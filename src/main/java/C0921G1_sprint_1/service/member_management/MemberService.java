@@ -6,10 +6,5 @@ import java.util.Optional;
 
 public interface MemberService {
 
-    Iterable<Member> findAllMembers();
-
-    Optional<Member> findMemberById(String id);
-
-    Member saveMember(Member member);
 
 }
