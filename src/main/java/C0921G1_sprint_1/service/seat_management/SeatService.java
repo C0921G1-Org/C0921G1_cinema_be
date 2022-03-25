@@ -6,4 +6,5 @@ import java.util.Set;
 
 public interface SeatService {
     Set<Seat> getAll();
+    Set<Seat> getAllByShowTimeId(String id);
 }

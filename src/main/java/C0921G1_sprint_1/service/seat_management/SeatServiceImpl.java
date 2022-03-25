@@ -15,4 +15,11 @@ public class SeatServiceImpl implements SeatService{
     public Set<Seat> getAll() {
         return seatRepository.getAll();
     }
+
+    @Override
+    public Set<Seat> getAllByShowTimeId(String id) {
+        return seatRepository.getAllByShowTimeId(id);
+    }
+
+
 }
