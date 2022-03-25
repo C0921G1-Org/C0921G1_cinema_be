@@ -1,7 +1,7 @@
 package C0921G1_sprint_1.model.showtime;
 
+
 import C0921G1_sprint_1.model.film.Film;
-import C0921G1_sprint_1.model.seat.Seat;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
