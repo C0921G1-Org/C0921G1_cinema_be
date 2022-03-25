@@ -4,6 +4,7 @@ import C0921G1_sprint_1.model.showtime.ShowTime;
 import C0921G1_sprint_1.model.transaction.Transaction;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table
@@ -17,10 +18,18 @@ public class Seat {
     @ManyToOne(targetEntity = SeatType.class)
     private SeatType seatType;
 
-    @ManyToOne(targetEntity = Transaction.class)
-    private Transaction transaction;
+    @ManyToMany(mappedBy = "seats")
+    private Set<Transaction> transactions;
 
     public Seat() {
+    }
+
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public Integer getId() {
