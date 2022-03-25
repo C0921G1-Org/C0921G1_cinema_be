@@ -14,7 +14,7 @@ public class StatisticFilmServiceImpl implements StatisticFilmService {
     private StatisticFilmRepository repository;
 
     @Override
-    public String [] findAllTopFilm() {
+    public List<Film> findAllTopFilm() {
         return repository.findAllTopFilm();
     }
 }

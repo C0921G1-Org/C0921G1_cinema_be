@@ -5,5 +5,5 @@ import C0921G1_sprint_1.model.film.Film;
 import java.util.List;
 
 public interface StatisticFilmService {
-    String [] findAllTopFilm();
+    List<Film> findAllTopFilm();
 }

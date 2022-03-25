@@ -1,12 +1,12 @@
 package C0921G1_sprint_1.repository.statistic_management;
 
-import C0921G1_sprint_1.dto.statistic.TopFilm;
 import C0921G1_sprint_1.model.film.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 
 @Repository
 public interface StatisticFilmRepository extends JpaRepository<Film, Integer> {
@@ -21,5 +21,5 @@ public interface StatisticFilmRepository extends JpaRepository<Film, Integer> {
             " Group by film.name " +
             " Order by total_money " +
             " Limit 10", nativeQuery = true)
-    String [] findAllTopFilm();
+    List<Film> findAllTopFilm();
 }
