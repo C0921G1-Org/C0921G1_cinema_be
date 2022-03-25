@@ -1,6 +1,8 @@
 package C0921G1_sprint_1.model.film;
 
+import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -10,7 +12,6 @@ import java.util.Set;
 public class FilmType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
 
