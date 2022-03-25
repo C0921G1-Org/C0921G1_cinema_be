@@ -7,9 +7,4 @@ import java.util.Optional;
 
 public interface FilmService {
     List<Film> getAll();
-
-
-
-    // //Tai DHN Xem Chi Tiết Phim
-    Optional<Film> findById(Integer id);
 }

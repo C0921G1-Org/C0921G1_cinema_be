@@ -27,11 +27,8 @@ public class ShowTime {
 
     @OneToMany(mappedBy = "showTime")
     @JsonBackReference(value = "showtime_transaction")
-<<<<<<< HEAD
     private List<Transaction> transaction;
-=======
-    private List<Transaction> transactions;
->>>>>>> e8c561bfe9ce73e36cd09a0f6e94a89a43cbfbac
+
 
     public ShowTime() {
     }
@@ -68,20 +65,11 @@ public class ShowTime {
         this.film = film;
     }
 
-<<<<<<< HEAD
     public List<Transaction> getTransaction() {
         return transaction;
     }
 
     public void setTransaction(List<Transaction> transaction) {
         this.transaction = transaction;
-=======
-    public List<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
->>>>>>> e8c561bfe9ce73e36cd09a0f6e94a89a43cbfbac
     }
 }

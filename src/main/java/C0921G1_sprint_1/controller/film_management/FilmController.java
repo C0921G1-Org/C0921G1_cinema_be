@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/film/")
+@RequestMapping("/film")
 public class FilmController {
     @Autowired
     private FilmService filmService;
@@ -26,14 +26,5 @@ public class FilmController {
         } else {
             return new ResponseEntity<>(filmList, HttpStatus.OK);
         }
-    }
-    //Tai DHN Xem Chi Tiết Phim
-    @GetMapping("findById/{id}")
-    public ResponseEntity<Film> findByIdFilm(@PathVariable Integer id){
-        Optional<Film> optionalFilm =filmService.findById(id);
-        if (optionalFilm.isPresent()){
-            return new ResponseEntity<>(optionalFilm.get(),HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
