@@ -14,7 +14,7 @@ public class Account {
     private Integer id;
     private String username;
     private String encryptPw;
-    private Boolean isEnabled;
+    private Integer isEnabled;
     private String email;
 
     @OneToMany(mappedBy = "account")
@@ -52,12 +52,12 @@ public class Account {
         this.encryptPw = encryptPw;
     }
 
-    public Boolean getEnabled() {
+    public Integer getIsEnabled() {
         return isEnabled;
     }
 
-    public void setEnabled(Boolean enabled) {
-        isEnabled = enabled;
+    public void setIsEnabled(Integer isEnabled) {
+        this.isEnabled = isEnabled;
     }
 
     public String getEmail() {
