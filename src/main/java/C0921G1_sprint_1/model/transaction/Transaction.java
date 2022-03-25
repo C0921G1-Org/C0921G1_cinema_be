@@ -30,6 +30,14 @@ public class Transaction {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
     private String code;
 
+    public Set<Seat> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(Set<Seat> seats) {
+        this.seats = seats;
+    }
+
     private String transactionalDate;
     private String ticketStatus;
 
@@ -41,8 +49,12 @@ public class Transaction {
     @JoinColumn(name = "showTime_id", referencedColumnName = "id")
     private ShowTime showTime;
 
-    @OneToMany(mappedBy = "transaction")
-    @JsonBackReference(value = "transaction_seat")
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "ticket",
+            joinColumns = @JoinColumn(name = "transaction_id"),
+            inverseJoinColumns = @JoinColumn(name = "seat_id")
+    )
     private Set<Seat> seats;
 
     @ManyToOne(targetEntity = Member.class)
