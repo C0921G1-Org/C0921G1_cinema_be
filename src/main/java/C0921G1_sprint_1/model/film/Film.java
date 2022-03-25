@@ -29,10 +29,8 @@ public class Film {
     private String director;
     private String studio;
 
-    @Column(columnDefinition = "LONGBLOB")
     private String image;
 
-    @Column(columnDefinition = "LONGBLOB")
     private String trailer;
 
     private String version;

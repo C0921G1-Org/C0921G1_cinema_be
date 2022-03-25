@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/film/")
 public class FilmController {
     @Autowired
     private FilmService filmService;
