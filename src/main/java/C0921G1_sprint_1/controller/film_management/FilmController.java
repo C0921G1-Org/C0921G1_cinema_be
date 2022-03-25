@@ -9,6 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import java.util.List;
+
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -16,14 +19,20 @@ import org.springframework.web.bind.annotation.*;
 public class FilmController {
     @Autowired
     private FilmService filmService;
-    // create Film of CaHm
-    @PostMapping("createFilm")
-    public ResponseEntity<Film>createFilm( @RequestBody FilmDTO filmDTO){
+//test findAll
+    @GetMapping("")
+    public ResponseEntity<Iterable<Film>>findAll(){
+        List<Film> filmList = (List<Film>) filmService.findAllFilm();
+        return new ResponseEntity<>(filmList,HttpStatus.OK);
+    }
+
+
+//huynh minh ca
+    @PostMapping("/createFilm")
+    public ResponseEntity<Film>createFilm(@Valid @RequestBody FilmDTO filmDTO){
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO,film);
         filmService.save(film);
-
         return new ResponseEntity<>(HttpStatus.OK);
-
     }
 }

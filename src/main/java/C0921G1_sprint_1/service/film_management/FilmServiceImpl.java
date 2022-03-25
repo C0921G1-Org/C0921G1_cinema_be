@@ -10,8 +10,15 @@ public class FilmServiceImpl implements FilmService{
     @Autowired
     private FilmRepository filmRepository;
 
+
     @Override
     public void save(Film film) {
-        filmRepository.save(film);
+        filmRepository.saveFilm(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),film.getFilmType().getId(),
+                film.getStudio(),film.getActor(),film.getDirector(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete());
+    }
+
+    @Override
+    public Iterable<Film> findAllFilm() {
+        return filmRepository.findAll();
     }
 }
