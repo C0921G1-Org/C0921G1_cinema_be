@@ -15,7 +15,7 @@ public class District {
     private String name;
 
     @OneToMany(mappedBy = "district")
-    @JsonBackReference
+    @JsonBackReference(value = "district_wards")
     private Set<Ward> wards;
 
     @ManyToOne(targetEntity = City.class)
