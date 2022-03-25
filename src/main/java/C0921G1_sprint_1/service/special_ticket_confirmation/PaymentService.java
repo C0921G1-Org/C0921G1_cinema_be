@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface PaymentService {
     List<Transaction> getAllTransaction();
+    Transaction saveTransaction(Transaction transaction);
 }

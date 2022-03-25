@@ -15,4 +15,9 @@ public class PaymentServiceImpl implements PaymentService{
     public List<Transaction> getAllTransaction() {
         return paymentRepository.findAll();
     }
+
+    @Override
+    public Transaction saveTransaction(Transaction transaction) {
+        return paymentRepository.save(transaction);
+    }
 }
