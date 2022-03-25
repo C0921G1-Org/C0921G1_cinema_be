@@ -1,6 +1,9 @@
 package C0921G1_sprint_1.model.showtime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -11,17 +14,20 @@ public class Screen {
     private Integer id;
     private String name;
 
-    @ManyToOne(targetEntity = ShowTime.class)
-    private ShowTime showTime;
+
+
+    @OneToMany(mappedBy = "screen")
+    @JsonBackReference(value = "showtime_screens")
+    private List<ShowTime> showTime;
 
     public Screen() {
     }
 
-    public ShowTime getShowTime() {
+    public List<ShowTime> getShowTime() {
         return showTime;
     }
 
-    public void setShowTime(ShowTime showTime) {
+    public void setShowTime(List<ShowTime> showTime) {
         this.showTime = showTime;
     }
 
