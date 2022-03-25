@@ -6,6 +6,7 @@ import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -24,9 +25,9 @@ public class ShowTime {
     @ManyToOne(targetEntity = Film.class)
     private Film film;
 
-    @OneToOne(mappedBy = "showTime")
+    @OneToMany(mappedBy = "showTime")
     @JsonBackReference(value = "showtime_transaction")
-    private Transaction transaction;
+    private List<Transaction> transactions;
 
     public ShowTime() {
     }
@@ -63,11 +64,11 @@ public class ShowTime {
         this.film = film;
     }
 
-    public Transaction getTransaction() {
-        return transaction;
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 }
