@@ -10,12 +10,11 @@ import java.util.Set;
 public class FilmType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
 
     @OneToMany(mappedBy = "filmType")
-    @JsonBackReference
+    @JsonBackReference(value = "filmType_film")
     private Set<Film> films;
 
     public FilmType() {

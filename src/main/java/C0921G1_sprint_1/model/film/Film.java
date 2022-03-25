@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.model.film;
 
 import C0921G1_sprint_1.model.showtime.ShowTime;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -21,13 +22,17 @@ public class Film {
     private FilmType filmType;
 
     @OneToMany(mappedBy = "film")
+    @JsonBackReference(value = "showTimes_film")
     private Set<ShowTime> showTimes;
 
     private String actor;
     private String director;
     private String studio;
+
     private String image;
+
     private String trailer;
+
     private String version;
     private Integer flagDelete;
 

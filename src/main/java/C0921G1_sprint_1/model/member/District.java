@@ -13,9 +13,12 @@ public class District {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String type;
+
+
 
     @OneToMany(mappedBy = "district")
-    @JsonBackReference
+    @JsonBackReference(value = "district_wards")
     private Set<Ward> wards;
 
     @ManyToOne(targetEntity = City.class)
@@ -54,5 +57,13 @@ public class District {
 
     public void setCity(City city) {
         this.city = city;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
