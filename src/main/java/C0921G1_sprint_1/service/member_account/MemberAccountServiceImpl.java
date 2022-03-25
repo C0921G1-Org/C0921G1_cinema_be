@@ -1,18 +1,29 @@
 package C0921G1_sprint_1.service.member_account;
 
 import C0921G1_sprint_1.dto.member.MemberHistoryDTO;
+import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.repository.member_account.MemberAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemberAccountServiceImpl implements MemberAccountService{
 
     @Autowired
-    MemberAccountRepository memberAccountRepository;
+    private MemberAccountRepository memberAccountRepository;
 
+
+    //    NhanNT get Trading history
     @Override
     public Page<MemberHistoryDTO> findTradingHistory(int id, Pageable pageable) {
         return memberAccountRepository.findTradingHistory(id,pageable);
+    }
+    //    NhanNT create Member
+    @Override
+    public void createMember(Member member) {
+//        memberAccountRepository.createMember(member.getAddress(),member.getDateOfBirth(),member.getEmail(),member.getGender(),member.getIdentityNumber(),member.getImage(),member.getName(),member.getPhone(),member.getPoint(),member.getCity().getId());
+        memberAccountRepository.save(member);
     }
 }
