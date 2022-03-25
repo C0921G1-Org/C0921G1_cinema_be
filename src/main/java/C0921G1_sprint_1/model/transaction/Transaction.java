@@ -49,7 +49,8 @@ public class Transaction {
     @JoinColumn(name = "showTime_id", referencedColumnName = "id")
     private ShowTime showTime;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
+    @JsonBackReference(value = "transaction_seat")
     @JoinTable(
             name = "ticket",
             joinColumns = @JoinColumn(name = "transaction_id"),

@@ -16,7 +16,7 @@ public class SeatType {
     private Double price;
 
     @OneToMany(mappedBy = "seatType")
-    @JsonBackReference
+    @JsonBackReference(value = "seatType_seats")
     private Set<Seat> seats;
 
     public SeatType() {
