@@ -45,8 +45,7 @@ public class Transaction {
     @JsonBackReference(value = "transaction_attachedService")
     private List<AttachedService> attachedServices;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "showTime_id", referencedColumnName = "id")
+    @ManyToOne(targetEntity = ShowTime.class)
     private ShowTime showTime;
 
     @ManyToMany

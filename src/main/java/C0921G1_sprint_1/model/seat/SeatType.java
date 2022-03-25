@@ -3,7 +3,7 @@ package C0921G1_sprint_1.model.seat;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table
@@ -17,7 +17,7 @@ public class SeatType {
 
     @OneToMany(mappedBy = "seatType")
     @JsonBackReference(value = "seatType_seats")
-    private Set<Seat> seats;
+    private List<Seat> seats;
 
     public SeatType() {
     }
@@ -46,11 +46,11 @@ public class SeatType {
         this.price = price;
     }
 
-    public Set<Seat> getSeats() {
+    public List<Seat> getSeats() {
         return seats;
     }
 
-    public void setSeats(Set<Seat> seats) {
+    public void setSeats(List<Seat> seats) {
         this.seats = seats;
     }
 }
