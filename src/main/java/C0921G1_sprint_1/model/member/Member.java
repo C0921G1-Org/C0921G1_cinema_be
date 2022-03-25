@@ -39,7 +39,7 @@ public class Member {
     private City city;
 
     @OneToMany(mappedBy = "member")
-    @JsonBackReference
+    @JsonBackReference(value = "transactions_member")
     private Set<Transaction> transactions;
 
     @OneToOne
