@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FilmRepository extends JpaRepository<Film, Integer> {
-    @Query(value="select id, duration, end_date, name, start_date, studio, version\n" +
+    @Query(value="select *\n" +
             "from film\n" +
             "where flag_delete = 1", nativeQuery = true)
     Page<Film> findAll(Pageable pageable);
