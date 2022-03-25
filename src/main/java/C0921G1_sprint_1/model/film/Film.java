@@ -34,6 +34,23 @@ public class Film {
     public Film() {
     }
 
+    public Film(Integer id, String name, String duration, String startDate, String endDate, FilmType filmType, Set<ShowTime> showTimes, String actor, String director, String studio, String image, String trailer, String version, Integer flagDelete) {
+        this.id = id;
+        this.name = name;
+        this.duration = duration;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.filmType = filmType;
+        this.showTimes = showTimes;
+        this.actor = actor;
+        this.director = director;
+        this.studio = studio;
+        this.image = image;
+        this.trailer = trailer;
+        this.version = version;
+        this.flagDelete = flagDelete;
+    }
+
     public Set<ShowTime> getShowTimes() {
         return showTimes;
     }
