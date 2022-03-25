@@ -15,8 +15,10 @@ import java.util.Optional;
 
 
 @CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping(value = "/film")
+
 public class FilmController {
     @Autowired
     private FilmService filmService;
@@ -30,7 +32,7 @@ public class FilmController {
 
     //Tai DHN Xem Chi Tiết Phim
     @GetMapping("findById/{id}")
-    public ResponseEntity<Film> findByIdFilm(@PathVariable Integer id) {
+    public ResponseEntity<Film> findById(@PathVariable Integer id) {
         Optional<Film> optionalFilm = filmService.findById(id);
         if (!optionalFilm.isPresent()) {
             return new ResponseEntity<>(optionalFilm.get(), HttpStatus.OK);
@@ -48,7 +50,7 @@ public class FilmController {
     }
 
     // Huynh Minh ca xem chi tiet phim theo id
-    @GetMapping("/{id}/findByIdFilm")
+    @GetMapping("findByIdFilm/{id}")
     public ResponseEntity<Film>findByIdFilm(@PathVariable Integer id){
         Optional<Film> filmOptional = filmService.findByIdFilm(id);
         if (!filmOptional.isPresent()){
@@ -59,20 +61,18 @@ public class FilmController {
     }
 
     // huynh minh ca sua thong tin phim
-    @PatchMapping("/{id}/editFilm")
+    @PutMapping("/{id}/editFilm")
     public ResponseEntity<Film>edit(@PathVariable Integer id, @RequestBody FilmDTO filmDTO){
 //        Film film = new Film();
 //        BeanUtils.copyProperties(filmDTO,film);
 //        filmService.saveFilm(film);
 //        return new ResponseEntity<>(HttpStatus.OK);
 
-        Optional<Film> filmOptional = this.filmService.findById(id);
-        System.out.println(filmOptional.get());
-        if (!filmOptional.isPresent())
+        Optional<Film> filmOptional = this.filmService.findByIdFilm(id);
+        if (!filmOptional.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-
+        }
         filmDTO.setId(id);
-
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO,film);
         this.filmService.saveFilm(film);

@@ -34,8 +34,7 @@ public interface FilmRepository extends JpaRepository<Film,Long> {
     @Query(value="SELECT f FROM Film  f where f.id = ?1")
     Optional<Film> findById(Integer id);
 // Huynh Minh Ca xem chi tiet phim theo id
-    
-    @Modifying
-    @Query(value = "select `name`,duration,start_Date,end_Date,film_Type_id,actor,director,studio,image,trailer,version,flag_Delete form film where id = ?", nativeQuery = true)
-    @Transactional Optional<Film> findByIdFilm(@Param("id") Integer id);
+
+    @Query(value = "select * from film where film.id = :ids ", nativeQuery = true)
+    Optional<Film> findByIdFilm(@Param("ids") Integer id);
 }
