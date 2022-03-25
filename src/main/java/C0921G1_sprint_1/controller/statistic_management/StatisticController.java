@@ -18,8 +18,8 @@ public class StatisticController {
 
     @GetMapping("")
     void getAllTopFilm() {
-        for (int i = 0; i <statisticFilmService.findAllTopFilm().length ; i++) {
-            System.out.println(statisticFilmService.findAllTopFilm()[i]);
-        }
+//        for (int i = 0; i <statisticFilmService.findAllTopFilm().length ; i++) {
+//            System.out.println(statisticFilmService.findAllTopFilm()[i]);
+//        }
     }
 }
