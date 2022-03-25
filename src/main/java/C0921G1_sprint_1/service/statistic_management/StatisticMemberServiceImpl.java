@@ -1,7 +1,6 @@
 package C0921G1_sprint_1.service.statistic_management;
 
 import C0921G1_sprint_1.dto.statistic.TopMember;
-import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.repository.statistic_management.StatisticMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

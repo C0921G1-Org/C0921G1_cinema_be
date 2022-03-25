@@ -7,5 +7,4 @@ public interface TopMember {
     String getTotalTicket();
     String getTotalMoney();
     String getPoint();
-
 }
