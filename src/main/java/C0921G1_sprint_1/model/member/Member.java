@@ -24,12 +24,14 @@ public class Member {
     private String id;
 
     private String name;
-    private Boolean gender;
+    private Integer gender;
     private String phone;
     private String email;
     private String address;
     private Double point;
     private String image;
+    private String dateOfBirth;
+    private String identityNumber;
 
     @ManyToOne(targetEntity = City.class)
     private City city;
@@ -41,8 +43,36 @@ public class Member {
     public Member() {
     }
 
-    public Boolean getGender() {
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getIdentityNumber() {
+        return identityNumber;
+    }
+
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
+    }
+
+    public Integer getGender() {
         return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public String getImage() {
@@ -67,14 +97,6 @@ public class Member {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Boolean isGender() {
-        return gender;
-    }
-
-    public void setGender(Boolean gender) {
-        this.gender = gender;
     }
 
     public String getPhone() {

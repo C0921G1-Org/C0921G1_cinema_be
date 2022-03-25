@@ -29,7 +29,7 @@ public class Film {
     private String image;
     private String trailer;
     private String version;
-    private Boolean flagDelete;
+    private Integer flagDelete;
 
     public Film() {
     }
@@ -122,11 +122,11 @@ public class Film {
         this.image = image;
     }
 
-    public Boolean getFlagDelete() {
+    public Integer getFlagDelete() {
         return flagDelete;
     }
 
-    public void setFlagDelete(Boolean flagDelete) {
+    public void setFlagDelete(Integer flagDelete) {
         this.flagDelete = flagDelete;
     }
 

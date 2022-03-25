@@ -21,10 +21,6 @@ public class ShowTime {
     @JsonBackReference
     private Set<Screen> screens;
 
-    @OneToMany(mappedBy = "showTime")
-    @JsonBackReference
-    private Set<Seat> seats;
-
     @ManyToOne(targetEntity = Film.class)
     private Film film;
 
@@ -56,14 +52,6 @@ public class ShowTime {
 
     public void setScreens(Set<Screen> screens) {
         this.screens = screens;
-    }
-
-    public Set<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(Set<Seat> seats) {
-        this.seats = seats;
     }
 
     public Film getFilm() {

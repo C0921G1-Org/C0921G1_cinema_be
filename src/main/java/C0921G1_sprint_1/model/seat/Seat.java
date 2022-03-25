@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.model.seat;
 
 import C0921G1_sprint_1.model.showtime.ShowTime;
+import C0921G1_sprint_1.model.transaction.Transaction;
 
 import javax.persistence.*;
 
@@ -11,13 +12,13 @@ public class Seat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Boolean status;
+    private Integer status;
 
     @ManyToOne(targetEntity = SeatType.class)
     private SeatType seatType;
 
-    @ManyToOne(targetEntity = ShowTime.class)
-    private ShowTime showTime;
+    @ManyToOne(targetEntity = Transaction.class)
+    private Transaction transaction;
 
     public Seat() {
     }
@@ -30,14 +31,6 @@ public class Seat {
         this.id = id;
     }
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
     public SeatType getSeatType() {
         return seatType;
     }
@@ -46,11 +39,11 @@ public class Seat {
         this.seatType = seatType;
     }
 
-    public ShowTime getShowTime() {
-        return showTime;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setShowTime(ShowTime showTime) {
-        this.showTime = showTime;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

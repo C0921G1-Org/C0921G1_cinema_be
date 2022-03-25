@@ -3,12 +3,14 @@ package C0921G1_sprint_1.model.transaction;
 import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
 import C0921G1_sprint_1.model.attached_service.AttachedService;
 import C0921G1_sprint_1.model.member.Member;
+import C0921G1_sprint_1.model.seat.Seat;
 import C0921G1_sprint_1.model.showtime.ShowTime;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
@@ -29,17 +31,19 @@ public class Transaction {
     private String code;
 
     private String transactionalDate;
-    private Integer ticketQuantity;
+    private String ticketStatus;
 
     @OneToMany(mappedBy = "transaction")
-    @JsonBackReference
+    @JsonBackReference(value = "transaction_attachedService")
     private List<AttachedService> attachedServices;
-
-    private Integer attachedServiceQuantity;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "showTime_id", referencedColumnName = "id")
     private ShowTime showTime;
+
+    @OneToMany(mappedBy = "transaction")
+    @JsonBackReference(value = "transaction_seat")
+    private Set<Seat> seats;
 
     @ManyToOne(targetEntity = Member.class)
     private Member member;
@@ -68,28 +72,12 @@ public class Transaction {
         this.transactionalDate = transactionalDate;
     }
 
-    public Integer getTicketQuantity() {
-        return ticketQuantity;
-    }
-
-    public void setTicketQuantity(Integer ticketQuantity) {
-        this.ticketQuantity = ticketQuantity;
-    }
-
     public List<AttachedService> getAttachedServices() {
         return attachedServices;
     }
 
     public void setAttachedServices(List<AttachedService> attachedServices) {
         this.attachedServices = attachedServices;
-    }
-
-    public Integer getAttachedServiceQuantity() {
-        return attachedServiceQuantity;
-    }
-
-    public void setAttachedServiceQuantity(Integer attachedServiceQuantity) {
-        this.attachedServiceQuantity = attachedServiceQuantity;
     }
 
     public ShowTime getShowTime() {
@@ -101,5 +89,21 @@ public class Transaction {
     }
 
     public Transaction() {
+    }
+
+    public String getTicketStatus() {
+        return ticketStatus;
+    }
+
+    public void setTicketStatus(String ticketStatus) {
+        this.ticketStatus = ticketStatus;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
     }
 }
