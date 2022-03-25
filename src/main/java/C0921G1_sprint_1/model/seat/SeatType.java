@@ -21,8 +21,12 @@ public class SeatType {
     private List<Seat> seats;
 =======
     @JsonBackReference(value = "seatType_seats")
+<<<<<<< HEAD
     private Set<Seat> seats;
 >>>>>>> 53319c79bc56c3c500040c5afbf03576751f49ce
+=======
+    private List<Seat> seats;
+>>>>>>> e8c561bfe9ce73e36cd09a0f6e94a89a43cbfbac
 
     public SeatType() {
     }
