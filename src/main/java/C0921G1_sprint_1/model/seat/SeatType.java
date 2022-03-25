@@ -16,8 +16,13 @@ public class SeatType {
     private Double price;
 
     @OneToMany(mappedBy = "seatType")
+<<<<<<< HEAD
     @JsonBackReference
     private List<Seat> seats;
+=======
+    @JsonBackReference(value = "seatType_seats")
+    private Set<Seat> seats;
+>>>>>>> 53319c79bc56c3c500040c5afbf03576751f49ce
 
     public SeatType() {
     }

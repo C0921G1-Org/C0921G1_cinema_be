@@ -1,11 +1,11 @@
 package C0921G1_sprint_1.model.showtime;
 
 import C0921G1_sprint_1.model.film.Film;
-import C0921G1_sprint_1.model.seat.Seat;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,14 +18,15 @@ public class ShowTime {
     private String name;
 
     @OneToMany(mappedBy = "showTime")
-    @JsonBackReference
+    @JsonBackReference(value = "showtime_screens")
     private Set<Screen> screens;
 
     @ManyToOne(targetEntity = Film.class)
     private Film film;
 
-    @OneToOne(mappedBy = "showTime")
-    private Transaction transaction;
+    @OneToMany(mappedBy = "showTime")
+    @JsonBackReference(value = "showtime_transaction")
+    private List<Transaction> transaction;
 
     public ShowTime() {
     }
@@ -62,11 +63,11 @@ public class ShowTime {
         this.film = film;
     }
 
-    public Transaction getTransaction() {
+    public List<Transaction> getTransaction() {
         return transaction;
     }
 
-    public void setTransaction(Transaction transaction) {
+    public void setTransaction(List<Transaction> transaction) {
         this.transaction = transaction;
     }
 }
