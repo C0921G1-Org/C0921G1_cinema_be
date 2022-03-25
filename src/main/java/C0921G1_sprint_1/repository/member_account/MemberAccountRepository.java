@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.repository.member_account;
 
 import C0921G1_sprint_1.dto.member.MemberDTO;
+import C0921G1_sprint_1.dto.member.MemberHistoryDTO;
 import C0921G1_sprint_1.model.member.Member;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public interface MemberAccountRepository extends JpaRepository<Member,String> {
     @Query(value =
             "Select t.transactional_date, t.code, s.name, f.name, se.transaction_id, st.price, ats.price, m.point \n" +
-            " From transaction t \n" +
+            "From transaction t \n" +
             "Join show_time st on t.show_time_id = st.id \n"+
             "Join film f on st.film_id = f.id \n"+
             "Join screen s on s.show_time_id = st.id \n"+
@@ -21,7 +22,6 @@ public interface MemberAccountRepository extends JpaRepository<Member,String> {
             "Join seat_type set on se.seat_type_id = set.id \n"+
             "Join attached_service ats on ats.transaction_id = t.id \n"+
             "where m.id = ?1;"
-
             , nativeQuery = true)
-    Page<MemberDTO> findAll(String name, Integer customerTypeId, Pageable pageable);
+    Page<MemberHistoryDTO>findTradingHistory(Integer customerTypeId, Pageable pageable);
 }
