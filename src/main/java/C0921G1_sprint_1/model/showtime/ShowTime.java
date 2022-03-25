@@ -18,13 +18,14 @@ public class ShowTime {
     private String name;
 
     @OneToMany(mappedBy = "showTime")
-    @JsonBackReference
+    @JsonBackReference(value = "showtime_screens")
     private Set<Screen> screens;
 
     @ManyToOne(targetEntity = Film.class)
     private Film film;
 
     @OneToOne(mappedBy = "showTime")
+    @JsonBackReference(value = "showtime_transaction")
     private Transaction transaction;
 
     public ShowTime() {

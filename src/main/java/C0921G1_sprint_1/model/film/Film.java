@@ -22,7 +22,7 @@ public class Film {
     private FilmType filmType;
 
     @OneToMany(mappedBy = "film")
-    @JsonBackReference
+    @JsonBackReference(value = "showTimes_film")
     private Set<ShowTime> showTimes;
 
     private String actor;

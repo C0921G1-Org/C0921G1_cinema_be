@@ -50,7 +50,7 @@ public class Transaction {
     private ShowTime showTime;
 
     @ManyToMany
-    @JsonBackReference
+    @JsonBackReference(value = "transaction_seat")
     @JoinTable(
             name = "ticket",
             joinColumns = @JoinColumn(name = "transaction_id"),
