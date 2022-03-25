@@ -1,20 +1,14 @@
 package C0921G1_sprint_1.controller.statistic_management;
 
-
-import C0921G1_sprint_1.dto.statistic.TopFilm;
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.service.statistic_management.StatisticFilmServiceImpl;
 import C0921G1_sprint_1.service.statistic_management.StatisticMemberServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -41,7 +35,7 @@ public class StatisticController {
 ////            System.out.println(statisticFilmService.findAllTopFilm()[i]);
 ////        }
 //    }
-    @GetMapping()
+    @GetMapping("/film")
     public ResponseEntity<List<Film>> getAllTopFilm() {
         List<Film> topFilmList = statisticFilmService.findAllTopFilm();
         if (topFilmList.isEmpty()) {
@@ -50,7 +44,7 @@ public class StatisticController {
         return new ResponseEntity<>(topFilmList, HttpStatus.OK);
     }
 
-    @GetMapping()
+    @GetMapping("member")
     public ResponseEntity<List<Member>> getAllTopMember() {
         List<Member> topMemberList = statisticMemberService.findAllTopMember();
         if (topMemberList.isEmpty()) {
