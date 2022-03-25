@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface FilmRepository extends JpaRepository<Film, Integer> {
     @Query(value="select *\n" +
             "from film\n" +
-            "where flag_delete = 1", nativeQuery = true)
-    Page<Film> findAll(Pageable pageable);
+            "where flag_delete = 1 and `name` like %?1% and start_date like %?2% and end_date like %?3%", nativeQuery = true)
+    Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable);
 }

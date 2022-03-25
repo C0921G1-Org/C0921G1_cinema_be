@@ -20,9 +20,12 @@ public class FilmController {
     private FilmService filmService;
 
     @GetMapping("/list")
-    public ResponseEntity<Page<Film>> findAll(@RequestParam(defaultValue = "0") int page){
+    public ResponseEntity<Page<Film>> findAll(@RequestParam(defaultValue = "0") int page,
+                                              @RequestParam(defaultValue = "") String name,
+                                              @RequestParam(defaultValue = "") String startDate,
+                                              @RequestParam(defaultValue = "") String endDate){
         Pageable pageable = PageRequest.of(page, 10);
-        Page<Film> filmPage= filmService.findAll(pageable);
+        Page<Film> filmPage= filmService.findAll(name,startDate,endDate,pageable);
         if (filmPage.isEmpty()){
             return new  ResponseEntity<>(HttpStatus.NO_CONTENT);
         }else {

@@ -7,5 +7,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface FilmService {
-    Page<Film> findAll(Pageable pageable);
+    Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable);
 }

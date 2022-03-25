@@ -12,8 +12,9 @@ public class FilmServiceImpl implements FilmService{
     @Autowired
     private FilmRepository filmRepository;
 
+
     @Override
-    public Page<Film> findAll(Pageable pageable) {
-        return filmRepository.findAll(pageable);
+    public Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable) {
+        return filmRepository.findAll(name,startDate,endDate,pageable);
     }
 }
