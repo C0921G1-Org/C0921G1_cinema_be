@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.controller.statistic_management;
 
-import C0921G1_sprint_1.model.film.Film;
+import C0921G1_sprint_1.dto.statistic.TopFilm;
+import C0921G1_sprint_1.dto.statistic.TopMember;
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.service.statistic_management.StatisticFilmServiceImpl;
 import C0921G1_sprint_1.service.statistic_management.StatisticMemberServiceImpl;
@@ -23,30 +24,18 @@ public class StatisticController {
     @Autowired
     private StatisticMemberServiceImpl statisticMemberService;
 
-    //    @GetMapping("/film")
-//    void getAllTopFilm() {
-////        for (int i = 0; i <statisticFilmService.findAllTopFilm().length ; i++) {
-////            System.out.println(statisticFilmService.findAllTopFilm()[i]);
-////        }
-//    }
-//    @GetMapping("/member")
-//    void getAllTopMember() {
-////        for (int i = 0; i <statisticFilmService.findAllTopFilm().length ; i++) {
-////            System.out.println(statisticFilmService.findAllTopFilm()[i]);
-////        }
-//    }
     @GetMapping("/film")
-    public ResponseEntity<List<Film>> getAllTopFilm() {
-        List<Film> topFilmList = statisticFilmService.findAllTopFilm();
+    public ResponseEntity<List<TopFilm>> getAllTopFilm() {
+        List<TopFilm> topFilmList = statisticFilmService.findAllTopFilm();
         if (topFilmList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(topFilmList, HttpStatus.OK);
     }
 
-    @GetMapping("member")
-    public ResponseEntity<List<Member>> getAllTopMember() {
-        List<Member> topMemberList = statisticMemberService.findAllTopMember();
+    @GetMapping("/member")
+    public ResponseEntity<List<TopMember>> getAllTopMember() {
+        List<TopMember> topMemberList = statisticMemberService.findAllTopMember();
         if (topMemberList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
