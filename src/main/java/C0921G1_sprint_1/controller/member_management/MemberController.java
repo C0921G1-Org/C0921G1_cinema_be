@@ -14,20 +14,20 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/c09/admin/member-management")
 public class MemberController {
-//
-//    @Autowired
-//    private MemberService memberService;
+
+    @Autowired
+    private MemberService memberService;
 
     //get all members - KhanhLDQ
-//    @GetMapping(value = "/member-list")
-//    public ResponseEntity<Iterable<Member>> getAllMembers() {
-//        List<Member> members = (List<Member>) this.memberService.findAllMembers();
-//
-//        if (members.isEmpty())
-//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-//
-//        return new ResponseEntity<>(members,HttpStatus.OK);
-//    }
+    @GetMapping(value = "/member-list")
+    public ResponseEntity<Iterable<Member>> getAllMembers() {
+        List<Member> members = (List<Member>) this.memberService.findAllMembers();
+
+        if (members.isEmpty())
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        return new ResponseEntity<>(members,HttpStatus.OK);
+    }
 
     //get member by Id - KhanhLDQ
 //    @GetMapping(value = "/member-list/{id}")
