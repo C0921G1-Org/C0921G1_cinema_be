@@ -1,35 +1,32 @@
 package C0921G1_sprint_1.model.seat;
 
+import C0921G1_sprint_1.model.showtime.Screen;
 import C0921G1_sprint_1.model.showtime.ShowTime;
 import C0921G1_sprint_1.model.transaction.Transaction;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table
-public class Seat {
+public class SelectedSeat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private Integer position;
     private Integer status;
+    private String orderedDate;
 
     @ManyToOne(targetEntity = SeatType.class)
     private SeatType seatType;
 
-    @ManyToMany(mappedBy = "seats")
-    private Set<Transaction> transactions;
+    @ManyToOne(targetEntity = ShowTime.class)
+    private ShowTime showTime;
 
-    public Seat() {
-    }
 
-    public Set<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(Set<Transaction> transactions) {
-        this.transactions = transactions;
+    public SelectedSeat() {
     }
 
     public Integer getId() {
@@ -38,6 +35,22 @@ public class Seat {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getOrderedDate() {
+        return orderedDate;
+    }
+
+    public void setOrderedDate(String orderedDate) {
+        this.orderedDate = orderedDate;
+    }
+
+    public Integer getPosition() {
+        return position;
+    }
+
+    public void setPosition(Integer position) {
+        this.position = position;
     }
 
     public SeatType getSeatType() {
@@ -55,4 +68,6 @@ public class Seat {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+
 }

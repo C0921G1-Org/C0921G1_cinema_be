@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.model.showtime;
 
 import C0921G1_sprint_1.model.film.Film;
+import C0921G1_sprint_1.model.seat.SelectedSeat;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -16,13 +17,16 @@ public class ShowTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String date;
     @ManyToOne(targetEntity = Screen.class)
     private Screen screen;
 
     @ManyToOne(targetEntity = Film.class)
     private Film film;
 
-
+    @OneToMany (mappedBy = "showTime")
+    @JsonBackReference(value = "showtime_selectedSeat")
+    private List<SelectedSeat> selectedSeats;
 
 
     @OneToMany(mappedBy = "showTime")
@@ -39,6 +43,14 @@ public class ShowTime {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getName() {
@@ -71,5 +83,13 @@ public class ShowTime {
 
     public void setTransaction(List<Transaction> transaction) {
         this.transaction = transaction;
+    }
+
+    public List<SelectedSeat> getSelectedSeats() {
+        return selectedSeats;
+    }
+
+    public void setSelectedSeats(List<SelectedSeat> selectedSeats) {
+        this.selectedSeats = selectedSeats;
     }
 }
