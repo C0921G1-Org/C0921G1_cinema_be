@@ -32,7 +32,7 @@ public class FilmController {
     }
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
-    @GetMapping("/list-client")
+    @GetMapping("list-client")
     public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") int seeMore,
                                                         @RequestParam(defaultValue = "0") int page,
                                                         @RequestParam(defaultValue = "") String startDate,
