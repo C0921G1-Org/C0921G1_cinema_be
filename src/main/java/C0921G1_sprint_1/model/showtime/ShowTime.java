@@ -16,6 +16,7 @@ public class ShowTime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String date;
     private String name;
     private String date;
     @ManyToOne(targetEntity = Screen.class)
@@ -24,10 +25,16 @@ public class ShowTime {
     @ManyToOne(targetEntity = Film.class)
     private Film film;
 
+<<<<<<< HEAD
     @OneToMany (mappedBy = "showTime")
     @JsonBackReference(value = "showtime_selectedSeat")
     private List<SelectedSeat> selectedSeats;
 
+=======
+    @OneToMany(mappedBy = "showTime")
+    @JsonBackReference(value = "showtime_selectedSeat")
+    private List<SelectedSeat> selectedSeats;
+>>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
 
     @OneToMany(mappedBy = "showTime")
     @JsonBackReference(value = "showtime_transaction")
@@ -53,6 +60,17 @@ public class ShowTime {
         this.date = date;
     }
 
+<<<<<<< HEAD
+=======
+    public List<SelectedSeat> getSelectedSeats() {
+        return selectedSeats;
+    }
+
+    public void setSelectedSeats(List<SelectedSeat> selectedSeats) {
+        this.selectedSeats = selectedSeats;
+    }
+
+>>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
     public String getName() {
         return name;
     }
