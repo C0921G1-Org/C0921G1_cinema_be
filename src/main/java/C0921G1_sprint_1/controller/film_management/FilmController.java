@@ -32,13 +32,15 @@ public class FilmController {
     }
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
-    @GetMapping("list-client")
-    public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") int page,
+    @GetMapping("/list-client")
+    public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") int seeMore,
+                                                        @RequestParam(defaultValue = "0") int page,
                                                         @RequestParam(defaultValue = "") String startDate,
                                                         @RequestParam(defaultValue = "") String name,
                                                         @RequestParam(defaultValue = "") String statusFilm,
                                                         @RequestParam(defaultValue = "") String typeFilm) {
-        Pageable pageable = PageRequest.of(page, 6);
+
+        Pageable pageable = PageRequest.of(page, seeMore);
         Page<Film> filmPage = filmService.findAllFilmClient(startDate, name, statusFilm, typeFilm, pageable);
         if (filmPage.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
