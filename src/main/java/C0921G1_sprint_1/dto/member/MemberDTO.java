@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
+import C0921G1_sprint_1.model.member.Ward;
 
 public class MemberDTO {
     private String id;
@@ -15,18 +16,28 @@ public class MemberDTO {
     private String dateOfBirth;
     private String identityNumber;
 
-    private City city;
-
-    public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }
+    private Ward ward;
 
     public MemberDTO() {
     }
+
+//    public City getCity() {
+//        return city;
+//    }
+//
+//    public void setCity(City city) {
+//        this.city = city;
+//    }
+
+    public Ward getWard() {
+        return ward;
+    }
+
+    public void setWard(Ward ward) {
+        this.ward = ward;
+    }
+
+
 
     public String getId() {
         return id;

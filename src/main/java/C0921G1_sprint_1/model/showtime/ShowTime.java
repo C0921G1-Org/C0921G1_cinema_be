@@ -1,11 +1,11 @@
 package C0921G1_sprint_1.model.showtime;
 
 import C0921G1_sprint_1.model.film.Film;
-import C0921G1_sprint_1.model.seat.Seat;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -16,17 +16,18 @@ public class ShowTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-
-    @OneToMany(mappedBy = "showTime")
-    @JsonBackReference(value = "showtime_screens")
-    private Set<Screen> screens;
+    @ManyToOne(targetEntity = Screen.class)
+    private Screen screen;
 
     @ManyToOne(targetEntity = Film.class)
     private Film film;
 
-    @OneToOne(mappedBy = "showTime")
+
+
+
+    @OneToMany(mappedBy = "showTime")
     @JsonBackReference(value = "showtime_transaction")
-    private Transaction transaction;
+    private List<Transaction> transactions;
 
     public ShowTime() {
     }
@@ -47,12 +48,12 @@ public class ShowTime {
         this.name = name;
     }
 
-    public Set<Screen> getScreens() {
-        return screens;
+    public Screen getScreen() {
+        return screen;
     }
 
-    public void setScreens(Set<Screen> screens) {
-        this.screens = screens;
+    public void setScreen(Screen screen) {
+        this.screen = screen;
     }
 
     public Film getFilm() {
@@ -63,11 +64,11 @@ public class ShowTime {
         this.film = film;
     }
 
-    public Transaction getTransaction() {
-        return transaction;
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 }

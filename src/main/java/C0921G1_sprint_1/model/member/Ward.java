@@ -1,6 +1,9 @@
 package C0921G1_sprint_1.model.member;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table
@@ -10,9 +13,14 @@ public class Ward {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String type;
 
     @ManyToOne(targetEntity = District.class)
     private District district;
+
+    @OneToMany(mappedBy = "ward")
+    @JsonBackReference(value = "ward_member")
+    private Set<Member> members;
 
     public Ward() {
     }
@@ -39,5 +47,13 @@ public class Ward {
 
     public void setDistrict(District district) {
         this.district = district;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

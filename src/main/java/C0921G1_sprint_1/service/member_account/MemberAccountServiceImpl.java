@@ -17,13 +17,14 @@ public class MemberAccountServiceImpl implements MemberAccountService{
 
     //    NhanNT get Trading history
     @Override
-    public Page<MemberHistoryDTO> findTradingHistory(int id, Pageable pageable) {
+    public Page<MemberHistoryDTO> findTradingHistory(String id, Pageable pageable) {
         return memberAccountRepository.findTradingHistory(id,pageable);
     }
+
+
     //    NhanNT create Member
     @Override
     public void createMember(Member member) {
-//        memberAccountRepository.createMember(member.getAddress(),member.getDateOfBirth(),member.getEmail(),member.getGender(),member.getIdentityNumber(),member.getImage(),member.getName(),member.getPhone(),member.getPoint(),member.getCity().getId());
         memberAccountRepository.save(member);
     }
 }
