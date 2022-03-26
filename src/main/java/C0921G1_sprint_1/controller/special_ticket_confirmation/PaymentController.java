@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.controller.special_ticket_confirmation;
 
 
+
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import C0921G1_sprint_1.service.member_management.MemberService;
@@ -55,8 +56,8 @@ public class PaymentController {
     @PostMapping(value = "/pay", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> addTracsaction(@RequestBody Transaction transaction){
 
-                Member member = chaneValueMember(transaction);
-                memberService.addMember(member);
+//                Member member = chaneValueMember(transaction);
+//                memberService.addMember(member);
 
 
 
@@ -169,12 +170,12 @@ public class PaymentController {
         // chuyển đối qrcode thành hình ảnh
     private void qrCode(Transaction transaction) throws WriterException, IOException {
 
-    String data = transaction.getCode() + " " + transaction.getId() + " "
-            + transaction.getMember().getEmail() + " " + transaction.getMember().getName();
-    String path = "src/main/resources/qr.png";
+        String data = transaction.getCode() + " " + transaction.getId() + " "
+                + transaction.getMember().getEmail() + " " + transaction.getMember().getName();
+        String path = "src/main/resources/qr.png";
         BitMatrix matrix;
-       matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);
-       MatrixToImageWriter.writeToPath(matrix, "png", Paths.get(path));
-}
+        matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);
+        MatrixToImageWriter.writeToPath(matrix, "png", Paths.get(path));
+    }
 }
 
