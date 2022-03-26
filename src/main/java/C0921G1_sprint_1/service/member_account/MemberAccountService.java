@@ -9,7 +9,7 @@ public interface MemberAccountService {
 
 
     //    NhanNT get Trading History
-    Page<MemberHistoryDTO> findTradingHistory(String id, Pageable pageable);
+    Page<MemberHistoryDTO> findTradingHistory(String id,String name, Pageable pageable);
     //    NhanNT Create Member
     void createMember(Member member);
 

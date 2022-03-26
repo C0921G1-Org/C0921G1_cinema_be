@@ -39,10 +39,11 @@ public class MemberAccountController {
     //get list trading history NhanNT
     @GetMapping("/member/history")
     public ResponseEntity<Iterable<MemberHistoryDTO>> getTradingHistory(@RequestParam(defaultValue = "0") int page,
-                                                                        @RequestParam(defaultValue = "") String memberID){
+                                                                        @RequestParam(defaultValue = "") String memberID,
+                                                                        @RequestParam(defaultValue = "") String filmName){
 
         Pageable pageable = PageRequest.of(page, 5);
-        Page<MemberHistoryDTO> historyDTOList = memberAccountService.findTradingHistory(memberID,pageable);
+        Page<MemberHistoryDTO> historyDTOList = memberAccountService.findTradingHistory(memberID,filmName,pageable);
 
         if (historyDTOList.isEmpty()){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);

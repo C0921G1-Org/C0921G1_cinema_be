@@ -17,8 +17,8 @@ public class MemberAccountServiceImpl implements MemberAccountService{
 
     //    NhanNT get Trading history
     @Override
-    public Page<MemberHistoryDTO> findTradingHistory(String id, Pageable pageable) {
-        return memberAccountRepository.findTradingHistory(id,pageable);
+    public Page<MemberHistoryDTO> findTradingHistory(String id,String name, Pageable pageable) {
+        return memberAccountRepository.findTradingHistory(id,name,pageable);
     }
 
 

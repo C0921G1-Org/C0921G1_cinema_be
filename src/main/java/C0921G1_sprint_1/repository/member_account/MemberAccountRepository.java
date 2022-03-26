@@ -26,10 +26,10 @@ public interface MemberAccountRepository extends JpaRepository<Member,String> {
                     "Join seat se on se.id = tk.seat_id \n"+
                     "Join seat_type sety on  sety.id = se.seat_type_id \n"+
                     "Join attached_service ats on ats.transaction_id = t.id \n"+
-                    "where m.id = ?1"
+                    "where m.id = ?1 and f.`name` like %?2%"
 
             , nativeQuery = true)
-    Page<MemberHistoryDTO>findTradingHistory(String id, Pageable pageable);
+    Page<MemberHistoryDTO>findTradingHistory(String id,String filmName, Pageable pageable);
 
     // NhanNT query Create Member
 //    @Query(value =
