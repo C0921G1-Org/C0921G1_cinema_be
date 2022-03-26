@@ -40,4 +40,12 @@ public class StatisticController {
         }
         return new ResponseEntity<>(topMemberList, HttpStatus.OK);
     }
+    @GetMapping("/member/{quarter}")
+    public ResponseEntity<List<TopMember>> getAllTopMemberByQuarter() {
+        List<TopMember> topMemberList = statisticMemberService.findAllTopMember();
+        if (topMemberList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(topMemberList, HttpStatus.OK);
+    }
 }
