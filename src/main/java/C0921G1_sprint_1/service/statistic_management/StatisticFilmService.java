@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface StatisticFilmService {
     List<TopFilm> findAllTopFilm();
+
 }

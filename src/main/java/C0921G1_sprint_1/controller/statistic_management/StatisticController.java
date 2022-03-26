@@ -7,9 +7,7 @@ import C0921G1_sprint_1.service.statistic_management.StatisticMemberServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -33,16 +31,21 @@ public class StatisticController {
     }
 
     @GetMapping("/member")
-    public ResponseEntity<List<TopMember>> getAllTopMember() {
-        List<TopMember> topMemberList = statisticMemberService.findAllTopMember();
-        if (topMemberList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<List<TopMember>> getAllTopMemberByQuarter(
+            @RequestParam(defaultValue = "") String quarter,
+            @RequestParam(defaultValue = "") String year) {
+        List<TopMember> topMemberList;
+        if ("".equals(quarter)) {
+            topMemberList = statisticMemberService.findAllTopMemberByYear(year);
+        } else if (quarter.equals("1")) {
+            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("1", "3", year);
+        } else if (quarter.equals("2")) {
+            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("3", "6", year);
+        } else if (quarter.equals("3")) {
+            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("6", "9", year);
+        } else {
+            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("9", "12", year);
         }
-        return new ResponseEntity<>(topMemberList, HttpStatus.OK);
-    }
-    @GetMapping("/member/{quarter}")
-    public ResponseEntity<List<TopMember>> getAllTopMemberByQuarter() {
-        List<TopMember> topMemberList = statisticMemberService.findAllTopMember();
         if (topMemberList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

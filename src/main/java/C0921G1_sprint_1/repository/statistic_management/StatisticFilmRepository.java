@@ -12,14 +12,13 @@ import java.util.List;
 @Repository
 public interface StatisticFilmRepository extends JpaRepository<Film, Integer> {
     @Query(value = " Select  film.name, " +
-            " count(ticket.seat_id) As totalTicket, " +
+            " COUNT(selected_seat.id) As totalTicket, " +
             " SUM(seat_type.price) AS totalMoney " +
-            "    From film " +
+            "    From Film " +
             "        left join show_time on show_time.film_id = film.id " +
-            "        left join `transaction` on `transaction`.show_time_id = show_time.id " +
-            "        left join ticket on `transaction`.id = ticket.transaction_id " +
-            "        left join seat on seat.id = ticket.seat_id " +
-            " join seat_type on seat_type.id = seat.seat_type_id " +
+            "        right join `transaction` on `transaction`.show_time_id = show_time.id " +
+            "        left join selected_seat on selected_seat.show_time_id = show_time.id " +
+            " left join seat_type on seat_type.id = selected_seat.seat_type_id " +
             " Group by film.name " +
             " Order by totalMoney " +
             " Limit 10; ", nativeQuery = true)

@@ -13,7 +13,12 @@ public class StatisticMemberServiceImpl implements StatisticMemberService {
     StatisticMemberRepository repository;
 
     @Override
-    public List<TopMember> findAllTopMember() {
-        return repository.findAllTopMember();
+    public List<TopMember> findAllTopMemberByYear(String year) {
+        return repository.findAllTopMemberByYear(year);
+    }
+
+    @Override
+    public List<TopMember> findAllTopMemberByQuarterAndYear(String monthStart, String monthEnd, String year) {
+        return repository.findAllTopMemberByQuarterAndYear(monthStart,monthEnd,year);
     }
 }

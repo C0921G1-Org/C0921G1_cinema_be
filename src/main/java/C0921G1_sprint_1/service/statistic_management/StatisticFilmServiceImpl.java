@@ -16,4 +16,5 @@ public class StatisticFilmServiceImpl implements StatisticFilmService {
     public List<TopFilm> findAllTopFilm() {
         return repository.findAllTopFilm();
     }
+
 }
