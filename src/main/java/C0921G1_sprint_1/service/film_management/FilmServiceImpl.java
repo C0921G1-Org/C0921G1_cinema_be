@@ -16,8 +16,9 @@ public class FilmServiceImpl implements FilmService{
 
     @Override
     public void saveFilm(Film film) {
-        filmRepository.saveFilm(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),film.getFilmType().getId(),
-                film.getStudio(),film.getActor(),film.getDirector(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete());
+        filmRepository.save(film);
+//        filmRepository.saveFilm(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),film.getFilmType().getId(),
+//                film.getStudio(),film.getActor(),film.getDirector(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete());
     }
 
     @Override

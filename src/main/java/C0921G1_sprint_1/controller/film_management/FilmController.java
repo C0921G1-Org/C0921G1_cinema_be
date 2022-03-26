@@ -61,22 +61,18 @@ public class FilmController {
     }
 
     // huynh minh ca sua thong tin phim
-    @PutMapping("/{id}/editFilm")
-    public ResponseEntity<Film>edit(@PathVariable Integer id, @RequestBody FilmDTO filmDTO){
-//        Film film = new Film();
-//        BeanUtils.copyProperties(filmDTO,film);
-//        filmService.saveFilm(film);
-//        return new ResponseEntity<>(HttpStatus.OK);
+    @PutMapping("{id}")
+    public ResponseEntity<Film>edit(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer id){
 
         Optional<Film> filmOptional = this.filmService.findByIdFilm(id);
         if (!filmOptional.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        filmDTO.setId(id);
+        filmDTO.setId(filmOptional.get().getId());
+        new FilmDTO().checkNgay(filmDTO);
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO,film);
         this.filmService.saveFilm(film);
         return new ResponseEntity<>(HttpStatus.OK);
-
     }
 }

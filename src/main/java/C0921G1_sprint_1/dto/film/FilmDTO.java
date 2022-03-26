@@ -1,59 +1,46 @@
 package C0921G1_sprint_1.dto.film;
 
 import C0921G1_sprint_1.model.film.FilmType;
-import C0921G1_sprint_1.model.showtime.ShowTime;
+
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import java.util.Set;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class FilmDTO implements Validator {
     private Integer id;
-  //  @NotBlank()
-  //  @Pattern(message = "The movie title must be correct for example: Cu Dam Mau,...",regexp = "^([A-Z][a-z]+)( [A-Z][a-z]*)*$")
+    @NotBlank(message = "This field cannot be left blank")
     private String name;
-  //  @NotBlank()
+    @NotBlank(message = "This field cannot be left blank")
     private String duration;
+    @NotBlank(message = "This field cannot be left blank")
     private String startDate;
-  //  @NotBlank
+    @NotBlank(message = "This field cannot be left blank")
     private String endDate;
     private FilmType filmType;
-  //  @NotBlank()
-  //  @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-Z][a-z]+)( [A-Z][a-z]*)*$" )
+    @NotBlank(message = "This field cannot be left blank")
     private String actor;
- //   @NotBlank()
+    @NotBlank(message = "This field cannot be left blank")
+    @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-Z][a-z]+)( [A-Z][a-z]*)*$" )
     private String director;
-  //  @NotBlank()
+    @NotBlank(message = "This field cannot be left blank")
+    @Pattern(message ="name actor must be correct for example: Studio Victory,..." ,regexp ="^([A-Z][a-z]+)( [A-Z][a-z]*)*$" )
     private String studio;
-  //  @NotBlank()
+    @NotBlank(message = "This field cannot be left blank")
     private String image;
-  //  @NotBlank()
+    @NotBlank(message = "This field cannot be left blank")
     private String trailer;
-  //  @NotBlank()
+    @NotBlank(message = "This field cannot be left blank")
     private String version;
 
     private Integer flagDelete;
 
     public FilmDTO() {
-    }
-
-
-    public FilmDTO(Integer id, String name, String duration, String startDate, String endDate, FilmType filmType, Set<ShowTime> showTimes, String actor, String director, String studio, String image, String trailer, String version, Integer flagDelete) {
-        this.id = id;
-        this.name = name;
-        this.duration = duration;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.filmType = filmType;
-        this.actor = actor;
-        this.director = director;
-        this.studio = studio;
-        this.image = image;
-        this.trailer = trailer;
-        this.version = version;
-        this.flagDelete = flagDelete;
     }
 
     public Integer getId() {
@@ -103,7 +90,6 @@ public class FilmDTO implements Validator {
     public void setFilmType(FilmType filmType) {
         this.filmType = filmType;
     }
-
 
     public String getActor() {
         return actor;
@@ -170,4 +156,26 @@ public class FilmDTO implements Validator {
     public void validate(Object target, Errors errors) {
 
     }
+    public static Boolean checkNgay(String startDate, String endDate) {
+        boolean flag;
+        Date ngayChieu = null;
+        Date ngayKetThuc = null;
+
+        try {
+            ngayChieu = new SimpleDateFormat("yyyy-MM-dd").parse(startDate);
+            ngayKetThuc = new SimpleDateFormat("yyyy-MM-dd").parse(endDate);
+        } catch (ParseException e) {
+            flag = false;
+        }
+        if (ngayChieu.compareTo(ngayKetThuc) > 0) {
+            flag = false;
+        } else if (ngayChieu.compareTo(ngayKetThuc) < 0) {
+            flag = true;
+        } else {
+            flag = true;
+        }
+        return flag;
+    }
+
+
 }
