@@ -16,7 +16,7 @@ public interface MemberAccountRepository extends JpaRepository<Member,String> {
 
     // NhanNT query Trading History
     @Query(value =
-            "Select t.transactional_date , t.`code` , s.`name` `screenName` , f.`name` `filmName`, sety.price `ticketPrice`, ats.price `attachedPrice`, m.`point` \n" +
+            "Select t.transactional_date `transactionalDate`, t.`code` , s.`name` `screenName` , f.`name` `filmName`, sety.price `ticketPrice`, ats.price `attachedPrice`, m.`point` \n" +
                     "From `member` m \n" +
                     "Join `transaction` t on t.member_id = m.id \n"+
                     "Join show_time st on t.show_time_id = st.id \n"+
