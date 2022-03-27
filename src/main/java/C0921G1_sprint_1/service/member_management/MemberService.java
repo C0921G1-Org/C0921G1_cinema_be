@@ -9,6 +9,6 @@ public interface MemberService {
 
     Optional<Member> findMemberById(String id);
 
-    Member saveMember(Member member);
+    void saveMember(Member member);
 
 }

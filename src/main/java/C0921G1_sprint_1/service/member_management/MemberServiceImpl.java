@@ -20,11 +20,14 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Optional<Member> findMemberById(String id) {
-        return this.memberRepository.findById(id);
+        return this.memberRepository.findMemberById(id);
     }
 
     @Override
-    public Member saveMember(Member member) {
-        return this.memberRepository.save(member);
+    public void saveMember(Member member) {
+        this.memberRepository.updateMember(member.getName(),member.getGender(),member.getPhone(),member.getEmail(),
+                member.getAddress(),member.getImage(),member.getDateOfBirth(),member.getIdentityNumber(),member.getCity().getId(),member.getId());
     }
+
+
 }
