@@ -1,7 +1,9 @@
 package C0921G1_sprint_1.controller.film_management;
 import C0921G1_sprint_1.dto.film.FilmDTO;
 import C0921G1_sprint_1.model.film.Film;
+import C0921G1_sprint_1.model.film.FilmType;
 import C0921G1_sprint_1.service.film_management.FilmService;
+import C0921G1_sprint_1.service.film_management.FilmTypeService;
 import org.springframework.beans.BeanUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +21,21 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "/film")
 
+
 public class FilmController {
-    @Autowired
-    private FilmService filmService;
+@Autowired
+// Huynh Minh CA
+private FilmService filmService;
+@Autowired
+private FilmTypeService filmTypeService;
 
     //huynh minh ca test findAll
     @GetMapping("")
     public ResponseEntity<Iterable<Film>> findAll() {
         List<Film> filmList = (List<Film>) filmService.findAllFilm();
+        if (filmList.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
         return new ResponseEntity<>(filmList, HttpStatus.OK);
     }
 
@@ -69,10 +78,19 @@ public class FilmController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         filmDTO.setId(filmOptional.get().getId());
-        new FilmDTO().checkNgay(filmDTO);
         Film film = new Film();
         BeanUtils.copyProperties(filmDTO,film);
         this.filmService.saveFilm(film);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+    //Huynh Minh Ca
+    @GetMapping("/filmType")
+    protected ResponseEntity<Iterable<FilmType>>findAllFilmType(){
+        List<FilmType> filmTypeList = (List<FilmType>) filmTypeService.findAll();
+        if (filmTypeList.isEmpty()){
+            return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(filmTypeList,HttpStatus.OK);
+    }
 }
+

@@ -37,4 +37,7 @@ public interface FilmRepository extends JpaRepository<Film,Long> {
 
     @Query(value = "select * from film where film.id = :ids ", nativeQuery = true)
     Optional<Film> findByIdFilm(@Param("ids") Integer id);
+
+
+
 }

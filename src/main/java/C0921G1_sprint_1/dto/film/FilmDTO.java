@@ -26,10 +26,10 @@ public class FilmDTO implements Validator {
     @NotBlank(message = "This field cannot be left blank")
     private String actor;
     @NotBlank(message = "This field cannot be left blank")
-    @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-Z][a-z]+)( [A-Z][a-z]*)*$" )
+    @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
     private String director;
     @NotBlank(message = "This field cannot be left blank")
-    @Pattern(message ="name actor must be correct for example: Studio Victory,..." ,regexp ="^([A-Z][a-z]+)( [A-Z][a-z]*)*$" )
+    @Pattern(message ="name actor must be correct for example: Studio Victory,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
     private String studio;
     @NotBlank(message = "This field cannot be left blank")
     private String image;
