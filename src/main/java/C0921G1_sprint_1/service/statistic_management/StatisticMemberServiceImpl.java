@@ -5,6 +5,7 @@ import C0921G1_sprint_1.repository.statistic_management.StatisticMemberRepositor
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -13,12 +14,30 @@ public class StatisticMemberServiceImpl implements StatisticMemberService {
     StatisticMemberRepository repository;
 
     @Override
-    public List<TopMember> findAllTopMemberByYear(String year) {
-        return repository.findAllTopMemberByYear(year);
-    }
-
-    @Override
-    public List<TopMember> findAllTopMemberByQuarterAndYear(String monthStart, String monthEnd, String year) {
-        return repository.findAllTopMemberByQuarterAndYear(monthStart,monthEnd,year);
+    public List<TopMember> findAllTopMemberByQuarterAndYear(String quarter, String year) {
+        List<TopMember> topMemberList = new ArrayList<>();
+        if (quarter == null) {
+            return topMemberList;
+        } else if (year == null) {
+            return topMemberList;
+        }
+        if ("".equals(year)&& !quarter.equals("")) {
+            return topMemberList;
+        }
+        if ("".equals(quarter)) {
+            topMemberList = repository.findAllTopMemberByYear(year);
+            if("".equals(year)){
+                topMemberList = repository.findAllTopMemberByYear("");
+            }
+        } else if (quarter.equals("1")) {
+            topMemberList = repository.findAllTopMemberByQuarterAndYear("1", "3", year);
+        } else if (quarter.equals("2")) {
+            topMemberList = repository.findAllTopMemberByQuarterAndYear("3", "6", year);
+        } else if (quarter.equals("3")) {
+            topMemberList = repository.findAllTopMemberByQuarterAndYear("6", "9", year);
+        } else if (quarter.equals("4")) {
+            topMemberList = repository.findAllTopMemberByQuarterAndYear("9", "12", year);
+        } else return topMemberList;
+        return topMemberList;
     }
 }

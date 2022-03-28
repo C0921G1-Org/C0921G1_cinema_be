@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/statistic")
+@CrossOrigin(value = "*")
 public class StatisticController {
 
     @Autowired
@@ -25,29 +26,18 @@ public class StatisticController {
     public ResponseEntity<List<TopFilm>> getAllTopFilm() {
         List<TopFilm> topFilmList = statisticFilmService.findAllTopFilm();
         if (topFilmList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(topFilmList, HttpStatus.OK);
     }
 
     @GetMapping("/member")
-    public ResponseEntity<List<TopMember>> getAllTopMemberByQuarter(
+    public ResponseEntity<List<TopMember>> getAllTopMemberByQuarterAndYear(
             @RequestParam(defaultValue = "") String quarter,
             @RequestParam(defaultValue = "") String year) {
-        List<TopMember> topMemberList;
-        if ("".equals(quarter)) {
-            topMemberList = statisticMemberService.findAllTopMemberByYear(year);
-        } else if (quarter.equals("1")) {
-            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("1", "3", year);
-        } else if (quarter.equals("2")) {
-            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("3", "6", year);
-        } else if (quarter.equals("3")) {
-            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("6", "9", year);
-        } else {
-            topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear("9", "12", year);
-        }
+        List<TopMember> topMemberList = statisticMemberService.findAllTopMemberByQuarterAndYear(quarter, year);
         if (topMemberList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(topMemberList, HttpStatus.OK);
     }
