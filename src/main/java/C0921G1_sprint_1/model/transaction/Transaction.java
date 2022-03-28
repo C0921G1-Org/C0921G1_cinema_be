@@ -3,10 +3,7 @@ package C0921G1_sprint_1.model.transaction;
 import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
 import C0921G1_sprint_1.model.attached_service.AttachedService;
 import C0921G1_sprint_1.model.member.Member;
-<<<<<<< HEAD
-=======
-import C0921G1_sprint_1.model.seat.SelectedSeat;
->>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
+
 import C0921G1_sprint_1.model.showtime.ShowTime;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;

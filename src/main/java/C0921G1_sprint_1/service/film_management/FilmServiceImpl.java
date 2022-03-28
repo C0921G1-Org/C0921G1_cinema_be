@@ -1,9 +1,19 @@
 package C0921G1_sprint_1.service.film_management;
 
-<<<<<<< HEAD
-public class FilmServiceImpl{
-=======
-public class FilmServiceImpl implements FilmService{
->>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
+import C0921G1_sprint_1.model.film.Film;
+import C0921G1_sprint_1.repository.film_management.FilmRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
+public class FilmServiceImpl implements FilmService{
+    @Autowired
+    private FilmRepository filmRepository;
+
+    @Override
+    public List<Film> getAllFilmList() {
+        return filmRepository.getAllFilmList();
+    }
 }

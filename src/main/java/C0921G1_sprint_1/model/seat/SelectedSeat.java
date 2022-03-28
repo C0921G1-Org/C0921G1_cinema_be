@@ -15,14 +15,9 @@ public class SelectedSeat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-<<<<<<< HEAD
-    private Integer position;
-=======
     private String bookingDate;
     private Integer seatPosition;
->>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
     private Integer status;
-    private String orderedDate;
 
     @ManyToOne(targetEntity = SeatType.class)
     private SeatType seatType;
@@ -30,10 +25,6 @@ public class SelectedSeat {
     @ManyToOne(targetEntity = ShowTime.class)
     private ShowTime showTime;
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
     public SelectedSeat() {
     }
 
@@ -43,22 +34,6 @@ public class SelectedSeat {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getOrderedDate() {
-        return orderedDate;
-    }
-
-    public void setOrderedDate(String orderedDate) {
-        this.orderedDate = orderedDate;
-    }
-
-    public Integer getPosition() {
-        return position;
-    }
-
-    public void setPosition(Integer position) {
-        this.position = position;
     }
 
     public SeatType getSeatType() {
@@ -77,9 +52,6 @@ public class SelectedSeat {
         this.status = status;
     }
 
-<<<<<<< HEAD
-
-=======
     public ShowTime getShowTime() {
         return showTime;
     }
@@ -103,5 +75,4 @@ public class SelectedSeat {
     public void setSeatPosition(Integer seatPosition) {
         this.seatPosition = seatPosition;
     }
->>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
 }
