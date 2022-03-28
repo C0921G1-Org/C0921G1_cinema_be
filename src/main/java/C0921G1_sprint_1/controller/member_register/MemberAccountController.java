@@ -1,4 +1,4 @@
-package C0921G1_sprint_1.controller.member_account;
+package C0921G1_sprint_1.controller.member_register;
 
 import C0921G1_sprint_1.dto.member.MemberDTO;
 import C0921G1_sprint_1.dto.member.MemberHistoryDTO;
@@ -14,7 +14,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

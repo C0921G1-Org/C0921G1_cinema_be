@@ -25,6 +25,7 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     //    NhanNT create Member
     @Override
     public void createMember(Member member) {
+        member.setPoint(0.0);
         memberAccountRepository.save(member);
     }
 }

@@ -2,18 +2,25 @@ package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.Ward;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Date;
 
-public class MemberDTO {
+public class MemberDTO implements Validator {
     private String id;
 
     @NotBlank
     @Pattern(regexp = "^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$",
-    message = "Tên cần viết Hoa Chữ cái đầu")
+            message = "Tên cần viết Hoa Chữ cái đầu")
     private String name;
     @NotNull
     private Integer gender;
@@ -24,8 +31,9 @@ public class MemberDTO {
     private String email;
     @NotBlank
     private String address;
-    @NotNull
+
     private Double point;
+
     @NotBlank
     private String image;
     @NotBlank
@@ -33,7 +41,7 @@ public class MemberDTO {
     @NotBlank
     private String identityNumber;
 
-//    private Ward ward;
+    //    private Ward ward;
     private City city;
 
     public MemberDTO() {
@@ -54,7 +62,6 @@ public class MemberDTO {
 //    public void setWard(Ward ward) {
 //        this.ward = ward;
 //    }
-
 
 
     public String getId() {
@@ -136,4 +143,19 @@ public class MemberDTO {
     public void setIdentityNumber(String identityNumber) {
         this.identityNumber = identityNumber;
     }
+
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        MemberDTO memberDTO = (MemberDTO) target;
+
+
+    }
+
+
 }

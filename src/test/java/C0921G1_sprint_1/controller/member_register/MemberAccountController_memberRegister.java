@@ -1,4 +1,4 @@
-package C0921G1_sprint_1.controller.member_account;
+package C0921G1_sprint_1.controller.member_register;
 
 import C0921G1_sprint_1.dto.member.MemberDTO;
 import C0921G1_sprint_1.model.member.City;
@@ -16,7 +16,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class MemberAccountController_createMember {
+public class MemberAccountController_memberRegister {
 
     @Autowired
     private MockMvc mockMvc;
@@ -33,7 +33,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -58,7 +57,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -82,7 +80,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -106,7 +103,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -130,7 +126,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -154,7 +149,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone(null);
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -178,7 +172,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -202,7 +195,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail(null);
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -226,7 +218,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -250,7 +241,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("asd");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -274,7 +264,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress(null);
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -298,31 +287,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("");
-        memberDTO.setPoint(2.2);
-        memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
-        memberDTO.setIdentityNumber("1234567890");
-
-        City city = new City();
-        city.setId(1);
-        memberDTO.setCity(city);
-
-        this.mockMvc.perform(MockMvcRequestBuilders.post("/member")
-                .content(this.objectMapper.writeValueAsString(memberDTO))
-                .contentType(MediaType.APPLICATION_JSON_VALUE))
-                .andDo(print())
-                .andExpect(status().is4xxClientError());
-    }
-    //    NhanNT test point null
-    @Test
-    public void createMember_point_13()throws Exception{
-        MemberDTO memberDTO = new MemberDTO();
-        memberDTO.setName("Test Name");
-        memberDTO.setGender(1);
-        memberDTO.setPhone("0987654321");
-        memberDTO.setEmail("test@test.com");
-        memberDTO.setAddress("test");
-        memberDTO.setPoint(null);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -346,7 +310,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage(null);
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -370,7 +333,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber("1234567890");
@@ -394,7 +356,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth(null);
         memberDTO.setIdentityNumber("1234567890");
@@ -418,7 +379,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("");
         memberDTO.setIdentityNumber("1234567890");
@@ -442,7 +402,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber(null);
@@ -466,7 +425,6 @@ public class MemberAccountController_createMember {
         memberDTO.setPhone("0987654321");
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
-        memberDTO.setPoint(2.2);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("02/02/2022");
         memberDTO.setIdentityNumber(null);
