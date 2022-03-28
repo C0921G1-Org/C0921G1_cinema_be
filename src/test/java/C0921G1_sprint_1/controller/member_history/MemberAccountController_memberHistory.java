@@ -15,6 +15,7 @@ public class MemberAccountController_memberHistory {
     @Autowired
     private MemberAccountController memberAccountController;
 
+    //    NhanNT test list =0
     @Test
     public void getListStudent_5() {
 
@@ -23,6 +24,7 @@ public class MemberAccountController_memberHistory {
 
         Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
     }
+    //    NhanNT test list >0
     @Test
     public void getListStudent_6() {
 
