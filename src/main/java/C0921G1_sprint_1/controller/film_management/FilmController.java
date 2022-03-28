@@ -16,20 +16,27 @@ import java.util.Optional;
 @RequestMapping("/film/")
 @CrossOrigin(origins = "*")
 public class FilmController {
+    @Autowired
+    private FilmService filmService;
 
     //TaiLM danh sách phim & tìm kiếm
     @GetMapping("list-management")
-    public ResponseEntity<Page<Film>> findAll(@RequestParam(defaultValue = "0") int page,
+    public ResponseEntity<Page<Film>> findAll(@RequestParam(defaultValue = "0") Integer page,
                                               @RequestParam(defaultValue = "") String name,
                                               @RequestParam(defaultValue = "") String startDate,
                                               @RequestParam(defaultValue = "") String endDate) {
-        Pageable pageable = PageRequest.of(page, 10);
-        Page<Film> filmPage = filmService.findAll(name, startDate, endDate, pageable);
-        if (filmPage.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } else {
-            return new ResponseEntity<>(filmPage, HttpStatus.OK);
+        try {
+            Pageable pageable = PageRequest.of(page, 10);
+            Page<Film> filmPage = filmService.findAll(name, startDate, endDate, pageable);
+            if (filmPage.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            } else {
+                return new ResponseEntity<>(filmPage, HttpStatus.OK);
+            }
+        }catch (NullPointerException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+
     }
 
     //TaiLM xóa phim

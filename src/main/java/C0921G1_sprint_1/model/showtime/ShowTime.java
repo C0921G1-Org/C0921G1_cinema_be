@@ -2,13 +2,9 @@ package C0921G1_sprint_1.model.showtime;
 
 
 import C0921G1_sprint_1.model.film.Film;
-<<<<<<< HEAD
-=======
 import C0921G1_sprint_1.model.seat.SelectedSeat;
->>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
 import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.util.List;
 import java.util.Set;
