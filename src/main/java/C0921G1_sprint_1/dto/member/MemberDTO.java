@@ -1,17 +1,14 @@
 package C0921G1_sprint_1.dto.member;
 
-import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.security.Account;
 import C0921G1_sprint_1.model.transaction.Transaction;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 public class MemberDTO {
+    @NotNull
     private String id;
     private Account account;
     private String name;

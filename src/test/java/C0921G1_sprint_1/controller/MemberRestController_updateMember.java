@@ -2,6 +2,7 @@ package C0921G1_sprint_1.controller;
 
 
 import C0921G1_sprint_1.dto.member.MemberDTO;
+import C0921G1_sprint_1.model.security.Account;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,14 +69,21 @@ public class MemberRestController_updateMember {
 
         testMemberDTO.setAddress("Hà Nội");
         testMemberDTO.setDateOfBirth("1999-08-02");
-        testMemberDTO.setId("testmail@gmail.com");
+        testMemberDTO.setEmail("testmail@gmail.com");
 
         testMemberDTO.setIdentityNumber("011111111");
         testMemberDTO.setImage("testIMG");
         testMemberDTO.setName("Bành Thị Cô Hồn");
         testMemberDTO.setPhone("0909123569");
 
+        Account testAccount = new Account();
+        testAccount.setId(1);
+        testAccount.setEmail("mail1");
+        testAccount.setEncryptPw("123456");
+        testAccount.setEnabled(1);
+        testAccount.setUsername("accoun00");
 
+        testMemberDTO.setAccount(testAccount);
         System.out.println(testMemberDTO);
         this.mockMvc
                 .perform(MockMvcRequestBuilders
@@ -85,5 +93,7 @@ public class MemberRestController_updateMember {
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful());
     }
+
+
 
 }

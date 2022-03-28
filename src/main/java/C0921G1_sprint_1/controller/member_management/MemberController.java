@@ -19,15 +19,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
-import java.util.Map;
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping(value = "member")
 
 public class MemberController {
-    private Map<Transaction, String> usedPointHistory;
 
     @Autowired
     private MemberService memberService;
@@ -35,10 +34,22 @@ public class MemberController {
     @Autowired
     private TransactionService transactionService;
 
+    private boolean isIdWrong(String id) {
+        return !memberService.findById(id).isPresent() || id == null || id.equals("");
+    }
+
+    private boolean isDateWrong(String startDate, String endDate) {
+        return startDate == null || endDate == null || startDate.equals("") || endDate.equals("");
+    }
+
 
     //LongTK lấy ra 1 tài khoản theo id
     @GetMapping("/getDetail/{id}")
     public ResponseEntity<Member> getDetail(@PathVariable String id) {
+
+        if(isIdWrong(id)){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         if (memberService.findById(id).isPresent()) {
             Member detailMember = memberService.findById(id).get();
             return new ResponseEntity<>(detailMember, HttpStatus.OK);
@@ -47,23 +58,26 @@ public class MemberController {
         }
     }
 
+
     //LongTK update member
-
     @PatchMapping(value = "/updateMember", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Member> updateMember(@RequestBody MemberDTO memberDTO) {
-
-        String id = memberDTO.getId();
-        if (id == null || id.equals("")) {
+    public ResponseEntity<Member> updateMember(@Valid @RequestBody MemberDTO memberDTO, BindingResult
+            bindingResult) {
+        if (bindingResult.hasFieldErrors()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        System.out.println("rest controller : " + memberDTO.toString());
-        if (memberService.findById(id).isPresent()) {
-            System.out.println( " \n Tìm thấy memeber có id này ahihi \n ==========");
-            Member updateMember = memberService.findById(id).get();
-            BeanUtils.copyProperties(memberDTO, updateMember);
+        } else {
+            String id = memberDTO.getId();
+            System.out.println("rest controller : " + memberDTO.toString());
+            if (memberService.findById(id).isPresent()) {
 
-            memberService.save(updateMember);
-            return new ResponseEntity<>(updateMember, HttpStatus.OK);
+                Member updateMember = memberService.findById(id).get();
+                BeanUtils.copyProperties(memberDTO, updateMember);
+                System.out.println("member after update: " + updateMember.toString());
+
+                memberService.save(updateMember);
+
+                return new ResponseEntity<>(updateMember, HttpStatus.OK);
+            }
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
@@ -77,11 +91,19 @@ public class MemberController {
                                                                     @RequestParam String startDate,
                                                                     @RequestParam String endDate,
                                                                     @RequestParam int pageNo) {
+        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(id, startDate, endDate);
+        if (attachServicePrice.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        if (isDateWrong(startDate, endDate)) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         //Lấy ra tổng tiền dịch vụ
         double sumAttachServicePrice = 0.0;
-        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(id, startDate, endDate);
+
         for (Double ase : attachServicePrice) {
-            System.out.println(ase);
+            System.out.println("attach service total: " + ase);
             sumAttachServicePrice += ase;
         }
 
@@ -98,7 +120,10 @@ public class MemberController {
 
         //lấy ra danh sách giao dịch
         Pageable pageable = PageRequest.of(pageNo, 10);
-        Page<Transaction> history = transactionService.getAllTransaction(id, startDate, endDate, totalPoint, pageable);
+        Page<Transaction> history = transactionService.getGainedPointTransaction(id, startDate, endDate, totalPoint, pageable);
+        if(history.isEmpty()){
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
 
         //trả về kết quả
         if (history.isEmpty()) {
@@ -114,7 +139,6 @@ public class MemberController {
         }
     }
 
-
     /**
      * xem lịch sử dùng điểm
      */
@@ -123,14 +147,22 @@ public class MemberController {
                                                                   @RequestParam String startDate,
                                                                   @RequestParam String endDate,
                                                                   @RequestParam int pageNo) {
+        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(id, startDate, endDate);
+        if (attachServicePrice.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        if (isIdWrong(id) || isDateWrong(startDate, endDate)) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
         Pageable pageable = PageRequest.of(pageNo, 10);
         if (memberService.findById(id).isPresent()) {
             Page<Transaction> usedPointHistory = transactionService.getUsedPointTransaction(id, startDate, endDate, pageable);
             if (usedPointHistory.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             }
             return new ResponseEntity<>(usedPointHistory, HttpStatus.OK);
         }
+
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
@@ -142,7 +174,6 @@ public class MemberController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
 
     /**
      * Đổi điểm lấy mã giảm giá

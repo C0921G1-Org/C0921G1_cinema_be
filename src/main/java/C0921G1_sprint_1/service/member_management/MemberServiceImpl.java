@@ -17,6 +17,9 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Optional<Member> findById(String id) {
+        if (id == null || id.equals("")) {
+            return Optional.empty();
+        }
         return memberRepository.findById(id);
     }
 

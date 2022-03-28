@@ -22,7 +22,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Intege
             " BETWEEN :startDate " +
             " AND :endDate " +
             " and ticket_status not LIKE '%c09%' " +
-            " GROUP BY transaction_id ",
+            " GROUP BY `transaction`.id ",
             nativeQuery = true)
     Page<Transaction> getGainedPointTransaction(@Param("memberId") String memberId,
                                                 @Param("startDate") String startDate,
@@ -42,9 +42,10 @@ public interface TransactionRepository extends JpaRepository<Transaction, Intege
             " LEFT JOIN selected_seat ss on ss.show_time_id = st.id " +
             " LEFT join seat_type s_type on s_type.id = ss.seat_type_id  " +
             " where member_id = :memberId  " +
-            " and transactional_date " +
+            " and transactional_date  " +
             " BETWEEN :startDate " +
             " AND :endDate " +
+            " AND ticket_status not LIKE '%c09%' " +
             " GROUP BY ase.name ",
             nativeQuery = true)
     List<Double> getAttachServicePrice(@Param("memberId") String memberId,
@@ -62,7 +63,8 @@ public interface TransactionRepository extends JpaRepository<Transaction, Intege
             " LEFT join show_time st on t.show_time_id = st.id\n" +
             " LEFT JOIN selected_seat ss on ss.show_time_id = st.id\n " +
             " LEFT join seat_type s_type on s_type.id = ss.seat_type_id \n " +
-            " where member_id = :memberId   and transactional_date  BETWEEN :startDate   AND  :endDate " +
+            " where member_id = :memberId   and transactional_date  BETWEEN :startDate   AND  :endDate" +
+            " AND ticket_status not LIKE '%c09%'  " +
             "GROUP BY s_type.name",
             nativeQuery = true)
     List<Double> getSeatPrice(@Param("memberId") String memberId,
