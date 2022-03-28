@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class BookingServiceImpl implements BookingService{
     @Autowired
@@ -16,4 +18,19 @@ public class BookingServiceImpl implements BookingService{
     public Page<Transaction> findAll(Pageable pageable) {
         return bookingRepo.findAll(pageable);
     }
+
+    @Override
+    public Page<Transaction> findAllTransactionSearch(Pageable pageable, String code, String name, String member_id, String phone) {
+        return bookingRepo.searchBookingTicket(pageable,code,name, member_id, phone);
+    }
+
+    @Override
+    public Optional<Transaction> findById(Integer id) {
+        return bookingRepo.findById(id);
+    }
+
+//    @Override
+//    public Page<Transaction> getAllConfirmPage(Pageable page){
+//        return this.bookingRepo.getAllConfirmPage(page);
+//    }
 }
