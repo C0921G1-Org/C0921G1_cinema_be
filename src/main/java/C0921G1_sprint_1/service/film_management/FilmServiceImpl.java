@@ -27,7 +27,7 @@ public class FilmServiceImpl implements FilmService {
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
     @Override
-    public Page<Film> findAllFilmClient(String startDate, String name, String statusFilm, String typeFilm, Pageable pageable) {
-        return filmRepository.findAllFilmClient(startDate, name, statusFilm, typeFilm, pageable);
+    public Page<Film> findAllFilmClient(String startDate, String name, String typeFilm, Pageable pageable) {
+        return filmRepository.findAllFilmClient(startDate, name, typeFilm, pageable);
     }
 }

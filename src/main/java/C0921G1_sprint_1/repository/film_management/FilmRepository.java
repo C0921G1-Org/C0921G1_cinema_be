@@ -15,11 +15,11 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
     @Query(value = "select * from film\n" +
             "join film_type on film.film_type_id = film_type.id\n" +
-            "where film.flag_delete = \"1\" and film.start_date like %?1% and film.name like %?2% and film_type.name like %?3% and film_type.name like %?4%",
+            "where film.flag_delete = \"1\" and film.start_date like %?1% and film.name like %?2% and film_type.name like %?3% ",
             countQuery = "  select count(*) from film\n" +
                     "join film_type on film.film_type_id = film_type.id\n" +
-                    "where film.flag_delete = \"1\" and film.start_date like %?1% and film.name like %?2% and film_type.name like %?3% and film_type.name like %?4%",
+                    "where film.flag_delete = \"1\" and film.start_date like %?1% and film.name like %?2% and film_type.name like %?3%",
             nativeQuery = true)
-    Page<Film> findAllFilmClient(String startDate, String name, String statusFilm, String typeFilm, Pageable pageable);
+    Page<Film> findAllFilmClient(String startDate, String name, String typeFilm, Pageable pageable);
 
 }

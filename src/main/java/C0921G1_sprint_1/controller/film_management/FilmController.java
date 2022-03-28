@@ -15,7 +15,6 @@ import java.util.Optional;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping("/film/")
-
 public class FilmController {
 
     @Autowired
@@ -33,19 +32,23 @@ public class FilmController {
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
     @GetMapping("list-client")
-    public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") int seeMore,
-                                                        @RequestParam(defaultValue = "0") int page,
+    public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") Integer seeMore,
+                                                        @RequestParam(defaultValue = "0") Integer page,
                                                         @RequestParam(defaultValue = "") String startDate,
                                                         @RequestParam(defaultValue = "") String name,
-                                                        @RequestParam(defaultValue = "") String statusFilm,
                                                         @RequestParam(defaultValue = "") String typeFilm) {
 
-        Pageable pageable = PageRequest.of(page, seeMore);
-        Page<Film> filmPage = filmService.findAllFilmClient(startDate, name, statusFilm, typeFilm, pageable);
-        if (filmPage.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } else {
-            return new ResponseEntity<>(filmPage, HttpStatus.OK);
+
+        try {
+            Pageable pageable = PageRequest.of(page, seeMore);
+            Page<Film> filmPage = filmService.findAllFilmClient(startDate, name, typeFilm, pageable);
+            if (filmPage.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            } else {
+                return new ResponseEntity<>(filmPage, HttpStatus.OK);
+            }
+        }catch (NullPointerException e){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 }
