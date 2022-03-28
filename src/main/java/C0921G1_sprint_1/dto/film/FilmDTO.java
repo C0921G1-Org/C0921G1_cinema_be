@@ -24,12 +24,12 @@ public class FilmDTO implements Validator {
     private String endDate;
     private FilmType filmType;
     @NotBlank(message = "This field cannot be left blank")
+    @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
     private String actor;
     @NotBlank(message = "This field cannot be left blank")
     @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
     private String director;
     @NotBlank(message = "This field cannot be left blank")
-    @Pattern(message ="name actor must be correct for example: Studio Victory,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
     private String studio;
     @NotBlank(message = "This field cannot be left blank")
     private String image;
@@ -154,28 +154,14 @@ public class FilmDTO implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
+    FilmDTO filmDTO = (FilmDTO) target;
+    String startDate = filmDTO.startDate;
+    String endDate = filmDTO.endDate;
+    if(ValidateStartAndEndDate.checkNgay(startDate,endDate)){
+        errors.rejectValue("startDate","startDate.CheckDate");
     }
-    public static Boolean checkNgay(String startDate, String endDate) {
-        boolean flag;
-        Date ngayChieu = null;
-        Date ngayKetThuc = null;
-
-        try {
-            ngayChieu = new SimpleDateFormat("yyyy-MM-dd").parse(startDate);
-            ngayKetThuc = new SimpleDateFormat("yyyy-MM-dd").parse(endDate);
-        } catch (ParseException e) {
-            flag = false;
-        }
-        if (ngayChieu.compareTo(ngayKetThuc) > 0) {
-            flag = false;
-        } else if (ngayChieu.compareTo(ngayKetThuc) < 0) {
-            flag = true;
-        } else {
-            flag = true;
-        }
-        return flag;
     }
+
 
 
 }
