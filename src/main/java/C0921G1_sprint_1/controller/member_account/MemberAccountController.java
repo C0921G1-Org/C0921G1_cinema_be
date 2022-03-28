@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -28,8 +30,12 @@ public class MemberAccountController {
 
     //create member NhanNT
     @PostMapping("/member")
-    public ResponseEntity<?> createMember(@RequestBody MemberDTO memberObj) {
+    public ResponseEntity<?> createMember(@Validated @RequestBody MemberDTO memberObj,
+                                          BindingResult bindingResult ) {
 
+        if (bindingResult.hasFieldErrors()){
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
         Member member = new Member();
         BeanUtils.copyProperties(memberObj, member);
         memberAccountService.createMember(member);

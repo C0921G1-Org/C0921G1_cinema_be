@@ -18,14 +18,14 @@ public interface MemberAccountRepository extends JpaRepository<Member,String> {
     @Query(value =
             "Select t.transactional_date `transactionalDate`, t.`code` , s.`name` `screenName` , f.`name` `filmName`, sety.price `ticketPrice`, ats.price `attachedPrice`, m.`point` \n" +
                     "From `member` m \n" +
-                    "Join `transaction` t on t.member_id = m.id \n"+
-                    "Join show_time st on t.show_time_id = st.id \n"+
-                    "Join screen s on s.id = st.screen_id \n"+
-                    "Join film f on st.film_id = f.id \n"+
-                    "Join ticket tk on tk.transaction_id = t.id \n"+
-                    "Join seat se on se.id = tk.seat_id \n"+
-                    "Join seat_type sety on  sety.id = se.seat_type_id \n"+
-                    "Join attached_service ats on ats.transaction_id = t.id \n"+
+                    "join `transaction` t on t.member_id = m.id \n"+
+                    "join show_time st on t.show_time_id = st.id \n"+
+                    "join screen s on s.id = st.screen_id \n"+
+                    "join film f on st.film_id = f.id \n"+
+//                    "Join ticket tk on tk.transaction_id = t.id \n"+
+                    "join selected_seat se on se.show_time_id = st.id \n"+
+                    "join seat_type sety on  sety.id = se.seat_type_id \n"+
+                    "join attached_service ats on ats.transaction_id = t.id \n"+
                     "where m.id = ?1 and f.`name` like %?2%"
 
             , nativeQuery = true)

@@ -3,39 +3,57 @@ package C0921G1_sprint_1.dto.member;
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.Ward;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 public class MemberDTO {
     private String id;
 
+    @NotBlank
+    @Pattern(regexp = "^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$",
+    message = "Tên cần viết Hoa Chữ cái đầu")
     private String name;
+    @NotNull
     private Integer gender;
+    @NotBlank
     private String phone;
+    @NotBlank
+    @Email
     private String email;
+    @NotBlank
     private String address;
+    @NotNull
     private Double point;
+    @NotBlank
     private String image;
+    @NotBlank
     private String dateOfBirth;
+    @NotBlank
     private String identityNumber;
 
-    private Ward ward;
+//    private Ward ward;
+    private City city;
 
     public MemberDTO() {
     }
 
-//    public City getCity() {
-//        return city;
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+//    public Ward getWard() {
+//        return ward;
 //    }
 //
-//    public void setCity(City city) {
-//        this.city = city;
+//    public void setWard(Ward ward) {
+//        this.ward = ward;
 //    }
-
-    public Ward getWard() {
-        return ward;
-    }
-
-    public void setWard(Ward ward) {
-        this.ward = ward;
-    }
 
 
 
