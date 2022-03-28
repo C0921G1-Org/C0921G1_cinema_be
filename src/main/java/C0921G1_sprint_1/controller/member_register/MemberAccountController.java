@@ -31,7 +31,7 @@ public class MemberAccountController {
     @PostMapping("/member")
     public ResponseEntity<?> createMember(@Validated @RequestBody MemberDTO memberObj,
                                           BindingResult bindingResult ) {
-
+        new MemberDTO().validate(memberObj,bindingResult);
         if (bindingResult.hasFieldErrors()){
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }

@@ -9,18 +9,20 @@ import org.springframework.validation.annotation.Validated;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import java.util.regex.Pattern;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.regex.Matcher;
 
 public class MemberDTO implements Validator {
     private String id;
 
     @NotBlank
-    @Pattern(regexp = "^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$",
-            message = "Tên cần viết Hoa Chữ cái đầu")
+//    @Pattern(regexp = "^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$",
+//            message = "Tên cần viết Hoa Chữ cái đầu")
     private String name;
     @NotNull
     private Integer gender;
@@ -37,6 +39,7 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String image;
     @NotBlank
+//    @Pattern(regexp = "\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
     private String dateOfBirth;
     @NotBlank
     private String identityNumber;
@@ -154,8 +157,49 @@ public class MemberDTO implements Validator {
     public void validate(Object target, Errors errors) {
         MemberDTO memberDTO = (MemberDTO) target;
 
+        if (checkAgeMember(memberDTO.getDateOfBirth())) {
+            errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 đến 100");
+        }
+        if (checkName(memberDTO.getName())) {
+            errors.rejectValue("name", "name.checkName", "Tên cần viết Hoa Chữ cái đầu");
+        }
+
 
     }
 
+    //check age name regex - NhanNT
+    public boolean checkName(String name){
+        Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");
+        Matcher matcher = pattern.matcher(name);
+        if (!matcher.matches()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    //check age member >= 16 - NhanNT
+    public boolean checkAgeMember(String dateOfBirth) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate now = LocalDate.now();
 
+        Pattern pattern = Pattern.compile("\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])");
+        Matcher matcher = pattern.matcher(dateOfBirth);
+
+        boolean isRetry = false;
+
+        if (!matcher.matches()) {
+            isRetry = true;
+        }
+        else{
+            LocalDate birthDay = LocalDate.parse(dateOfBirth, formatter);
+            LocalDate after16Years = birthDay.plusYears(16);
+            LocalDate before100Years = birthDay.plusYears(100);
+            if (after16Years.isAfter(now) || before100Years.isBefore(now)) {
+                isRetry = true;
+            }
+        }
+
+
+        return isRetry;
+    }
 }

@@ -34,7 +34,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -58,7 +58,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -81,7 +81,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -104,7 +104,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -127,7 +127,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -150,7 +150,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -173,7 +173,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -196,7 +196,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail(null);
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -219,7 +219,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -242,7 +242,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("asd");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -265,7 +265,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress(null);
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -288,7 +288,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -311,7 +311,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage(null);
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -334,7 +334,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber("1234567890");
 
         City city = new City();
@@ -393,6 +393,52 @@ public class MemberAccountController_memberRegister {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
+    //    NhanNT test date of birth not format
+    @Test
+    public void createMember_dateOfBirth_15()throws Exception{
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setName("Test Name");
+        memberDTO.setGender(1);
+        memberDTO.setPhone("0987654321");
+        memberDTO.setEmail("test@test.com");
+        memberDTO.setAddress("test");
+        memberDTO.setImage("testImg");
+        memberDTO.setDateOfBirth("20-02-2000");
+        memberDTO.setIdentityNumber("1234567890");
+
+        City city = new City();
+        city.setId(1);
+        memberDTO.setCity(city);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/member")
+                .content(this.objectMapper.writeValueAsString(memberDTO))
+                .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    //    NhanNT test date of birth not 16 -100
+    @Test
+    public void createMember_dateOfBirth_16()throws Exception{
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setName("Test Name");
+        memberDTO.setGender(1);
+        memberDTO.setPhone("0987654321");
+        memberDTO.setEmail("test@test.com");
+        memberDTO.setAddress("test");
+        memberDTO.setImage("testImg");
+        memberDTO.setDateOfBirth("2007-02-02");
+        memberDTO.setIdentityNumber("1234567890");
+
+        City city = new City();
+        city.setId(1);
+        memberDTO.setCity(city);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/member")
+                .content(this.objectMapper.writeValueAsString(memberDTO))
+                .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
     //    NhanNT test identityNumber null
     @Test
     public void createMember_identityNumber_13()throws Exception{
@@ -403,7 +449,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber(null);
 
         City city = new City();
@@ -426,7 +472,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setEmail("test@test.com");
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
-        memberDTO.setDateOfBirth("02/02/2022");
+        memberDTO.setDateOfBirth("2000-02-02");
         memberDTO.setIdentityNumber(null);
 
         City city = new City();
