@@ -14,6 +14,7 @@ public class FilmType {
     private String name;
     @JsonBackReference
     @OneToMany(mappedBy = "filmType")
+
 //    @JsonBackReference(value = "filmType_film")
     private Set<Film> films;
 

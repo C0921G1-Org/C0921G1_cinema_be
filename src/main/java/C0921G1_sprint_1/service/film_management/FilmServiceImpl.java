@@ -2,6 +2,7 @@ package C0921G1_sprint_1.service.film_management;
 
 
 import C0921G1_sprint_1.model.film.Film;
+import C0921G1_sprint_1.model.film.FilmType;
 import C0921G1_sprint_1.repository.film_management.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,8 @@ public class FilmServiceImpl implements FilmService{
     private FilmRepository filmRepository;
     @Override
     public void saveFilm(Film film) {
+        film.setFlagDelete(1);
+//        film.setFilmType(new FilmType());
         filmRepository.save(film);
 //        filmRepository.saveFilm(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),film.getFilmType().getId(),
 //                film.getStudio(),film.getActor(),film.getDirector(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete());

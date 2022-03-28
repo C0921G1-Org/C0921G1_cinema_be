@@ -20,6 +20,9 @@ public class Film {
     private String startDate;
     private String endDate;
 
+    //CaHM fix CheckBox
+//    private String typeFilmNew;
+
     @ManyToOne(targetEntity = FilmType.class)
     private FilmType filmType;
 
@@ -39,31 +42,6 @@ public class Film {
     private Integer flagDelete;
 
     public Film() {
-    }
-
-    public Film(Integer id, String name, String duration, String startDate, String endDate, FilmType filmType, Set<ShowTime> showTimes, String actor, String director, String studio, String image, String trailer, String version, Integer flagDelete) {
-        this.id = id;
-        this.name = name;
-        this.duration = duration;
-        this.startDate = startDate;
-        this.endDate = endDate;
-        this.filmType = filmType;
-        this.showTimes = showTimes;
-        this.actor = actor;
-        this.director = director;
-        this.studio = studio;
-        this.image = image;
-        this.trailer = trailer;
-        this.version = version;
-        this.flagDelete = flagDelete;
-    }
-
-    public Set<ShowTime> getShowTimes() {
-        return showTimes;
-    }
-
-    public void setShowTimes(Set<ShowTime> showTimes) {
-        this.showTimes = showTimes;
     }
 
     public Integer getId() {
@@ -106,12 +84,28 @@ public class Film {
         this.endDate = endDate;
     }
 
+//    public String getTypeTypeNew() {
+//        return typeFilmNew;
+//    }
+//
+//    public void setTypeTypeNew(String typeTypeNew) {
+//        this.typeFilmNew = typeTypeNew;
+//    }
+
     public FilmType getFilmType() {
         return filmType;
     }
 
     public void setFilmType(FilmType filmType) {
         this.filmType = filmType;
+    }
+
+    public Set<ShowTime> getShowTimes() {
+        return showTimes;
+    }
+
+    public void setShowTimes(Set<ShowTime> showTimes) {
+        this.showTimes = showTimes;
     }
 
     public String getActor() {
@@ -146,14 +140,6 @@ public class Film {
         this.image = image;
     }
 
-    public Integer getFlagDelete() {
-        return flagDelete;
-    }
-
-    public void setFlagDelete(Integer flagDelete) {
-        this.flagDelete = flagDelete;
-    }
-
     public String getTrailer() {
         return trailer;
     }
@@ -168,5 +154,13 @@ public class Film {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getFlagDelete() {
+        return flagDelete;
+    }
+
+    public void setFlagDelete(Integer flagDelete) {
+        this.flagDelete = flagDelete;
     }
 }

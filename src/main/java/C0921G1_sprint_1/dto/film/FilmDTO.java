@@ -22,6 +22,8 @@ public class FilmDTO implements Validator {
     private String startDate;
     @NotBlank(message = "This field cannot be left blank")
     private String endDate;
+//    @NotBlank(message = "This field cannot be left blank")
+//    private String typeFilmNew;
     private FilmType filmType;
     @NotBlank(message = "This field cannot be left blank")
     @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
@@ -82,6 +84,14 @@ public class FilmDTO implements Validator {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
+
+//    public String getTypeFilmNew() {
+//        return typeFilmNew;
+//    }
+//
+//    public void setTypeFilmNew(String typeFilmNew) {
+//        this.typeFilmNew = typeFilmNew;
+//    }
 
     public FilmType getFilmType() {
         return filmType;
