@@ -14,4 +14,8 @@ public class MemberServiceImpl implements MemberService {
     private MemberRepository memberRepository;
 
 
+    @Override
+    public Member saveMember(Member member) {
+        return memberRepository.save(member);
+    }
 }
