@@ -121,8 +121,7 @@ public class PaymentController {
                         "    <img src=\"cid:image\">\n" +
                         "    </div>\n" +
 
-                        "</div>"
-                ;
+                        "</div>";
 
         messageBodyPart.setContent(htmlText, "text/html;charset=UTF-8");
         // thêm vào body
