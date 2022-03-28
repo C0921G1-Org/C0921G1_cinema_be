@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.service.film_management;
 
+<<<<<<< HEAD
 import C0921G1_sprint_1.model.film.Film;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,5 +15,8 @@ public interface FilmService {
     void deleteFilm(Integer id);
 
     Optional<Film> findById(Integer id);
+=======
+public interface FilmService {
+>>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
 
 }

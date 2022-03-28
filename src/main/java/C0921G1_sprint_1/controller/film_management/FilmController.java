@@ -16,8 +16,6 @@ import java.util.Optional;
 @RequestMapping("/film/")
 @CrossOrigin(origins = "*")
 public class FilmController {
-    @Autowired
-    private FilmService filmService;
 
     //TaiLM danh sách phim & tìm kiếm
     @GetMapping("list-management")

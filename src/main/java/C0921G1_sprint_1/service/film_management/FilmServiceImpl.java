@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.service.film_management;
 
+<<<<<<< HEAD
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.repository.film_management.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,4 +33,8 @@ public class FilmServiceImpl implements FilmService {
     public Optional<Film> findById(Integer id) {
         return filmRepository.findById(id);
     }
+=======
+public class FilmServiceImpl implements FilmService{
+
+>>>>>>> 63f908bd3561a51482101c4a356e59d35354aa6b
 }

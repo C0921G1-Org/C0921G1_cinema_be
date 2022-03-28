@@ -8,28 +8,22 @@ import java.util.Set;
 
 @Entity
 @Table
-public class Seat {
+public class SelectedSeat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    private String bookingDate;
+    private Integer seatPosition;
     private Integer status;
 
     @ManyToOne(targetEntity = SeatType.class)
     private SeatType seatType;
 
-    @ManyToMany(mappedBy = "seats")
-    private Set<Transaction> transactions;
+    @ManyToOne(targetEntity = ShowTime.class)
+    private ShowTime showTime;
 
-    public Seat() {
-    }
-
-    public Set<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(Set<Transaction> transactions) {
-        this.transactions = transactions;
+    public SelectedSeat() {
     }
 
     public Integer getId() {
@@ -54,5 +48,29 @@ public class Seat {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public ShowTime getShowTime() {
+        return showTime;
+    }
+
+    public void setShowTime(ShowTime showTime) {
+        this.showTime = showTime;
+    }
+
+    public String getBookingDate() {
+        return bookingDate;
+    }
+
+    public void setBookingDate(String bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
+    public Integer getSeatPosition() {
+        return seatPosition;
+    }
+
+    public void setSeatPosition(Integer seatPosition) {
+        this.seatPosition = seatPosition;
     }
 }
