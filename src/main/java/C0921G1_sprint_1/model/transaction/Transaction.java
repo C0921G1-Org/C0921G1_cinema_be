@@ -3,7 +3,7 @@ package C0921G1_sprint_1.model.transaction;
 import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
 import C0921G1_sprint_1.model.attached_service.AttachedService;
 import C0921G1_sprint_1.model.member.Member;
-import C0921G1_sprint_1.model.seat.SelectedSeat;
+
 import C0921G1_sprint_1.model.showtime.ShowTime;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
@@ -11,7 +11,6 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table
@@ -30,6 +29,7 @@ public class Transaction {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "TSC-"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
     @NotBlank(message = "Ko dc trong")
+
     private String code;
 
     private String transactionalDate;
@@ -105,16 +105,6 @@ public class Transaction {
         this.member = member;
     }
 
-    @Override
-    public String toString() {
-        return "Transaction{" +
-                "id=" + id +
-                ", code='" + code + '\'' +
-                ", transactionalDate='" + transactionalDate + '\'' +
-                ", ticketStatus='" + ticketStatus + '\'' +
-                ", attachedServices=" + attachedServices +
-                ", showTime=" + showTime +
-                ", member=" + member +
-                '}';
-    }
+
 }
+

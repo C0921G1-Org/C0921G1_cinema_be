@@ -21,5 +21,4 @@ public class PaymentServiceImpl implements PaymentService {
     public Transaction saveTransaction(Transaction transaction) {
         return paymentRepository.save(transaction);
     }
-
 }

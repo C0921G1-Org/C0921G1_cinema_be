@@ -6,14 +6,21 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface FilmRepository extends JpaRepository<Film, Integer> {
+    /*DatTC - Query lấy tất cả dữ liệu phim*/
+    @Query(value="SELECT * FROM film", nativeQuery = true)
+    List<Film> getAllFilmList();
+
+
 
 
     //Tai DHN Xem Chi Tiết Phim
     @Query(value="SELECT f FROM Film  f where f.id = ?1")
     Optional<Film> findById(Integer id);
+
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
     @Query(value = "select * from film\n" +

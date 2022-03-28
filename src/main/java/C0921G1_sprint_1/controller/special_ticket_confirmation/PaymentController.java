@@ -3,8 +3,10 @@ package C0921G1_sprint_1.controller.special_ticket_confirmation;
 
 
 import C0921G1_sprint_1.model.member.Member;
+import C0921G1_sprint_1.model.seat.SelectedSeat;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import C0921G1_sprint_1.service.member_management.MemberService;
+import C0921G1_sprint_1.service.selected_seat_management.SelectedSeatService;
 import C0921G1_sprint_1.service.special_ticket_confirmation.PaymentService;
 
 import com.google.zxing.BarcodeFormat;
@@ -45,6 +47,7 @@ public class PaymentController {
     private PaymentService paymentService;
 
 
+
     // cái này xóa đi
     @GetMapping("/pay")
     public ResponseEntity<List<Transaction>> listResponseEntity(){
@@ -70,6 +73,9 @@ public class PaymentController {
         }
         return new ResponseEntity<>(paymentService.saveTransaction(transaction) , HttpStatus.OK);
     }
+
+
+
 
 
 
@@ -150,5 +156,9 @@ public class PaymentController {
         matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);
         MatrixToImageWriter.writeToPath(matrix, "png", Paths.get(path));
     }
+
+
+
+
 }
 
