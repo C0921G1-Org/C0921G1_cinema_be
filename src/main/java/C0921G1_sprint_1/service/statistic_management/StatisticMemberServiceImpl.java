@@ -25,9 +25,10 @@ public class StatisticMemberServiceImpl implements StatisticMemberService {
             return topMemberList;
         }
         if ("".equals(quarter)) {
-            topMemberList = repository.findAllTopMemberByYear(year);
             if("".equals(year)){
                 topMemberList = repository.findAllTopMemberByYear("");
+            }else {
+                topMemberList = repository.findAllTopMemberByYear(year);
             }
         } else if (quarter.equals("1")) {
             topMemberList = repository.findAllTopMemberByQuarterAndYear("1", "3", year);

@@ -14,6 +14,7 @@ import java.util.List;
 public class StatisticRestController_getAllTopMember {
     @Autowired
     private StatisticController statisticController;
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số year = null
     @Test
     public void getAllTopMember_7_a() {
@@ -22,6 +23,7 @@ public class StatisticRestController_getAllTopMember {
                 = this.statisticController.getAllTopMemberByQuarterAndYear(null, "2022");
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số quarter = null
     @Test
     public void getAllTopMember_7_b() {
@@ -29,6 +31,15 @@ public class StatisticRestController_getAllTopMember {
                 = this.statisticController.getAllTopMemberByQuarterAndYear("1", null);
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
+    //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) cả 2 tham số truyền vào đều null
+    @Test
+    public void getAllTopMember_7_c() {
+        ResponseEntity<List<TopMember>> responseEntity
+                = this.statisticController.getAllTopMemberByQuarterAndYear(null, null);
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
+    }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year)
     // có tham số quarter = "" sẽ trả về list thống kê theo năm
     @Test
@@ -43,6 +54,7 @@ public class StatisticRestController_getAllTopMember {
         Assertions.assertEquals("215000.0", responseEntity.getBody().get(0).getTotalMoney());
         Assertions.assertEquals("1000.0", responseEntity.getBody().get(0).getPoint());
     }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year)
     // có tham số year = ""
     @Test
@@ -51,6 +63,7 @@ public class StatisticRestController_getAllTopMember {
                 = this.statisticController.getAllTopMemberByQuarterAndYear("1", "");
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số
     // quarter = "" và year = "" sẽ trả về toàn bộ list
     @Test
@@ -65,6 +78,7 @@ public class StatisticRestController_getAllTopMember {
         Assertions.assertEquals("215000.0", responseEntity.getBody().get(1).getTotalMoney());
         Assertions.assertEquals("1000.0", responseEntity.getBody().get(1).getPoint());
     }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số
     // quarter = 5 , không tồn tại quý 5 trong DB
     @Test
@@ -73,6 +87,7 @@ public class StatisticRestController_getAllTopMember {
                 = this.statisticController.getAllTopMemberByQuarterAndYear("5", "2022");
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số
     // year = 2023 , không tồn tại năm 2023 trong DB
     @Test
@@ -81,6 +96,7 @@ public class StatisticRestController_getAllTopMember {
                 = this.statisticController.getAllTopMemberByQuarterAndYear("4", "2023");
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số
     // quarter = 2 , year = 2022 ,xem thống kê quý 2 năm 2022 có tồn tại trong DB nhưng không có dữ liệu
     @Test
@@ -89,6 +105,7 @@ public class StatisticRestController_getAllTopMember {
                 = this.statisticController.getAllTopMemberByQuarterAndYear("2", "2022");
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
     //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số
     //quarter = 1 , year = 2022 ,xem thống kê quý 1 năm 2022 có dữ liệu trả về
     @Test
