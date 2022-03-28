@@ -46,4 +46,29 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("id") String id
     );
 
+    //search member by name
+    @Query(value = "select * from member m where m.name like %:name% order by m.id",
+            countQuery = "select count(*) from member", nativeQuery = true)
+    Page<Member> findMembersByName(
+            Pageable pageable,
+            @Param("name") String name
+    );
+
+    //search member by city
+    @Query(value = "select * from member m where m.city_id = :city_id order by m.id",
+            countQuery = "select count(*) from member", nativeQuery = true)
+    Page<Member> findMembersByCity(
+            Pageable pageable,
+            @Param("city_id") Integer cityId
+    );
+
+    //search member by point range
+    @Query(value = "select * from member m where m.point between :firstValue and :secondValue order by m.id",
+            countQuery = "select count(*) from member", nativeQuery = true)
+    Page<Member> findMembersByPointRange(
+            Pageable pageable,
+            @Param("firstValue") Integer firstValue,
+            @Param("secondValue") Integer secondValue
+    );
+
 }

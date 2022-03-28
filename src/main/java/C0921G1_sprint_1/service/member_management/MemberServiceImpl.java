@@ -36,5 +36,18 @@ public class MemberServiceImpl implements MemberService {
                 member.getAddress(),member.getImage(),member.getDateOfBirth(),member.getIdentityNumber(),member.getCity().getId(),member.getId());
     }
 
+    @Override
+    public Page<Member> findMembersByName(Pageable pageable, String name) {
+        return this.memberRepository.findMembersByName(pageable, name);
+    }
 
+    @Override
+    public Page<Member> findMembersByCity(Pageable pageable, Integer cityId) {
+        return this.memberRepository.findMembersByCity(pageable, cityId);
+    }
+
+    @Override
+    public Page<Member> findMembersByPointRange(Pageable pageable, Integer firstValue, Integer secondValue) {
+        return this.memberRepository.findMembersByPointRange(pageable, firstValue, secondValue);
+    }
 }

@@ -90,4 +90,56 @@ public class MemberController {
         this.memberService.saveMember(member);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    //search member by name - KhanhLDQ
+//    @GetMapping(value = "/member-list/search")
+//    public ResponseEntity<Page<Member>> getMembersByName(
+//            @PageableDefault(size = 5) Pageable pageable,
+//            @RequestParam(name = "name", required = false, defaultValue = "") String name
+//    ) {
+//        System.out.println(name);
+//
+//        Page<Member> members = this.memberService.findMembersByName(pageable,name);
+//
+//        if (members.isEmpty())
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//
+//        return new ResponseEntity<>(members,HttpStatus.OK);
+//    }
+
+    //search member by city - KhanhLDQ
+//    @GetMapping(value = "/member-list/search")
+//    public ResponseEntity<Page<Member>> getMembersByCity(
+//            @PageableDefault(size = 5) Pageable pageable,
+//            @RequestParam(name = "cityId", required = false) Integer cityId
+//    ) {
+//        System.out.println(cityId);
+//
+//        Page<Member> members = this.memberService.findMembersByCity(pageable,cityId);
+//
+//        if (members.isEmpty())
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//
+//        return new ResponseEntity<>(members,HttpStatus.OK);
+//    }
+
+    //search member by point range - KhanhLDQ
+    @GetMapping(value = "/member-list/search")
+    public ResponseEntity<Page<Member>> getMembersByPointRange(
+            @PageableDefault(size = 5) Pageable pageable,
+            @RequestParam(name = "firstValue") Integer firstValue,
+            @RequestParam(name = "secondValue") Integer secondValue
+    ) {
+        System.out.println(firstValue);
+        System.out.println(secondValue);
+
+        Page<Member> members = this.memberService.findMembersByPointRange(pageable, firstValue, secondValue);
+
+        if (members.isEmpty())
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        return new ResponseEntity<>(members,HttpStatus.OK);
+    }
+
+
 }
