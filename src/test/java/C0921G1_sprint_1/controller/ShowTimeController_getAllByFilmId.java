@@ -47,7 +47,12 @@ public class ShowTimeController_getAllByFilmId {
     /*Lấy dữ liệu theo ID - TH: tham số tồn tại có list size > 0*/
     @Test
     public void getAllFilmById_11() {
-        ResponseEntity<List<ShowTime>> responseEntity = this.showTimeController.getAllByFilmId("1");
+        ResponseEntity<List<ShowTime>> responseEntity = this.showTimeController.getAllByFilmId("2");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(11, responseEntity.getBody().get(3).getId());
+        Assertions.assertEquals("3/25/2022", responseEntity.getBody().get(3).getDate());
+        Assertions.assertEquals("21:00", responseEntity.getBody().get(3).getName());
+        Assertions.assertEquals(2, responseEntity.getBody().get(3).getFilm().getId());
+        Assertions.assertEquals(2, responseEntity.getBody().get(3).getScreen().getId());
     }
 }
