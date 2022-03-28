@@ -145,4 +145,12 @@ public class Member {
     public void setCity(City city) {
         this.city = city;
     }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 }
