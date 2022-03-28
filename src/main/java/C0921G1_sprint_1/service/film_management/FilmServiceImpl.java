@@ -1,4 +1,5 @@
 package C0921G1_sprint_1.service.film_management;
 
-public class FilmServiceImpl {
+public class FilmServiceImpl implements FilmService{
+
 }

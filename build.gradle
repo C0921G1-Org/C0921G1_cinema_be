@@ -12,7 +12,10 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 //    implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -23,8 +26,12 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
 //    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.springframework.security:spring-security-test'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.2.0.RELEASE'
+
 }
 
-tasks.named('test') {
+
+test {
     useJUnitPlatform()
 }
+

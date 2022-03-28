@@ -43,7 +43,9 @@ public class Member {
     private City city;
 
     @OneToMany(mappedBy = "member")
+
     @JsonBackReference("member_transaction")
+
     private Set<Transaction> transactions;
 
     public Member() {
