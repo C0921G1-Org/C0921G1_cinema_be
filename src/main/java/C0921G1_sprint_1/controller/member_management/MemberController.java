@@ -1,11 +1,19 @@
 package C0921G1_sprint_1.controller.member_management;
 
+import C0921G1_sprint_1.dto.member.MemberDTO;
 import C0921G1_sprint_1.model.member.Member;
 
 import C0921G1_sprint_1.service.member_management.MemberService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,9 +27,21 @@ public class MemberController {
     private MemberService memberService;
 
     //get all members - KhanhLDQ
+//    @GetMapping(value = "/member-list")
+//    public ResponseEntity<Iterable<Member>> getAllMembers() {
+//        List<Member> members = (List<Member>) this.memberService.findAllMembers();
+//
+//        if (members.isEmpty())
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//
+//        return new ResponseEntity<>(members,HttpStatus.OK);
+//    }
+
+    //get all members with pagination - KhanhLDQ
     @GetMapping(value = "/member-list")
-    public ResponseEntity<Iterable<Member>> getAllMembers() {
-        List<Member> members = (List<Member>) this.memberService.findAllMembers();
+    public ResponseEntity<Page<Member>> getAllMembersWithPagination(
+            @PageableDefault(size = 5)Pageable pageable) {
+        Page<Member> members = this.memberService.findAllMembersWithPagination(pageable);
 
         if (members.isEmpty())
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -30,7 +50,7 @@ public class MemberController {
     }
 
     //get member by Id - KhanhLDQ
-    @GetMapping(value = "/member-list/{id}")
+    @GetMapping(value = "/member-list/info/{id}")
     public ResponseEntity<Member> getMemberById(@PathVariable String id) {
         Optional<Member> memberOptional = this.memberService.findMemberById(id);
 
@@ -41,14 +61,32 @@ public class MemberController {
     }
 
     //update member by Id - KhanhLDQ
-    @PutMapping(value = "/member-list/{id}")
-    public ResponseEntity<Member> updateMember(@PathVariable String id, @RequestBody Member member) {
+    @PatchMapping(value = "/member-list/update/{id}")
+    public ResponseEntity<List<FieldError>> updateMember(@PathVariable String id,
+                                                         @RequestBody @Validated MemberDTO memberDTO,
+                                                         BindingResult bindingResult) {
+//        Optional<Member> memberOptional = this.memberService.findMemberById(id);
+//
+//        if (!memberOptional.isPresent())
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//
+//        member.setId(id);
+//        this.memberService.saveMember(member);
+//        return new ResponseEntity<>(HttpStatus.OK);
+
         Optional<Member> memberOptional = this.memberService.findMemberById(id);
 
         if (!memberOptional.isPresent())
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
-        member.setId(id);
+        new MemberDTO().validate(memberDTO,bindingResult);
+
+        if (bindingResult.hasErrors())
+            return new ResponseEntity<>(bindingResult.getFieldErrors(), HttpStatus.NOT_ACCEPTABLE);
+
+        memberDTO.setId(id);
+        Member member = new Member();
+        BeanUtils.copyProperties(memberDTO,member);
         this.memberService.saveMember(member);
         return new ResponseEntity<>(HttpStatus.OK);
     }

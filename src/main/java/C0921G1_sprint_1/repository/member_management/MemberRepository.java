@@ -1,6 +1,8 @@
 package C0921G1_sprint_1.repository.member_management;
 
 import C0921G1_sprint_1.model.member.Member;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -15,6 +17,10 @@ public interface MemberRepository extends JpaRepository<Member,String> {
 
     @Query(value = "select * from member", nativeQuery = true)
     Iterable<Member> findAllMembers();
+
+    @Query(value = "select * from member order by id",
+            countQuery = "select count(*) from member", nativeQuery = true)
+    Page<Member> findAllMembersWithPagination(Pageable pageable);
 
     @Query(value = "select * from member m where m.id = :id", nativeQuery = true)
     Optional<Member> findMemberById(
