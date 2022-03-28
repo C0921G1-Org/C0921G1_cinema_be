@@ -191,7 +191,7 @@ public class PaymentController_saveHistory {
 
 
 
-    // check code sai format
+    // check dữ liệu đúng
     @Test
     public void saveCode_all_18() throws Exception {
         Transaction transaction = new Transaction();

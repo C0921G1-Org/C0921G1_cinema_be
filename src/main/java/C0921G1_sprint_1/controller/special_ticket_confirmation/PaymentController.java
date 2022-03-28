@@ -45,10 +45,6 @@ public class PaymentController {
     private PaymentService paymentService;
 
 
-    @Autowired
-    private MemberService memberService;
-
-
     // cái này xóa đi
     @GetMapping("/pay")
     public ResponseEntity<List<Transaction>> listResponseEntity(){
@@ -74,11 +70,6 @@ public class PaymentController {
         }
         return new ResponseEntity<>(paymentService.saveTransaction(transaction) , HttpStatus.OK);
     }
-
-
-
-
-
 
 
 
@@ -113,24 +104,24 @@ public class PaymentController {
         BodyPart messageBodyPart = new MimeBodyPart();
 
 
-        String htmlText="aa"
-//                "<div style=\"color: #031327\">\n" +
-//                        "    <div style=\"background: url(https://thumbs.dreamstime.com/b/abstract-background-white-film-strip-frame-cinema-festival-poster-flyer-template-your-design-movie-time-139262949.jpg);\n" +
-//                        "width: 720px ;height: 480px\">\n" +
-//                        "        <br>\n" +
-//                        "        <h2 style=\"text-align: center;\">Kính chào quý khách <strong style=\"color: darkblue\">"+ transaction.getMember().getName()+ "</strong></h2>\n" +
-//                        "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim: </strong>" + "<strong style=\"color: darkblue\">" + "" + "</strong>" +"</p>\n" +
-//                        "        <p><strong>NGÀY CHIẾU: </strong>"+ "aaa" + "<p>\n" +
-//                        "        <p><strong>XUẤT CHIẾU: </strong>"+  "transaction.getShowTime().getFilm().getName()" + "<p>\n" +
-//                        "        <p><strong>SỐ GHẾ: </strong>"+ 1222 + "<p>\n" +
-//                        "        <p><strong>TỔNG TIỀN: </strong>"+ "100.000.000" + " VND"+ " </p>\n" +
-//                        "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim tại <span style=\"color: darkblue\">C0921G1-CINEMA</span></strong></p>\n" +
-//                        "        <p><strong> CHÚC QUÝ KHÁCH MỘT BUỔI XEM PHIM VUI VẺ </strong></p>\n" +
-//                        "        <p><strong style=\"color: red\">LƯU Ý: KHI ĐI NHỚ ĐEM THEO MÃ QR ĐẾN QUẦY THU NGÂN ĐỂ XÁC NHẬN ĐẶT VÉ.</strong></p>\n" +
-//                        "    <img src=\"cid:image\">\n" +
-//                        "    </div>\n" +
-//
-//                        "</div>"
+        String htmlText=
+                "<div style=\"color: #031327\">\n" +
+                        "    <div style=\"background: url(https://thumbs.dreamstime.com/b/abstract-background-white-film-strip-frame-cinema-festival-poster-flyer-template-your-design-movie-time-139262949.jpg);\n" +
+                        "width: 720px ;height: 480px\">\n" +
+                        "        <br>\n" +
+                        "        <h2 style=\"text-align: center;\">Kính chào quý khách <strong style=\"color: darkblue\">"+ transaction.getMember().getName()+ "</strong></h2>\n" +
+                        "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim: </strong>" + "<strong style=\"color: darkblue\">" + transaction.getShowTime().getFilm().getName() + "</strong>" +"</p>\n" +
+                        "        <p><strong>NGÀY CHIẾU: </strong>"+ transaction.getShowTime().getDate() + "<p>\n" +
+                        "        <p><strong>XUẤT CHIẾU: </strong>"+  transaction.getShowTime().getName() + "<p>\n" +
+                        "        <p><strong>SỐ GHẾ: </strong>"+ "đang đợi dữ liệu bên đạt" + "<p>\n" +
+                        "        <p><strong>TỔNG TIỀN: </strong>"+ "100.000.000" + " VND"+ " </p>\n" +
+                        "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim tại <span style=\"color: darkblue\">C0921G1-CINEMA</span></strong></p>\n" +
+                        "        <p><strong> CHÚC QUÝ KHÁCH MỘT BUỔI XEM PHIM VUI VẺ </strong></p>\n" +
+                        "        <p><strong style=\"color: red\">LƯU Ý: KHI ĐI NHỚ ĐEM THEO MÃ QR ĐẾN QUẦY THU NGÂN ĐỂ XÁC NHẬN ĐẶT VÉ.</strong></p>\n" +
+                        "    <img src=\"cid:image\">\n" +
+                        "    </div>\n" +
+
+                        "</div>"
                 ;
 
         messageBodyPart.setContent(htmlText, "text/html;charset=UTF-8");
@@ -151,15 +142,14 @@ public class PaymentController {
     }
 
 
-
         // chuyển đối qrcode thành hình ảnh
     private void qrCode(Transaction transaction) throws WriterException, IOException {
-//        String data = transaction.getCode() + "" + transaction.getId() + " "
-//                + "Email Người đặt vé" +transaction.getMember().getEmail() + "Tên Người Đặt Vé" + transaction.getMember().getName();
-//        String path = "src/main/resources/qr.png";
-//        BitMatrix matrix;
-//        matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);
-//        MatrixToImageWriter.writeToPath(matrix, "png", Paths.get(path));
+        String data = transaction.getCode() + "" + transaction.getId() + " "
+                + "Email Người đặt vé" +transaction.getMember().getEmail() + "Tên Người Đặt Vé" + transaction.getMember().getName();
+        String path = "src/main/resources/qr.png";
+        BitMatrix matrix;
+        matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);
+        MatrixToImageWriter.writeToPath(matrix, "png", Paths.get(path));
     }
 }
 
