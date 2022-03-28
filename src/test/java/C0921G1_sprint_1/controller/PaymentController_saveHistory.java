@@ -1,8 +1,8 @@
 package C0921G1_sprint_1.controller;
 
 import C0921G1_sprint_1.dto.member.MemberDTO;
-import C0921G1_sprint_1.model.member.Member;
-import C0921G1_sprint_1.model.showtime.ShowTime;
+import C0921G1_sprint_1.dto.showtime.ShowTimeDTO;
+
 import C0921G1_sprint_1.model.transaction.Transaction;
 import C0921G1_sprint_1.model.transaction.TransactionDto;
 
@@ -37,7 +37,7 @@ public class PaymentController_saveHistory {
     // check code null
     @Test
     public void saveCode_code_13() throws Exception {
-        Transaction transaction = new Transaction();
+
 
         TransactionDto transactionDto = new TransactionDto();
         transactionDto.setCode(null);
@@ -50,7 +50,7 @@ public class PaymentController_saveHistory {
         this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/pay")
-                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .content(this.objectMapper.writeValueAsString(transactionDto))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
@@ -58,7 +58,7 @@ public class PaymentController_saveHistory {
     // check transactionalDate null
     @Test
     public void saveCode_transactionalDate_13() throws Exception {
-        Transaction transaction = new Transaction();
+
 
         TransactionDto transactionDto = new TransactionDto();
         transactionDto.setCode("BV-0001");
@@ -71,7 +71,7 @@ public class PaymentController_saveHistory {
         this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/pay")
-                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .content(this.objectMapper.writeValueAsString(transactionDto))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
@@ -81,7 +81,7 @@ public class PaymentController_saveHistory {
     // check ticketStatus null
     @Test
     public void saveCode_ticketStatus_13() throws Exception {
-        Transaction transaction = new Transaction();
+
 
         TransactionDto transactionDto = new TransactionDto();
         transactionDto.setCode("BV-0001");
@@ -94,7 +94,7 @@ public class PaymentController_saveHistory {
         this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/pay")
-                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .content(this.objectMapper.writeValueAsString(transactionDto))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
@@ -103,7 +103,6 @@ public class PaymentController_saveHistory {
     // check code rỗng
     @Test
     public void saveCode_code_14() throws Exception {
-        Transaction transaction = new Transaction();
 
         TransactionDto transactionDto = new TransactionDto();
         transactionDto.setCode("");
@@ -116,7 +115,7 @@ public class PaymentController_saveHistory {
         this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/pay")
-                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .content(this.objectMapper.writeValueAsString(transactionDto))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
@@ -126,7 +125,7 @@ public class PaymentController_saveHistory {
     // check TransactionalDate rỗng
     @Test
     public void saveCode_TransactionalDate_14() throws Exception {
-        Transaction transaction = new Transaction();
+
 
         TransactionDto transactionDto = new TransactionDto();
         transactionDto.setCode("BV-0002");
@@ -139,7 +138,7 @@ public class PaymentController_saveHistory {
         this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/pay")
-                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .content(this.objectMapper.writeValueAsString(transactionDto))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
@@ -148,7 +147,7 @@ public class PaymentController_saveHistory {
     // check setTicketStatus rỗng
     @Test
     public void saveCode_setTicketStatus_14() throws Exception {
-        Transaction transaction = new Transaction();
+
 
         TransactionDto transactionDto = new TransactionDto();
         transactionDto.setCode("BV-0002");
@@ -161,7 +160,7 @@ public class PaymentController_saveHistory {
         this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/pay")
-                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .content(this.objectMapper.writeValueAsString(transactionDto))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
@@ -171,7 +170,7 @@ public class PaymentController_saveHistory {
     // check code sai format
     @Test
     public void saveCode_code_15() throws Exception {
-        Transaction transaction = new Transaction();
+
 
         TransactionDto transactionDto = new TransactionDto();
         transactionDto.setCode("BD-001");
@@ -184,9 +183,42 @@ public class PaymentController_saveHistory {
         this.mockMvc
                 .perform(MockMvcRequestBuilders
                         .post("/pay")
-                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .content(this.objectMapper.writeValueAsString(transactionDto))
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
+    }
+
+
+
+    // check code sai format
+    @Test
+    public void saveCode_all_18() throws Exception {
+        Transaction transaction = new Transaction();
+
+        TransactionDto transactionDto = new TransactionDto();
+        transactionDto.setCode("BV-001");
+        transactionDto.setTransactionalDate("2022-03-20");
+        transactionDto.setTicketStatus("1");
+
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setId("2");
+        transactionDto.setMemberDTO(memberDTO);
+
+        ShowTimeDTO showTimeDTO = new ShowTimeDTO();
+        showTimeDTO.setId(1);
+        transactionDto.setShowTimeDTO(showTimeDTO);
+
+
+        BeanUtils.copyProperties(transactionDto,transaction);
+        paymentService.saveTransaction(transaction);
+
+        this.mockMvc
+                .perform(MockMvcRequestBuilders
+                        .post("/pay")
+                        .content(this.objectMapper.writeValueAsString(transaction))
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is2xxSuccessful());
     }
 }

@@ -154,8 +154,6 @@ public class PaymentController {
 
         // chuyển đối qrcode thành hình ảnh
     private void qrCode(Transaction transaction) throws WriterException, IOException {
-
-
 //        String data = transaction.getCode() + "" + transaction.getId() + " "
 //                + "Email Người đặt vé" +transaction.getMember().getEmail() + "Tên Người Đặt Vé" + transaction.getMember().getName();
 //        String path = "src/main/resources/qr.png";

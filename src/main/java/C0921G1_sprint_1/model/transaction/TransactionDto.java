@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.model.transaction;
 
 import C0921G1_sprint_1.dto.member.MemberDTO;
+import C0921G1_sprint_1.dto.showtime.ShowTimeDTO;
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.showtime.ShowTime;
 import com.sun.istack.NotNull;
@@ -22,7 +23,8 @@ public class TransactionDto {
     private String ticketStatus;
 
     private MemberDTO memberDTO;
-    private ShowTime showTime;
+
+    private ShowTimeDTO showTimeDTO;
 
     public Integer getId() {
         return id;
@@ -64,11 +66,11 @@ public class TransactionDto {
         this.memberDTO = memberDTO;
     }
 
-    public ShowTime getShowTime() {
-        return showTime;
+    public ShowTimeDTO getShowTimeDTO() {
+        return showTimeDTO;
     }
 
-    public void setShowTime(ShowTime showTime) {
-        this.showTime = showTime;
+    public void setShowTimeDTO(ShowTimeDTO showTimeDTO) {
+        this.showTimeDTO = showTimeDTO;
     }
 }
