@@ -35,6 +35,10 @@ public class Member {
 
     @ManyToOne(targetEntity = City.class)
     private City city;
+//    @ManyToOne(targetEntity = district.class)
+//    private District district;
+//    @ManyToOne(targetEntity = Ward.class)
+//    private Ward ward;
 
     @OneToMany(mappedBy = "member")
     @JsonBackReference(value = "transactions_member")
@@ -138,4 +142,12 @@ public class Member {
     public void setCity(City city) {
         this.city = city;
     }
+
+//    public Ward getWard() {
+//        return ward;
+//    }
+//
+//    public void setWard(Ward ward) {
+//        this.ward = ward;
+//    }
 }
