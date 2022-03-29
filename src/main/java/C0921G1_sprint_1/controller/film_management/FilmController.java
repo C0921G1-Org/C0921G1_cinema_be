@@ -25,7 +25,6 @@ import java.util.Optional;
 public class FilmController {
     // Huynh Minh CA
 @Autowired
-
 private FilmService filmService;
 @Autowired
 private FilmTypeService filmTypeService;
