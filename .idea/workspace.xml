@@ -20,8 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3246a505-7b97-45a2-92c5-6b06d315495e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/film_controller/FilmController_deleteFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/film_controller/FilmController_deleteFilm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +191,8 @@
       <workItem from="1648436024699" duration="7537000" />
       <workItem from="1648449153969" duration="11500000" />
       <workItem from="1648468459241" duration="753000" />
+      <workItem from="1648469572387" duration="69000" />
+      <workItem from="1648518835385" duration="1398000" />
     </task>
     <servers />
   </component>
