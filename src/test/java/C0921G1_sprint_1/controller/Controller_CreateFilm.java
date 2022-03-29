@@ -213,7 +213,7 @@ public class Controller_CreateFilm {
 
 
    // test sai format --------------------------------------------------------->
-
+    //format duration dơn vị là p nhưng nhập là 2h
     @Test
     public  void createFilm_15_duration_format() throws  Exception{
         FilmDTO filmDTO = new FilmDTO();
@@ -243,7 +243,7 @@ public class Controller_CreateFilm {
     }
 
 
-    // startDay rong
+    // format startDate >= ngày hiện tại và < endDate
 
     @Test
     public  void createFilm_15_startDay_format() throws  Exception{
@@ -274,7 +274,7 @@ public class Controller_CreateFilm {
     }
 
 
-    // endDate rong
+    // format của EndtDate > startDate
 
     @Test
     public  void createFilm_15_endDay_format() throws  Exception{
