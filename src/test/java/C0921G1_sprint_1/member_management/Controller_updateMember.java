@@ -24,6 +24,7 @@ public class Controller_updateMember {
     @Autowired
     private ObjectMapper objectMapper;
 
+    //test case with blank name - KhanhLDQ
     @Test
     public void updateMember_name_20() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -51,6 +52,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with format name - KhanhLDQ
     @Test
     public void updateMember_name_21() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -78,6 +80,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with size name - KhanhLDQ
     @Test
     public void updateMember_name_22() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -105,6 +108,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with blank phone - KhanhLDQ
     @Test
     public void updateMember_phone_20() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -133,6 +137,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with format phone - KhanhLDQ
     @Test
     public void updateMember_phone_21() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -161,6 +166,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with blank email - KhanhLDQ
     @Test
     public void updateMember_email_20() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -189,6 +195,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with format email - KhanhLDQ
     @Test
     public void updateMember_email_21() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -217,6 +224,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with blank address - KhanhLDQ
     @Test
     public void updateMember_address_20() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -245,6 +253,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with blank date of birth - KhanhLDQ
     @Test
     public void updateMember_dateOfBirth_20() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -273,6 +282,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with age member - KhanhLDQ
     @Test
     public void updateMember_dateOfBirth_21() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -301,6 +311,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with blank identity number - KhanhLDQ
     @Test
     public void updateMember_identityNumber_20() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -329,6 +340,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with format identity number - KhanhLDQ
     @Test
     public void updateMember_identityNumber_21() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
@@ -357,6 +369,7 @@ public class Controller_updateMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with valid data - KhanhLDQ
     @Test
     public void updateMember_24() throws Exception {
         MemberDTO memberDTO = new MemberDTO();

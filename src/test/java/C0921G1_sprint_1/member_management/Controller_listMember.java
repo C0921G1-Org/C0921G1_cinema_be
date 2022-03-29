@@ -16,18 +16,47 @@ public class Controller_listMember {
     @Autowired
     private MemberController memberController;
 
+    //test case with page param = null - KhanhLDQ
     @Test
-    public void getListMember_5() {
-        ResponseEntity<Page<Member>> responseEntity
-                = this.memberController.getAllMembersWithPagination(PageRequest.of(0,5));
+    public void getListMember_1() {
+        ResponseEntity<Page<Member>> responseEntity =
+                this.memberController.getAllMembersWithPagination(null);
+
+        Assertions.assertEquals(404,responseEntity.getStatusCodeValue());
+    }
+
+    //test case with page param = 10 (not existed) - KhanhLDQ
+    @Test
+    public void getListMember_3() {
+        ResponseEntity<Page<Member>> responseEntity =
+                this.memberController.getAllMembersWithPagination(10);
 
         Assertions.assertEquals(204,responseEntity.getStatusCodeValue());
     }
 
+    //test case with page param = 1 (existed) - KhanhLDQ
+    @Test
+    public void getListMember_4() {
+        ResponseEntity<Page<Member>> responseEntity =
+                this.memberController.getAllMembersWithPagination(1);
+
+        Assertions.assertEquals(200,responseEntity.getStatusCodeValue());
+    }
+
+    //test case with size = 0 - KhanhLDQ
+    @Test
+    public void getListMember_5() {
+        ResponseEntity<Page<Member>> responseEntity
+                = this.memberController.getAllMembersWithPagination(0);
+
+        Assertions.assertEquals(204,responseEntity.getStatusCodeValue());
+    }
+
+    //test case with size > 0 - KhanhLDQ
     @Test
     public void getListMember_6() {
         ResponseEntity<Page<Member>> responseEntity
-                = this.memberController.getAllMembersWithPagination(PageRequest.of(0,5));
+                = this.memberController.getAllMembersWithPagination(0);
 
         Assertions.assertEquals(200,responseEntity.getStatusCodeValue());
         Assertions.assertEquals(2,responseEntity.getBody().getTotalPages());

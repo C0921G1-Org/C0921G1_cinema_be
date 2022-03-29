@@ -18,6 +18,7 @@ public class Controller_InfoMember {
     @Autowired
     private MockMvc mockMvc;
 
+    //test case with id = null - KhanhLDQ
     @Test
     public void getInfoMember_1() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
@@ -26,6 +27,7 @@ public class Controller_InfoMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with id = "" - KhanhLDQ
     @Test
     public void getInfoMember_2() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
@@ -34,6 +36,7 @@ public class Controller_InfoMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with id not existed in database - KhanhLDQ
     @Test
     public void getInfoMember_3() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
@@ -42,6 +45,7 @@ public class Controller_InfoMember {
                 .andExpect(status().is4xxClientError());
     }
 
+    //test case with id existed in database - KhanhLDQ
     @Test
     public void getInfoMember_4() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders

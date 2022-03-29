@@ -15,18 +15,22 @@ import java.util.Optional;
 @Repository
 public interface MemberRepository extends JpaRepository<Member,String> {
 
+    //find all members - KhanhLDQ
     @Query(value = "select * from member", nativeQuery = true)
     Iterable<Member> findAllMembers();
 
+    //find all members with pagination - KhanhLDQ
     @Query(value = "select * from member order by id",
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findAllMembersWithPagination(Pageable pageable);
 
+    //find member by id - KhanhLDQ
     @Query(value = "select * from member m where m.id = :id", nativeQuery = true)
     Optional<Member> findMemberById(
             @Param("id") String id
     );
 
+    //update member by id - KhanhLDQ
     @Transactional
     @Modifying
 //    return type = void / int - Integer
@@ -46,7 +50,7 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("id") String id
     );
 
-    //search member by name
+    //search member by name - KhanhLDQ
     @Query(value = "select * from member m where m.name like %:name% order by m.id",
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findMembersByName(
@@ -54,7 +58,7 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("name") String name
     );
 
-    //search member by city
+    //search member by city - KhanhLDQ
     @Query(value = "select * from member m where m.city_id = :city_id order by m.id",
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findMembersByCity(
@@ -62,7 +66,7 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("city_id") Integer cityId
     );
 
-    //search member by point range
+    //search member by point range - KhanhLDQ
     @Query(value = "select * from member m where m.point between :firstValue and :secondValue order by m.id",
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findMembersByPointRange(
@@ -70,5 +74,7 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("firstValue") Integer firstValue,
             @Param("secondValue") Integer secondValue
     );
+
+    //search member by name and city - KhanhLDQ
 
 }

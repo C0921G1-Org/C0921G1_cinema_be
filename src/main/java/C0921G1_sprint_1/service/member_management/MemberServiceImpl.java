@@ -1,6 +1,8 @@
 package C0921G1_sprint_1.service.member_management;
 
+import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.Member;
+import C0921G1_sprint_1.repository.member_management.CityRepository;
 import C0921G1_sprint_1.repository.member_management.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,9 +17,17 @@ public class MemberServiceImpl implements MemberService {
     @Autowired
     private MemberRepository memberRepository;
 
+    @Autowired
+    private CityRepository cityRepository;
+
     @Override
     public Iterable<Member> findAllMembers() {
         return this.memberRepository.findAllMembers();
+    }
+
+    @Override
+    public Iterable<City> findAllCities() {
+        return this.cityRepository.findAllCities();
     }
 
     @Override
