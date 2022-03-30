@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.repository.statistic_management;
 
+import C0921G1_sprint_1.dto.statistic.Revenue;
 import C0921G1_sprint_1.dto.statistic.TopMember;
 import C0921G1_sprint_1.model.member.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -59,6 +60,17 @@ public interface StatisticMemberRepository extends JpaRepository<Member, String>
             "order by year(`transactional_date`) desc"
             , nativeQuery = true)
     List<String> getYear();
-
+    @Query(value = " Select transactional_date as `date`, " +
+            "SUM(seat_type.price + ifnull(attached_service.price,0)) AS totalMoney " +
+            "    From `transaction` " +
+            "        left join show_time on `transaction`.show_time_id = show_time.id " +
+            "        left join selected_seat on selected_seat.show_time_id = show_time.id " +
+            " left join seat_type on seat_type.id = selected_seat.seat_type_id\n" +
+            " left join attached_service on attached_service.transaction_id = `transaction`.id " +
+            "        where year(`transaction`.transactional_date)= year(curdate()) and month(`transaction`.transactional_date)= month(curdate()) " +
+            " Group by transactional_date" +
+            " Order by transactional_date ; "
+            , nativeQuery = true)
+    List<Revenue> getRevenueByMonth();
 
 }

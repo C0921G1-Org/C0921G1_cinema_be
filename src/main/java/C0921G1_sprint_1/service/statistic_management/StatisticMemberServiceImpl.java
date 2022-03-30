@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.service.statistic_management;
 
+import C0921G1_sprint_1.dto.statistic.Revenue;
 import C0921G1_sprint_1.dto.statistic.TopMember;
 import C0921G1_sprint_1.repository.statistic_management.StatisticMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,10 @@ public class StatisticMemberServiceImpl implements StatisticMemberService {
     @Override
     public List<String> getYear() {
         return repository.getYear();
+    }
+
+    @Override
+    public List<Revenue> getRevenueByMonth() {
+        return repository.getRevenueByMonth();
     }
 }
