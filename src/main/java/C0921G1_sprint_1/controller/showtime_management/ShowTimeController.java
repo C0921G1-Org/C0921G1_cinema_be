@@ -12,6 +12,8 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
+
+@RequestMapping("/c09/user")
 public class ShowTimeController {
     @Autowired
     private ShowTimeService showTimeService;
@@ -48,4 +50,6 @@ public class ShowTimeController {
         }
     }
 
+
 }
+

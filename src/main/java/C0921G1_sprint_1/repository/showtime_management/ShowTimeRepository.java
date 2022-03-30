@@ -21,3 +21,4 @@ public interface ShowTimeRepository extends JpaRepository<ShowTime, Integer> {
     @Query(value = "SELECT * FROM show_time WHERE id = :id", nativeQuery = true)
     Optional<ShowTime> findById(@Param("id") Integer id);
 }
+

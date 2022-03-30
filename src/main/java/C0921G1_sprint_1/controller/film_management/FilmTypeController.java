@@ -14,7 +14,7 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/film-type/")
+@RequestMapping(value = "/c09/user/film-type/")
 public class FilmTypeController {
     @Autowired
     FilmTypeService filmTypeService;
