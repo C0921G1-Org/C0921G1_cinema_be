@@ -34,14 +34,13 @@ public class FilmController {
     @GetMapping("list-client")
     public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") Integer seeMore,
                                                         @RequestParam(defaultValue = "0") Integer page,
-                                                        @RequestParam(defaultValue = "") String startDate,
+                                                        @RequestParam(defaultValue = "") String actor,
                                                         @RequestParam(defaultValue = "") String name,
-                                                        @RequestParam(defaultValue = "") String typeFilm) {
-
-
+                                                        @RequestParam(defaultValue = "") String typeFilm,
+                                                        @RequestParam(defaultValue = "") String filmStatus) {
         try {
             Pageable pageable = PageRequest.of(page, seeMore);
-            Page<Film> filmPage = filmService.findAllFilmClient(startDate, name, typeFilm, pageable);
+            Page<Film> filmPage = filmService.findAllFilmClient(actor, name, typeFilm, filmStatus, pageable);
             if (filmPage.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
@@ -51,4 +50,5 @@ public class FilmController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
 }

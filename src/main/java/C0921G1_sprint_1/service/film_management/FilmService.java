@@ -11,7 +11,7 @@ public interface FilmService {
     Optional<Film> findById(Integer id);
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
-    Page<Film> findAllFilmClient(String startDate, String name, String typeFilm, Pageable pageable);
+    Page<Film> findAllFilmClient(String actor, String name, String typeFilm, String filmStatus, Pageable pageable);
 
 
 }

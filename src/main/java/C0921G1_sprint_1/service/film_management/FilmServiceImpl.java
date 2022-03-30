@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 
@@ -27,7 +29,17 @@ public class FilmServiceImpl implements FilmService {
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
     @Override
-    public Page<Film> findAllFilmClient(String startDate, String name, String typeFilm, Pageable pageable) {
-        return filmRepository.findAllFilmClient(startDate, name, typeFilm, pageable);
+    public Page<Film> findAllFilmClient(String actor, String name, String typeFilm, String filmStatus, Pageable pageable) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+        String currentDate = dtf.format(now);
+
+        if ("".equals(filmStatus)) {
+           return filmRepository.findAllFilmClientCurrent(actor, name, typeFilm, currentDate, pageable);
+        } else if("1".equals(filmStatus)){
+            return filmRepository.findAllFilmClientFuture(actor, name, typeFilm, currentDate, pageable);
+        }
+        return null;
     }
+
 }
