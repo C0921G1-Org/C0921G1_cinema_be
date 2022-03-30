@@ -1,6 +1,5 @@
 package C0921G1_sprint_1.controller.film_management;
 
-
 import C0921G1_sprint_1.dto.film.FilmDTO;
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.model.film.FilmType;
@@ -107,7 +106,6 @@ public class FilmController {
         }
         return new ResponseEntity<>(filmTypeList, HttpStatus.OK);
     }
-
-
 }
+
 
