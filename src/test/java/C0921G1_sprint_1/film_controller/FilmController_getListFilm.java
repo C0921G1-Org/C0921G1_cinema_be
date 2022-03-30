@@ -96,7 +96,7 @@ public class FilmController_getListFilm {
 
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
-        Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
+        Assertions.assertEquals(6, responseEntity.getBody().getTotalElements());
     }
 
     //trường hợp tham số page sai
@@ -152,7 +152,7 @@ public class FilmController_getListFilm {
 
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
-        Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
+        Assertions.assertEquals(6, responseEntity.getBody().getTotalElements());
     }
 
     //trường hợp tham số name đúng
