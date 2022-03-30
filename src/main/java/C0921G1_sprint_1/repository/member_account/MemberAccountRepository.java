@@ -22,7 +22,6 @@ public interface MemberAccountRepository extends JpaRepository<Member,String> {
                     "join show_time st on t.show_time_id = st.id \n"+
                     "join screen s on s.id = st.screen_id \n"+
                     "join film f on st.film_id = f.id \n"+
-//                    "Join ticket tk on tk.transaction_id = t.id \n"+
                     "join selected_seat se on se.show_time_id = st.id \n"+
                     "join seat_type sety on  sety.id = se.seat_type_id \n"+
                     "join attached_service ats on ats.transaction_id = t.id \n"+
