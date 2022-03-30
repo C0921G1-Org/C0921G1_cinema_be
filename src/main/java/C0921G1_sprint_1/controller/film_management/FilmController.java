@@ -15,10 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/film")
+@RequestMapping("/c09/user/film")
 public class FilmController {
     @Autowired
     private FilmService filmService;
@@ -50,9 +49,6 @@ public class FilmController {
         } else {
             return new ResponseEntity<>(filmPage, HttpStatus.OK);
         }
-
-
-
     }
 
 
