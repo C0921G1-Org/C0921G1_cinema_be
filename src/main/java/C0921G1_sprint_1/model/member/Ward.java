@@ -10,6 +10,7 @@ public class Ward {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
+    private String type;
 
     @ManyToOne(targetEntity = District.class)
     private District district;
@@ -39,5 +40,13 @@ public class Ward {
 
     public void setDistrict(District district) {
         this.district = district;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }
