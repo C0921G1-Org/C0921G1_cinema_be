@@ -17,6 +17,7 @@ import java.util.List;
 @CrossOrigin(value = "*")
 public class StatisticController {
 
+
     @Autowired
     private StatisticFilmServiceImpl statisticFilmService;
     @Autowired
@@ -40,5 +41,14 @@ public class StatisticController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(topMemberList, HttpStatus.OK);
+    }
+
+    @GetMapping("/member/year")
+    public ResponseEntity<List<String>> getYear() {
+        List<String> yearList = statisticMemberService.getYear();
+        if (yearList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(yearList, HttpStatus.OK);
     }
 }

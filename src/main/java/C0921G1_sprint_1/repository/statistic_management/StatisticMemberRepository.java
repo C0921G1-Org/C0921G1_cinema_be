@@ -53,4 +53,12 @@ public interface StatisticMemberRepository extends JpaRepository<Member, String>
             @RequestParam("monthEnd") String monthEnd,
             @RequestParam("year") String year
     );
+    @Query(value = " select year(`transactional_date`) " +
+            "from `transaction` " +
+            "group by year(`transactional_date`)" +
+            "order by year(`transactional_date`) desc"
+            , nativeQuery = true)
+    List<String> getYear();
+
+
 }

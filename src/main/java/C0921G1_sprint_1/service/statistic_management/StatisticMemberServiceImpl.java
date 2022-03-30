@@ -41,4 +41,9 @@ public class StatisticMemberServiceImpl implements StatisticMemberService {
         } else return topMemberList;
         return topMemberList;
     }
+
+    @Override
+    public List<String> getYear() {
+        return repository.getYear();
+    }
 }

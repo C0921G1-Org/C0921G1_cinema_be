@@ -19,7 +19,6 @@ public class StatisticRestController_getAllTopMember {
     @Test
     public void getAllTopMember_7_a() {
         ResponseEntity<List<TopMember>> responseEntity
-
                 = this.statisticController.getAllTopMemberByQuarterAndYear(null, "2022");
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
@@ -32,7 +31,7 @@ public class StatisticRestController_getAllTopMember {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
-    //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) cả 2 tham số truyền vào đều null
+    //Trường hợp getAllTopMemberByQuarterAndYear(quarter,year) có tham số quarter = null và year = null
     @Test
     public void getAllTopMember_7_c() {
         ResponseEntity<List<TopMember>> responseEntity

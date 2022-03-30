@@ -15,12 +15,15 @@ public class StatisticRestController_getAllTopFilm {
     @Autowired
     private StatisticController statisticController;
 
+    //Trường hợp getAllTopFilm() không có dữ liệu trả về list có size = 0
     @Test
     public void getAllTopFilm_5() {
         ResponseEntity<List<TopFilm>> responseEntity
                 = this.statisticController.getAllTopFilm();
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
+
+    //Trường hợp getAllTopFilm() có dữ liệu trả về list có size > 0
     @Test
     public void getAllTopFilm_6() {
         ResponseEntity<List<TopFilm>> responseEntity

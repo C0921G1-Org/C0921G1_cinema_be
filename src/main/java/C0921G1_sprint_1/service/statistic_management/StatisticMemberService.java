@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface StatisticMemberService {
     List<TopMember> findAllTopMemberByQuarterAndYear(String quarter, String year);
+    List<String> getYear();
 }
