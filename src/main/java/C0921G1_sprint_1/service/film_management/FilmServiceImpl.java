@@ -25,6 +25,7 @@ public class FilmServiceImpl implements FilmService {
     public Optional<Film> findById(Integer id) {
         return filmRepository.findById(id);
     }
+
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
     @Override
     public Page<Film> findAllFilmClient(String startDate, String name, String statusFilm, String typeFilm, Pageable pageable) {
@@ -38,5 +39,4 @@ public class FilmServiceImpl implements FilmService {
         return filmRepository.getAllFilmList();
 
     }
-
 }

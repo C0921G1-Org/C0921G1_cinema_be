@@ -19,6 +19,7 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
     List<Film> getAllFilmList(Integer id);
 
 
+
     //Tai DHN Xem Chi Tiết Phim
     @Query(value="SELECT f FROM Film  f where f.id = ?1")
     Optional<Film> findById(Integer id);
