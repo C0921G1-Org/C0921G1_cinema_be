@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3c1eedb9-2566-4d0f-a4e8-1ffaacd59586" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/dependencies-accessors/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileChanges/last-build.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/7.4.1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/Sprint1Application.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/film_management/FilmController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/member_management/MemberController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/member_register/MemberAccountController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/order_ticket/BookingController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/special_ticket_confirmation/PaymentController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/statistic_management/StatisticController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/custom_id/StringPrefixedSequenceIdGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/dto/film/FilmDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/dto/member/MemberAccountDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/dto/member/MemberDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/dto/member/MemberHistoryDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/attached_service/AttachedService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/film/Film.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/film/FilmType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/City.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/District.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/Member.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/Ward.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/seat/SeatType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/seat/SelectedSeat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/showtime/Screen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/showtime/ShowTime.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/transaction/Transaction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/film_management/FilmRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/CityRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/DistrictRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/MemberRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/WardRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/order_ticket/BookingRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/special_ticket_confirmation/PaymentRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/statistic_management/StatisticRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/film_management/FilmService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/film_management/FilmServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_account/MemberAccountService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_account/MemberAccountServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_management/MemberService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_management/MemberServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/order_ticket/BookingService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/order_ticket/BookingServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/statistic_management/StatisticService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/statistic_management/StatisticServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/C0921G1_sprint_1/Sprint1ApplicationTests.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/C0921G1_sprint_1/controller/member_history/MemberAccountController_memberHistory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/test/C0921G1_sprint_1/controller/member_register/MemberAccountController_memberRegister.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/member_register/MemberAccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/member/MemberHistoryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/member_history/MemberAccountController_memberHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/member_register/MemberAccountController_memberRegister.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/member_account/MemberAccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/member/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/member/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Ward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Ward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="26s3Lrmb5L5BNCG5uuDzdH08dYf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../module 4/C0921G1_NguyenThanhNhan_Module4/final/casestudy" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.Sprint1Application">
+    <configuration name="MemberAccountController_memberHistory.getListStudent_5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.member_history.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller.member_history" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.member_history.MemberAccountController_memberHistory" />
+      <option name="METHOD_NAME" value="getListStudent_5" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberAccountController_memberRegister.createMember_18" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.member_register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller.member_register" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.member_register.MemberAccountController_memberRegister" />
+      <option name="METHOD_NAME" value="createMember_18" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberAccountController_memberRegister.createMember_dateOfBirth_15" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.member_register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller.member_register" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.member_register.MemberAccountController_memberRegister" />
+      <option name="METHOD_NAME" value="createMember_dateOfBirth_15" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberAccountController_memberRegister.createMember_dateOfBirth_16" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.member_register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller.member_register" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.member_register.MemberAccountController_memberRegister" />
+      <option name="METHOD_NAME" value="createMember_dateOfBirth_16" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MemberAccountController_memberRegister.createMember_name_13" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.member_register.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller.member_register" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.member_register.MemberAccountController_memberRegister" />
+      <option name="METHOD_NAME" value="createMember_name_13" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Sprint1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sprint_1.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="C0921G1_sprint_1.Sprint1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_dateOfBirth_16" />
+        <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_dateOfBirth_15" />
+        <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_name_13" />
+        <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_18" />
+        <item itemvalue="JUnit.MemberAccountController_memberHistory.getListStudent_5" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a9fd70d9-8b7c-4c98-a928-498d945340e9" name="Default Changelist" comment="" />
+      <created>1648198413769</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648198413769</updated>
+      <workItem from="1648198416591" duration="7088000" />
+      <workItem from="1648224018363" duration="1419000" />
+      <workItem from="1648268686355" duration="16121000" />
+      <workItem from="1648359186522" duration="338000" />
+      <workItem from="1648361120330" duration="1766000" />
+      <workItem from="1648364556535" duration="1925000" />
+      <workItem from="1648397024281" duration="647000" />
+      <workItem from="1648430730707" duration="7439000" />
+      <workItem from="1648449211523" duration="13000" />
+      <workItem from="1648449255018" duration="18310000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1648456985418">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1648456985418" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1648459397652">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1648459397652" />
+    <state x="718" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1648289542219" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1648451653105">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1648451653105" />
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1648283694319" />
+    <state width="1493" height="327" key="GridCell.Tab.0.bottom" timestamp="1648655932421">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1648655932421" />
+    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="327" key="GridCell.Tab.0.center" timestamp="1648655932421">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1648655932421" />
+    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="327" key="GridCell.Tab.0.left" timestamp="1648655932420">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1648655932420" />
+    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="327" key="GridCell.Tab.0.right" timestamp="1648655932421">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1648655932421" />
+    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="327" key="GridCell.Tab.1.bottom" timestamp="1648655932421">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1648655932421" />
+    <state width="1493" height="204" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="327" key="GridCell.Tab.1.center" timestamp="1648655932421">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1648655932421" />
+    <state width="1493" height="204" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="327" key="GridCell.Tab.1.left" timestamp="1648655932421">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1648655932421" />
+    <state width="1493" height="204" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="327" key="GridCell.Tab.1.right" timestamp="1648655932421">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state width="1493" height="327" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1648655932421" />
+    <state width="1493" height="204" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
+    <state width="1877" height="306" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="229" key="GridCell.Tab.2.bottom" timestamp="1648451416319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="229" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1877" height="306" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="229" key="GridCell.Tab.2.center" timestamp="1648451416319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="229" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1877" height="306" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="229" key="GridCell.Tab.2.left" timestamp="1648451416319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="229" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1877" height="306" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state width="1493" height="229" key="GridCell.Tab.2.right" timestamp="1648451416319">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="229" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1877" height="306" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1648443306965">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1648443306965" />
+    <state x="431" y="145" key="search.everywhere.popup" timestamp="1648442619856">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1648442619856" />
+  </component>
+</project>
