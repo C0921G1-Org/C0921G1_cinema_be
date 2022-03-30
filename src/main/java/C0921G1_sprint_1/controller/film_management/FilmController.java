@@ -4,7 +4,6 @@ package C0921G1_sprint_1.controller.film_management;
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.service.film_management.FilmService;
 
-
 import C0921G1_sprint_1.dto.film.FilmDTO;
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.model.film.FilmType;
@@ -22,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
+import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,21 +30,11 @@ import java.util.Optional;
 @RequestMapping("/film/")
 public class FilmController {
 
-    // Huynh Minh CA
     @Autowired
     private FilmService filmService;
     @Autowired
     private FilmTypeService filmTypeService;
 
-    //huynh minh ca test findAll
-    @GetMapping("")
-    public ResponseEntity<Iterable<Film>> findAllTest() {
-        List<Film> filmList = (List<Film>) filmService.findAllFilm();
-        if (filmList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(filmList, HttpStatus.OK);
-    }
 
 
     //TaiLM danh sách phim & tìm kiếm
@@ -64,13 +54,12 @@ public class FilmController {
         } catch (NullPointerException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
     }
 
     //TaiLM xóa phim
     @GetMapping("delete/{id}")
     public ResponseEntity<?> delete(@PathVariable Integer id) {
-        Optional<Film> filmOptional = filmService.findById(id);
+        Optional<Film> filmOptional = filmService.findByIdFilm(id);
         if (filmOptional.isPresent()) {
             filmService.deleteFilm(filmOptional.get().getId());
             return new ResponseEntity<>(HttpStatus.OK);
@@ -147,6 +136,6 @@ public class FilmController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-
 }
+
 

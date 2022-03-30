@@ -17,9 +17,19 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import java.util.Optional;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Optional;
+
+
+import java.util.List;
+
 
 @Service
-public class FilmServiceImpl implements FilmService {
+public class FilmServiceImpl implements FilmService{
     @Autowired
     private FilmRepository filmRepository;
 
@@ -49,16 +59,6 @@ public class FilmServiceImpl implements FilmService {
        filmRepository.saveFilm(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),film.getFilmType().getId(),
               film.getActor(),film.getDirector(), film.getStudio(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete());
     }
-    // CaHM xem list film
-    @Override
-    public Iterable<Film> findAllFilm() {
-        return filmRepository.findAll();
-    }
-    // CaHM tim film theo id
-    @Override
-    public Optional<Film> findById(Integer id) {
-        return filmRepository.findByIdFilm(id);
-    }
     // CaHM updateFilm
     @Override
     public void updateFilm(Film film) {
@@ -67,8 +67,8 @@ public class FilmServiceImpl implements FilmService {
 
     //TaiLM danh sách & tìm kiếm
     @Override
-    public Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable) {
-        return filmRepository.findAll(name, startDate, endDate, pageable);
+    public Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable){
+        return filmRepository.findAll(name,  startDate, endDate, pageable);
     }
     //TaiLM delete film
     @Override

@@ -17,6 +17,7 @@ public class FilmController_deleteFilm {
     @Autowired
     MockMvc mockMvc;
 
+    //trường hợp id null
     @Test
     public void deleteFilm_1() throws Exception{
         this.mockMvc.perform(
@@ -25,6 +26,7 @@ public class FilmController_deleteFilm {
                 .andExpect(status().is4xxClientError());
     }
 
+    //trường hợp id rỗng
     @Test
     public void deleteFilm_2() throws Exception{
         this.mockMvc.perform(
@@ -33,6 +35,7 @@ public class FilmController_deleteFilm {
                 .andExpect(status().is4xxClientError());
     }
 
+    //trường hợp id không có trong database
     @Test
     public void deleteFilm_3() throws Exception{
         this.mockMvc.perform(
@@ -41,6 +44,7 @@ public class FilmController_deleteFilm {
                 .andExpect(status().is4xxClientError());
     }
 
+    //trường hợp id có trong database
     @Test
     public void deleteFilm_4() throws Exception{
         this.mockMvc.perform(

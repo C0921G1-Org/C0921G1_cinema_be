@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.Optional;
 
 public interface FilmService {
@@ -22,10 +23,6 @@ public interface FilmService {
     //CaHM save film
     void saveFilm(Film film);
 
-    Iterable<Film> findAllFilm();
-
-
-    Optional<Film> findById(Integer id);
-
     void updateFilm(Film film);
+
 }

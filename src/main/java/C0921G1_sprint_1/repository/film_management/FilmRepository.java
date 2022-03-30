@@ -8,10 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
-
+import javax.xml.crypto.Data;
+import java.util.Date;
 import java.util.Optional;
 
 @Repository
@@ -71,7 +73,7 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
     //TaiLM danh sách phim & tìm kiếm
     @Query(value="select *\n" +
             "from film\n" +
-            "where flag_delete = 1 and `name` like %?1% and start_date like %?2% and end_date like %?3%", nativeQuery = true)
+            "where flag_delete = 1 and name like %?1% and start_date like %?2% and end_date like %?3%", nativeQuery = true)
     Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable);
 
     //TaiLM xóa phim
