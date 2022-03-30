@@ -6,6 +6,5 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PaymentService {
-    List<Transaction>  getAllTransaction();
     Transaction saveTransaction(Transaction transaction);
 }

@@ -8,5 +8,6 @@ import java.util.Optional;
 public interface ShowTimeService {
     List<ShowTime> getAllByFilmId(Integer id, String date);
     List<ShowTime> getAllShowTime();
-    Optional<ShowTime> findById(Integer id);
-}
+    Optional<ShowTime> findById(Integer id);}
+ }
+
