@@ -9,7 +9,6 @@ public class MemberDTO {
     private String id;
     @NotBlank
     private String name;
-    @NotNull
     private Integer gender;
     @NotBlank
     private String phone;
