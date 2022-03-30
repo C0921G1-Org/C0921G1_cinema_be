@@ -5,12 +5,10 @@ import C0921G1_sprint_1.service.film_management.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
@@ -27,6 +25,17 @@ public class FilmController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(filmList, HttpStatus.OK);
+        }
+    }
+
+    /*DatTC - API lấy dữ liệu theo id */
+    @GetMapping("/filmList/{id}")
+    public ResponseEntity<Film> findFilmById(@PathVariable Integer id){
+        Optional<Film> filmOptional = this.filmService.findById(id);
+        if (!filmOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(filmOptional.get(), HttpStatus.OK);
         }
     }
 }
