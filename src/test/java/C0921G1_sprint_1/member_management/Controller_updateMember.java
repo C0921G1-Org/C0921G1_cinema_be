@@ -45,7 +45,7 @@ public class Controller_updateMember {
         memberDTO.setCity(city);
 
         this.mockMvc.perform(MockMvcRequestBuilders
-                .patch("/c09/admin/member-management/member-list/update/{id}", "Mem-002")
+                .patch("/c09/admin/member-management/member-list/update/{id}", "Mem-010")
                 .content(this.objectMapper.writeValueAsString(memberDTO))
                 .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andDo(print())
@@ -197,7 +197,7 @@ public class Controller_updateMember {
 
     //test case with format email - KhanhLDQ
     @Test
-    public void updateMember_email_21() throws Exception {
+    public void updateMember_email_21_a() throws Exception {
         MemberDTO memberDTO = new MemberDTO();
 
         City city = new City();
@@ -209,6 +209,35 @@ public class Controller_updateMember {
 
         //format email
         memberDTO.setEmail("nguyenA");
+
+        memberDTO.setAddress("Ha Noi");
+        memberDTO.setImage("");
+        memberDTO.setDateOfBirth("2000-09-05");
+        memberDTO.setIdentityNumber("123456123");
+        memberDTO.setCity(city);
+
+        this.mockMvc.perform(MockMvcRequestBuilders
+                .patch("/c09/admin/member-management/member-list/update/{id}", "Mem-002")
+                .content(this.objectMapper.writeValueAsString(memberDTO))
+                .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+
+    //test case with duplicated email - KhanhLDQ
+    @Test
+    public void updateMember_email_21_b() throws Exception {
+        MemberDTO memberDTO = new MemberDTO();
+
+        City city = new City();
+        city.setId(2);
+
+        memberDTO.setName("Nguyen Van A");
+        memberDTO.setGender(0);
+        memberDTO.setPhone("0901234567");
+
+        //format email
+        memberDTO.setEmail("nguyenBVip@gmail.com");
 
         memberDTO.setAddress("Ha Noi");
         memberDTO.setImage("");

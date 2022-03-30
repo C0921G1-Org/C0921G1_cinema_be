@@ -24,4 +24,7 @@ public interface MemberService {
     Page<Member> findMembersByCity(Pageable pageable, Integer cityId);
 
     Page<Member> findMembersByPointRange(Pageable pageable, Integer firstValue, Integer secondValue);
+
+    Page<Member> findMembersByNameAndPointRange(
+            Pageable pageable, String name, Integer firstValue, Integer secondValue);
 }

@@ -59,8 +59,8 @@ public class Controller_listMember {
                 = this.memberController.getAllMembersWithPagination(0);
 
         Assertions.assertEquals(200,responseEntity.getStatusCodeValue());
-        Assertions.assertEquals(2,responseEntity.getBody().getTotalPages());
-        Assertions.assertEquals(7,responseEntity.getBody().getTotalElements());
+        Assertions.assertEquals(5,responseEntity.getBody().getTotalPages());
+        Assertions.assertEquals(23,responseEntity.getBody().getTotalElements());
 
         Assertions.assertEquals("Mem-005",
                 responseEntity.getBody().getContent().get(4).getId());
@@ -68,7 +68,7 @@ public class Controller_listMember {
         Assertions.assertEquals("Phu Quoc",
                 responseEntity.getBody().getContent().get(4).getAddress());
 
-        Assertions.assertEquals("5/2/1985",
+        Assertions.assertEquals("1995-09-02",
                 responseEntity.getBody().getContent().get(4).getDateOfBirth());
 
         Assertions.assertEquals("nguyenE@gmail.com",

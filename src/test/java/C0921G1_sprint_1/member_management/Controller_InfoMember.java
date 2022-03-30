@@ -49,20 +49,20 @@ public class Controller_InfoMember {
     @Test
     public void getInfoMember_4() throws Exception {
         this.mockMvc.perform(MockMvcRequestBuilders
-                .get("/c09/admin/member-management/member-list/info/{id}", "Mem-002"))
+                .get("/c09/admin/member-management/member-list/info/{id}", "Mem-010"))
                 .andDo(print())
                 .andExpect(status().is2xxSuccessful())
-                .andExpect(jsonPath("$.id").value("Mem-002"))
-                .andExpect(jsonPath("$.name").value("Nguyen B"))
+                .andExpect(jsonPath("$.id").value("Mem-010"))
+                .andExpect(jsonPath("$.name").value("Nguyen F"))
                 .andExpect(jsonPath("$.gender").value(0))
-                .andExpect(jsonPath("$.phone").value("904567123"))
-                .andExpect(jsonPath("$.email").value("nguyenB@gmail.com"))
-                .andExpect(jsonPath("$.address").value("Ha Noi"))
+                .andExpect(jsonPath("$.phone").value("9012341234"))
+                .andExpect(jsonPath("$.email").value("nguyenF@gmail.com"))
+                .andExpect(jsonPath("$.address").value("Gia Lai"))
                 .andExpect(jsonPath("$.point").value(2000))
                 .andExpect(jsonPath("$.image").value(""))
-                .andExpect(jsonPath("$.dateOfBirth").value("10/5/2005"))
-                .andExpect(jsonPath("$.identityNumber").value("123456123"))
-                .andExpect(jsonPath("$.city.id").value(2));
+                .andExpect(jsonPath("$.dateOfBirth").value("1995-09-02"))
+                .andExpect(jsonPath("$.identityNumber").value("123999123"))
+                .andExpect(jsonPath("$.city.id").value(5));
     }
 
 

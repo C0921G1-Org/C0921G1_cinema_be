@@ -1,7 +1,11 @@
 package C0921G1_sprint_1.dto.member;
 
+import C0921G1_sprint_1.model.member.Member;
+import C0921G1_sprint_1.service.member_management.MemberServiceImpl;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 

@@ -1,7 +1,11 @@
 package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
+import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.transaction.Transaction;
+import C0921G1_sprint_1.service.member_management.MemberService;
+import C0921G1_sprint_1.service.member_management.MemberServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -9,16 +13,19 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.util.List;
 import java.util.Set;
 
 public class MemberDTO implements Validator {
+
+//    private MemberServiceImpl memberService = new MemberServiceImpl();
 
     private String id;
 
     @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
     @Pattern(regexp = RegexMember.REGEX_MEMBER_NAME,
             message = "Dữ liệu không hợp lệ! Tên không bao gồm số hoặc kí tự đặc biệt!")
-    @Size(min = 8, message = "Dữ liệu không hợp lệ! Tên ít nhất bao gồm 8 kí tự")
+    @Size(min = 8, message = "Dữ liệu không hợp lệ! Tên ít nhất bao gồm 8 kí tự!")
     private String name;
 
     private Integer gender;
@@ -165,5 +172,30 @@ public class MemberDTO implements Validator {
         if (RegexMember.checkAgeMember(dateOfBirth)) {
             errors.rejectValue("dateOfBirth","dateOfBirth.age");
         }
+
+//        String email = memberDTO.email;
+//        System.out.println(checkDuplicatedEmail(email));
+//        if (checkDuplicatedEmail(email)) {
+//            errors.rejectValue("email","email.duplicated");
+//        }
     }
+
+    //check duplicated email - KhanhLDQ
+//    public boolean checkDuplicatedEmail(String email) {
+//
+//        List<Member> members = (List<Member>) memberService.findAllMembers();
+//        boolean isRetry = false;
+//
+//        if (!members.isEmpty()) {
+//            for (Member member: members) {
+//                if (email.equals(member.getEmail())) {
+//                    isRetry = true;
+//                    break;
+//                }
+//            }
+//        }
+//
+//        return isRetry;
+//    }
+
 }

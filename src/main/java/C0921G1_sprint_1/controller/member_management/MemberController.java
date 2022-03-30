@@ -113,29 +113,29 @@ public class MemberController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    //search member by name - KhanhLDQ
-    @GetMapping(value = "/member-list/search")
-    public ResponseEntity<Page<Member>> getMembersByName(
-            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
-            @RequestParam(name = "name", required = false, defaultValue = "") String name
-    ) {
-        System.out.println(name);
+    //search members by name - KhanhLDQ
+//    @GetMapping(value = "/member-list/search")
+//    public ResponseEntity<Page<Member>> getMembersByName(
+//            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+//            @RequestParam(name = "name", required = false, defaultValue = "") String name
+//    ) {
+//        System.out.println(name);
+//
+//        try {
+//            Pageable pageable = PageRequest.of(page,5);
+//            Page<Member> members = this.memberService.findMembersByName(pageable,name);
+//
+//            if (members.isEmpty())
+//                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//
+//            return new ResponseEntity<>(members,HttpStatus.OK);
+//        }
+//        catch (NullPointerException nullPointerException) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
-        try {
-            Pageable pageable = PageRequest.of(page,5);
-            Page<Member> members = this.memberService.findMembersByName(pageable,name);
-
-            if (members.isEmpty())
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-
-            return new ResponseEntity<>(members,HttpStatus.OK);
-        }
-        catch (NullPointerException nullPointerException) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    //search member by city - KhanhLDQ
+    //search members by city - KhanhLDQ
 //    @GetMapping(value = "/member-list/search")
 //    public ResponseEntity<Page<Member>> getMembersByCity(
 //            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
@@ -157,7 +157,7 @@ public class MemberController {
 //        }
 //    }
 
-    //search member by point range - KhanhLDQ
+    //search members by point range - KhanhLDQ
 //    @GetMapping(value = "/member-list/search")
 //    public ResponseEntity<Page<Member>> getMembersByPointRange(
 //            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
@@ -180,5 +180,28 @@ public class MemberController {
 //            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 //        }
 //    }
+
+    //search members by name and point range - KhanhLDQ
+    @GetMapping(value = "/member-list/search")
+    public ResponseEntity<Page<Member>> getMembersByNameAndPointRange(
+            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam(name = "firstValue", required = false) Integer firstValue,
+            @RequestParam(name = "secondValue", required = false) Integer secondValue
+    ) {
+        try {
+            Pageable pageable = PageRequest.of(page,5);
+            Page<Member> members = this.memberService.findMembersByNameAndPointRange(
+                    pageable,name,firstValue,secondValue);
+
+            if (members.isEmpty())
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+            return new ResponseEntity<>(members,HttpStatus.OK);
+        }
+        catch (NullPointerException nullPointerException) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
 
 }

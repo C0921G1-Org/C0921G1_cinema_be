@@ -50,7 +50,7 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("id") String id
     );
 
-    //search member by name - KhanhLDQ
+    //search members by name - KhanhLDQ
     @Query(value = "select * from member m where m.name like %:name% order by m.id",
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findMembersByName(
@@ -58,7 +58,7 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("name") String name
     );
 
-    //search member by city - KhanhLDQ
+    //search members by city - KhanhLDQ
     @Query(value = "select * from member m where m.city_id = :city_id order by m.id",
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findMembersByCity(
@@ -66,7 +66,7 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("city_id") Integer cityId
     );
 
-    //search member by point range - KhanhLDQ
+    //search members by point range - KhanhLDQ
     @Query(value = "select * from member m where m.point between :firstValue and :secondValue order by m.id",
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findMembersByPointRange(
@@ -75,6 +75,15 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("secondValue") Integer secondValue
     );
 
-    //search member by name and city - KhanhLDQ
+    //search members by name and point range - KhanhLDQ
+    @Query(value = "select * from member m " +
+            "where (m.name like %:name%) and (m.point between :firstValue and :secondValue)" +
+            " order by m.id", countQuery = "select count(*) from member", nativeQuery = true)
+    Page<Member> findMembersByNameAndPointRange(
+            Pageable pageable,
+            @Param("name") String name,
+            @Param("firstValue") Integer firstValue,
+            @Param("secondValue") Integer secondValue
+    );
 
 }
