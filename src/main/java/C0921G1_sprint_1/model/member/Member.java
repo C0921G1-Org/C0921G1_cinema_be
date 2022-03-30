@@ -40,6 +40,7 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     @JsonBackReference(value = "transactions_member")
+
     private Set<Transaction> transactions;
 
     @OneToOne
