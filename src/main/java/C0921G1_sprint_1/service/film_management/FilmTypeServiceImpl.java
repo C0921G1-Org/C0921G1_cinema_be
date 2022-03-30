@@ -9,13 +9,20 @@ import java.util.List;
 
 //Hung NM tạo để lấy list type film
 @Service
-public class FilmTypeServiceImpl implements FilmTypeService{
+public class FilmTypeServiceImpl implements FilmTypeService {
     @Autowired
     FilmTypeRepository filmTypeRepository;
 
-//HungNM lấy danh sách thể loại phim để đổ lên màn hình tìm kiếm tại trang chủ
+    //HungNM lấy danh sách thể loại phim để đổ lên màn hình tìm kiếm tại trang chủ
     @Override
     public List<FilmType> getAll() {
         return filmTypeRepository.getAll();
     }
+
+//    CAmh lay danh sach type film
+    @Override
+    public Iterable<FilmType> findAll() {
+        return filmTypeRepository.findAll();
+    }
+
 }
