@@ -44,27 +44,21 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String identityNumber;
 
-    //    private Ward ward;
-    private City city;
+    private Ward ward;
+
 
     public MemberDTO() {
     }
 
-    public City getCity() {
-        return city;
+
+
+    public Ward getWard() {
+        return ward;
     }
 
-    public void setCity(City city) {
-        this.city = city;
+    public void setWard(Ward ward) {
+        this.ward = ward;
     }
-
-//    public Ward getWard() {
-//        return ward;
-//    }
-//
-//    public void setWard(Ward ward) {
-//        this.ward = ward;
-//    }
 
 
     public String getId() {
@@ -163,10 +157,22 @@ public class MemberDTO implements Validator {
         if (checkName(memberDTO.getName())) {
             errors.rejectValue("name", "name.checkName", "Tên cần viết Hoa Chữ cái đầu");
         }
+        if (checkPhone(memberDTO.getPhone())) {
+            errors.rejectValue("phone", "phone.checkPhone", "Số điện thoại phải có 10 số và có số 0 phía trước");
+        }
 
 
     }
-
+    //check phone regex - NhanNT
+    public  boolean checkPhone(String phone){
+        Pattern pattern = Pattern.compile("\\(?(0[1-9]{2})\\)?([ .-]?)([0-9]{3})\\2([0-9]{4})");
+        Matcher matcher = pattern.matcher(phone);
+        if (!matcher.matches()){
+            return true;
+        }else{
+            return false;
+        }
+    }
     //check age name regex - NhanNT
     public boolean checkName(String name){
         Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");

@@ -35,7 +35,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -59,7 +59,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -82,7 +82,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -105,7 +105,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -128,7 +128,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -151,7 +151,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -174,7 +174,30 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
+
+        City city = new City();
+        city.setId(1);
+        memberDTO.setCity(city);
+
+        this.mockMvc.perform(MockMvcRequestBuilders.post("/member")
+                .content(this.objectMapper.writeValueAsString(memberDTO))
+                .contentType(MediaType.APPLICATION_JSON_VALUE))
+                .andDo(print())
+                .andExpect(status().is4xxClientError());
+    }
+    //    NhanNT test phone format
+    @Test
+    public void createMember_phone_15()throws Exception{
+        MemberDTO memberDTO = new MemberDTO();
+        memberDTO.setName("Test Name");
+        memberDTO.setGender(1);
+        memberDTO.setPhone("");
+        memberDTO.setEmail("test@test.com");
+        memberDTO.setAddress("test");
+        memberDTO.setImage("testImg");
+        memberDTO.setDateOfBirth("2000-02-02");
+        memberDTO.setIdentityNumber("0005996846");
 
         City city = new City();
         city.setId(1);
@@ -197,7 +220,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -220,7 +243,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -243,7 +266,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -266,7 +289,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress(null);
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -289,7 +312,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -312,7 +335,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage(null);
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -335,7 +358,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("");
         memberDTO.setDateOfBirth("2000-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -358,7 +381,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth(null);
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -381,7 +404,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -404,7 +427,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("20-02-2000");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
@@ -427,7 +450,7 @@ public class MemberAccountController_memberRegister {
         memberDTO.setAddress("test");
         memberDTO.setImage("testImg");
         memberDTO.setDateOfBirth("2007-02-02");
-        memberDTO.setIdentityNumber("1234567890");
+        memberDTO.setIdentityNumber("0905996846");
 
         City city = new City();
         city.setId(1);
