@@ -45,7 +45,7 @@ public class FilmController_findByIdFilm {
                 MockMvcRequestBuilders
                         .get("/film/findById/{id}", "22222"))
                 .andDo(print())
-                .andExpect(status().is2xxSuccessful());
+                .andExpect(status().is4xxClientError());
     }
 
     //check trường hợp id đúng và trả về db

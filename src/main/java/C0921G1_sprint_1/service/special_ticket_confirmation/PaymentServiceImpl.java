@@ -13,12 +13,8 @@ public class PaymentServiceImpl implements PaymentService {
     private PaymentRepository paymentRepository;
 
     @Override
-    public List<Transaction> getAllTransaction() {
-        return paymentRepository.findAll();
-    }
-
-    @Override
     public Transaction saveTransaction(Transaction transaction) {
         return paymentRepository.save(transaction);
     }
+
 }

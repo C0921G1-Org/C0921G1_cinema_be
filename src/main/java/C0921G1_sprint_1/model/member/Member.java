@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Set;
 
 @Entity
@@ -22,6 +23,7 @@ public class Member {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "Mem-"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
     private String id;
+
 
     private String name;
     private Integer gender;
@@ -139,4 +141,6 @@ public class Member {
     public void setCity(City city) {
         this.city = city;
     }
+
+
 }

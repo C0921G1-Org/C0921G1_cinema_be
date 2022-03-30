@@ -27,5 +27,4 @@ public class SelectedSeatController {
             return new ResponseEntity<>(selectedSeatList, HttpStatus.OK);
         }
     }
-
 }
