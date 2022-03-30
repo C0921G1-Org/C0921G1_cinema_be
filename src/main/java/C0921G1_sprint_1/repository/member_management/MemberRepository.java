@@ -50,35 +50,12 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("id") String id
     );
 
-    //search members by name - KhanhLDQ
-    @Query(value = "select * from member m where m.name like %:name% order by m.id",
-            countQuery = "select count(*) from member", nativeQuery = true)
-    Page<Member> findMembersByName(
-            Pageable pageable,
-            @Param("name") String name
-    );
-
-    //search members by city - KhanhLDQ
-    @Query(value = "select * from member m where m.city_id = :city_id order by m.id",
-            countQuery = "select count(*) from member", nativeQuery = true)
-    Page<Member> findMembersByCity(
-            Pageable pageable,
-            @Param("city_id") Integer cityId
-    );
-
-    //search members by point range - KhanhLDQ
-    @Query(value = "select * from member m where m.point between :firstValue and :secondValue order by m.id",
-            countQuery = "select count(*) from member", nativeQuery = true)
-    Page<Member> findMembersByPointRange(
-            Pageable pageable,
-            @Param("firstValue") Integer firstValue,
-            @Param("secondValue") Integer secondValue
-    );
-
     //search members by name and point range - KhanhLDQ
     @Query(value = "select * from member m " +
             "where (m.name like %:name%) and (m.point between :firstValue and :secondValue)" +
-            " order by m.id", countQuery = "select count(*) from member", nativeQuery = true)
+            " order by m.id",
+            countQuery = "select count(*) from member m " +
+                    "where (m.name like %:name%) and (m.point between :firstValue and :secondValue)", nativeQuery = true)
     Page<Member> findMembersByNameAndPointRange(
             Pageable pageable,
             @Param("name") String name,

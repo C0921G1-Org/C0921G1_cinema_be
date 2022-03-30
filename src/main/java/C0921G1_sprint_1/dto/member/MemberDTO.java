@@ -18,8 +18,6 @@ import java.util.Set;
 
 public class MemberDTO implements Validator {
 
-//    private MemberServiceImpl memberService = new MemberServiceImpl();
-
     private String id;
 
     @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
@@ -172,30 +170,8 @@ public class MemberDTO implements Validator {
         if (RegexMember.checkAgeMember(dateOfBirth)) {
             errors.rejectValue("dateOfBirth","dateOfBirth.age");
         }
-
-//        String email = memberDTO.email;
-//        System.out.println(checkDuplicatedEmail(email));
-//        if (checkDuplicatedEmail(email)) {
-//            errors.rejectValue("email","email.duplicated");
-//        }
     }
 
-    //check duplicated email - KhanhLDQ
-//    public boolean checkDuplicatedEmail(String email) {
-//
-//        List<Member> members = (List<Member>) memberService.findAllMembers();
-//        boolean isRetry = false;
-//
-//        if (!members.isEmpty()) {
-//            for (Member member: members) {
-//                if (email.equals(member.getEmail())) {
-//                    isRetry = true;
-//                    break;
-//                }
-//            }
-//        }
-//
-//        return isRetry;
-//    }
+
 
 }

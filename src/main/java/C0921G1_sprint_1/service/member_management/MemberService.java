@@ -19,12 +19,6 @@ public interface MemberService {
 
     void saveMember(Member member);
 
-    Page<Member> findMembersByName(Pageable pageable, String name);
-
-    Page<Member> findMembersByCity(Pageable pageable, Integer cityId);
-
-    Page<Member> findMembersByPointRange(Pageable pageable, Integer firstValue, Integer secondValue);
-
     Page<Member> findMembersByNameAndPointRange(
             Pageable pageable, String name, Integer firstValue, Integer secondValue);
 }
