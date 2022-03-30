@@ -1,23 +1,44 @@
 package C0921G1_sprint_1.service.film_management;
 
 import C0921G1_sprint_1.model.film.Film;
+import C0921G1_sprint_1.repository.film_management.FilmRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.model.film.FilmType;
 import C0921G1_sprint_1.repository.film_management.FilmRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-
 import java.util.Optional;
 
 
 @Service
-
-public class FilmServiceImpl implements FilmService{
-
+public class FilmServiceImpl implements FilmService {
     @Autowired
     private FilmRepository filmRepository;
+
+
+
+    // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
+    @Override
+    public Page<Film> findAllFilmClient(String actor, String name, String typeFilm, String filmStatus, Pageable pageable) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDateTime now = LocalDateTime.now();
+        String currentDate = dtf.format(now);
+
+        if ("".equals(filmStatus)) {
+           return filmRepository.findAllFilmClientCurrent(actor, name, typeFilm, currentDate, pageable);
+        } else if("1".equals(filmStatus)){
+            return filmRepository.findAllFilmClientFuture(actor, name, typeFilm, currentDate, pageable);
+        }
+        return null;
+    }
 
     // huynh minh ca save film
     @Override
