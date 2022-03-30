@@ -42,6 +42,7 @@ import java.util.Properties;
 
 @RestController
 @CrossOrigin(origins = "*")
+@RequestMapping("/c09/user")
 public class PaymentController {
     @Autowired
     private PaymentService paymentService;
