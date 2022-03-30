@@ -15,5 +15,6 @@ public interface FilmService {
 
 
     List<Film> getAllFilmList();
+    Optional<Film> findById(Integer id);
 }
 

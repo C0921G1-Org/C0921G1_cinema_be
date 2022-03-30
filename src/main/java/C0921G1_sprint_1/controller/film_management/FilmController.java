@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.Optional;
 
 
-
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/film")
@@ -66,6 +65,17 @@ public class FilmController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(filmList, HttpStatus.OK);
+        }
+    }
+
+    /*DatTC - API lấy dữ liệu theo id */
+    @GetMapping("/filmList/{id}")
+    public ResponseEntity<Film> findFilmById(@PathVariable Integer id){
+        Optional<Film> filmOptional = this.filmService.findById(id);
+        if (!filmOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(filmOptional.get(), HttpStatus.OK);
         }
     }
 }

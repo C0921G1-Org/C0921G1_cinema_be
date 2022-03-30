@@ -14,6 +14,9 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
     @Query(value="SELECT * FROM film", nativeQuery = true)
     List<Film> getAllFilmList();
 
+    /*DatTC - Query lấy tất cả dữ liệu phim theo id*/
+    @Query(value="SELECT * FROM film WHERE id = :id", nativeQuery = true)
+    List<Film> getAllFilmList(Integer id);
 
 
 
