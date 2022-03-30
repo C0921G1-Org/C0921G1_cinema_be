@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.Optional;
 
 @Service
@@ -14,6 +15,11 @@ public interface FilmService {
 
     void deleteFilm(Integer id);
 
-    Optional<Film> findById(Integer id);
+    Optional<Film> findByIdFilm(Integer id);
 
+
+    //CaHM save film
+    void saveFilm(Film film);
+
+    void updateFilm(Film film);
 }
