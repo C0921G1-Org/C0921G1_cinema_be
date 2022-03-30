@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:list-film-client-HungNM" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d59c8251-e3f2-4751-bde9-d1c339774c66" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="26uh3AA8oSpJG7HPmeiThCFqhBV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="show.unlinked.gradle.project.popup" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management" />
+      <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\film_management" />
+      <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\film_management" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Sprint1Application">
+    <configuration name="FilmServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.service.film_management.FilmServiceImpl" />
+      <module name="sprint_1.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.service.film_management.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_name_typeFilm_10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_name_typeFilm_10" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_startDate_11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_startDate_11" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_startDate_name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_startDate_name" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_typeFilm_10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sprint_1.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_typeFilm_10" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Sprint1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="sprint_1.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="C0921G1_sprint_1.Sprint1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.FilmServiceImpl" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_name_typeFilm_10" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_startDate_11" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_startDate_name" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_typeFilm_10" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d59c8251-e3f2-4751-bde9-d1c339774c66" name="Default Changelist" comment="" />
+      <created>1648279176493</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1648279176493</updated>
+      <workItem from="1648279184005" duration="940000" />
+      <workItem from="1648281457066" duration="6677000" />
+      <workItem from="1648294763863" duration="676000" />
+      <workItem from="1648304197916" duration="83000" />
+      <workItem from="1648304821463" duration="4504000" />
+      <workItem from="1648366988162" duration="2078000" />
+      <workItem from="1648384358020" duration="4610000" />
+      <workItem from="1648435926396" duration="1054000" />
+      <workItem from="1648437156097" duration="16000" />
+      <workItem from="1648437421864" duration="4611000" />
+      <workItem from="1648448762128" duration="11390000" />
+      <workItem from="1648516495556" duration="18592000" />
+      <workItem from="1648563606696" duration="1291000" />
+      <workItem from="1648603290187" duration="3262000" />
+      <workItem from="1648622110597" duration="5527000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="list-film-client-HungNM" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1648633611824">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1648633611824" />
+    <state x="93" y="87" width="1073" height="501" key="DiffContextDialog" timestamp="1648305308497">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="87" width="1073" height="501" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1648305308497" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1648437171234">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1648437171234" />
+    <state width="1237" height="339" key="GridCell.Tab.0.bottom" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.0.center" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.0.left" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.0.right" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.bottom" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.center" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.left" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.right" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state width="1237" height="204" key="GridCell.Tab.2.center" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state width="1237" height="204" key="GridCell.Tab.2.left" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state width="1237" height="204" key="GridCell.Tab.2.right" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1648441517269">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1648441517269" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1648305864542">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1648305864542" />
+  </component>
+</project>
