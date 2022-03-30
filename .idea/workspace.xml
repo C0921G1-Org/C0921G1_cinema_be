@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a9fd70d9-8b7c-4c98-a928-498d945340e9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/member_history/MemberAccountController_memberHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/member_history/MemberAccountController_memberHistory.java" afterDir="false" />
-    </list>
+    <list default="true" id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
