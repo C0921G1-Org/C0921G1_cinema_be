@@ -46,11 +46,8 @@ public class MemberDTO implements Validator {
 
     private Ward ward;
 
-
     public MemberDTO() {
     }
-
-
 
     public Ward getWard() {
         return ward;

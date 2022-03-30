@@ -5,6 +5,7 @@ import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.District;
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.member.Ward;
+import C0921G1_sprint_1.model.security.Account;
 import C0921G1_sprint_1.repository.member_account.MemberAccountRepository;
 import C0921G1_sprint_1.repository.member_management.CityRepository;
 import C0921G1_sprint_1.repository.member_management.DistrictRepository;
@@ -12,7 +13,10 @@ import C0921G1_sprint_1.repository.member_management.WardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import sun.security.util.Password;
 
 @Service
 public class MemberAccountServiceImpl implements MemberAccountService{
@@ -26,6 +30,8 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     @Autowired
     private WardRepository wardRepository;
 
+    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
     //    NhanNT get Trading history
     @Override
     public Page<MemberHistoryDTO> findTradingHistory(String id,String name, Pageable pageable) {
@@ -36,6 +42,11 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     public void createMember(Member member) {
         member.setPoint(0.0);
         memberAccountRepository.save(member);
+        Account account = member.getAccount();
+        String encodedPassword = this.passwordEncoder.encode(account.getEncryptPw());
+        account.setEmail(member.getEmail());
+        account.setEncryptPw(encodedPassword);
+        memberAccountRepository.createAccount(account.getId());
     }
 
 
@@ -54,10 +65,6 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     public Iterable<Ward> getListWard(int id) {
         return wardRepository.findWardByDistrict_Id(id);
     }
-
-
-
-
 
 
 }

@@ -33,7 +33,7 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public void saveMember(Member member) {
         this.memberRepository.updateMember(member.getName(),member.getGender(),member.getPhone(),member.getEmail(),
-                member.getAddress(),member.getImage(),member.getDateOfBirth(),member.getIdentityNumber(),member.getCity().getId(),member.getId());
+                member.getAddress(),member.getImage(),member.getDateOfBirth(),member.getIdentityNumber(),member.getWard().getId(),member.getId());
     }
 
 
