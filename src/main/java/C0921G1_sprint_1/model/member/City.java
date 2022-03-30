@@ -75,4 +75,5 @@ public class City {
     public void setSlug(String slug) {
         this.slug = slug;
     }
+
 }
