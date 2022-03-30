@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.model.showtime;
 
+import C0921G1_sprint_1.model.seat.SelectedSeat;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
@@ -13,8 +14,6 @@ public class Screen {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-
-
 
     @OneToMany(mappedBy = "screen")
     @JsonBackReference(value = "showtime_screens")

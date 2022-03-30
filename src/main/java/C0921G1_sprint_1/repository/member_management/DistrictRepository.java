@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.repository.member_management;
 
+
 import C0921G1_sprint_1.model.member.District;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,4 +14,5 @@ public interface DistrictRepository extends JpaRepository<District,Integer> {
             "from district d\n" +
             "where d.city_id = ?1",nativeQuery = true)
     List<District>findDistinctByCity_Id(int id);
+
 }

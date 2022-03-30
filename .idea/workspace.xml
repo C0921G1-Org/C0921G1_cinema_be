@@ -20,7 +20,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/attached_service_management/AttachedServiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/security/SecurityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/selected_seat_management/SelectedSeatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/showtime_management/ShowTimeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/security/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/security/AccountRole.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/security/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/attached_service_management/AttachedServiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/security/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/security/AccountRoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/security/RoleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/selected_seat_management/SelectedSeatRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/showtime_management/ShowTimeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/jwt/JwtTokenFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/jwt/JwtTokenUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/payload/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/payload/response/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/services/UserDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/services/UserDetailsImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/attached_service/AttachedServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/attached_service/AttachedServiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/security/AccountRoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/security/AccountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/security/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/security/impl/AccountRoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/security/impl/AccountServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/security/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/selected_seat_management/SelectedSeatService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/selected_seat_management/SelectedSeatServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/AttachedServiceController_getAllAttachedServiceList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_getAllFilmList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SecurityController_authenticateUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SelectedSeatController_getAllByShowTimeId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/ShowTimeController_getAllByFilmId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/config/MailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/config/MailConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/order_ticket/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/order_ticket/BookingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/seat/SelectedSeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/seat/SelectedSeat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/showtime/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/showtime/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/showtime/ShowTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/showtime/ShowTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/film_management/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/film_management/FilmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/CityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/DistrictRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/DistrictRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/WardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/WardRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/special_ticket_confirmation/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/special_ticket_confirmation/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/Sprint1ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/Sprint1ApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +89,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -169,7 +239,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a9fd70d9-8b7c-4c98-a928-498d945340e9" name="Default Changelist" comment="" />
+      <changelist id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="" />
       <created>1648198413769</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -184,6 +254,7 @@
       <workItem from="1648430730707" duration="7439000" />
       <workItem from="1648449211523" duration="13000" />
       <workItem from="1648449255018" duration="18310000" />
+      <workItem from="1648640172657" duration="529000" />
     </task>
     <servers />
   </component>
