@@ -1,11 +1,14 @@
 package C0921G1_sprint_1.model.member;
 
 import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
+import C0921G1_sprint_1.model.security.Account;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -22,6 +25,7 @@ public class Member {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "Mem-"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
     private String id;
+
 
     private String name;
     private Integer gender;
@@ -42,7 +46,13 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     @JsonBackReference(value = "transactions_member")
+
     private Set<Transaction> transactions;
+
+    @OneToOne
+    @JoinColumn(name = "account_id")
+    @NotNull
+    private Account account;
 
     public Member() {
     }
@@ -143,6 +153,15 @@ public class Member {
         this.city = city;
     }
 
+
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }}
 //    public Ward getWard() {
 //        return ward;
 //    }

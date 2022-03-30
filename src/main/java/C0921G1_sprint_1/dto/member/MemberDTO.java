@@ -1,6 +1,11 @@
 package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+
 import C0921G1_sprint_1.model.member.Ward;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
@@ -29,6 +34,14 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String phone;
     @NotBlank
+    private String email;
+    @NotBlank
+    private String address;
+    @NotNull
+    private Double point;
+    @NotBlank
+    private String image;
+    @NotBlank
     @Email
     private String email;
     @NotBlank
@@ -44,6 +57,11 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String identityNumber;
 
+    public MemberDTO() {
+    }
+
+    //    private Ward ward;
+    private City city;
     //    private Ward ward;
     private City city;
 
@@ -65,7 +83,6 @@ public class MemberDTO implements Validator {
 //    public void setWard(Ward ward) {
 //        this.ward = ward;
 //    }
-
 
     public String getId() {
         return id;
@@ -147,6 +164,12 @@ public class MemberDTO implements Validator {
         this.identityNumber = identityNumber;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
 
     @Override
     public boolean supports(Class<?> clazz) {
