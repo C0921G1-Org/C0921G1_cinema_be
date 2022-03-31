@@ -1,0 +1,6 @@
+projectKey=C0921G1_ReviewCode_NhanNT
+serverUrl=http://192.168.1.78:9000
+serverVersion=9.3.0.51899
+dashboardUrl=http://192.168.1.78:9000/dashboard?id=C0921G1_ReviewCode_NhanNT
+ceTaskId=AX_fQIXcwt3wMxMS-X39
+ceTaskUrl=http://192.168.1.78:9000/api/ce/task?id=AX_fQIXcwt3wMxMS-X39
