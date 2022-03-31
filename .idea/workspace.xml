@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/.scannerwork/.sonar_lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/.scannerwork/checkstyle-result.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/.scannerwork/checkstyle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/.scannerwork/report-task.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/sonar-project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-    </list>
+    <list default="true" id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,6 +205,7 @@
       <workItem from="1648657705614" duration="971000" />
       <workItem from="1648661590057" duration="1887000" />
       <workItem from="1648689266429" duration="19133000" />
+      <workItem from="1648746116010" duration="458000" />
     </task>
     <servers />
   </component>
