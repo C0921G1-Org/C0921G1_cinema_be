@@ -1,6 +1,5 @@
 package C0921G1_sprint_1.controller.film_management;
 
-
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.service.film_management.FilmService;
 
@@ -26,15 +25,14 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "*")
-@RequestMapping("/film/")
+@CrossOrigin("*")
+@RequestMapping("/c09/user/film")
 public class FilmController {
 
     @Autowired
     private FilmService filmService;
     @Autowired
     private FilmTypeService filmTypeService;
-
 
 
     //TaiLM danh sách phim & tìm kiếm
@@ -52,7 +50,39 @@ public class FilmController {
                 return new ResponseEntity<>(filmPage, HttpStatus.OK);
             }
         } catch (NullPointerException e) {
+            return new ResponseEntity<>( HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+    // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
+    @GetMapping("list-client")
+    public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") int seeMore,
+                                                        @RequestParam(defaultValue = "0") int page,
+                                                        @RequestParam(defaultValue = "") String startDate,
+                                                        @RequestParam(defaultValue = "") String name,
+                                                        @RequestParam(defaultValue = "") String statusFilm,
+                                                        @RequestParam(defaultValue = "") String typeFilm) {
+
+        Pageable pageable = PageRequest.of(page, seeMore);
+        Page<Film> filmPage = filmService.findAllFilmClient(startDate, name, statusFilm, typeFilm, pageable);
+        if (filmPage.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(filmPage, HttpStatus.OK);
+        }
+    }
+
+
+
+    /*DatTC - API lấy dữ liệu tất cả film */
+    @GetMapping("/filmList")
+    public ResponseEntity<List<Film>> getAllFilmList() {
+        List<Film> filmList = this.filmService.getAllFilm();
+        if (filmList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else {
+            return new ResponseEntity<>(filmList, HttpStatus.OK);
         }
     }
 
@@ -134,6 +164,17 @@ public class FilmController {
             }
         } catch (NullPointerException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    /*DatTC - API lấy dữ liệu theo id */
+    @GetMapping("/filmList/{id}")
+    public ResponseEntity<Film> findFilmById(@PathVariable Integer id){
+        Optional<Film> filmOptional = this.filmService.findById(id);
+        if (!filmOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(filmOptional.get(), HttpStatus.OK);
         }
     }
 }

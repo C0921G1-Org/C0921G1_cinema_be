@@ -15,4 +15,5 @@ public interface FilmTypeRepository extends JpaRepository<FilmType, String> {
     @Query(value = "select * from film_type", nativeQuery = true)
     List<FilmType> getAll();
 
+
 }

@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.text.ParseException;
+import java.util.List;
 import java.util.Optional;
 
 public interface FilmService {
@@ -25,4 +26,11 @@ public interface FilmService {
 
     void updateFilm(Film film);
 
+
+    Optional<Film> finbyIdFilm(Integer id);
+
+    List<Film> getAllFilm();
+
+    Optional<Film> findById(Integer id);
 }
+

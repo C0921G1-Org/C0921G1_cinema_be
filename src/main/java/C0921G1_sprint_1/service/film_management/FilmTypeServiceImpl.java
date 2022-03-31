@@ -9,7 +9,7 @@ import java.util.List;
 
 //Hung NM tạo để lấy list type film
 @Service
-public class FilmTypeServiceImpl implements FilmTypeService {
+public class FilmTypeServiceImpl implements FilmTypeService{
     @Autowired
     FilmTypeRepository filmTypeRepository;
 
@@ -18,6 +18,7 @@ public class FilmTypeServiceImpl implements FilmTypeService {
     public List<FilmType> getAll() {
         return filmTypeRepository.getAll();
     }
+
 
 //    CAmh lay danh sach type film
     @Override

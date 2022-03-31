@@ -10,6 +10,7 @@ public interface FilmTypeService {
     //HungNM lấy danh sách thể loại phim để đổ lên màn hình tìm kiếm tại trang chủ
     List<FilmType> getAll();
 
+
     // CaHM xem list FilmType
     Iterable<FilmType> findAll();
 
