@@ -7,9 +7,12 @@ import C0921G1_sprint_1.model.security.Account;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import sun.applet.resources.MsgAppletViewer_es;
+
+import javax.transaction.Transactional;
 
 @Repository
 public interface MemberAccountRepository extends JpaRepository<Member, String> {
@@ -33,6 +36,8 @@ public interface MemberAccountRepository extends JpaRepository<Member, String> {
 
     // NhanNT query Create account
 
+    @Modifying
+    @Transactional
     @Query(value =
             "insert into c0921g1_sprint_1.account_role(account_id,role_id)\n" +
                     "values (?1,2);"

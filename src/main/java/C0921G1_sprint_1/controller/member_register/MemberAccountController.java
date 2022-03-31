@@ -8,6 +8,7 @@ import C0921G1_sprint_1.model.member.Member;
 
 import C0921G1_sprint_1.model.member.Ward;
 import C0921G1_sprint_1.service.member_account.MemberAccountService;
+import C0921G1_sprint_1.service.member_management.MemberService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,7 +30,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping
+@RequestMapping(value = "/c09/public")
 @CrossOrigin(origins = "*")
 public class MemberAccountController {
 
@@ -37,17 +38,16 @@ public class MemberAccountController {
     private MemberAccountService memberAccountService;
 
 
+
     //create member NhanNT
-    @PostMapping("/member")
+    @PostMapping(value = "/member", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> createMember(@Validated @RequestBody MemberDTO memberObj,
                                           BindingResult bindingResult ) {
         new MemberDTO().validate(memberObj,bindingResult);
         if (bindingResult.hasFieldErrors()){
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
-        Member member = new Member();
-        BeanUtils.copyProperties(memberObj, member);
-        memberAccountService.createMember(member);
+        memberAccountService.createMember(memberObj);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
     //    NhanNT lay list city

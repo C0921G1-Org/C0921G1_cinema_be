@@ -20,12 +20,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmTypeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/showtime/ShowTimeDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/transaction/TransactionDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/film_management/FilmTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmTypeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/qr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_findByIdFilm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/PaymentController_saveHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/attached_service_management/AttachedServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/attached_service_management/AttachedServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/member_register/MemberAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/member_register/MemberAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/selected_seat_management/SelectedSeatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/selected_seat_management/SelectedSeatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/showtime_management/ShowTimeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/showtime_management/ShowTimeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/special_ticket_confirmation/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/special_ticket_confirmation/PaymentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/member/MemberDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/member/MemberDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/City.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/member/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/transaction/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/film_management/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/film_management/FilmRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/CityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/CityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_management/MemberRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/selected_seat_management/SelectedSeatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/selected_seat_management/SelectedSeatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/showtime_management/ShowTimeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/showtime_management/ShowTimeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/special_ticket_confirmation/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/special_ticket_confirmation/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/security/config/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_account/MemberAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/member_management/MemberServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/Sprint1ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/Sprint1ApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/AttachedServiceController_getAllAttachedServiceList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/AttachedServiceController_getAllAttachedServiceList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_getAllFilmList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_getAllFilmList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SecurityController_authenticateUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SecurityController_authenticateUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SelectedSeatController_getAllByShowTimeId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SelectedSeatController_getAllByShowTimeId.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/ShowTimeController_getAllByFilmId.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/ShowTimeController_getAllByFilmId.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +112,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../module 4/C0921G1_NguyenThanhNhan_Module4/final/casestudy" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Sprint 1/Sprint 1/BE/C0821G1-Repo-BE" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -204,6 +243,9 @@
       <workItem from="1648640172657" duration="877000" />
       <workItem from="1648641791034" duration="606000" />
       <workItem from="1648650893723" duration="5753000" />
+      <workItem from="1648657705614" duration="971000" />
+      <workItem from="1648661590057" duration="1887000" />
+      <workItem from="1648689266429" duration="12332000" />
     </task>
     <servers />
   </component>
@@ -227,75 +269,79 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1648456985418" />
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1648459397652">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648694861905">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1648459397652" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1648694861905" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1648698339460">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1648698339460" />
     <state x="718" y="162" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1648289542219" />
-    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1648650979633">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1648692458922">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1648451653105" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1648692458922" />
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1648650979633" />
-    <state width="1877" height="273" key="GridCell.Tab.0.bottom" timestamp="1648657618885">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618885" />
-    <state width="1877" height="273" key="GridCell.Tab.0.center" timestamp="1648657618885">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618885" />
-    <state width="1877" height="273" key="GridCell.Tab.0.left" timestamp="1648657618885">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618885" />
-    <state width="1877" height="273" key="GridCell.Tab.0.right" timestamp="1648657618885">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618885" />
-    <state width="1877" height="273" key="GridCell.Tab.1.bottom" timestamp="1648657618889">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618889" />
-    <state width="1877" height="273" key="GridCell.Tab.1.center" timestamp="1648657618889">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618889" />
-    <state width="1877" height="273" key="GridCell.Tab.1.left" timestamp="1648657618889">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618889" />
-    <state width="1877" height="273" key="GridCell.Tab.1.right" timestamp="1648657618889">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1493" height="204" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
-    <state width="1877" height="273" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648657618889" />
-    <state width="1493" height="229" key="GridCell.Tab.2.bottom" timestamp="1648451416319">
+    <state width="1493" height="198" key="GridCell.Tab.0.bottom" timestamp="1648710767775">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1493" height="198" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648710767775" />
+    <state width="1877" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.0.center" timestamp="1648710767775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1648710767775" />
+    <state width="1877" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.0.left" timestamp="1648710767774">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1648710767774" />
+    <state width="1877" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.0.right" timestamp="1648710767775">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1648710767775" />
+    <state width="1877" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.1.bottom" timestamp="1648710775719">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648710775719" />
+    <state width="1877" height="273" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.1.center" timestamp="1648710775719">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1648710775719" />
+    <state width="1877" height="273" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.1.left" timestamp="1648710775719">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1648710775719" />
+    <state width="1877" height="273" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.1.right" timestamp="1648710775719">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1648710775719" />
+    <state width="1877" height="273" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648663574803" />
+    <state width="1493" height="198" key="GridCell.Tab.2.bottom" timestamp="1648710620448">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="198" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648710620448" />
     <state width="1877" height="306" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
-    <state width="1493" height="229" key="GridCell.Tab.2.center" timestamp="1648451416319">
+    <state width="1493" height="198" key="GridCell.Tab.2.center" timestamp="1648710620448">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1493" height="198" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1648710620448" />
     <state width="1877" height="306" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
-    <state width="1493" height="229" key="GridCell.Tab.2.left" timestamp="1648451416319">
+    <state width="1493" height="198" key="GridCell.Tab.2.left" timestamp="1648710620448">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1493" height="198" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1648710620448" />
     <state width="1877" height="306" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
-    <state width="1493" height="229" key="GridCell.Tab.2.right" timestamp="1648451416319">
+    <state width="1493" height="198" key="GridCell.Tab.2.right" timestamp="1648710620448">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="229" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1648451416319" />
+    <state width="1493" height="198" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1648710620448" />
     <state width="1877" height="306" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
     <state x="277" y="57" key="SettingsEditor" timestamp="1648443306965">
       <screen x="0" y="0" width="1536" height="824" />
@@ -305,5 +351,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1648442619856" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/member_register/MemberAccountController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

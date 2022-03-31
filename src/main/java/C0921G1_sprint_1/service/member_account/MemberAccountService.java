@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.service.member_account;
 
+import C0921G1_sprint_1.dto.member.MemberDTO;
 import C0921G1_sprint_1.dto.member.MemberHistoryDTO;
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.District;
@@ -16,7 +17,7 @@ public interface MemberAccountService {
     //    NhanNT get Trading History
     public Page<MemberHistoryDTO> findTradingHistory(String id,String name, Pageable pageable);
     //    NhanNT Create Member
-    public void createMember(Member member);
+    public void createMember(MemberDTO member);
     //    NhanNT get City
     public Iterable<City> getListCity();
     //    NhanNT get District

@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.service.member_account;
 
+import C0921G1_sprint_1.dto.member.MemberDTO;
 import C0921G1_sprint_1.dto.member.MemberHistoryDTO;
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.District;
@@ -10,13 +11,12 @@ import C0921G1_sprint_1.repository.member_account.MemberAccountRepository;
 import C0921G1_sprint_1.repository.member_management.CityRepository;
 import C0921G1_sprint_1.repository.member_management.DistrictRepository;
 import C0921G1_sprint_1.repository.member_management.WardRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import sun.security.util.Password;
 
 @Service
 public class MemberAccountServiceImpl implements MemberAccountService{
@@ -29,8 +29,8 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     private DistrictRepository districtRepository;
     @Autowired
     private WardRepository wardRepository;
-
-    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
 
     //    NhanNT get Trading history
     @Override
@@ -39,13 +39,20 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     }
     //    NhanNT create Member
     @Override
-    public void createMember(Member member) {
-        member.setPoint(0.0);
-        memberAccountRepository.save(member);
-        Account account = member.getAccount();
-        String encodedPassword = this.passwordEncoder.encode(account.getEncryptPw());
+    public void createMember(MemberDTO memberObj) {
+        Member member = new Member();
+        BeanUtils.copyProperties(memberObj, member, "wardId");
+        Ward ward = wardRepository.findById(memberObj.getWardId()).orElse(null);
+        member.setWard(ward);
+        Account account = new Account();
+        String encodedPassword = bCryptPasswordEncoder.encode(memberObj.getPassword());
         account.setEmail(member.getEmail());
         account.setEncryptPw(encodedPassword);
+        account.setIsEnabled(0);
+        account.setUsername(member.getEmail());
+        member.setAccount(account);
+        member.setPoint(0.0);
+        memberAccountRepository.save(member);
         memberAccountRepository.createAccount(account.getId());
     }
 

@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -24,6 +25,7 @@ public class Member {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "Mem-"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
     private String id;
+
 
     private String name;
     private Integer gender;
@@ -46,9 +48,9 @@ public class Member {
     @JsonBackReference(value = "transactions_member")
     private Set<Transaction> transactions;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id")
-    @NotNull
+//    @NotNull
     private Account account;
 
     public Member() {
@@ -158,11 +160,12 @@ public class Member {
         this.ward = ward;
     }
 
+
+
     public Account getAccount() {
         return account;
     }
 
     public void setAccount(Account account) {
         this.account = account;
-    }
-}
+    }}
