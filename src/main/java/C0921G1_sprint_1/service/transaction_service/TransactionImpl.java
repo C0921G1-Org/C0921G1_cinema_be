@@ -18,13 +18,13 @@ public class TransactionImpl implements TransactionService {
 
 
     @Override
-    public Page<Transaction> getGainedPointTransaction(String memeberId, String startDate, String endDate, Double total, Pageable pageable) {
+    public Page<Transaction> getGainedPointTransaction(String memeberId, String startDate, String endDate, Pageable pageable) {
         List<Transaction> transactionsList = new ArrayList<>();
         Page<Transaction> page = new PageImpl<>(transactionsList);
         if (memeberId == null) {
             return page;
         }
-        return transactionRepository.getGainedPointTransaction(memeberId, startDate, endDate, total, pageable);
+        return transactionRepository.getGainedPointTransaction(memeberId, startDate, endDate, pageable);
     }
 
     @Override
@@ -38,13 +38,13 @@ public class TransactionImpl implements TransactionService {
     }
 
     @Override
-    public List<Double> getAllAttachServicePrice(String memeberId, String startDate, String endDate) {
-        return transactionRepository.getAttachServicePrice(memeberId, startDate, endDate);
+    public List<Double> getAllAttachServicePrice(Integer transactionId, String startDate, String endDate) {
+        return transactionRepository.getAttachServicePrice(transactionId, startDate, endDate);
     }
 
     @Override
-    public List<Double> getSeatPrice(String memeberId, String startDate, String endDate) {
-        return transactionRepository.getSeatPrice(memeberId, startDate, endDate
+    public List<Double> getSeatPrice(Integer transactionId, String startDate, String endDate) {
+        return transactionRepository.getSeatPrice(transactionId, startDate, endDate
         );
     }
 

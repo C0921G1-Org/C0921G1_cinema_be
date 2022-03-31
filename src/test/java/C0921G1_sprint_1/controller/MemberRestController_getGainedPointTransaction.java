@@ -24,6 +24,10 @@ public class MemberRestController_getGainedPointTransaction {
     @Autowired
     private MemberController memberController;
 
+
+    /**
+     * Lấy lịch sử cộng điểm của người dùng khi có id null
+     */
     @Test
     public void getListGainedPoint_id_1() {
         ResponseEntity<Page<Transaction>> responseEntity
@@ -32,6 +36,10 @@ public class MemberRestController_getGainedPointTransaction {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+
+    /**
+     * Lấy lịch sử cộng điểm của người dùng khi có id rỗng
+     */
     @Test
     public void getListGainedPoint_id_2() {
 
@@ -41,7 +49,9 @@ public class MemberRestController_getGainedPointTransaction {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
-    /**id không tồn tại trong DB*/
+    /**
+     * id không tồn tại trong DB
+     */
     @Test
     public void getListGainedPoint_id_3() {
 
@@ -51,6 +61,9 @@ public class MemberRestController_getGainedPointTransaction {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+    /**
+     * Lấy lịch sử cộng điểm của người dùng khi có ngày bắt đầu null
+     */
     @Test
     public void getListGainedPoint_startDate_1() {
 
@@ -60,6 +73,9 @@ public class MemberRestController_getGainedPointTransaction {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+    /**
+     * Lấy lịch sử cộng điểm của người dùng khi có ngày bắt đầu rỗng
+     */
     @Test
     public void getListGainedPoint_startDate_2() {
 
@@ -69,6 +85,9 @@ public class MemberRestController_getGainedPointTransaction {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+    /**
+     * Lấy lịch sử cộng điểm của người dùng khi có ngày kết thức null
+     */
     @Test
     public void getListGainedPoint_endDate_1() {
 
@@ -78,6 +97,9 @@ public class MemberRestController_getGainedPointTransaction {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+    /**
+     * Lấy lịch sử cộng điểm của người dùng khi có ngày kết thúc rỗng
+     */
     @Test
     public void getListGainedPoint_endDate_2() {
 
@@ -87,6 +109,9 @@ public class MemberRestController_getGainedPointTransaction {
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+    /**
+     * Lấy lịch sử cộng điểm của người dùng khi mọi thông tin đều đúng
+     */
     @Test
     public void getListGainedPoint_4() {
 

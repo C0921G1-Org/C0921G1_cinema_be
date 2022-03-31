@@ -7,7 +7,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -27,7 +26,6 @@ public class Member {
 
     @OneToOne
     @JoinColumn(name = "account_id")
-    @NotNull
     private Account account;
     private String name;
     private Integer gender;

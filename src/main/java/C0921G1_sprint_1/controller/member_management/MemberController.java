@@ -17,14 +17,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "member")
+@RequestMapping("member")
 
 public class MemberController {
 
@@ -47,7 +47,7 @@ public class MemberController {
     @GetMapping("/getDetail/{id}")
     public ResponseEntity<Member> getDetail(@PathVariable String id) {
 
-        if(isIdWrong(id)){
+        if (isIdWrong(id)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         if (memberService.findById(id).isPresent()) {
@@ -59,10 +59,12 @@ public class MemberController {
     }
 
 
-    //LongTK update member
+    //LongTK update member method
     @PatchMapping(value = "/updateMember", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Member> updateMember(@Valid @RequestBody MemberDTO memberDTO, BindingResult
+    public ResponseEntity<Member> updateMember(@Validated @RequestBody MemberDTO memberDTO, BindingResult
             bindingResult) {
+
+        new MemberDTO().validate(memberDTO, bindingResult);
         if (bindingResult.hasFieldErrors()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
@@ -82,6 +84,36 @@ public class MemberController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+    /**
+     * lấy ra tổng tiền dịch vụ và tiền ghế rồi convert thành điểm
+     */
+
+    public Double letTotal(Integer transactionId, String startDate, String endDate) {
+        //Lấy ra tổng tiền dịch vụ
+        double sumAttachServicePrice = 0.0;
+        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(transactionId, startDate, endDate);
+        for (Double ase : attachServicePrice) {
+            if (ase == null) {
+                ase = 0.0;
+            }
+            System.out.println(transactionId + " - " + startDate + " - " +endDate);
+            sumAttachServicePrice += ase;
+        }
+        System.out.println("attach service total: " + sumAttachServicePrice);
+
+        //Lấy ra tổng tiền ghế
+        double sumSeatPrice = 0.0;
+        List<Double> seatPrice = transactionService.getSeatPrice(transactionId, startDate, endDate);
+        for (Double seat : seatPrice) {
+            System.out.println("seat price :: " + seat);
+            sumSeatPrice += seat;
+        }
+
+        //tổng lại chia 10000, tỷ lệ 10000vnd = 1 điểm
+        double totalPoint = (sumAttachServicePrice + sumSeatPrice) / 10000;
+
+        return totalPoint;
+    }
 
     /**
      * Xem lịch sử  công điểm LongTK
@@ -91,47 +123,30 @@ public class MemberController {
                                                                     @RequestParam String startDate,
                                                                     @RequestParam String endDate,
                                                                     @RequestParam int pageNo) {
-        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(id, startDate, endDate);
-        if (attachServicePrice.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+//        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(id, startDate, endDate);
+//        if (attachServicePrice.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
 
         if (isDateWrong(startDate, endDate)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        //Lấy ra tổng tiền dịch vụ
-        double sumAttachServicePrice = 0.0;
 
-        for (Double ase : attachServicePrice) {
-            System.out.println("attach service total: " + ase);
-            sumAttachServicePrice += ase;
-        }
-
-        //Lấy ra tổng tiền ghế
-        double sumSeatPrice = 0.0;
-        List<Double> seatPrice = transactionService.getSeatPrice(id, startDate, endDate);
-        for (Double seat : attachServicePrice) {
-            System.out.println("seat price :: " + seat);
-            sumSeatPrice += seat;
-        }
-
-        //tổng lại chia 10000, tỷ lệ 10000vnd = 1 điểm
-        double totalPoint = (sumAttachServicePrice + sumSeatPrice) / 10000;
 
         //lấy ra danh sách giao dịch
         Pageable pageable = PageRequest.of(pageNo, 10);
-        Page<Transaction> history = transactionService.getGainedPointTransaction(id, startDate, endDate, totalPoint, pageable);
-        if(history.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
+        Page<Transaction> history = transactionService.getGainedPointTransaction(id, startDate, endDate, pageable);
 
         //trả về kết quả
         if (history.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } else {
 
-            //kiểm tra thông tin lấy được đúng hay sai
+            //set số điểm nhận dc thông qua cho giao dịch
             for (Transaction t : history) {
+                System.out.println("__________________" +t.getId());
+                t.setPointGained(letTotal(t.getId(),startDate,endDate));
+                System.out.println(letTotal(t.getId(),startDate,endDate));
                 System.out.println("----");
                 System.out.println(t.getShowTime().getFilm().getName());
             }
@@ -147,10 +162,11 @@ public class MemberController {
                                                                   @RequestParam String startDate,
                                                                   @RequestParam String endDate,
                                                                   @RequestParam int pageNo) {
-        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(id, startDate, endDate);
-        if (attachServicePrice.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+
+//        List<Double> attachServicePrice = transactionService.getAllAttachServicePrice(id, startDate, endDate);
+//        if (attachServicePrice.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
         if (isIdWrong(id) || isDateWrong(startDate, endDate)) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }

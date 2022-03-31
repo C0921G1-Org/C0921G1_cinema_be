@@ -20,6 +20,9 @@ public class MemberRestController_tradingPoint {
     @Autowired
     private MockMvc mockMvc;
 
+    /**
+     * Đổi điểm của người dùng có id null
+     */
     @Test
     public void tradingPoint_1() throws Exception {
         this.mockMvc.perform(
@@ -29,6 +32,9 @@ public class MemberRestController_tradingPoint {
                 .andExpect(status().is4xxClientError());
     }
 
+    /**
+     * Đổi điểm của người dùng có id rỗng
+     */
     @Test
     public void tradingPoint_2() throws Exception {
         this.mockMvc.perform(
@@ -38,6 +44,9 @@ public class MemberRestController_tradingPoint {
                 .andExpect(status().is4xxClientError());
     }
 
+    /**
+     * Đổi điểm của người dùng có id không tồn tại trong DB
+     */
     @Test
     public void tradingPoint_3() throws Exception {
         this.mockMvc.perform(
