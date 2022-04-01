@@ -1,6 +1,15 @@
+<<<<<<< HEAD
+projectKey=C0921G1_ReviewCode_HungNM
+serverUrl=http://192.168.1.78:9000
+serverVersion=9.3.0.51899
+dashboardUrl=http://192.168.1.78:9000/dashboard?id=C0921G1_ReviewCode_HungNM
+ceTaskId=AX_fEbq9wt3wMxMS-X3Z
+ceTaskUrl=http://192.168.1.78:9000/api/ce/task?id=AX_fEbq9wt3wMxMS-X3Z
+=======
 projectKey=C0921G1_ReviewCode_TaiLM
 serverUrl=http://192.168.1.78:9000
 serverVersion=9.3.0.51899
 dashboardUrl=http://192.168.1.78:9000/dashboard?id=C0921G1_ReviewCode_TaiLM
 ceTaskId=AX_fSghOwt3wMxMS-X4i
 ceTaskUrl=http://192.168.1.78:9000/api/ce/task?id=AX_fSghOwt3wMxMS-X4i
+>>>>>>> 88fedb13877f673bcfa52382159a6e4300c6ef5b
