@@ -35,6 +35,17 @@ public class Transaction {
     private String transactionalDate;
     private String ticketStatus;
 
+    public Integer getCheckAcceptTicket() {
+        return checkAcceptTicket;
+    }
+
+    public void setCheckAcceptTicket(Integer checkAcceptTicket) {
+        this.checkAcceptTicket = checkAcceptTicket;
+    }
+
+    //AnhVN tạo cột check thông tin vé đã được nhận
+    private Integer checkAcceptTicket;
+
     @OneToMany(mappedBy = "transaction")
     @JsonBackReference(value = "transaction_attachedService")
     private List<AttachedService> attachedServices;
