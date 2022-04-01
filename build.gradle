@@ -3,7 +3,6 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
     id 'org.sonarqube' version '3.0'
-
 }
 
 group = 'com.example'
@@ -57,6 +56,5 @@ sonarqube {
         property 'sonar.login', '[c411f85018504e7c7cf185253d699d752a4d5b76]'
         property 'sonar.projectKey', 'C0921G1_ReviewCode_DatTC'
         property 'sonar.projectName', 'C0921G1_ReviewCode_DatTC'
-
     }
 }
