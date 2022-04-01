@@ -46,6 +46,8 @@ public class Transaction {
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Member member;
 
+    // cột dùng điểm và nhận điểm
+
     private Integer checkAcceptTicket;
     private double pointGained;
     private double pointUsed;
@@ -53,6 +55,22 @@ public class Transaction {
 
     public Integer getId() {
         return id;
+    }
+
+    public double getPointGained() {
+        return pointGained;
+    }
+
+    public void setPointGained(double pointGained) {
+        this.pointGained = pointGained;
+    }
+
+    public double getPointUsed() {
+        return pointUsed;
+    }
+
+    public void setPointUsed(double pointUsed) {
+        this.pointUsed = pointUsed;
     }
 
     public void setId(Integer id) {

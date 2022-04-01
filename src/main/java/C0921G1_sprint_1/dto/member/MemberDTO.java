@@ -8,11 +8,13 @@ import javax.validation.constraints.NotNull;
 
 import C0921G1_sprint_1.model.member.Ward;
 import C0921G1_sprint_1.model.security.Account;
+import C0921G1_sprint_1.model.transaction.Transaction;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Email;
+
 import java.util.regex.Pattern;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -22,21 +24,19 @@ import java.util.Date;
 import java.util.regex.Matcher;
 
 public class MemberDTO implements Validator {
+
+
     private String id;
 
     @NotBlank
-//    @Pattern(regexp = "^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$",
-//            message = "Tên cần viết Hoa Chữ cái đầu")
     private String name;
 
     @NotNull
     private Integer gender;
 
-    @NotBlank
     private String phone;
 
     @NotBlank
-
     @Email
     private String email;
 
@@ -48,31 +48,22 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String image;
 
+
     @NotBlank
-//    @Pattern(regexp = "\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
     private String dateOfBirth;
 
     @NotBlank
     private String identityNumber;
 
-
     @NotBlank
     private String password;
 
-    private int wardId;
+    private Integer wardId;
 
 //    private Account account;
 
-    public int getWardId() {
-        return wardId;
-    }
-
-    public void setWardId(int wardId) {
-        this.wardId = wardId;
-    }
-
-    public MemberDTO() {
-    }
+    //    private Ward ward;
+    private City city;
 
     public String getId() {
         return id;
@@ -162,6 +153,26 @@ public class MemberDTO implements Validator {
         this.password = password;
     }
 
+    public Integer getWardId() {
+        return wardId;
+    }
+
+    public void setWardId(Integer wardId) {
+        this.wardId = wardId;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public MemberDTO() {
+    }
+
+
     @Override
     public boolean supports(Class<?> clazz) {
         return false;
@@ -171,6 +182,34 @@ public class MemberDTO implements Validator {
     public void validate(Object target, Errors errors) {
         MemberDTO memberDTO = (MemberDTO) target;
 
+//        if (!memberDTO.name.matches("^[\\p{Lu}\\p{Ll}\\s0-9]+$") || memberDTO.name.length() > 50 || memberDTO.name.length() < 1) {
+//            errors.rejectValue("name",
+//                    "name.wrongName",
+//                    "Tên không được phép có số hoặc ký tự đặc biệt. Tối thiểu 1 ký tự và tối đa 50 ký tự");
+//        }
+
+
+        if (memberDTO.gender == null || memberDTO.gender < 0 || memberDTO.gender > 1) {
+            errors.rejectValue("gender", "gender.wrongGender", "Vui lòng chọn giới tính phù hợp");
+        }
+
+
+
+        if (!memberDTO.email.matches("^[A-Za-z0-9._]+[@][A-Za-z0-9._]+[.][A-Za-z0-9._]+$")) {
+            errors.rejectValue("email", "email.wrongMail", "sai format Email.");
+        }
+
+        if (memberDTO.email.length() < 10 || memberDTO.email.length() > 40) {
+            errors.rejectValue("email", "email.wrongLengthMail", "Email có độ dài tối thiểu là 10 đến 40 ký tự.");
+        }
+
+        if (!memberDTO.identityNumber.matches("^\\d{9,10}$")) {
+            errors.rejectValue("identityNumber", "identityNumber.wrongIdentityCard", "CMND phải có 9 hoặc 10 số");
+        }
+
+        if (memberDTO.wardId == null) {
+            errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
+        }
         if (checkAgeMember(memberDTO.getDateOfBirth())) {
             errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 đến 100");
         }
@@ -232,5 +271,5 @@ public class MemberDTO implements Validator {
 
     }
 
-
 }
+

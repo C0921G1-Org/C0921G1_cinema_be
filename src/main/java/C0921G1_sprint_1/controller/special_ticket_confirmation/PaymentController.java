@@ -35,9 +35,6 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-
-
-
     // thêm mới lịch sử xong redirect về trang lịch sử
     @PostMapping(value = "/pay", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> addTracsaction(@Valid @RequestBody Transaction transaction , BindingResult bindingResult){
@@ -55,10 +52,6 @@ public class PaymentController {
         }
         return new ResponseEntity<>(paymentService.saveTransaction(transaction) , HttpStatus.OK);
     }
-
-
-
-
 
 
         // chức năng send mail

@@ -1,23 +1,18 @@
 package C0921G1_sprint_1.repository.member_account;
 
-import C0921G1_sprint_1.dto.member.MemberDTO;
 import C0921G1_sprint_1.dto.member.MemberHistoryDTO;
 import C0921G1_sprint_1.model.member.Member;
-import C0921G1_sprint_1.model.security.Account;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import sun.applet.resources.MsgAppletViewer_es;
 
 import javax.transaction.Transactional;
 
 @Repository
 public interface MemberAccountRepository extends JpaRepository<Member, String> {
-
-
     // NhanNT query Trading History
     @Query(value =
         "Select t.transactional_date `transactionalDate`, t.`code` , s.`name` `screenName` , f.`name` `filmName`, sum(sety.price) `ticketPrice`, m.`point` \n" +
