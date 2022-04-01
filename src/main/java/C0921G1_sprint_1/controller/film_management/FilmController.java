@@ -1,12 +1,13 @@
 package C0921G1_sprint_1.controller.film_management;
 
+import C0921G1_sprint_1.model.film.Film;
+import C0921G1_sprint_1.service.film_management.FilmService;
 
 import C0921G1_sprint_1.dto.film.FilmDTO;
-import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.model.film.FilmType;
-import C0921G1_sprint_1.service.film_management.FilmService;
 import C0921G1_sprint_1.service.film_management.FilmTypeService;
 import org.springframework.beans.BeanUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,13 +16,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "*")
 @RestController
-@RequestMapping(value = "/film")
+@CrossOrigin("*")
+@RequestMapping("/c09/user/film")
 public class FilmController {
     // Huynh Minh CA
     @Autowired
@@ -45,15 +47,28 @@ public class FilmController {
                 return new ResponseEntity<>(filmPage, HttpStatus.OK);
             }
         } catch (NullPointerException e) {
+
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
 
+    /*DatTC - API lấy dữ liệu tất cả film */
+    @GetMapping("/filmList")
+    public ResponseEntity<List<Film>> getAllFilmList() {
+        List<Film> filmList = this.filmService.getAllFilm();
+        if (filmList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else {
+            return new ResponseEntity<>(filmList, HttpStatus.OK);
+        }
     }
 
     //TaiLM xóa phim
-    @GetMapping("/delete/{id}")
+
+    @GetMapping("delete/{id}")
     public ResponseEntity<?> delete(@PathVariable Integer id) {
-        Optional<Film> filmOptional = filmService.findById(id);
+        Optional<Film> filmOptional = filmService.findByIdFilm(id);
+
         if (filmOptional.isPresent()) {
             filmService.deleteFilm(filmOptional.get().getId());
             return new ResponseEntity<>(HttpStatus.OK);
@@ -99,7 +114,8 @@ public class FilmController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    //Huynh Minh Ca get list FilmType
+
+    //Huynh Minh Ca
     @GetMapping("/filmType")
     protected ResponseEntity<Iterable<FilmType>> findAllFilmType() {
         List<FilmType> filmTypeList = (List<FilmType>) filmTypeService.findAll();
@@ -110,5 +126,37 @@ public class FilmController {
     }
 
 
+    // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
+    @GetMapping("/list-client")
+    public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") Integer seeMore,
+                                                        @RequestParam(defaultValue = "0") Integer page,
+                                                        @RequestParam(defaultValue = "") String actor,
+                                                        @RequestParam(defaultValue = "") String name,
+                                                        @RequestParam(defaultValue = "") String typeFilm,
+                                                        @RequestParam(defaultValue = "") String filmStatus) {
+        try {
+            Pageable pageable = PageRequest.of(page, seeMore);
+            Page<Film> filmPage = filmService.findAllFilmClient(actor, name, typeFilm, filmStatus, pageable);
+            if (filmPage.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            } else {
+                return new ResponseEntity<>(filmPage, HttpStatus.OK);
+            }
+        } catch (NullPointerException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    /*DatTC - API lấy dữ liệu theo id */
+    @GetMapping("/filmList/{id}")
+    public ResponseEntity<Film> findFilmById(@PathVariable Integer id){
+        Optional<Film> filmOptional = this.filmService.findByIdFilm(id);
+        if (!filmOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(filmOptional.get(), HttpStatus.OK);
+        }
+    }
 }
+
 

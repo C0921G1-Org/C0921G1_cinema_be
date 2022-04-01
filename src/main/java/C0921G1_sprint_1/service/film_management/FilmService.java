@@ -1,18 +1,25 @@
 package C0921G1_sprint_1.service.film_management;
 
-
 import C0921G1_sprint_1.model.film.Film;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.util.List;
 import java.util.Optional;
 
-@Service
 public interface FilmService {
+
+
+    // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
+    Page<Film> findAllFilmClient(String actor, String name, String typeFilm, String filmStatus, Pageable pageable);
+
+    //TaiLM lấy danh sách phim phím quản lý
 
     Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable);
 
+    //TaiLM xóa phim
     void deleteFilm(Integer id);
 
     Optional<Film> findByIdFilm(Integer id);
@@ -21,12 +28,14 @@ public interface FilmService {
     //CaHM save film
     void saveFilm(Film film);
 
-    Iterable<Film> findAllFilm();
 
 
-    Optional<Film> findById(Integer id);
+    // Đạt làm
+    List<Film> getAllFilm();
 
 
 //CaHM
     void updateFilm(Film film);
+
 }
+

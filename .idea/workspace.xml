@@ -16,9 +16,18 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:list-film-client-HungNM" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
+    <list default="true" id="d59c8251-e3f2-4751-bde9-d1c339774c66" name="Default Changelist" comment="" />
+=======
     <list default="true" id="3246a505-7b97-45a2-92c5-6b06d315495e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" afterDir="false" />
@@ -39,6 +48,7 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/film_management/FilmServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/film_management/FilmServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/film_management/FilmController.java" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/film/FilmDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/film/FilmDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/film/ValidateStartAndEndDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/dto/film/ValidateStartAndEndDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/film/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/film/Film.java" afterDir="false" />
@@ -48,7 +58,14 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/film_management/FilmServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/Controller_CreateFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/Controller_CreateFilm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/Controller_EditFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/Controller_EditFilm.java" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/film_controller/FilmController_deleteFilm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/film_controller/FilmController_deleteFilm.java" afterDir="false" />
+=======
+>>>>>>> f05be5aa03043813a070b454009adaffb99108f0
+>>>>>>> 985718e90a0bad7efc7882a150c97c5fc07ce1bb
     </list>
+>>>>>>> 49efa210dc0a1675fd31340eae6443823cb6a516
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,21 +75,6 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
-  </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <task path="$PROJECT_DIR$">
-          <activation />
-        </task>
-        <projects_view>
-          <tree_state>
-            <expand />
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,12 +86,19 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="create-film-management-CaHM" />
+=======
+        <entry key="$PROJECT_DIR$" value="dev" />
+>>>>>>> 985718e90a0bad7efc7882a150c97c5fc07ce1bb
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="26rPrp8YyK8PelT2uTc7y04OLPS" />
+  <component name="ProjectId" id="26uh3AA8oSpJG7HPmeiThCFqhBV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -103,89 +112,103 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/c09g-spring-boot-junit-5" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+<<<<<<< HEAD
+    <property name="restartRequiresConfirmation" value="false" />
+=======
+>>>>>>> 49efa210dc0a1675fd31340eae6443823cb6a516
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+>>>>>>> 985718e90a0bad7efc7882a150c97c5fc07ce1bb
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management" />
+      <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\film_management" />
+      <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\film_management" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.Sprint1Application">
-    <configuration name="FilmController_getListFilm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint_1.test" />
+    <configuration name="FilmServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.service.film_management.FilmServiceImpl" />
+      <module name="sprint_1.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="C0921G1_sprint_1.film_controller.*" />
+          <option name="PATTERN" value="C0921G1_sprint_1.service.film_management.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.film_controller" />
-      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.film_controller.FilmController_getListFilm" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmController_getListFilm.getListFilm_1_e" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_name_typeFilm_10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_1.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="C0921G1_sprint_1.film_controller.*" />
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.film_controller" />
-      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.film_controller.FilmController_getListFilm" />
-      <option name="METHOD_NAME" value="getListFilm_1_e" />
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_name_typeFilm_10" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmController_getListFilm.getListFilm_2_d" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_startDate_11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_1.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="C0921G1_sprint_1.film_controller.*" />
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.film_controller" />
-      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.film_controller.FilmController_getListFilm" />
-      <option name="METHOD_NAME" value="getListFilm_2_d" />
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_startDate_11" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmController_getListFilm.getListFilm_3_e" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_startDate_name" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_1.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="C0921G1_sprint_1.film_controller.*" />
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.film_controller" />
-      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.film_controller.FilmController_getListFilm" />
-      <option name="METHOD_NAME" value="getListFilm_3_e" />
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_startDate_name" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FilmController_getListFilm.getListFilm_4_e" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FilmController_findAllFilmClient.findAllFilmClient_typeFilm_10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_1.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="C0921G1_sprint_1.film_controller.*" />
+          <option name="PATTERN" value="C0921G1_sprint_1.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.film_controller" />
-      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.film_controller.FilmController_getListFilm" />
-      <option name="METHOD_NAME" value="getListFilm_4_e" />
+      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller" />
+      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.FilmController_findAllFilmClient" />
+      <option name="METHOD_NAME" value="findAllFilmClient_typeFilm_10" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,11 +223,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.FilmController_getListFilm" />
-        <item itemvalue="JUnit.FilmController_getListFilm.getListFilm_4_e" />
-        <item itemvalue="JUnit.FilmController_getListFilm.getListFilm_3_e" />
-        <item itemvalue="JUnit.FilmController_getListFilm.getListFilm_2_d" />
-        <item itemvalue="JUnit.FilmController_getListFilm.getListFilm_1_e" />
+        <item itemvalue="Application.FilmServiceImpl" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_name_typeFilm_10" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_startDate_11" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_startDate_name" />
+        <item itemvalue="JUnit.FilmController_findAllFilmClient.findAllFilmClient_typeFilm_10" />
       </list>
     </recent_temporary>
   </component>
@@ -213,10 +236,28 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3246a505-7b97-45a2-92c5-6b06d315495e" name="Default Changelist" comment="" />
-      <created>1648178939335</created>
+      <changelist id="d59c8251-e3f2-4751-bde9-d1c339774c66" name="Default Changelist" comment="" />
+      <created>1648279176493</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
+      <updated>1648279176493</updated>
+      <workItem from="1648279184005" duration="940000" />
+      <workItem from="1648281457066" duration="6677000" />
+      <workItem from="1648294763863" duration="676000" />
+      <workItem from="1648304197916" duration="83000" />
+      <workItem from="1648304821463" duration="4504000" />
+      <workItem from="1648366988162" duration="2078000" />
+      <workItem from="1648384358020" duration="4610000" />
+      <workItem from="1648435926396" duration="1054000" />
+      <workItem from="1648437156097" duration="16000" />
+      <workItem from="1648437421864" duration="4611000" />
+      <workItem from="1648448762128" duration="11390000" />
+      <workItem from="1648516495556" duration="18592000" />
+      <workItem from="1648563606696" duration="1291000" />
+      <workItem from="1648603290187" duration="3262000" />
+      <workItem from="1648622110597" duration="5527000" />
+=======
       <updated>1648178939335</updated>
       <workItem from="1648179002826" duration="485000" />
       <workItem from="1648179570131" duration="2914000" />
@@ -229,8 +270,14 @@
       <workItem from="1648373506513" duration="742000" />
       <workItem from="1648436024699" duration="7537000" />
       <workItem from="1648449153969" duration="11500000" />
+<<<<<<< HEAD
+      <workItem from="1648468459241" duration="753000" />
+      <workItem from="1648469572387" duration="69000" />
+      <workItem from="1648518835385" duration="1398000" />
+=======
       <workItem from="1648507390297" duration="6147000" />
       <workItem from="1648517631739" duration="2202000" />
+<<<<<<< HEAD
       <workItem from="1648595368900" duration="671000" />
       <workItem from="1648602668864" duration="3686000" />
       <workItem from="1648609272938" duration="581000" />
@@ -248,6 +295,10 @@
       <workItem from="1648733883906" duration="1074000" />
       <workItem from="1648735207138" duration="4283000" />
       <workItem from="1648776916469" duration="1293000" />
+=======
+>>>>>>> f05be5aa03043813a070b454009adaffb99108f0
+>>>>>>> 49efa210dc0a1675fd31340eae6443823cb6a516
+>>>>>>> 985718e90a0bad7efc7882a150c97c5fc07ce1bb
     </task>
     <servers />
   </component>
@@ -259,7 +310,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="list-film-client-HungNM" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -267,9 +330,44 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1648179818614">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1648633611824">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1648633611824" />
+    <state x="93" y="87" width="1073" height="501" key="DiffContextDialog" timestamp="1648305308497">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="93" y="87" width="1073" height="501" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1648305308497" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1648437171234">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1648437171234" />
+    <state width="1237" height="339" key="GridCell.Tab.0.bottom" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.0.center" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.0.left" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.0.right" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+<<<<<<< HEAD
+    <state width="1237" height="339" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.bottom" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+=======
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1648457457811" />
+<<<<<<< HEAD
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom" timestamp="1648469377984">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+<<<<<<< HEAD
     <state x="137" y="19" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1648179818614" />
     <state x="457" y="57" key="#com.intellij.ide.util.MemberChooser" timestamp="1648540369253">
       <screen x="0" y="0" width="1280" height="689" />
@@ -281,8 +379,29 @@
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1648457457811" />
     <state width="1237" height="349" key="GridCell.Tab.0.bottom" timestamp="1648778910547">
-      <screen x="0" y="0" width="1280" height="689" />
+=======
+    <state width="1323" height="200" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648469377984" />
+    <state width="1323" height="200" key="GridCell.Tab.0.center" timestamp="1648469377984">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="200" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1648469377984" />
+    <state width="1323" height="200" key="GridCell.Tab.0.left" timestamp="1648469377984">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="200" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1648469377984" />
+    <state width="1323" height="200" key="GridCell.Tab.0.right" timestamp="1648469377984">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1323" height="200" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648469377984" />
+    <state width="1323" height="254" key="GridCell.Tab.1.bottom" timestamp="1648208318630">
+      <screen x="0" y="0" width="1366" height="728" />
+=======
+    <state width="1237" height="2" key="GridCell.Tab.0.bottom" timestamp="1648520082635">
+>>>>>>> 985718e90a0bad7efc7882a150c97c5fc07ce1bb
+      <screen x="0" y="0" width="1280" height="689" />
+>>>>>>> 49efa210dc0a1675fd31340eae6443823cb6a516
+    </state>
+<<<<<<< HEAD
     <state width="1237" height="349" key="GridCell.Tab.0.bottom/0.0.1280.689@0.0.1280.689" timestamp="1648778910547" />
     <state width="1323" height="200" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648461531464" />
     <state width="1237" height="349" key="GridCell.Tab.0.center" timestamp="1648778910547">
@@ -299,10 +418,33 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state width="1237" height="349" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1648778910547" />
+=======
+    <state width="1237" height="339" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.center" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.left" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="339" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.right" timestamp="1648631224679">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+<<<<<<< HEAD
+    <state width="1237" height="339" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+=======
+    <state width="1237" height="2" key="GridCell.Tab.0.right/0.0.1280.689@0.0.1280.689" timestamp="1648520082635" />
+>>>>>>> 985718e90a0bad7efc7882a150c97c5fc07ce1bb
     <state width="1323" height="200" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1648461531464" />
     <state width="1237" height="349" key="GridCell.Tab.1.bottom" timestamp="1648778910547">
       <screen x="0" y="0" width="1280" height="689" />
+>>>>>>> f05be5aa03043813a070b454009adaffb99108f0
+>>>>>>> 49efa210dc0a1675fd31340eae6443823cb6a516
     </state>
+<<<<<<< HEAD
     <state width="1237" height="349" key="GridCell.Tab.1.bottom/0.0.1280.689@0.0.1280.689" timestamp="1648778910547" />
     <state width="1323" height="254" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1648208318630" />
     <state width="1237" height="349" key="GridCell.Tab.1.center" timestamp="1648778910547">
@@ -349,5 +491,28 @@
       <screen x="0" y="0" width="1280" height="689" />
     </state>
     <state x="297" y="153" key="run.anything.popup/0.0.1280.689@0.0.1280.689" timestamp="1648646930575" />
+=======
+    <state width="1237" height="204" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state width="1237" height="204" key="GridCell.Tab.2.center" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state width="1237" height="204" key="GridCell.Tab.2.left" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state width="1237" height="204" key="GridCell.Tab.2.right" timestamp="1648553402658">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1648553402658" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1648441517269">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1648441517269" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1648305864542">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1648305864542" />
+>>>>>>> 985718e90a0bad7efc7882a150c97c5fc07ce1bb
   </component>
 </project>
