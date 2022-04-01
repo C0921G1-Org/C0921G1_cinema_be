@@ -19,9 +19,6 @@ public class SeatType {
     @JsonBackReference(value = "seatType_seats")
     private List<Seat> seats;
 
-    public SeatType() {
-    }
-
     public Integer getId() {
         return id;
     }

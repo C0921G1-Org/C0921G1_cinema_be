@@ -63,4 +63,20 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("secondValue") Integer secondValue
     );
 
+    //search members by name and point default - KhanhLDQ
+    @Query(value = "select * from member m " +
+            "where (m.name like %:name%) and (m.point > 0) order by m.id",
+            countQuery = "select count(*) from member m " +
+                    "where (m.name like %:name%) and (m.point > 0)", nativeQuery = true)
+    Page<Member> findMembersByNameAndPointDefault(
+            Pageable pageable,
+            @Param("name") String name
+    );
+
+    //check existed email in database - KhanhLDQ
+    @Query(value = "select * from member m where m.email = :email", nativeQuery = true)
+    Optional<Member> existedMemberByEmail(
+            @Param("email") String email
+    );
+
 }

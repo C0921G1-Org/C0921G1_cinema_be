@@ -40,9 +40,6 @@ public class Member {
     @JsonBackReference(value = "transactions_member")
     private Set<Transaction> transactions;
 
-    public Member() {
-    }
-
     public String getDateOfBirth() {
         return dateOfBirth;
     }

@@ -36,9 +36,6 @@ public class Film {
     private String version;
     private Integer flagDelete;
 
-    public Film() {
-    }
-
     public Set<ShowTime> getShowTimes() {
         return showTimes;
     }

@@ -14,14 +14,9 @@ public class Screen {
     private Integer id;
     private String name;
 
-
-
     @OneToMany(mappedBy = "screen")
     @JsonBackReference(value = "showtime_screens")
     private List<ShowTime> showTime;
-
-    public Screen() {
-    }
 
     public List<ShowTime> getShowTime() {
         return showTime;

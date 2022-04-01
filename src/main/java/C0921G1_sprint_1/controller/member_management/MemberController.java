@@ -19,7 +19,9 @@ import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @CrossOrigin(origins = "*")
@@ -109,12 +111,25 @@ public class MemberController {
         memberDTO.setId(id);
         Member member = new Member();
         BeanUtils.copyProperties(memberDTO,member);
+
+        System.out.println(member.getEmail());
+
+        //check existed email - KhanhLDQ
+        Map<String, String> listErrors = new HashMap<>();
+
+        Optional<Member> existedEmail = this.memberService.existedMemberByEmail(member.getEmail());
+
+        if (existedEmail.isPresent()) {
+            listErrors.put("email","existedEmail");
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+
         this.memberService.saveMember(member);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     //search members by name and point range - KhanhLDQ
-    @GetMapping(value = "/member-list/search")
+    @GetMapping(value = "/member-list/search-point-range")
     public ResponseEntity<Page<Member>> getMembersByNameAndPointRange(
             @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
             @RequestParam(name = "name", required = false) String name,
@@ -128,6 +143,29 @@ public class MemberController {
 
             if (members.isEmpty())
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+            return new ResponseEntity<>(members,HttpStatus.OK);
+        }
+        catch (NullPointerException nullPointerException) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    //search members by name and point default - KhanhLDQ
+    @GetMapping(value = "/member-list/search-point-default")
+    public ResponseEntity<Page<Member>> getMembersByNameAndPointDefault(
+            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+            @RequestParam(name = "name", required = false) String name
+    ) {
+        try {
+            Pageable pageable = PageRequest.of(page,5);
+            Page<Member> members = this.memberService.findMembersByNameAndPointDefault(pageable,name);
+
+            //return status: no content - body: null
+            if (members.isEmpty()) {
+//                System.out.println(members.getContent());
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
 
             return new ResponseEntity<>(members,HttpStatus.OK);
         }

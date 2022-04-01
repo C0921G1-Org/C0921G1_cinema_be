@@ -17,9 +17,6 @@ public class AttachedService {
     @ManyToOne(targetEntity = Transaction.class)
     private Transaction transaction;
 
-    public AttachedService() {
-    }
-
     public Integer getId() {
         return id;
     }

@@ -3,6 +3,7 @@ package C0921G1_sprint_1.dto.member;
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.transaction.Transaction;
+import C0921G1_sprint_1.repository.member_management.MemberRepository;
 import C0921G1_sprint_1.service.member_management.MemberService;
 import C0921G1_sprint_1.service.member_management.MemberServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 public class MemberDTO implements Validator {
@@ -56,9 +58,6 @@ public class MemberDTO implements Validator {
     private City city;
 
     private Set<Transaction> transactions;
-
-    public MemberDTO() {
-    }
 
     public String getId() {
         return id;
@@ -170,8 +169,7 @@ public class MemberDTO implements Validator {
         if (RegexMember.checkAgeMember(dateOfBirth)) {
             errors.rejectValue("dateOfBirth","dateOfBirth.age");
         }
+
     }
-
-
 
 }

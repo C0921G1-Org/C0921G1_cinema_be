@@ -50,4 +50,15 @@ public class MemberServiceImpl implements MemberService {
     public Page<Member> findMembersByNameAndPointRange(Pageable pageable, String name, Integer firstValue, Integer secondValue) {
         return this.memberRepository.findMembersByNameAndPointRange(pageable, name, firstValue, secondValue);
     }
+
+    @Override
+    public Page<Member> findMembersByNameAndPointDefault(Pageable pageable, String name) {
+        return this.memberRepository.findMembersByNameAndPointDefault(pageable, name);
+    }
+
+    @Override
+    public Optional<Member> existedMemberByEmail(String email) {
+        return this.memberRepository.existedMemberByEmail(email);
+    }
+
 }

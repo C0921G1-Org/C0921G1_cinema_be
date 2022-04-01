@@ -21,9 +21,6 @@ public class Seat {
     @ManyToMany(mappedBy = "seats")
     private Set<Transaction> transactions;
 
-    public Seat() {
-    }
-
     public Set<Transaction> getTransactions() {
         return transactions;
     }

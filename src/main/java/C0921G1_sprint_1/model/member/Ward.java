@@ -15,9 +15,6 @@ public class Ward {
     @ManyToOne(targetEntity = District.class)
     private District district;
 
-    public Ward() {
-    }
-
     public Integer getId() {
         return id;
     }

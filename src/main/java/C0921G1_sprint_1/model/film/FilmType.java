@@ -17,9 +17,6 @@ public class FilmType {
     @JsonBackReference(value = "filmType_film")
     private Set<Film> films;
 
-    public FilmType() {
-    }
-
     public String getId() {
         return id;
     }

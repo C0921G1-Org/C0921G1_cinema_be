@@ -21,4 +21,8 @@ public interface MemberService {
 
     Page<Member> findMembersByNameAndPointRange(
             Pageable pageable, String name, Integer firstValue, Integer secondValue);
+
+    Page<Member> findMembersByNameAndPointDefault(Pageable pageable, String name);
+
+    Optional<Member> existedMemberByEmail(String email);
 }
