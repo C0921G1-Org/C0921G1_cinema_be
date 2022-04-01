@@ -36,5 +36,4 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
     Page<Film> findAllFilmClient(String startDate, String name, String statusFilm, String typeFilm, Pageable pageable);
 
 
-
 }

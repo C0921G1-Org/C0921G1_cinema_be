@@ -10,6 +10,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.http.ResponseEntity;
 
+import java.util.Objects;
+
 @SpringBootTest
 public class MemberAccountController_memberHistory {
     @Autowired
@@ -32,5 +34,14 @@ public class MemberAccountController_memberHistory {
                 = this.memberAccountController.getTradingHistory(0,"Mem-001","bat");
 
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals("2022-02-02", Objects.requireNonNull(responseEntity.getBody()).iterator().next().getTransactionalDate());
+        Assertions.assertEquals("GD-0001", Objects.requireNonNull(responseEntity.getBody()).iterator().next().getCode());
+        Assertions.assertEquals("S2", Objects.requireNonNull(responseEntity.getBody()).iterator().next().getScreenName());
+        Assertions.assertEquals("Batman", Objects.requireNonNull(responseEntity.getBody()).iterator().next().getFilmName());
+        Assertions.assertEquals("150000.0", Objects.requireNonNull(responseEntity.getBody()).iterator().next().getTicketPrice());
+        Assertions.assertEquals("50000.0", Objects.requireNonNull(responseEntity.getBody()).iterator().next().getAttachedPrice());
+        Assertions.assertEquals(2.2, Objects.requireNonNull(responseEntity.getBody()).iterator().next().getPoint());
+
     }
+
 }

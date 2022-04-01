@@ -18,7 +18,6 @@ import java.io.IOException;
 /**
  * TuNk
  */
-
 @Component
 public class JwtTokenFilter extends OncePerRequestFilter {
 
@@ -42,15 +41,11 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
                 SecurityContextHolder.getContext().setAuthentication(authentication);
             }
-
         }catch (Exception e) {
             logger.error("Cannot set user authentication: {}", e);
         }
-
         filterChain.doFilter(request, response);
-
     }
-
 
     private String parseJwt(HttpServletRequest request) {
         String headerAuth = request.getHeader("Authorization");
@@ -58,9 +53,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer ")) {
             return headerAuth.substring(7, headerAuth.length());
         }
-
         return null;
     }
-
 
 }

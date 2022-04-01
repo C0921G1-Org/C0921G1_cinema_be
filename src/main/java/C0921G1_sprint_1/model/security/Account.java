@@ -19,11 +19,12 @@ public class Account {
     private String email;
 
     @OneToMany(mappedBy = "account")
- @JsonBackReference(value = "account_RoleSet")
+    @JsonBackReference("account_accountRoleList")
     private List<AccountRole> accountRoleList;
 
+
     @OneToOne(mappedBy = "account")
-    @JsonBackReference(value = "account_member")
+    @JsonBackReference("account_member")
     private Member member;
 
     public Account() {
@@ -59,6 +60,13 @@ public class Account {
 
     public void setIsEnabled(Integer isEnabled) {
         this.isEnabled = isEnabled;
+    }
+    public Integer getEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(Integer enabled) {
+        isEnabled = enabled;
     }
 
     public String getEmail() {

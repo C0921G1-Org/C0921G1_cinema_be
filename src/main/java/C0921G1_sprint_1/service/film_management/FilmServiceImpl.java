@@ -31,8 +31,6 @@ public class FilmServiceImpl implements FilmService {
     public Page<Film> findAllFilmClient(String startDate, String name, String statusFilm, String typeFilm, Pageable pageable) {
         return filmRepository.findAllFilmClient(startDate, name, statusFilm, typeFilm, pageable);
 
-
-
     }
     @Override
     public List<Film> getAllFilmList () {
