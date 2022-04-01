@@ -55,21 +55,14 @@ public class FilmServiceImpl implements FilmService {
         }
         return null;
     }
-
-    public Optional<Film> finbyIdFilm(Integer id) {
-        return filmRepository.findById(id);
-    }
+    
 
     //DatTC lấy list
     @Override
     public List<Film> getAllFilm() {
         return filmRepository.findAll();
     }
-
-    @Override
-    public Optional<Film> findById(Integer id) {
-        return filmRepository.findById(id);
-    }
+    
 
 
     // huynh minh ca save film
@@ -88,7 +81,7 @@ public class FilmServiceImpl implements FilmService {
         filmRepository.save(film);
     }
 
-    //TaiLM danh sách & tìm kiếm
+    //TaiLM danh sách & tìm kiếm phím quản lí
     @Override
     public Page<Film> findAll(String name, String startDate, String endDate, Pageable pageable) {
         return filmRepository.findAll(name, startDate, endDate, pageable);
@@ -105,5 +98,7 @@ public class FilmServiceImpl implements FilmService {
     public Optional<Film> findByIdFilm(Integer id) {
         return filmRepository.findByIdFilm(id);
     }
+    
+    
 
 }
