@@ -22,7 +22,7 @@ public class Account {
     @JsonBackReference("C0921G1")
     private Set<AccountRole> accountRoleSet;
 
-    @OneToOne(mappedBy = "account")
+    @OneToMany(mappedBy = "account")
     @JsonBackReference("account_accountRoleList")
     private List<AccountRole> accountRoleList;
 
