@@ -50,10 +50,8 @@ public class SecurityController {
                 .collect(Collectors.toList());
         Account account = accountService.findAccountByUsername(loginRequest.getUsername());
 //        Member member = memberService.findMemberById(account.getId().toString()).get();
-        Member member = account.getMember();
-//        if (member != null) {
-//            member.setAccount(null);
-//        }
+        Member member = memberService.findMemberByAccount(account).get();
+
 
         return ResponseEntity.ok(
                 new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), roles, member)
