@@ -35,7 +35,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_startDate_name_typeFilm_filmStatus_7() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0,  null, null, null,null);
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
 //    Trường hợp statusFilm, name và typeFilm bị null
@@ -43,7 +43,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_name_typeFilm_filmStatus_7() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "Matt Reeves",  null, null,null);
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
 //    Trường hợp typeFilm và statusFilm bị null
@@ -51,7 +51,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_typeFilm_filmStatus_7() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "THE BATMAN", null,null);
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp typeFilm bị null
@@ -59,7 +59,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_filmStatus_7() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "SPIDER-MAN: NO WAY HOME", "Hành Động",null);
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
 
@@ -69,21 +69,29 @@ public class FilmController_findAllFilmClient {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "", "", "", "");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(2, responseEntity.getBody().getTotalPages());
+        Assertions.assertEquals(10, responseEntity.getBody().getTotalElements());
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
+                responseEntity.getBody().getContent().get(0).getName());
+        Assertions.assertEquals("Tom Holland",
+                responseEntity.getBody().getContent().get(0).getActor());
+        Assertions.assertEquals("2022-03-01",
+                responseEntity.getBody().getContent().get(0).getStartDate());
     }
 
 //    Trường hợp name , statusFilm và typeFilm bị rỗng
     @Test
     public void findAllFilmClient_name_typeFilm_filmStatus_8() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "", "", "");
+                = this.filmController.findAllFilmClient(6, 0, "Tom Holland", "", "", "");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
-        Assertions.assertEquals("THE BATMAN",
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
                 responseEntity.getBody().getContent().get(0).getName());
-        Assertions.assertEquals("Robert Pattinson",
+        Assertions.assertEquals("Tom Holland",
                 responseEntity.getBody().getContent().get(0).getActor());
-        Assertions.assertEquals("2022-03-06",
+        Assertions.assertEquals("2022-03-01",
                 responseEntity.getBody().getContent().get(0).getStartDate());
     }
 
@@ -92,15 +100,15 @@ public class FilmController_findAllFilmClient {
     @Test
     public void findAllFilmClient_typeFilm_filmStatus_8() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "THE BATMAN", "","");
+                = this.filmController.findAllFilmClient(6, 0, "Tom Holland", "SPIDER-MAN: NO WAY HOME", "","");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
-        Assertions.assertEquals("THE BATMAN",
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
                 responseEntity.getBody().getContent().get(0).getName());
-        Assertions.assertEquals("Robert Pattinson",
+        Assertions.assertEquals("Tom Holland",
                 responseEntity.getBody().getContent().get(0).getActor());
-        Assertions.assertEquals("2022-03-06",
+        Assertions.assertEquals("2022-03-01",
                 responseEntity.getBody().getContent().get(0).getStartDate());
     }
 
@@ -108,15 +116,15 @@ public class FilmController_findAllFilmClient {
     @Test
     public void findAllFilmClient_filmStatus_8() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "THE BATMAN", "Hành Động","");
+                = this.filmController.findAllFilmClient(6, 0, "Tom Holland", "SPIDER-MAN: NO WAY HOME", "Hành Động","");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
-        Assertions.assertEquals("THE BATMAN",
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
                 responseEntity.getBody().getContent().get(0).getName());
-        Assertions.assertEquals("Robert Pattinson",
+        Assertions.assertEquals("Tom Holland",
                 responseEntity.getBody().getContent().get(0).getActor());
-        Assertions.assertEquals("2022-03-06",
+        Assertions.assertEquals("2022-03-01",
                 responseEntity.getBody().getContent().get(0).getStartDate());
     }
 
@@ -125,7 +133,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_startDate_name_typeFilm_filmStatus_9() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "jjnkk", "Phim Không Có", "Chưa Biết","phim đã chiếu");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp actor  không tồn tại trong database, name rỗng và typeFilm rỗng
@@ -133,7 +141,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_name_typeFilm_filmStatus_9() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "jkhjkhjnj", "", "","");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp actor  không tồn tại trong database, name không tồn tại trong database, filmStatus và typeFilm rỗng
@@ -141,7 +149,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_typeFilm_filmStatus_9() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "hbhjbjbj", "Phim Không Có", "","");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp actor  không tồn tại trong database, name không tồn tại trong database,  typeFilm không tồn tại trong database và typeFilm rỗng
@@ -149,7 +157,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_filmStatus_9() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "Peyton Reed", "Phim Không Có", "sgfsgf","");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
 //    Trường hợp tồn tại dữ liệu trong database nhưng nhập sai actor, name, typeFilm và statusDate
@@ -157,7 +165,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_startDate_name_typeFilm_filmStatus_10() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "sđsdf", "âsdasd", "sdvvad","12");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp tồn tại dữ liệu trong database nhưng nhập sai actor
@@ -165,7 +173,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_name_typeFilm_filmStatus_10() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "sdsd", "THE BATMAN", "Hành Động","1");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp tồn tại dữ liệu trong database nhưng nhập sai actor và name
@@ -173,7 +181,7 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_typeFilm_filmStatus_10() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "2dfdf", "ffgf", "Hành Động","1");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp tồn tại dữ liệu trong database nhưng nhập sai actor , name và typeFilm
@@ -181,22 +189,22 @@ public class FilmController_findAllFilmClient {
     public void findAllFilmClient_filmStatus_10() {
         ResponseEntity<Page<Film>> responseEntity
                 = this.filmController.findAllFilmClient(6, 0, "2dfdf", "ffgf", "asdsad","1");
-        Assertions.assertEquals(204, responseEntity.getStatusCodeValue());
+        Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
     //    Trường hợp tồn tại dữ liệu trong database và nhập đúng tất cả các trường
     @Test
     public void findAllFilmClient_startDate_name_typeFilm_filmStatus_11() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "THE BATMAN", "Hành Động","1");
+                = this.filmController.findAllFilmClient(6, 0, "Tom Holland", "SPIDER-MAN: NO WAY HOME", "Hành Động","");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
-        Assertions.assertEquals("THE BATMAN",
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
                 responseEntity.getBody().getContent().get(0).getName());
-        Assertions.assertEquals("Robert Pattinson",
+        Assertions.assertEquals("Tom Holland",
                 responseEntity.getBody().getContent().get(0).getActor());
-        Assertions.assertEquals("2022-03-06",
+        Assertions.assertEquals("2022-03-01",
                 responseEntity.getBody().getContent().get(0).getStartDate());
     }
 
@@ -204,15 +212,15 @@ public class FilmController_findAllFilmClient {
     @Test
     public void findAllFilmClient_name_typeFilm_11() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "", "THE BATMAN", "Hành Động","1");
+                = this.filmController.findAllFilmClient(6, 0, "", "SPIDER-MAN: NO WAY HOME", "Hành Động","");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
-        Assertions.assertEquals("THE BATMAN",
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
                 responseEntity.getBody().getContent().get(0).getName());
-        Assertions.assertEquals("Robert Pattinson",
+        Assertions.assertEquals("Tom Holland",
                 responseEntity.getBody().getContent().get(0).getActor());
-        Assertions.assertEquals("2022-03-06",
+        Assertions.assertEquals("2022-03-01",
                 responseEntity.getBody().getContent().get(0).getStartDate());
     }
 
@@ -221,7 +229,7 @@ public class FilmController_findAllFilmClient {
     @Test
     public void findAllFilmClient_typeFilm_11() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "", "", "Hành Động","1");
+                = this.filmController.findAllFilmClient(6, 0, "", "", "Hành Động","");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(5, responseEntity.getBody().getTotalElements());
@@ -237,15 +245,15 @@ public class FilmController_findAllFilmClient {
     @Test
     public void findAllFilmClient_startDate_name_11() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "THE BATMAN", "","1");
+                = this.filmController.findAllFilmClient(6, 0, "Tom Holland", "SPIDER-MAN: NO WAY HOME", "","");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
-        Assertions.assertEquals("THE BATMAN",
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
                 responseEntity.getBody().getContent().get(0).getName());
-        Assertions.assertEquals("Robert Pattinson",
+        Assertions.assertEquals("Tom Holland",
                 responseEntity.getBody().getContent().get(0).getActor());
-        Assertions.assertEquals("2022-03-06",
+        Assertions.assertEquals("2022-03-01",
                 responseEntity.getBody().getContent().get(0).getStartDate());
     }
 
@@ -253,15 +261,15 @@ public class FilmController_findAllFilmClient {
     @Test
     public void findAllFilmClient_startDate_11() {
         ResponseEntity<Page<Film>> responseEntity
-                = this.filmController.findAllFilmClient(6, 0, "Matt Reeves", "", "", "");
+                = this.filmController.findAllFilmClient(6, 0, "Tom Holland", "", "", "");
         Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalPages());
         Assertions.assertEquals(1, responseEntity.getBody().getTotalElements());
-        Assertions.assertEquals("THE BATMAN",
+        Assertions.assertEquals("SPIDER-MAN: NO WAY HOME",
                 responseEntity.getBody().getContent().get(0).getName());
-        Assertions.assertEquals("Robert Pattinson",
+        Assertions.assertEquals("Tom Holland",
                 responseEntity.getBody().getContent().get(0).getActor());
-        Assertions.assertEquals("2022-03-06",
+        Assertions.assertEquals("2022-03-01",
                 responseEntity.getBody().getContent().get(0).getStartDate());
     }
 }

@@ -139,7 +139,7 @@ public class FilmController {
             Pageable pageable = PageRequest.of(page, seeMore);
             Page<Film> filmPage = filmService.findAllFilmClient(actor, name, typeFilm, filmStatus, pageable);
             if (filmPage.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
             } else {
                 return new ResponseEntity<>(filmPage, HttpStatus.OK);
             }
