@@ -1,6 +1,5 @@
 package C0921G1_sprint_1.repository.member_account;
 
-import C0921G1_sprint_1.dto.member.MemberDTO;
 import C0921G1_sprint_1.dto.member.MemberHistoryDTO;
 import C0921G1_sprint_1.model.member.Member;
 import org.springframework.data.domain.Page;
@@ -8,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import sun.applet.resources.MsgAppletViewer_es;
+
 
 @Repository
 public interface MemberAccountRepository extends JpaRepository<Member,String> {
