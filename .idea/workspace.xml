@@ -19,13 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/member_account/MemberAccountController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/Sprint1ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/Sprint1ApplicationTests.java" afterDir="false" />
-    </list>
+    <list default="true" id="c473369d-9e0e-43a5-bd69-0a3b15d3fd82" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
