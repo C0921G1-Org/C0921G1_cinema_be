@@ -28,16 +28,33 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/Sprint1Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/Sprint1Application.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/transaction/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/transaction/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/C0921G1_sprint_1/controller/member_history/MemberAccountController_memberHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/C0921G1_sprint_1/controller/member_register/MemberAccountController_memberRegister.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/.scannerwork/.sonar_lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/.scannerwork/checkstyle-result.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/.scannerwork/checkstyle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/.scannerwork/report-task.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/Sprint1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/Sprint1Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/transaction/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/transaction/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/sonar-project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/security/SecurityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/controller/security/SecurityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/security/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/model/security/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/film_management/FilmRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/repository/film_management/FilmRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/C0921G1_sprint_1/service/showtime_management/ShowTimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/Sprint1ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/AttachedServiceController_getAllAttachedServiceList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_findByIdFilm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_getAllFilmList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/PaymentController_saveHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SecurityController_authenticateUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/SelectedSeatController_getAllByShowTimeId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/ShowTimeController_getAllByFilmId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/member_history/MemberAccountController_memberHistory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/member_register/MemberAccountController_memberRegister.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +65,37 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sprint_1" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sprint_1" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sprint_1" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -93,37 +141,43 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.Sprint1Application">
-    <configuration name="MemberAccountController_memberHistory.getListStudent_5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint_1.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="C0921G1_sprint_1.controller.member_history.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller.member_history" />
-      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.member_history.MemberAccountController_memberHistory" />
-      <option name="METHOD_NAME" value="getListStudent_5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="C0921G1_cinema_be [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="MemberAccountController_memberRegister.createMember_18" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sprint_1.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="C0921G1_sprint_1.controller.member_register.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="C0921G1_sprint_1.controller.member_register" />
-      <option name="MAIN_CLASS_NAME" value="C0921G1_sprint_1.controller.member_register.MemberAccountController_memberRegister" />
-      <option name="METHOD_NAME" value="createMember_18" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="C0921G1_cinema_be [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="MemberAccountController_memberRegister.createMember_dateOfBirth_15" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sprint_1.test" />
@@ -182,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.C0921G1_cinema_be [build]" />
+        <item itemvalue="Gradle.C0921G1_cinema_be [clean]" />
         <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_dateOfBirth_16" />
         <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_dateOfBirth_15" />
         <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_name_13" />
-        <item itemvalue="JUnit.MemberAccountController_memberRegister.createMember_18" />
-        <item itemvalue="JUnit.MemberAccountController_memberHistory.getListStudent_5" />
       </list>
     </recent_temporary>
   </component>
@@ -218,6 +272,7 @@
       <workItem from="1648794441344" duration="1241000" />
       <workItem from="1648796571854" duration="6942000" />
       <workItem from="1648816964786" duration="3292000" />
+      <workItem from="1648829852461" duration="177000" />
     </task>
     <servers />
   </component>
@@ -261,28 +316,28 @@
     <state x="549" y="165" key="FileChooserDialogImpl/0.0.1536.816@0.0.1536.816" timestamp="1648807258338" />
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1648451653105" />
     <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1648283694319" />
-    <state width="1493" height="99" key="GridCell.Tab.0.bottom" timestamp="1648823038711">
+    <state width="1493" height="233" key="GridCell.Tab.0.bottom" timestamp="1648830011411">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1648823038711" />
+    <state width="1493" height="233" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1648830011411" />
     <state width="1493" height="204" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
     <state width="1877" height="306" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
-    <state width="1493" height="99" key="GridCell.Tab.0.center" timestamp="1648823038711">
+    <state width="1493" height="233" key="GridCell.Tab.0.center" timestamp="1648830011411">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1648823038711" />
+    <state width="1493" height="233" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1648830011411" />
     <state width="1493" height="204" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
     <state width="1877" height="306" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
-    <state width="1493" height="99" key="GridCell.Tab.0.left" timestamp="1648823038711">
+    <state width="1493" height="233" key="GridCell.Tab.0.left" timestamp="1648830011410">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1648823038711" />
+    <state width="1493" height="233" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1648830011410" />
     <state width="1493" height="204" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
     <state width="1877" height="306" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
-    <state width="1493" height="99" key="GridCell.Tab.0.right" timestamp="1648823038711">
+    <state width="1493" height="233" key="GridCell.Tab.0.right" timestamp="1648830011411">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="99" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1648823038711" />
+    <state width="1493" height="233" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1648830011411" />
     <state width="1493" height="204" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1648469162411" />
     <state width="1877" height="306" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1648298195663" />
     <state width="1493" height="99" key="GridCell.Tab.1.bottom" timestamp="1648823038712">
