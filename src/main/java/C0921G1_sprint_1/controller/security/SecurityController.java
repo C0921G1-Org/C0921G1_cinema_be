@@ -48,12 +48,10 @@ public class SecurityController {
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
-        Account account = accountService.findAccountByUsername(loginRequest.getUsername());
-        Member member = memberService.findMemberById(account.getId().toString()).get();
 
-//        if (member != null) {
-//            member.setAccount(null);
-//        }
+        Account account = accountService.findAccountByUsername(loginRequest.getUsername());
+//        Member member = memberService.findMemberById(account.getId().toString()).get();
+        Member member = memberService.findMemberByAccount(account).get();
 
         return ResponseEntity.ok(
                 new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), roles, member)
