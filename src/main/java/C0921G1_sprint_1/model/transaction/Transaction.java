@@ -117,5 +117,21 @@ public class Transaction {
     public void setCheckAcceptTicket(Integer checkAcceptTicket) {
         this.checkAcceptTicket = checkAcceptTicket;
     }
+
+    public double getPointGained() {
+        return pointGained;
+    }
+
+    public void setPointGained(double pointGained) {
+        this.pointGained = pointGained;
+    }
+
+    public double getPointUsed() {
+        return pointUsed;
+    }
+
+    public void setPointUsed(double pointUsed) {
+        this.pointUsed = pointUsed;
+    }
 }
 
