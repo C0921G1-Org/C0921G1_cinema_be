@@ -35,13 +35,13 @@ public class SecurityController {
     private MemberService memberService;
 
     @PostMapping("/login")
-    public ResponseEntity<?> authenticateUser (@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
         );
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt =jwtTokenUtils.generateJwtToken(loginRequest.getUsername());
+        String jwt = jwtTokenUtils.generateJwtToken(loginRequest.getUsername());
 
         UserDetailsImpl userDetails = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
@@ -49,8 +49,8 @@ public class SecurityController {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
         Account account = accountService.findAccountByUsername(loginRequest.getUsername());
-        Member member = memberService.findMemberById(account.getId().toString()).get();
-
+//        Member member = memberService.findMemberById(account.getId().toString()).get();
+        Member member = account.getMember();
 //        if (member != null) {
 //            member.setAccount(null);
 //        }
