@@ -24,24 +24,14 @@ import java.util.Optional;
 @RequestMapping(value = "/film")
 public class FilmController {
     // Huynh Minh CA
-@Autowired
-private FilmService filmService;
-@Autowired
-private FilmTypeService filmTypeService;
-
-    //huynh minh ca test findAll
-    @GetMapping("")
-    public ResponseEntity<Iterable<Film>> findAllTest() {
-        List<Film> filmList = (List<Film>) filmService.findAllFilm();
-        if (filmList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(filmList, HttpStatus.OK);
-        }
+    @Autowired
+    private FilmService filmService;
+    @Autowired
+    private FilmTypeService filmTypeService;
 
 
     //TaiLM danh sách phim & tìm kiếm
-    @GetMapping("list-management")
+    @GetMapping("/list-management")
     public ResponseEntity<Page<Film>> findAll(@RequestParam(defaultValue = "0") Integer page,
                                               @RequestParam(defaultValue = "") String name,
                                               @RequestParam(defaultValue = "") String startDate,
@@ -54,20 +44,20 @@ private FilmTypeService filmTypeService;
             } else {
                 return new ResponseEntity<>(filmPage, HttpStatus.OK);
             }
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
     }
 
     //TaiLM xóa phim
-    @GetMapping("delete/{id}")
-    public ResponseEntity<?> delete(@PathVariable Integer id){
+    @GetMapping("/delete/{id}")
+    public ResponseEntity<?> delete(@PathVariable Integer id) {
         Optional<Film> filmOptional = filmService.findById(id);
-        if (filmOptional.isPresent()){
+        if (filmOptional.isPresent()) {
             filmService.deleteFilm(filmOptional.get().getId());
             return new ResponseEntity<>(HttpStatus.OK);
-        }else {
+        } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
 
@@ -85,37 +75,38 @@ private FilmTypeService filmTypeService;
 
     // Huynh Minh ca xem chi tiet phim theo id
     @GetMapping("findById/{id}")
-    public ResponseEntity<Film>findByIdFilm(@PathVariable Integer id){
+    public ResponseEntity<Film> findByIdFilm(@PathVariable Integer id) {
         Optional<Film> filmOptional = filmService.findByIdFilm(id);
-        if (!filmOptional.isPresent()){
+        if (!filmOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return  new ResponseEntity<>(filmOptional.get(),HttpStatus.OK);
+        return new ResponseEntity<>(filmOptional.get(), HttpStatus.OK);
 
     }
 
     // huynh minh ca sua thong tin phim
     @PatchMapping("{id}")
-    public ResponseEntity<Film>edit(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer id){
+    public ResponseEntity<Film> edit(@Valid @RequestBody FilmDTO filmDTO, @PathVariable Integer id) {
 
         Optional<Film> filmOptional = this.filmService.findByIdFilm(id);
-        if (!filmOptional.isPresent()){
+        if (!filmOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         filmDTO.setId(filmOptional.get().getId());
         Film film = new Film();
-        BeanUtils.copyProperties(filmDTO,film);
+        BeanUtils.copyProperties(filmDTO, film);
         this.filmService.updateFilm(film);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    //Huynh Minh Ca
+
+    //Huynh Minh Ca get list FilmType
     @GetMapping("/filmType")
-    protected ResponseEntity<Iterable<FilmType>>findAllFilmType(){
+    protected ResponseEntity<Iterable<FilmType>> findAllFilmType() {
         List<FilmType> filmTypeList = (List<FilmType>) filmTypeService.findAll();
-        if (filmTypeList.isEmpty()){
-            return  new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        if (filmTypeList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
-        return new ResponseEntity<>(filmTypeList,HttpStatus.OK);
+        return new ResponseEntity<>(filmTypeList, HttpStatus.OK);
     }
 
 

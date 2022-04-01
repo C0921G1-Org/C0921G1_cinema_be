@@ -2,22 +2,32 @@ package C0921G1_sprint_1.dto.film;
 
 import C0921G1_sprint_1.model.film.FilmType;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.Validator;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class FilmDTO implements Validator {
     private Integer id;
     @NotBlank(message = "This field cannot be left blank")
     private String name;
+    @Pattern(message = "Input unit is number",regexp = "\\d*")
+    @Min(message = "min duration = 10",value = 10)
+    @Max(message = "max duration = 240",value = 240)
     @NotBlank(message = "This field cannot be left blank")
     private String duration;
+
     @NotBlank(message = "This field cannot be left blank")
     private String startDate;
     @NotBlank(message = "This field cannot be left blank")
@@ -26,7 +36,7 @@ public class FilmDTO implements Validator {
 //    private String typeFilmNew;
     private FilmType filmType;
     @NotBlank(message = "This field cannot be left blank")
-    @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
+ //   @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
     private String actor;
     @NotBlank(message = "This field cannot be left blank")
     @Pattern(message ="name actor must be correct for example: Nguyen Van A,..." ,regexp ="^([A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]+)( [A-ZĐ][a-zÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚÝàáâãèéêìíòóôõùúýĂăĐđĨĩŨũƠơƯưẠ-ỹ]*)*$" )
@@ -41,6 +51,9 @@ public class FilmDTO implements Validator {
     private String version;
 
     private Integer flagDelete;
+    //CaHM fix CheckBox
+    @NotBlank(message = "This field cannot be left blank")
+    private String filmTypeNew;
 
     public FilmDTO() {
     }
@@ -84,14 +97,6 @@ public class FilmDTO implements Validator {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
-
-//    public String getTypeFilmNew() {
-//        return typeFilmNew;
-//    }
-//
-//    public void setTypeFilmNew(String typeFilmNew) {
-//        this.typeFilmNew = typeFilmNew;
-//    }
 
     public FilmType getFilmType() {
         return filmType;
@@ -157,6 +162,14 @@ public class FilmDTO implements Validator {
         this.flagDelete = flagDelete;
     }
 
+    public String getFilmTypeNew() {
+        return filmTypeNew;
+    }
+
+    public void setFilmTypeNew(String filmTypeNew) {
+        this.filmTypeNew = filmTypeNew;
+    }
+
     @Override
     public boolean supports(Class<?> clazz) {
         return false;
@@ -172,6 +185,16 @@ public class FilmDTO implements Validator {
     }
     }
 
-
-
+//    @ResponseStatus(HttpStatus.BAD_REQUEST)
+//    @ExceptionHandler(MethodArgumentNotValidException.class)
+//    public Map<String, String> handleValidationExceptions(
+//            MethodArgumentNotValidException ex) {
+//        Map<String, String> errors = new HashMap<>();
+//        ex.getBindingResult().getAllErrors().forEach((error) -> {
+//            String fieldName = ((FieldError) error).getField();
+//            String errorMessage = error.getDefaultMessage();
+//            errors.put(fieldName, errorMessage);
+//        });
+//        return errors;
+//    }
 }

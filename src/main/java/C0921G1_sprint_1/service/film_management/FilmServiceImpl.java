@@ -13,7 +13,6 @@ import java.util.Optional;
 
 
 @Service
-
 public class FilmServiceImpl implements FilmService{
 
     @Autowired
@@ -23,10 +22,11 @@ public class FilmServiceImpl implements FilmService{
     @Override
     public void saveFilm(Film film) {
         film.setFlagDelete(1);
-    //   film.setFilmType(new FilmType());
+     //  film.setFilmType(new FilmType("1","Hành ĐỘng"));
      //  filmRepository.save(film);
-       filmRepository.saveFilm(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),film.getFilmType().getId(),
-              film.getActor(),film.getDirector(), film.getStudio(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete());
+
+       filmRepository.saveFilm(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),
+              film.getActor(),film.getDirector(), film.getStudio(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete(),film.getFilmTypeNew());
     }
     // CaHM xem list film
     @Override
@@ -38,10 +38,13 @@ public class FilmServiceImpl implements FilmService{
     public Optional<Film> findById(Integer id) {
         return filmRepository.findByIdFilm(id);
     }
+
     // CaHM updateFilm
     @Override
     public void updateFilm(Film film) {
-        filmRepository.save(film);
+        film.setFilmType(null);
+        filmRepository.update(film.getName(), film.getDuration(),film.getStartDate(),film.getEndDate(),
+                film.getActor(),film.getDirector(), film.getStudio(),film.getImage(),film.getTrailer(),film.getVersion(),film.getFlagDelete(),film.getFilmTypeNew(),film.getId());
     }
 
     //TaiLM danh sách & tìm kiếm
@@ -59,5 +62,8 @@ public class FilmServiceImpl implements FilmService{
     public Optional<Film> findByIdFilm(Integer id) {
         return filmRepository.findByIdFilm(id);
     }
+
+
+
 
 }

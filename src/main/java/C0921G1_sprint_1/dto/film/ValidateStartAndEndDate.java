@@ -5,8 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ValidateStartAndEndDate {
-//    public static final String REGEX_TIME_START_DATE = "^(\\d){4}-(\\d){2}-(\\d){2}$";
-//    public static final String REGEX_TIME_END_DATE = "^(\\d){4}-(\\d){2}-(\\d){2}$";
 
     public static Boolean checkNgay(String startDate, String endDate) {
         boolean flag;

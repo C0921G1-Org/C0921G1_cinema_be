@@ -305,6 +305,8 @@ public class Controller_CreateFilm {
     }
 
 
+
+
     //test tat ca deu dung ------------------------------------------------------>
 
     @Test
@@ -312,8 +314,8 @@ public class Controller_CreateFilm {
         FilmDTO filmDTO = new FilmDTO();
         filmDTO.setName(" Funy Boy");
         filmDTO.setDuration("60p");
-        filmDTO.setStartDate("2022-03-01");
-        filmDTO.setEndDate("2022-03-04");
+        filmDTO.setStartDate("2022-04-01");
+        filmDTO.setEndDate("2022-04-04");
      //   filmDTO.setTypeFilmNew("Hành Động");
         filmDTO.setActor("Trấn Thành");
         filmDTO.setDirector("Minh Ca");
@@ -321,7 +323,7 @@ public class Controller_CreateFilm {
         filmDTO.setImage("https://firebasestorage.googleapis.com/v0/b/apiservice-edc10.appspot.com/o/28-03-2022023420AMhinh-nen-may-tinh-4k-game-min.jpg?alt=media&token=f73e55ae-b460-4143-b53d-6097a80468f6");
         filmDTO.setTrailer("https://www.youtube.com/watch?v=6F8tJgKz_v8");
         filmDTO.setVersion("3D");
-        filmDTO.setFlagDelete(0);
+        filmDTO.setFlagDelete(1);
 
         FilmType filmType = new FilmType();
         filmDTO.setId(5);
