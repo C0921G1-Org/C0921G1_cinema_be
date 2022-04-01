@@ -25,7 +25,69 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d59c8251-e3f2-4751-bde9-d1c339774c66" name="Default Changelist" comment="" />
+    <list default="true" id="d59c8251-e3f2-4751-bde9-d1c339774c66" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/Sprint1Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/config/MailConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/film_management/FilmController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/member_account/MemberAccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/member_management/MemberController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/order_ticket/BookingController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/special_ticket_confirmation/PaymentController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/controller/statistic_management/StatisticController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/custom_id/StringPrefixedSequenceIdGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/dto/film/FilmDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/dto/member/MemberAccountDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/dto/member/MemberDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/attached_service/AttachedService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/film/Film.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/film/FilmType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/City.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/District.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/Member.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/member/Ward.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/seat/SeatType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/seat/SelectedSeat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/showtime/Screen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/showtime/ShowTime.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/model/transaction/Transaction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/film_management/FilmRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_account/MemberAccountRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/CityRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/DistrictRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/MemberRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/member_management/WardRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/order_ticket/BookingRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/special_ticket_confirmation/PaymentRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/repository/statistic_management/StatisticRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/film_management/FilmService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/film_management/FilmServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_account/MemberAccountService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_account/MemberAccountServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_management/MemberService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/member_management/MemberServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/order_ticket/BookingService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/order_ticket/BookingServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/special_ticket_confirmation/PaymentServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/statistic_management/StatisticService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/C0921G1_sprint_1/service/statistic_management/StatisticServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_findAllFilmClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/C0921G1_sprint_1/controller/FilmController_findAllFilmClient.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +97,18 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,13 +142,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="show.unlinked.gradle.project.popup" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java" />
       <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management" />
       <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\film_management" />
       <recent name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\film_management" />
@@ -199,7 +274,8 @@
       <workItem from="1648516495556" duration="18592000" />
       <workItem from="1648563606696" duration="1291000" />
       <workItem from="1648603290187" duration="3262000" />
-      <workItem from="1648622110597" duration="5527000" />
+      <workItem from="1648622110597" duration="6828000" />
+      <workItem from="1648710265436" duration="7153000" />
     </task>
     <servers />
   </component>
@@ -243,38 +319,38 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1648437171234" />
-    <state width="1237" height="339" key="GridCell.Tab.0.bottom" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.0.bottom" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
-    <state width="1237" height="339" key="GridCell.Tab.0.center" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
+    <state width="1237" height="339" key="GridCell.Tab.0.center" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
-    <state width="1237" height="339" key="GridCell.Tab.0.left" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
+    <state width="1237" height="339" key="GridCell.Tab.0.left" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
-    <state width="1237" height="339" key="GridCell.Tab.0.right" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
+    <state width="1237" height="339" key="GridCell.Tab.0.right" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
-    <state width="1237" height="339" key="GridCell.Tab.1.bottom" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
+    <state width="1237" height="339" key="GridCell.Tab.1.bottom" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
-    <state width="1237" height="339" key="GridCell.Tab.1.center" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
+    <state width="1237" height="339" key="GridCell.Tab.1.center" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
-    <state width="1237" height="339" key="GridCell.Tab.1.left" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
+    <state width="1237" height="339" key="GridCell.Tab.1.left" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
-    <state width="1237" height="339" key="GridCell.Tab.1.right" timestamp="1648631224679">
+    <state width="1237" height="339" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
+    <state width="1237" height="339" key="GridCell.Tab.1.right" timestamp="1648724464870">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="339" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1648631224679" />
+    <state width="1237" height="339" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1648724464870" />
     <state width="1237" height="204" key="GridCell.Tab.2.bottom" timestamp="1648553402658">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

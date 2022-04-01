@@ -2,11 +2,22 @@ plugins {
     id 'org.springframework.boot' version '2.6.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
+    id "org.sonarqube" version "3.0"
 }
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://192.168.1.78:9000/'
+        property 'sonar.login',
+                'c411f85018504e7c7cf185253d699d752a4d5b76'
+        property 'sonar.projectKey', 'C0921G1_ReviewCode_HungNM'
+        property 'sonar.projectName', 'C0921G1_ReviewCode_HungNM'
+    }
+}
 
 repositories {
     mavenCentral()
