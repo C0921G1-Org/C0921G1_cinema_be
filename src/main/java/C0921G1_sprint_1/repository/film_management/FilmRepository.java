@@ -1,7 +1,6 @@
 package C0921G1_sprint_1.repository.film_management;
 
 import C0921G1_sprint_1.model.film.Film;
-import C0921G1_sprint_1.model.film.FilmType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,11 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -106,8 +103,7 @@ public interface FilmRepository extends JpaRepository<Film,Integer> {
             " actor = :actor," +
             " director = :director,studio = :studio,image = :image,trailer = :trailer,version = :version,flag_Delete= :flag_Delete," +
             " film_type_new = :film_type_new WHERE id = :id", nativeQuery = true)
-    void update(
-                  @Param("name") String name,
+    void update(@Param("name") String name,
                   @Param("duration") String duration,
                   @Param("start_Date") String start_Date,
                   @Param("end_Date") String end_Date,
@@ -119,12 +115,7 @@ public interface FilmRepository extends JpaRepository<Film,Integer> {
                   @Param("version") String version,
                   @Param("flag_Delete") Integer flag_Delete,
                   @Param("film_type_new") String film_type_new,
-                  @Param("id") Integer id)
-                 ;
+                  @Param("id") Integer id);
 
-
-//    /*DatTC - Query lấy tất cả dữ liệu phim*/
-//    @Query(value="SELECT * FROM film WHERE id = :id", nativeQuery = true)
-//    List<Film> getAllFilmList(Integer id);
 
 }

@@ -2,20 +2,14 @@ package C0921G1_sprint_1.dto.film;
 
 import C0921G1_sprint_1.model.film.FilmType;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.validation.Errors;
-import org.springframework.validation.FieldError;
 import org.springframework.validation.Validator;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import java.util.HashMap;
-import java.util.Map;
+
 
 
 public class FilmDTO implements Validator {

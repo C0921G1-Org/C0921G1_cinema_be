@@ -38,7 +38,6 @@ public class FilmServiceImpl implements FilmService {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDateTime now = LocalDateTime.now();
         String currentDate = dtf.format(now);
-
         if ("".equals(filmStatus)) {
             return filmRepository.findAllFilmClientCurrent(actor, name, typeFilm, currentDate, pageable);
         } else if ("1".equals(filmStatus)) {
@@ -80,6 +79,5 @@ public class FilmServiceImpl implements FilmService {
     public Optional<Film> findByIdFilm(Integer id) {
         return filmRepository.findByIdFilm(id);
     }
-
 
 }

@@ -1,6 +1,5 @@
 package C0921G1_sprint_1.controller.order_ticket;
 
-
 import C0921G1_sprint_1.model.transaction.Transaction;
 import C0921G1_sprint_1.service.order_ticket.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
