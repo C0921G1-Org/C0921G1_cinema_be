@@ -1,9 +1,9 @@
 package C0921G1_sprint_1.controller.film_management;
 
+import C0921G1_sprint_1.dto.film.FilmDTO;
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.service.film_management.FilmService;
 
-import C0921G1_sprint_1.dto.film.FilmDTO;
 import C0921G1_sprint_1.model.film.FilmType;
 import C0921G1_sprint_1.service.film_management.FilmTypeService;
 import org.springframework.beans.BeanUtils;
@@ -23,7 +23,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/c09/user/film")
+@RequestMapping("/c09/public/film")
 public class FilmController {
     // Huynh Minh CA
     @Autowired
@@ -58,7 +58,7 @@ public class FilmController {
         List<Film> filmList = this.filmService.getAllFilm();
         if (filmList.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }else {
+        } else {
             return new ResponseEntity<>(filmList, HttpStatus.OK);
         }
     }
@@ -72,10 +72,8 @@ public class FilmController {
         if (filmOptional.isPresent()) {
             filmService.deleteFilm(filmOptional.get().getId());
             return new ResponseEntity<>(HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 
@@ -149,14 +147,16 @@ public class FilmController {
 
     /*DatTC - API lấy dữ liệu theo id */
     @GetMapping("/filmList/{id}")
-    public ResponseEntity<Film> findFilmById(@PathVariable Integer id){
+    public ResponseEntity<Film> findFilmById(@PathVariable Integer id) {
         Optional<Film> filmOptional = this.filmService.findByIdFilm(id);
-        if (!filmOptional.isPresent()){
+        System.err.println("Hello");
+        if (!filmOptional.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(filmOptional.get(), HttpStatus.OK);
         }
     }
 }
+
 
 

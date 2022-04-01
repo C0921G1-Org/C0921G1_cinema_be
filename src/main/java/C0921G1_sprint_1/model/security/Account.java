@@ -4,6 +4,7 @@ import C0921G1_sprint_1.model.member.Member;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity(name = "account")
@@ -22,7 +23,12 @@ public class Account {
     private Set<AccountRole> accountRoleSet;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference("CODEGYM")
+    @JsonBackReference("account_accountRoleList")
+    private List<AccountRole> accountRoleList;
+
+
+    @OneToOne(mappedBy = "account")
+    @JsonBackReference("account_member")
     private Member member;
 
     public Account() {
@@ -59,6 +65,13 @@ public class Account {
     public void setIsEnabled(Integer isEnabled) {
         this.isEnabled = isEnabled;
     }
+    public Integer getEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(Integer enabled) {
+        isEnabled = enabled;
+    }
 
     public String getEmail() {
         return email;
@@ -68,12 +81,12 @@ public class Account {
         this.email = email;
     }
 
-    public Set<AccountRole> getAccountRoleSet() {
-        return accountRoleSet;
+    public List<AccountRole> getAccountRoleList() {
+        return accountRoleList;
     }
 
-    public void setAccountRoleSet(Set<AccountRole> accountRoleSet) {
-        this.accountRoleSet = accountRoleSet;
+    public void setAccountRoleList(List<AccountRole> accountRoleList) {
+        this.accountRoleList = accountRoleList;
     }
 
     public Member getMember() {

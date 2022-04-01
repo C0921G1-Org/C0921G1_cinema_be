@@ -21,9 +21,9 @@ public class City {
     @JsonBackReference(value = "city_district")
     private Set<District> districts;
 
-    @OneToMany(mappedBy = "city")
-    @JsonBackReference(value = "city_member")
-    private Set<Member> members;
+//    @OneToMany(mappedBy = "city")
+//    @JsonBackReference(value = "city_member")
+//    private Set<Member> members;
 
     public City() {
     }
@@ -52,13 +52,13 @@ public class City {
         this.districts = districts;
     }
 
-    public Set<Member> getMembers() {
-        return members;
-    }
-
-    public void setMembers(Set<Member> members) {
-        this.members = members;
-    }
+//    public Set<Member> getMembers() {
+//        return members;
+//    }
+//
+//    public void setMembers(Set<Member> members) {
+//        this.members = members;
+//    }
 
     public String getType() {
         return type;
