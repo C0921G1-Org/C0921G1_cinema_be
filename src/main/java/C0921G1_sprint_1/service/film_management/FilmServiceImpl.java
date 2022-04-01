@@ -40,11 +40,4 @@ public class FilmServiceImpl implements FilmService {
 
     }
 
-
-
-//        //đạt làm
-//    @Override
-//    public Optional<Film> findById(Integer id) {
-//        return filmRepository.findById(id);
-//    }
 }

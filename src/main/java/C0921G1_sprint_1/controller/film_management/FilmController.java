@@ -17,7 +17,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
-@RequestMapping("/c09/user/film")
+@RequestMapping("/c09/public/film")
 public class FilmController {
     @Autowired
     private FilmService filmService;
@@ -34,7 +34,7 @@ public class FilmController {
     }
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
-    @GetMapping("list-client")
+    @GetMapping("/list-client")
     public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") int seeMore,
                                                         @RequestParam(defaultValue = "0") int page,
                                                         @RequestParam(defaultValue = "") String startDate,
@@ -45,7 +45,7 @@ public class FilmController {
         Pageable pageable = PageRequest.of(page, seeMore);
         Page<Film> filmPage = filmService.findAllFilmClient(startDate, name, statusFilm, typeFilm, pageable);
         if (filmPage.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(filmPage, HttpStatus.OK);
         }
@@ -67,6 +67,7 @@ public class FilmController {
     /*DatTC - API lấy dữ liệu theo id */
     @GetMapping("/filmList/{id}")
     public ResponseEntity<Film> findFilmById(@PathVariable Integer id){
+        System.err.println("Hello");
         Optional<Film> filmOptional = this.filmService.findById(id);
         if (!filmOptional.isPresent()){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
