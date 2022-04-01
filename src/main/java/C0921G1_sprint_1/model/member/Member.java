@@ -7,8 +7,6 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -37,10 +35,6 @@ public class Member {
     private String dateOfBirth;
     private String identityNumber;
 
-    //    @ManyToOne(targetEntity = City.class)
-//    private City city;
-//    @ManyToOne(targetEntity = district.class)
-//    private District district;
     @ManyToOne(targetEntity = Ward.class)
     private Ward ward;
 

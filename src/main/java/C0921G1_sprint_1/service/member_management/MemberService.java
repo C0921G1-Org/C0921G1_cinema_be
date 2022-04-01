@@ -1,7 +1,11 @@
 package C0921G1_sprint_1.service.member_management;
 
 import C0921G1_sprint_1.model.member.Member;
+
 import C0921G1_sprint_1.model.member.Ward;
+
+import C0921G1_sprint_1.model.security.Account;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -20,8 +24,12 @@ public interface MemberService {
 
     Optional<Member> findMemberById(String id);
 
+
     void saveMember(Member member);
 
     void save(Member member);
+
+    Optional<Member> findMemberByAccount(Account accpunt);
+
 
 }

@@ -14,11 +14,11 @@ import org.springframework.transaction.annotation.Transactional;
  */
 
 @Service
+@Transactional
 public class UserDetailServiceImpl implements UserDetailsService {
     @Autowired
     AccountRepository repository;
     @Override
-    @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Account account = repository.findAccountByUsername(username);
         if(account == null){

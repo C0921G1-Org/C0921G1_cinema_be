@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.repository.member_management;
 
 import C0921G1_sprint_1.model.member.Member;
+import C0921G1_sprint_1.model.security.Account;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -26,6 +27,8 @@ public interface MemberRepository extends JpaRepository<Member,String> {
     Optional<Member> findMemberById(
             @Param("id") String id
     );
+
+    Optional<Member> findMemberByAccount(Account accpunt);
 
     @Transactional
     @Modifying
