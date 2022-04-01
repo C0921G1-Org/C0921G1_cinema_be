@@ -37,8 +37,4 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
 
 
 
-
-//    /*DatTC - Query lấy tất cả dữ liệu phim*/
-//    @Query(value="SELECT * FROM film WHERE id = :id", nativeQuery = true)
-//    List<Film> getAllFilmList(Integer id);
 }

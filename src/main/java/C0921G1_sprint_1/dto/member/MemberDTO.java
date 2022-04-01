@@ -1,6 +1,11 @@
 package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
+
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import C0921G1_sprint_1.model.member.Ward;
 import C0921G1_sprint_1.model.security.Account;
 import org.springframework.validation.Errors;
@@ -8,8 +13,6 @@ import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.regex.Pattern;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,6 +36,7 @@ public class MemberDTO implements Validator {
     private String phone;
 
     @NotBlank
+
     @Email
     private String email;
 
@@ -51,10 +55,10 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String identityNumber;
 
+
     @NotBlank
     private String password;
 
-    //    private Ward ward;
     private int wardId;
 
 //    private Account account;
@@ -70,32 +74,6 @@ public class MemberDTO implements Validator {
     public MemberDTO() {
     }
 
-//    public Account getAccount() {
-//        return account;
-//    }
-//
-//    public void setAccount(Account account) {
-//        this.account = account;
-//    }
-
-//    public Ward getWard() {
-//        return ward;
-//    }
-//
-//    public void setWard(Ward ward) {
-//        this.ward = ward;
-//    }
-
-
-//    private Ward ward;
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     public String getId() {
         return id;
     }
@@ -176,6 +154,13 @@ public class MemberDTO implements Validator {
         this.identityNumber = identityNumber;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -198,6 +183,7 @@ public class MemberDTO implements Validator {
 
 
     }
+
 
     //check phone regex - NhanNT
     public boolean checkPhone(String phone) {
@@ -245,4 +231,6 @@ public class MemberDTO implements Validator {
         return isRetry;
 
     }
+
+
 }

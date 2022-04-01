@@ -66,14 +66,14 @@ public class TransactionDto {
     public void setTicketStatus(String ticketStatus) {
         this.ticketStatus = ticketStatus;
     }
-
-    public MemberDTO getMemberDTO() {
-        return memberDTO;
-    }
-
-    public void setMemberDTO(MemberDTO memberDTO) {
-        this.memberDTO = memberDTO;
-    }
+//
+//    public MemberDTO getMemberDTO() {
+//        return memberDTO;
+//    }
+//
+//    public void setMemberDTO(MemberDTO memberDTO) {
+//        this.memberDTO = memberDTO;
+//    }
 
     public ShowTimeDTO getShowTimeDTO() {
         return showTimeDTO;

@@ -23,7 +23,7 @@ public class Member {
             parameters = {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "Mem-"),
-                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
+                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
     private String id;
 
 
@@ -37,7 +37,7 @@ public class Member {
     private String dateOfBirth;
     private String identityNumber;
 
-//    @ManyToOne(targetEntity = City.class)
+    //    @ManyToOne(targetEntity = City.class)
 //    private City city;
 //    @ManyToOne(targetEntity = district.class)
 //    private District district;
@@ -144,13 +144,6 @@ public class Member {
         this.point = point;
     }
 
-//    public City getCity() {
-//        return city;
-//    }
-//
-//    public void setCity(City city) {
-//        this.city = city;
-//    }
 
     public Ward getWard() {
         return ward;
@@ -159,13 +152,11 @@ public class Member {
     public void setWard(Ward ward) {
         this.ward = ward;
     }
-
-
-
-    public Account getAccount() {
+    public Account getAccount () {
         return account;
     }
 
-    public void setAccount(Account account) {
+    public void setAccount (Account account){
         this.account = account;
-    }}
+    }
+}

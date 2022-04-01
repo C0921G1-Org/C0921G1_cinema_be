@@ -2,6 +2,7 @@ package C0921G1_sprint_1.service.member_management;
 
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.member.Ward;
+import C0921G1_sprint_1.model.security.Account;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -16,5 +17,7 @@ public interface MemberService {
     Page<Member> findAllMembersWithPagination(Pageable pageable);
 
     Optional<Member> findMemberById(String id);
+
+    Optional<Member> findMemberByAccount(Account account);
 
 }

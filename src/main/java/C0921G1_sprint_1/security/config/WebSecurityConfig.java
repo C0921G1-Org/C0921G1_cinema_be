@@ -39,25 +39,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(12);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-//        http.authorizeRequests().antMatchers("/c09/public/**").permitAll();
-        http.cors().and().csrf().disable()
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
+        http.cors().and().csrf()
+                .disable()
+
                 .authorizeRequests()
-                .antMatchers("/c09/public/**")
-                .permitAll()
-                .antMatchers("/c09/user/**")
-                .permitAll()
-//                .hasAnyRole("USER", "ADMIN")
-                .antMatchers("/c09/admin/**")
-                .hasRole("ADMIN")
-                .anyRequest().authenticated();
+                .antMatchers("/c09/public/**").permitAll()
+                .antMatchers("/c09/user/**").hasAnyRole("USER","ADMIN")
+                .antMatchers("/c09/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+                .and()
+                .sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(jwtTokenFilter, UsernamePasswordAuthenticationFilter.class);
     }
-    
+
 }
