@@ -12,12 +12,18 @@ public class FilmType {
     @Id
     private String id;
     private String name;
-
+    @JsonBackReference
     @OneToMany(mappedBy = "filmType")
-    @JsonBackReference(value = "filmType_film")
+
+//    @JsonBackReference(value = "filmType_film")
     private Set<Film> films;
 
     public FilmType() {
+    }
+
+    public FilmType(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     public String getId() {

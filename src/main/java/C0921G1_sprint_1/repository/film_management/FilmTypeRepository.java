@@ -11,7 +11,9 @@ import java.util.List;
 @Repository
 public interface FilmTypeRepository extends JpaRepository<FilmType, String> {
 
-    //    HungNM lấy danh sách thể loại phim để đổ lên màn hình tìm kiếm tại trang chủ
+//    HungNM lấy danh sách thể loại phim để đổ lên màn hình tìm kiếm tại trang chủ
     @Query(value = "select * from film_type", nativeQuery = true)
     List<FilmType> getAll();
+
+
 }

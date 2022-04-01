@@ -31,6 +31,8 @@ dependencies {
 
     testImplementation 'org.apache.httpcomponents:httpclient'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
+//
+
 
 //// https://mvnrepository.com/artifact/com.google.zxing/core
 //    implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
@@ -38,9 +40,9 @@ dependencies {
 //    implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
     
 
+
 }
 
 test {
     useJUnitPlatform()
 }
-
