@@ -18,8 +18,7 @@ public class Film {
     private String startDate;
     private String endDate;
 
-    //CaHM fix CheckBox
-//    private String typeFilmNew;
+
 
     @ManyToOne(targetEntity = FilmType.class)
     private FilmType filmType;
@@ -38,6 +37,8 @@ public class Film {
 
     private String version;
     private Integer flagDelete;
+    //CaHM fix CheckBox
+    private String filmTypeNew;
 
     public Film() {
     }
@@ -81,14 +82,6 @@ public class Film {
     public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
-
-//    public String getTypeTypeNew() {
-//        return typeFilmNew;
-//    }
-//
-//    public void setTypeTypeNew(String typeTypeNew) {
-//        this.typeFilmNew = typeTypeNew;
-//    }
 
     public FilmType getFilmType() {
         return filmType;
@@ -160,5 +153,13 @@ public class Film {
 
     public void setFlagDelete(Integer flagDelete) {
         this.flagDelete = flagDelete;
+    }
+
+    public String getFilmTypeNew() {
+        return filmTypeNew;
+    }
+
+    public void setFilmTypeNew(String filmTypeNew) {
+        this.filmTypeNew = filmTypeNew;
     }
 }

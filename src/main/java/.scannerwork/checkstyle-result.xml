@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="10.0">
+<<<<<<< HEAD
 <file name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\config\MailConfig.java">
 </file>
 <file name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\attached_service\AttachedService.java">
@@ -99,5 +100,174 @@
 <file name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management\FilmTypeService.java">
 </file>
 <file name="C:\newcodegym\project_C0921G1\sprint_1_be\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management\FilmServiceImpl.java">
+=======
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\dto\showtime\ShowTimeDTO.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\selected_seat_management\SelectedSeatService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\selected_seat_management\SelectedSeatRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\config\MailConfig.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\selected_seat_management\SelectedSeatController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\attached_service\AttachedService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\member_management\MemberRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\attached_service_management\AttachedServiceController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\statistic_management\StatisticController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\film_management\FilmRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\security\impl\RoleServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\security\payload\request\LoginRequest.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\film_management\FilmTypeController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\member_account\MemberAccountServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\attached_service_management\AttachedServiceRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\member_management\WardRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\order_ticket\BookingServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\member_account\MemberAccountController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\seat\SeatType.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\film\Film.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\member\Member.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\seat\SelectedSeat.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\security\config\WebSecurityConfig.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\security\RoleService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\member\City.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\showtime\Screen.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\member_account\MemberAccountRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\order_ticket\BookingController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\attached_service\AttachedServiceService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\statistic_management\StatisticServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\film\FilmType.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\special_ticket_confirmation\PaymentServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\member_management\MemberService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\member_management\MemberServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\security\RoleRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\statistic_management\StatisticRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\transaction\Transaction.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\dto\member\MemberAccountDTO.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\showtime_management\ShowTimeRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\special_ticket_confirmation\PaymentRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\security\services\UserDetailsImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\member_management\MemberController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\order_ticket\BookingService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\dto\member\MemberDTO.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\statistic_management\StatisticService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\member\Ward.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\security\Role.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\member_management\CityRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\security\Account.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\special_ticket_confirmation\PaymentService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\film_management\FilmController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\security\AccountRoleService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\Sprint1Application.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\security\jwt\JwtTokenUtils.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\security\AccountService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\dto\film\FilmDTO.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\showtime_management\ShowTimeController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\security\AccountRole.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\security\AccountRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\member\District.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\security\payload\response\JwtResponse.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\showtime_management\ShowTimeService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\security\jwt\JwtTokenFilter.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\security\impl\AccountServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\dto\film\ValidateStartAndEndDate.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\security\services\UserDetailServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\selected_seat_management\SelectedSeatServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\special_ticket_confirmation\PaymentController.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\transaction\TransactionDto.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management\FilmTypeServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\security\impl\AccountRoleServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\model\showtime\ShowTime.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\security\AccountRoleRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\member_management\DistrictRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\member_account\MemberAccountService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\attached_service\AttachedServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\order_ticket\BookingRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management\FilmService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\custom_id\StringPrefixedSequenceIdGenerator.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\repository\film_management\FilmTypeRepository.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management\FilmTypeService.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\film_management\FilmServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\service\showtime_management\ShowTimeServiceImpl.java">
+</file>
+<file name="D:\codegym\C0921G1-LeMinhTai-Module-6\C0921G1_cinema_be_1 - Copy - Copy - Copy - Copy\C0921G1_cinema_be\src\main\java\C0921G1_sprint_1\controller\security\SecurityController.java">
+>>>>>>> 88fedb13877f673bcfa52382159a6e4300c6ef5b
 </file>
 </checkstyle>

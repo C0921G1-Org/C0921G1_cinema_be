@@ -1,14 +1,10 @@
 package C0921G1_sprint_1.controller.film_management;
 
-
 import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.service.film_management.FilmService;
-
 
 import C0921G1_sprint_1.dto.film.FilmDTO;
-import C0921G1_sprint_1.model.film.Film;
 import C0921G1_sprint_1.model.film.FilmType;
-import C0921G1_sprint_1.service.film_management.FilmService;
 import C0921G1_sprint_1.service.film_management.FilmTypeService;
 import org.springframework.beans.BeanUtils;
 
@@ -26,29 +22,18 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin(origins = "*")
-@RequestMapping("/film/")
+@CrossOrigin("*")
+@RequestMapping("/c09/user/film")
 public class FilmController {
-
     // Huynh Minh CA
     @Autowired
     private FilmService filmService;
     @Autowired
     private FilmTypeService filmTypeService;
 
-    //huynh minh ca test findAll
-    @GetMapping("")
-    public ResponseEntity<Iterable<Film>> findAllTest() {
-        List<Film> filmList = (List<Film>) filmService.findAllFilm();
-        if (filmList.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
-        return new ResponseEntity<>(filmList, HttpStatus.OK);
-    }
-
 
     //TaiLM danh sách phim & tìm kiếm
-    @GetMapping("list-management")
+    @GetMapping("/list-management")
     public ResponseEntity<Page<Film>> findAll(@RequestParam(defaultValue = "0") Integer page,
                                               @RequestParam(defaultValue = "") String name,
                                               @RequestParam(defaultValue = "") String startDate,
@@ -62,15 +47,28 @@ public class FilmController {
                 return new ResponseEntity<>(filmPage, HttpStatus.OK);
             }
         } catch (NullPointerException e) {
+
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+    }
 
+    /*DatTC - API lấy dữ liệu tất cả film */
+    @GetMapping("/filmList")
+    public ResponseEntity<List<Film>> getAllFilmList() {
+        List<Film> filmList = this.filmService.getAllFilm();
+        if (filmList.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else {
+            return new ResponseEntity<>(filmList, HttpStatus.OK);
+        }
     }
 
     //TaiLM xóa phim
+
     @GetMapping("delete/{id}")
     public ResponseEntity<?> delete(@PathVariable Integer id) {
-        Optional<Film> filmOptional = filmService.findById(id);
+        Optional<Film> filmOptional = filmService.findByIdFilm(id);
+
         if (filmOptional.isPresent()) {
             filmService.deleteFilm(filmOptional.get().getId());
             return new ResponseEntity<>(HttpStatus.OK);
@@ -116,6 +114,7 @@ public class FilmController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+
     //Huynh Minh Ca
     @GetMapping("/filmType")
     protected ResponseEntity<Iterable<FilmType>> findAllFilmType() {
@@ -128,7 +127,7 @@ public class FilmController {
 
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
-    @GetMapping("list-client")
+    @GetMapping("/list-client")
     public ResponseEntity<Page<Film>> findAllFilmClient(@RequestParam(defaultValue = "0") Integer seeMore,
                                                         @RequestParam(defaultValue = "0") Integer page,
                                                         @RequestParam(defaultValue = "") String actor,
@@ -148,5 +147,16 @@ public class FilmController {
         }
     }
 
+    /*DatTC - API lấy dữ liệu theo id */
+    @GetMapping("/filmList/{id}")
+    public ResponseEntity<Film> findFilmById(@PathVariable Integer id){
+        Optional<Film> filmOptional = this.filmService.findByIdFilm(id);
+        if (!filmOptional.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(filmOptional.get(), HttpStatus.OK);
+        }
+    }
 }
+
 
