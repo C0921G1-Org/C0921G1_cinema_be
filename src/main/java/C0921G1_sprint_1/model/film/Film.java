@@ -18,6 +18,8 @@ public class Film {
     private String startDate;
     private String endDate;
 
+
+
     @ManyToOne(targetEntity = FilmType.class)
     private FilmType filmType;
 
@@ -35,16 +37,10 @@ public class Film {
 
     private String version;
     private Integer flagDelete;
+    //CaHM fix CheckBox
+    private String filmTypeNew;
 
     public Film() {
-    }
-
-    public Set<ShowTime> getShowTimes() {
-        return showTimes;
-    }
-
-    public void setShowTimes(Set<ShowTime> showTimes) {
-        this.showTimes = showTimes;
     }
 
     public Integer getId() {
@@ -95,6 +91,14 @@ public class Film {
         this.filmType = filmType;
     }
 
+    public Set<ShowTime> getShowTimes() {
+        return showTimes;
+    }
+
+    public void setShowTimes(Set<ShowTime> showTimes) {
+        this.showTimes = showTimes;
+    }
+
     public String getActor() {
         return actor;
     }
@@ -127,14 +131,6 @@ public class Film {
         this.image = image;
     }
 
-    public Integer getFlagDelete() {
-        return flagDelete;
-    }
-
-    public void setFlagDelete(Integer flagDelete) {
-        this.flagDelete = flagDelete;
-    }
-
     public String getTrailer() {
         return trailer;
     }
@@ -149,5 +145,21 @@ public class Film {
 
     public void setVersion(String version) {
         this.version = version;
+    }
+
+    public Integer getFlagDelete() {
+        return flagDelete;
+    }
+
+    public void setFlagDelete(Integer flagDelete) {
+        this.flagDelete = flagDelete;
+    }
+
+    public String getFilmTypeNew() {
+        return filmTypeNew;
+    }
+
+    public void setFilmTypeNew(String filmTypeNew) {
+        this.filmTypeNew = filmTypeNew;
     }
 }

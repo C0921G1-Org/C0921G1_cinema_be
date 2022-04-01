@@ -38,7 +38,7 @@ public class UserDetailsImpl implements UserDetails {
                 .map(role -> new SimpleGrantedAuthority(role.getRole().getName()))
                 .collect(Collectors.toList());
         return new UserDetailsImpl(account.getId(), account.getUsername(), account.getIsEnabled(),
-                    account.getEncryptPw(), authorities);
+                account.getEncryptPw(), authorities);
     }
 
     @Override
@@ -77,7 +77,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-            return true;
+        return true;
 
     }
 
