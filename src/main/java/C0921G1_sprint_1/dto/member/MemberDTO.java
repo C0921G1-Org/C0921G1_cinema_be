@@ -2,9 +2,9 @@ package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
 
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-
 
 import C0921G1_sprint_1.model.member.Ward;
 import C0921G1_sprint_1.model.security.Account;
@@ -14,9 +14,7 @@ import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.util.Set;
+
 import java.util.regex.Pattern;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,7 +26,6 @@ import java.util.regex.Matcher;
 public class MemberDTO implements Validator {
 
 
-    @NotNull
     private String id;
 
     @NotBlank
@@ -39,12 +36,15 @@ public class MemberDTO implements Validator {
 
     private String phone;
 
+    @NotBlank
+    @Email
+    private String email;
 
     @NotBlank
-    private String email;
-    @NotBlank
     private String address;
+
     private Double point;
+
     @NotBlank
     private String image;
 
@@ -55,28 +55,23 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String identityNumber;
 
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     @NotBlank
     private String password;
-    //    private Ward ward;
-    private City city;
 
-
-    //    private Ward ward;
     private Integer wardId;
 
+//    private Account account;
+
+    //    private Ward ward;
+    private City city;
 
     public String getId() {
         return id;
     }
 
-    public MemberDTO() {
+    public void setId(String id) {
+        this.id = id;
     }
-
 
     public String getName() {
         return name;
@@ -85,7 +80,6 @@ public class MemberDTO implements Validator {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public Integer getGender() {
         return gender;
@@ -159,14 +153,13 @@ public class MemberDTO implements Validator {
         this.password = password;
     }
 
-    public int getWardId() {
+    public Integer getWardId() {
         return wardId;
     }
 
-    public void setWardId(int wardId) {
+    public void setWardId(Integer wardId) {
         this.wardId = wardId;
     }
-
 
     public City getCity() {
         return city;
@@ -175,6 +168,10 @@ public class MemberDTO implements Validator {
     public void setCity(City city) {
         this.city = city;
     }
+
+    public MemberDTO() {
+    }
+
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -185,24 +182,18 @@ public class MemberDTO implements Validator {
     public void validate(Object target, Errors errors) {
         MemberDTO memberDTO = (MemberDTO) target;
 
-        if (!memberDTO.name.matches("^[\\p{Lu}\\p{Ll}\\s0-9]+$") || memberDTO.name.length() > 50 || memberDTO.name.length() < 1) {
-            errors.rejectValue("name",
-                    "name.wrongName",
-                    "Tên không được phép có số hoặc ký tự đặc biệt. Tối thiểu 1 ký tự và tối đa 50 ký tự");
-        }
+//        if (!memberDTO.name.matches("^[\\p{Lu}\\p{Ll}\\s0-9]+$") || memberDTO.name.length() > 50 || memberDTO.name.length() < 1) {
+//            errors.rejectValue("name",
+//                    "name.wrongName",
+//                    "Tên không được phép có số hoặc ký tự đặc biệt. Tối thiểu 1 ký tự và tối đa 50 ký tự");
+//        }
 
-//        if (memberDTO.account == null) {
-//        errors.rejectValue("account", "account.nullAccount", "Bắt buộc thành viên phải có tài khoản");
-//    }
 
         if (memberDTO.gender == null || memberDTO.gender < 0 || memberDTO.gender > 1) {
             errors.rejectValue("gender", "gender.wrongGender", "Vui lòng chọn giới tính phù hợp");
         }
 
-//        if (!(memberDTO.phone.matches("^(84+|0)(90|91)[0-9]{7}$"))) {
-//        errors.rejectValue("phone", "phone.wrongPhone",
-//                "Số điện thoại phải theo định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84) 90xxxxxxx hoặc (84) 91xxxxxxx");
-//    }
+
 
         if (!memberDTO.email.matches("^[A-Za-z0-9._]+[@][A-Za-z0-9._]+[.][A-Za-z0-9._]+$")) {
             errors.rejectValue("email", "email.wrongMail", "sai format Email.");
@@ -222,9 +213,9 @@ public class MemberDTO implements Validator {
         if (checkAgeMember(memberDTO.getDateOfBirth())) {
             errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 đến 100");
         }
-//        if (checkName(memberDTO.getName())) {
-//            errors.rejectValue("name", "name.checkName", "Tên cần viết Hoa Chữ cái đầu");
-//        }
+        if (checkName(memberDTO.getName())) {
+            errors.rejectValue("name", "name.checkName", "Tên cần viết Hoa Chữ cái đầu");
+        }
         if (checkPhone(memberDTO.getPhone())) {
             errors.rejectValue("phone", "phone.checkPhone", "Số điện thoại phải có 10 số và có số 0 phía trước");
         }
@@ -255,17 +246,6 @@ public class MemberDTO implements Validator {
         }
     }
 
-    //check age name regex - NhanNT
-//    public boolean checkName(String name) {
-//        Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");
-//        Matcher matcher = pattern.matcher(name);
-//        if (!matcher.matches()) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//    }
-
     //check age member >= 16 - NhanNT
     public boolean checkAgeMember(String dateOfBirth) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -290,4 +270,6 @@ public class MemberDTO implements Validator {
         return isRetry;
 
     }
+
 }
+

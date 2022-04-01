@@ -35,6 +35,10 @@ public class Member {
     private String dateOfBirth;
     private String identityNumber;
 
+//    @ManyToOne(targetEntity = City.class)
+//    private City city;
+
+
     @ManyToOne(targetEntity = Ward.class)
     private Ward ward;
 
@@ -45,7 +49,6 @@ public class Member {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id")
-//    @NotNull
     private Account account;
 
     public Member() {
@@ -139,11 +142,9 @@ public class Member {
         this.ward = ward;
     }
 
-
     public Set<Transaction> getTransactions() {
         return transactions;
     }
-
 
     public void setTransactions(Set<Transaction> transactions) {
         this.transactions = transactions;
@@ -155,15 +156,5 @@ public class Member {
 
     public void setAccount(Account account) {
         this.account = account;
-
     }
 }
-
-//    public Ward getWard() {
-//        return ward;
-//    }
-//
-//    public void setWard(Ward ward) {
-//        this.ward = ward;
-//    }
-

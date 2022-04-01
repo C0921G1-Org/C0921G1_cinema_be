@@ -36,11 +36,4 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
     Page<Film> findAllFilmClient(String startDate, String name, String statusFilm, String typeFilm, Pageable pageable);
 
 
-
-
-
-//    /*DatTC - Query lấy tất cả dữ liệu phim*/
-//    @Query(value="SELECT * FROM film WHERE id = :id", nativeQuery = true)
-//    List<Film> getAllFilmList(Integer id);
-
 }

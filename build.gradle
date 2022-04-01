@@ -5,23 +5,6 @@ plugins {
 
 }
 
-//sonarqube {
-//    properties {
-//<<<<<<< HEAD
-//        property 'sonar.host.url', 'http://192.168.1.78:9000/'
-//        property 'sonar.login', 'f4570cffeldd5bf39ecbeed@ef04eef921709b5a'
-//        property 'sonar.projectKey', 'C0921G1_ReviewCode_LongTK'
-//        property 'sonar.projectName', 'C0921G1_ReviewCode_LongTK'
-//
-//=======
-//        property 'sonar.host.url','http://192.168.1.78:9000/'
-//        property 'sonar.login', 'c411f85018504e7c7cf185253d699d752a4d5b76'
-//        property 'sonar.projectKey', 'C0921G1_ReviewCode_NhanNT'
-//        property 'sonar.projectName', 'C0921G1_ReviewCode_NhanNT'
-//>>>>>>> a22d5e9ca102626a39c74a2a833ae6e1574d7a87
-//    }
-//}
-
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -29,18 +12,6 @@ sourceCompatibility = '1.8'
 repositories {
     mavenCentral()
 }
-
-
-//sonarqube {
-//    properties {
-//        property 'sonar.host.url', 'http://192.168.1.78:9000/'
-//        property 'sonar.login',
-//                'c411f85018504e7c7cf185253d699d752a4d5b76'
-//        property 'sonar.projectKey', 'C0921G1_ReviewCode_TaiDHN'
-//        property 'sonar.projectName', 'C0921G1_ReviewCode_TaiDHN'
-//    }
-//}
-
 
 dependencies {
     testImplementation('org.springframework.boot:spring-boot-starter-test')
@@ -57,42 +28,17 @@ dependencies {
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.2.0.RELEASE'
     testImplementation 'org.apache.httpcomponents:httpclient'
     implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
-    testImplementation 'org.apache.httpcomponents:httpclient'
 
+    testImplementation 'org.apache.httpcomponents:httpclient'
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 
-    // https://mvnrepository.com/artifact/com.google.zxing/core
     implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
-    // https://mvnrepository.com/artifact/com.google.zxing/javase
     implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
-//    // https://mvnrepository.com/artifact/com.google.zxing/core
-//    implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
-//    // https://mvnrepository.com/artifact/com.google.zxing/javase
-//    implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
-
+    
 
 }
 
 test {
     useJUnitPlatform()
 }
-//
-//sonarqube {
-//    properties {
-//        property 'sonar.host.url', 'http://192.168.1.78:9000/'
-//        property 'sonar.login', 'c411f85018504e7c7cf185253d699d752a4d5b76'
-//        property 'sonar.projectName', 'C0921G1_ReviewCode_TuNK'
-//        property 'sonar.projectKey', 'C0921G1_ReviewCode_TuNK'
-//    }
-//}
-
-
-//sonarqube {
-//    properties {
-//        property 'sonar.host.url', 'http://192.168.1.78:9000/'
-//        property 'sonar.login', '[c411f85018504e7c7cf185253d699d752a4d5b76]'
-//        property 'sonar.projectKey', 'C0921G1_ReviewCode_DatTC'
-//        property 'sonar.projectName', 'C0921G1_ReviewCode_DatTC'
-//    }
-//}
 

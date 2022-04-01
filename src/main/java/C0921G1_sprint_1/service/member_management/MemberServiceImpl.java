@@ -61,30 +61,17 @@ public class MemberServiceImpl implements MemberService {
         return this.memberRepository.findMemberById(id);
     }
 
+
+    @Override
+    public Optional<Member> findMemberByAccount(Account accpunt) {
+        return this.memberRepository.findMemberByAccount(accpunt);
+    }
+
     @Override
     public void saveMember(Member member) {
 
     }
 
-//<<<<<<< HEAD
-//    @Override
-//    public void saveMember(Member member) {
-//        this.memberRepository.updateMember(member.getName(),member.getGender(),member.getPhone(),member.getEmail(),
-//                member.getAddress(),member.getImage(),member.getDateOfBirth(),member.getIdentityNumber(),member.getWard().getId(),member.getId());
-//    }
-//=======
-//>>>>>>> a22d5e9ca102626a39c74a2a833ae6e1574d7a87
 
-
-//
-//    @Override
-//    public void saveMember(Member member) {
-//        this.memberRepository.updateMember(member.getName(),member.getGender(),member.getPhone(),member.getEmail(),
-//                member.getAddress(),member.getImage(),member.getDateOfBirth(),member.getIdentityNumber(),member.getWard().getId(),member.getId());
-//    }
-
-    public Optional<Member> findMemberByAccount(Account accpunt) {
-        return this.memberRepository.findMemberByAccount(accpunt);
-    }
 }
 

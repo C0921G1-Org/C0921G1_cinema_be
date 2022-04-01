@@ -15,22 +15,20 @@ import javax.transaction.Transactional;
 public interface MemberAccountRepository extends JpaRepository<Member, String> {
     // NhanNT query Trading History
     @Query(value =
-            "Select t.transactional_date `transactionalDate`, t.`code` , s.`name` `screenName` , f.`name` `filmName`, sety.price `ticketPrice`, ats.price `attachedPrice`, m.`point` \n" +
-                    "From `member` m \n" +
-                    "join `transaction` t on t.member_id = m.id \n" +
-                    "join show_time st on t.show_time_id = st.id \n" +
-                    "join screen s on s.id = st.screen_id \n" +
-                    "join film f on st.film_id = f.id \n" +
-                    "join selected_seat se on se.show_time_id = st.id \n" +
-                    "join seat_type sety on  sety.id = se.seat_type_id \n" +
-                    "left join attached_service ats on ats.transaction_id = t.id \n" +
-                    "where m.id = ?1 and f.`name` like %?2%"
-
-            , nativeQuery = true)
+        "Select t.transactional_date `transactionalDate`, t.`code` , s.`name` `screenName` , f.`name` `filmName`, sum(sety.price) `ticketPrice`, m.`point` \n" +
+        "From `member` m \n" +
+        "join `transaction` t on t.member_id = m.id\n" +
+        "join show_time st on t.show_time_id = st.id \n" +
+        "join screen s on s.id = st.screen_id \n" +
+        "join film f on st.film_id = f.id \n" +
+        "join selected_seat se on se.show_time_id = st.id \n" +
+        "join seat_type sety on  sety.id = se.seat_type_id \n" +
+        "where m.id = ?1 and f.`name` like %?2% \n" +
+        "group by t.transactional_date", nativeQuery = true)
     Page<MemberHistoryDTO> findTradingHistory(String id, String filmName, Pageable pageable);
 
-    // NhanNT query Create account
 
+    // NhanNT query Create account
     @Modifying
     @Transactional
     @Query(value =
