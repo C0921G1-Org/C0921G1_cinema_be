@@ -2,6 +2,7 @@ package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.Ward;
+import C0921G1_sprint_1.model.security.Account;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.validation.annotation.Validated;
@@ -24,13 +25,17 @@ public class MemberDTO implements Validator {
 //    @Pattern(regexp = "^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$",
 //            message = "Tên cần viết Hoa Chữ cái đầu")
     private String name;
+
     @NotNull
     private Integer gender;
+
     @NotBlank
     private String phone;
+
     @NotBlank
     @Email
     private String email;
+
     @NotBlank
     private String address;
 
@@ -38,29 +43,59 @@ public class MemberDTO implements Validator {
 
     @NotBlank
     private String image;
+
     @NotBlank
 //    @Pattern(regexp = "\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])")
     private String dateOfBirth;
+
     @NotBlank
     private String identityNumber;
 
-    private Ward ward;
+    @NotBlank
+    private String password;
 
+    //    private Ward ward;
+    private int wardId;
+
+//    private Account account;
+
+    public int getWardId() {
+        return wardId;
+    }
+
+    public void setWardId(int wardId) {
+        this.wardId = wardId;
+    }
 
     public MemberDTO() {
     }
 
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
+
+//    public Ward getWard() {
+//        return ward;
+//    }
+//
+//    public void setWard(Ward ward) {
+//        this.ward = ward;
+//    }
 
 
-    public Ward getWard() {
-        return ward;
+    //    private Ward ward;
+
+    public String getPassword() {
+        return password;
     }
 
-    public void setWard(Ward ward) {
-        this.ward = ward;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
-
     public String getId() {
         return id;
     }
@@ -163,26 +198,29 @@ public class MemberDTO implements Validator {
 
 
     }
+
     //check phone regex - NhanNT
-    public  boolean checkPhone(String phone){
+    public boolean checkPhone(String phone) {
         Pattern pattern = Pattern.compile("\\(?(0[1-9]{2})\\)?([ .-]?)([0-9]{3})\\2([0-9]{4})");
         Matcher matcher = pattern.matcher(phone);
-        if (!matcher.matches()){
+        if (!matcher.matches()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+
     //check age name regex - NhanNT
-    public boolean checkName(String name){
+    public boolean checkName(String name) {
         Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");
         Matcher matcher = pattern.matcher(name);
-        if (!matcher.matches()){
+        if (!matcher.matches()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+
     //check age member >= 16 - NhanNT
     public boolean checkAgeMember(String dateOfBirth) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -195,8 +233,7 @@ public class MemberDTO implements Validator {
 
         if (!matcher.matches()) {
             isRetry = true;
-        }
-        else{
+        } else {
             LocalDate birthDay = LocalDate.parse(dateOfBirth, formatter);
             LocalDate after16Years = birthDay.plusYears(16);
             LocalDate before100Years = birthDay.plusYears(100);
@@ -205,7 +242,7 @@ public class MemberDTO implements Validator {
             }
         }
 
-
         return isRetry;
+
     }
 }
