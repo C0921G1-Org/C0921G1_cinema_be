@@ -15,14 +15,16 @@ public class BookingController_listBookingTicket {
     @Autowired
     private BookingController bookingController;
 
+//    Trường hợp trả về list có size = 0
     @Test
-    public void getListStudent_5() {
+    public void getListBookingTicket_5() {
         ResponseEntity<Page<Transaction>> responseEntity
                 = this.bookingController.getListTransaction(0);
 
         Assertions.assertEquals(404, responseEntity.getStatusCodeValue());
     }
 
+//    Trường hợp trả về list có size > 0
     @Test
     public void getListBookingTicket_6() {
         ResponseEntity<Page<Transaction>> responseEntity

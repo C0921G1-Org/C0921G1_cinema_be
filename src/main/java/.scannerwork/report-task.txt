@@ -1,0 +1,6 @@
+projectKey=C0921G1_ReviewCode_AnhVN
+serverUrl=http://192.168.1.78:9000
+serverVersion=9.3.0.51899
+dashboardUrl=http://192.168.1.78:9000/dashboard?id=C0921G1_ReviewCode_AnhVN
+ceTaskId=AX_fSOGZwt3wMxMS-X4W
+ceTaskUrl=http://192.168.1.78:9000/api/ce/task?id=AX_fSOGZwt3wMxMS-X4W

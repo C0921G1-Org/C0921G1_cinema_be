@@ -1,6 +1,4 @@
 package C0921G1_sprint_1.booking_controller;
-
-import C0921G1_sprint_1.controller.order_ticket.BookingController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -19,6 +17,7 @@ public class BookingController_confirmBookingTicket {
     @Autowired
     private MockMvc mockMvc;
 
+//    Trường hợp tham số id truyền vào bị null
     @Test
     public void getConfirmTicket_1() throws Exception {
         this.mockMvc.perform(
@@ -28,6 +27,7 @@ public class BookingController_confirmBookingTicket {
                 .andExpect(status().is4xxClientError());
     }
 
+//    Trường hợp tham số id truyền vào bị rỗng
     @Test
     public void getConfirmTicket_2() throws Exception {
         this.mockMvc.perform(
@@ -37,6 +37,7 @@ public class BookingController_confirmBookingTicket {
                 .andExpect(status().is4xxClientError());
     }
 
+//    Trường hợp tham số id truyền vào không có trong database
     @Test
     public void getConfirmTicket_3() throws Exception {
         this.mockMvc.perform(
@@ -46,6 +47,7 @@ public class BookingController_confirmBookingTicket {
                 .andExpect(status().is4xxClientError());
     }
 
+//    Trường hợp tham số truyền vào tồn tại trong database
     @Test
     public void getConfirmTicket_4() throws Exception {
         this.mockMvc.perform(

@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/BookingTicket")
 public class BookingController {
@@ -32,18 +32,18 @@ public class BookingController {
 
     //    Tìm kiếm theo nhiều trường : AnhVN
     @GetMapping(value = "/Search")
-    public ResponseEntity<Page<Transaction>> searchBookingTicket(@PageableDefault(value = 0) Pageable pageable,
+    public ResponseEntity<Page<Transaction>> searchBookingTicket(@RequestParam(defaultValue = "0") Integer pageable,
                                                                  @RequestParam(defaultValue = "") String code,
                                                                  @RequestParam(defaultValue = "") String name,
                                                                  @RequestParam(defaultValue = "") String member_id,
                                                                  @RequestParam(defaultValue = "") String phone
     ) {
-        System.out.println("TestSearch");
-        Page<Transaction> transactionsListSearch = bookingService.findAllTransactionSearch(pageable, code,name, member_id, phone);
-        System.out.println(transactionsListSearch);
-        if (transactionsListSearch.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        }
+        Pageable pageable1 = PageRequest.of(pageable, 10);
+
+        Page<Transaction> transactionsListSearch = bookingService.findAllTransactionSearch(code, name, member_id, phone, pageable1);
+//        if (transactionsListSearch.isEmpty()) {
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//        }
         return new ResponseEntity<>(transactionsListSearch, HttpStatus.OK);
     }
 
@@ -64,6 +64,15 @@ public class BookingController {
         if (!transObj.isPresent()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        return new ResponseEntity<>((Transaction) transObj.get(), HttpStatus.OK);
+        return new ResponseEntity<>(transObj.get(), HttpStatus.OK);
+    }
+
+
+    // Cập nhật trạng thái xác nhận của vé
+    @PatchMapping(value = "/Update")
+    public ResponseEntity<?> accepTicket(@RequestBody Transaction transaction) {
+        transaction.setCheckAcceptTicket(1);
+        bookingService.acceptTicket(transaction);
+        return ResponseEntity.ok().build();
     }
 }
