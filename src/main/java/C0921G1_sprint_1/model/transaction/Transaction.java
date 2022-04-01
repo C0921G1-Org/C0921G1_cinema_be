@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -26,7 +27,9 @@ public class Transaction {
             parameters = {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "TSC-"),
-                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
+                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
+    @NotBlank(message = "Ko dc trong")
+
     private String code;
 
     private String transactionalDate;
@@ -40,6 +43,7 @@ public class Transaction {
     private ShowTime showTime;
 
     @ManyToOne(targetEntity = Member.class)
+    @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Member member;
 
     // cột dùng điểm và nhận điểm
@@ -124,3 +128,4 @@ public class Transaction {
 
 
 }
+

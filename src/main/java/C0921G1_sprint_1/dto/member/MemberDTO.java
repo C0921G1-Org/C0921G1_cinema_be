@@ -22,27 +22,34 @@ import java.util.regex.Matcher;
 
 public class MemberDTO implements Validator {
 
-    public MemberDTO() {
-    }
 
     @NotNull
     private String id;
 
-    @NotNull
-    private Account account;
-
+    @NotBlank
     private String name;
+
+//    @NotNull
+//    private Account account;
+
     private Integer gender;
+
     private String phone;
     private String email;
+
+
+    @NotBlank
     private String address;
     private Double point;
+    @NotBlank
     private String image;
-    private String dateOfBirth;
-    private String identityNumber;
-    private City city;
-    private Set<Transaction> transactions;
 
+
+    @NotBlank
+    private String dateOfBirth;
+
+    @NotBlank
+    private String identityNumber;
 
     public String getId() {
         return id;
@@ -52,13 +59,17 @@ public class MemberDTO implements Validator {
         this.id = id;
     }
 
+    @NotBlank
+    private String password;
 
-    public Account getAccount() {
-        return account;
-    }
+    //    private Ward ward;
+    private Integer wardId;
 
-    public void setAccount(Account account) {
-        this.account = account;
+//    private Account account;
+
+
+
+    public MemberDTO() {
     }
 
 
@@ -69,6 +80,14 @@ public class MemberDTO implements Validator {
     public void setName(String name) {
         this.name = name;
     }
+
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
 
     public Integer getGender() {
         return gender;
@@ -134,27 +153,27 @@ public class MemberDTO implements Validator {
         this.identityNumber = identityNumber;
     }
 
-    public City getCity() {
-        return city;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCity(City city) {
-        this.city = city;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public Set<Transaction> getTransactions() {
-        return transactions;
+    public int getWardId() {
+        return wardId;
     }
 
-    public void setTransactions(Set<Transaction> transactions) {
-        this.transactions = transactions;
+    public void setWardId(int wardId) {
+        this.wardId = wardId;
     }
 
     @Override
     public String toString() {
         return "MemberDTO{" +
                 "id='" + id + '\'' +
-                ", account=" + account +
+//                ", account=" + account +
                 ", name='" + name + '\'' +
                 ", gender=" + gender +
                 ", phone='" + phone + '\'' +
@@ -164,8 +183,8 @@ public class MemberDTO implements Validator {
                 ", image='" + image + '\'' +
                 ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", identityNumber='" + identityNumber + '\'' +
-                ", city=" + city +
-                ", transactions=" + transactions +
+//                ", city=" + city +
+//                ", transactions=" + transactions +
                 '}';
     }
 
@@ -179,24 +198,24 @@ public class MemberDTO implements Validator {
     public void validate(Object target, Errors errors) {
         MemberDTO memberDTO = (MemberDTO) target;
 
- if (!memberDTO.name.matches("^[\\p{Lu}\\p{Ll}\\s0-9]+$") || memberDTO.name.length() > 50) {
+ if (!memberDTO.name.matches("^[\\p{Lu}\\p{Ll}\\s0-9]+$") || memberDTO.name.length() > 50 ||  memberDTO.name.length() <1) {
         errors.rejectValue("name",
                 "name.wrongName",
                 "Tên không được phép có số hoặc ký tự đặc biệt. Tối thiểu 1 ký tự và tối đa 50 ký tự");
     }
 
-        if (memberDTO.account == null) {
-        errors.rejectValue("account", "account.nullAccount", "Bắt buộc thành viên phải có tài khoản");
-    }
+//        if (memberDTO.account == null) {
+//        errors.rejectValue("account", "account.nullAccount", "Bắt buộc thành viên phải có tài khoản");
+//    }
 
         if (memberDTO.gender == null || memberDTO.gender <0 || memberDTO.gender > 1) {
         errors.rejectValue("gender", "gender.wrongGender", "Vui lòng chọn giới tính phù hợp");
     }
 
-        if (!(memberDTO.phone.matches("^(84+|0)(90|91)[0-9]{7}$"))) {
-        errors.rejectValue("phone", "phone.wrongPhone",
-                "Số điện thoại phải theo định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84) 90xxxxxxx hoặc (84) 91xxxxxxx");
-    }
+//        if (!(memberDTO.phone.matches("^(84+|0)(90|91)[0-9]{7}$"))) {
+//        errors.rejectValue("phone", "phone.wrongPhone",
+//                "Số điện thoại phải theo định dạng 090xxxxxxx hoặc 091xxxxxxx hoặc (84) 90xxxxxxx hoặc (84) 91xxxxxxx");
+//    }
 
         if (!memberDTO.email.matches("^[A-Za-z0-9._]+[@][A-Za-z0-9._]+[.][A-Za-z0-9._]+$")) {
         errors.rejectValue("email", "email.wrongMail", "sai format Email.");
@@ -210,41 +229,44 @@ public class MemberDTO implements Validator {
         errors.rejectValue("identityNumber", "identityNumber.wrongIdentityCard", "CMND phải có 9 hoặc 10 số");
     }
 
-        if (memberDTO.city == null) {
-        errors.rejectValue("city", "city.nullCity", "Bắt buộc thành viên phải có thành phố");
+        if (memberDTO.wardId == null) {
+        errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
     }
         if (checkAgeMember(memberDTO.getDateOfBirth())) {
             errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 đến 100");
         }
-        if (checkName(memberDTO.getName())) {
-            errors.rejectValue("name", "name.checkName", "Tên cần viết Hoa Chữ cái đầu");
-        }
+//        if (checkName(memberDTO.getName())) {
+//            errors.rejectValue("name", "name.checkName", "Tên cần viết Hoa Chữ cái đầu");
+//        }
         if (checkPhone(memberDTO.getPhone())) {
             errors.rejectValue("phone", "phone.checkPhone", "Số điện thoại phải có 10 số và có số 0 phía trước");
         }
 
 
     }
+
     //check phone regex - NhanNT
-    public  boolean checkPhone(String phone){
+    public boolean checkPhone(String phone) {
         Pattern pattern = Pattern.compile("\\(?(0[1-9]{2})\\)?([ .-]?)([0-9]{3})\\2([0-9]{4})");
         Matcher matcher = pattern.matcher(phone);
-        if (!matcher.matches()){
+        if (!matcher.matches()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
+
     //check age name regex - NhanNT
-    public boolean checkName(String name){
-        Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");
-        Matcher matcher = pattern.matcher(name);
-        if (!matcher.matches()){
-            return true;
-        }else{
-            return false;
-        }
-    }
+//    public boolean checkName(String name) {
+//        Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");
+//        Matcher matcher = pattern.matcher(name);
+//        if (!matcher.matches()) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
     //check age member >= 16 - NhanNT
     public boolean checkAgeMember(String dateOfBirth) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -257,8 +279,7 @@ public class MemberDTO implements Validator {
 
         if (!matcher.matches()) {
             isRetry = true;
-        }
-        else{
+        } else {
             LocalDate birthDay = LocalDate.parse(dateOfBirth, formatter);
             LocalDate after16Years = birthDay.plusYears(16);
             LocalDate before100Years = birthDay.plusYears(100);
@@ -267,9 +288,7 @@ public class MemberDTO implements Validator {
             }
         }
 
-
         return isRetry;
-
 
     }
 }
