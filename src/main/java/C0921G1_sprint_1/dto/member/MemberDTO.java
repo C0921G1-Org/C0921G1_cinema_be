@@ -87,7 +87,7 @@ public class MemberDTO implements Validator {
 //    }
 
 
-    //    private Ward ward;
+//    private Ward ward;
 
     public String getPassword() {
         return password;
