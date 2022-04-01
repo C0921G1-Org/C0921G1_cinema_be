@@ -1,0 +1,6 @@
+projectKey=C0921G1_ReviewCode_DatTC
+serverUrl=http://192.168.1.78:9000
+serverVersion=9.3.0.51899
+dashboardUrl=http://192.168.1.78:9000/dashboard?id=C0921G1_ReviewCode_DatTC
+ceTaskId=AX_fPf0pwt3wMxMS-X3x
+ceTaskUrl=http://192.168.1.78:9000/api/ce/task?id=AX_fPf0pwt3wMxMS-X3x
