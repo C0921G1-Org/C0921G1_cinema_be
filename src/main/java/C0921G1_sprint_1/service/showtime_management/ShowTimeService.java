@@ -10,3 +10,4 @@ public interface ShowTimeService {
     List<ShowTime> getAllShowTime();
     Optional<ShowTime> findById(Integer id);
 }
+
