@@ -8,9 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface SelectedSeatRepository extends JpaRepository<SelectedSeat, Integer> {
-
-
-
     /*DatTC - Query lấy dữ liệu ghế đã chọn theo showTimeId*/
     @Query(value = "SELECT * FROM selected_seat WHERE show_time_id = :id", nativeQuery = true)
     List<SelectedSeat> getAllByShowTimeId(@Param("id") String id);
