@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Set;
 
@@ -25,6 +26,7 @@ public class Member {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
     private String id;
 
+
     private String name;
     private Integer gender;
     private String phone;
@@ -40,6 +42,7 @@ public class Member {
 
     @OneToMany(mappedBy = "member")
     @JsonBackReference(value = "transactions_member")
+
     private Set<Transaction> transactions;
 
     @OneToOne
@@ -146,11 +149,12 @@ public class Member {
         this.city = city;
     }
 
+
+
     public Account getAccount() {
         return account;
     }
 
     public void setAccount(Account account) {
         this.account = account;
-    }
-}
+    }}

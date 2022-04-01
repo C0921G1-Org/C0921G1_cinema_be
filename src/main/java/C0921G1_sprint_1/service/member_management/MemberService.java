@@ -6,6 +6,8 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.Optional;
 
+import C0921G1_sprint_1.model.member.Member;
+
 public interface MemberService {
 
     Iterable<Member> findAllMembers();
@@ -13,7 +15,5 @@ public interface MemberService {
     Page<Member> findAllMembersWithPagination(Pageable pageable);
 
     Optional<Member> findMemberById(String id);
-
-    void saveMember(Member member);
 
 }
