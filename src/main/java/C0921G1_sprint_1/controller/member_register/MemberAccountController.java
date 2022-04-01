@@ -59,6 +59,15 @@ public class MemberAccountController {
         }
         return new ResponseEntity<>(cityList,HttpStatus.OK);
     }
+    //    NhanNT lay city
+    @GetMapping("/member/city/{id}")
+    public ResponseEntity<City> getCityById(@PathVariable int id){
+        City cityById =  memberAccountService.getCityById(id);
+        if(cityById == null){
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+        }
+        return new ResponseEntity<>(cityById,HttpStatus.OK);
+    }
     //    NhanNT lay list district
     @GetMapping("/member/district/{id}")
     public ResponseEntity<Iterable<District>> getDistrictList(@PathVariable int id){
@@ -77,6 +86,7 @@ public class MemberAccountController {
         }
         return new ResponseEntity<>(wardList,HttpStatus.OK);
     }
+
 
 
     //get list trading history NhanNT

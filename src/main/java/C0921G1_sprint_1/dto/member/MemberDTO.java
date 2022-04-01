@@ -58,7 +58,10 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String password;
 
-    private Integer wardId;
+//    private Integer wardId;
+//    @NotBlank
+    private Integer cityId;
+
 
 //    private Account account;
 
@@ -153,13 +156,13 @@ public class MemberDTO implements Validator {
         this.password = password;
     }
 
-    public Integer getWardId() {
-        return wardId;
-    }
-
-    public void setWardId(Integer wardId) {
-        this.wardId = wardId;
-    }
+//    public Integer getWardId() {
+//        return wardId;
+//    }
+//
+//    public void setWardId(Integer wardId) {
+//        this.wardId = wardId;
+//    }
 
     public City getCity() {
         return city;
@@ -167,6 +170,14 @@ public class MemberDTO implements Validator {
 
     public void setCity(City city) {
         this.city = city;
+    }
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 
     public MemberDTO() {
@@ -207,9 +218,12 @@ public class MemberDTO implements Validator {
             errors.rejectValue("identityNumber", "identityNumber.wrongIdentityCard", "CMND phải có 9 hoặc 10 số");
         }
 
-        if (memberDTO.wardId == null) {
-            errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
-        }
+//        if (memberDTO.cityId == null) {
+//            errors.rejectValue("cityId", "cityId.nullCityId", "Bắt buộc thành viên phải có địa chỉ");
+//        }
+//        if (memberDTO.wardId == null) {
+//            errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
+//        }
         if (checkAgeMember(memberDTO.getDateOfBirth())) {
             errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 đến 100");
         }
@@ -220,9 +234,7 @@ public class MemberDTO implements Validator {
             errors.rejectValue("phone", "phone.checkPhone", "Số điện thoại phải có 10 số và có số 0 phía trước");
         }
 
-
     }
-
 
     //check phone regex - NhanNT
     public boolean checkPhone(String phone) {

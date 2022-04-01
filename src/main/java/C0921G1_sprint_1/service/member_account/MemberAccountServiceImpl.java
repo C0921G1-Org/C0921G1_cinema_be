@@ -41,9 +41,12 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     @Override
     public void createMember(MemberDTO memberObj) {
         Member member = new Member();
-        BeanUtils.copyProperties(memberObj, member, "wardId");
-        Ward ward = wardRepository.findById(memberObj.getWardId()).orElse(null);
-        member.setWard(ward);
+//        BeanUtils.copyProperties(memberObj, member, "wardId");
+        BeanUtils.copyProperties(memberObj, member,"city");
+//        Ward ward = wardRepository.findById(memberObj.getWardId()).orElse(null);
+//        member.setWard(ward);//
+        City city = cityRepository.findById(memberObj.getCityId()).orElse(null);
+        member.setCity(city);
         Account account = new Account();
         String encodedPassword = bCryptPasswordEncoder.encode(memberObj.getPassword());
         account.setEmail(member.getEmail());
@@ -61,6 +64,10 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     @Override
     public Iterable<City> getListCity() {
         return cityRepository.findAll();
+    }
+    @Override
+    public City getCityById(int id) {
+        return cityRepository.findCityById(id);
     }
     //    NhanNT get District
     @Override

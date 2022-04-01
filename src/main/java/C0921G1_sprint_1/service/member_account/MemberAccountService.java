@@ -24,7 +24,7 @@ public interface MemberAccountService {
     public Iterable<District> getListDistrict(int id);
     //    NhanNT get ward
     public Iterable<Ward> getListWard(int id);
-
-
+    // NhanNT get city
+    public  City getCityById(int id);
 
 }
