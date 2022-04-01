@@ -39,6 +39,7 @@ public class Member {
     private Ward ward;
 
     @OneToMany(mappedBy = "member")
+
     @JsonBackReference("member_transaction")
     private Set<Transaction> transactions;
 
@@ -138,9 +139,11 @@ public class Member {
         this.ward = ward;
     }
 
+
     public Set<Transaction> getTransactions() {
         return transactions;
     }
+
 
     public void setTransactions(Set<Transaction> transactions) {
         this.transactions = transactions;
@@ -152,5 +155,15 @@ public class Member {
 
     public void setAccount(Account account) {
         this.account = account;
+
     }
 }
+
+//    public Ward getWard() {
+//        return ward;
+//    }
+//
+//    public void setWard(Ward ward) {
+//        this.ward = ward;
+//    }
+

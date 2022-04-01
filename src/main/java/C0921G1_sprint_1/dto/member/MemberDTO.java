@@ -1,6 +1,11 @@
 package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+
 import C0921G1_sprint_1.model.member.Ward;
 import C0921G1_sprint_1.model.security.Account;
 import C0921G1_sprint_1.model.transaction.Transaction;
@@ -29,15 +34,14 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String name;
 
-//    @NotNull
-//    private Account account;
-
+    @NotNull
     private Integer gender;
 
     private String phone;
+
+
+    @NotBlank
     private String email;
-
-
     @NotBlank
     private String address;
     private Double point;
@@ -51,9 +55,6 @@ public class MemberDTO implements Validator {
     @NotBlank
     private String identityNumber;
 
-    public String getId() {
-        return id;
-    }
 
     public void setId(String id) {
         this.id = id;
@@ -61,13 +62,17 @@ public class MemberDTO implements Validator {
 
     @NotBlank
     private String password;
+    //    private Ward ward;
+    private City city;
+
 
     //    private Ward ward;
     private Integer wardId;
 
-//    private Account account;
 
-
+    public String getId() {
+        return id;
+    }
 
     public MemberDTO() {
     }
@@ -81,13 +86,6 @@ public class MemberDTO implements Validator {
         this.name = name;
     }
 
-//    public Account getAccount() {
-//        return account;
-//    }
-//
-//    public void setAccount(Account account) {
-//        this.account = account;
-//    }
 
     public Integer getGender() {
         return gender;
@@ -169,25 +167,14 @@ public class MemberDTO implements Validator {
         this.wardId = wardId;
     }
 
-    @Override
-    public String toString() {
-        return "MemberDTO{" +
-                "id='" + id + '\'' +
-//                ", account=" + account +
-                ", name='" + name + '\'' +
-                ", gender=" + gender +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", point=" + point +
-                ", image='" + image + '\'' +
-                ", dateOfBirth='" + dateOfBirth + '\'' +
-                ", identityNumber='" + identityNumber + '\'' +
-//                ", city=" + city +
-//                ", transactions=" + transactions +
-                '}';
+
+    public City getCity() {
+        return city;
     }
 
+    public void setCity(City city) {
+        this.city = city;
+    }
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -198,19 +185,19 @@ public class MemberDTO implements Validator {
     public void validate(Object target, Errors errors) {
         MemberDTO memberDTO = (MemberDTO) target;
 
- if (!memberDTO.name.matches("^[\\p{Lu}\\p{Ll}\\s0-9]+$") || memberDTO.name.length() > 50 ||  memberDTO.name.length() <1) {
-        errors.rejectValue("name",
-                "name.wrongName",
-                "Tên không được phép có số hoặc ký tự đặc biệt. Tối thiểu 1 ký tự và tối đa 50 ký tự");
-    }
+        if (!memberDTO.name.matches("^[\\p{Lu}\\p{Ll}\\s0-9]+$") || memberDTO.name.length() > 50 || memberDTO.name.length() < 1) {
+            errors.rejectValue("name",
+                    "name.wrongName",
+                    "Tên không được phép có số hoặc ký tự đặc biệt. Tối thiểu 1 ký tự và tối đa 50 ký tự");
+        }
 
 //        if (memberDTO.account == null) {
 //        errors.rejectValue("account", "account.nullAccount", "Bắt buộc thành viên phải có tài khoản");
 //    }
 
-        if (memberDTO.gender == null || memberDTO.gender <0 || memberDTO.gender > 1) {
-        errors.rejectValue("gender", "gender.wrongGender", "Vui lòng chọn giới tính phù hợp");
-    }
+        if (memberDTO.gender == null || memberDTO.gender < 0 || memberDTO.gender > 1) {
+            errors.rejectValue("gender", "gender.wrongGender", "Vui lòng chọn giới tính phù hợp");
+        }
 
 //        if (!(memberDTO.phone.matches("^(84+|0)(90|91)[0-9]{7}$"))) {
 //        errors.rejectValue("phone", "phone.wrongPhone",
@@ -218,20 +205,20 @@ public class MemberDTO implements Validator {
 //    }
 
         if (!memberDTO.email.matches("^[A-Za-z0-9._]+[@][A-Za-z0-9._]+[.][A-Za-z0-9._]+$")) {
-        errors.rejectValue("email", "email.wrongMail", "sai format Email.");
-    }
+            errors.rejectValue("email", "email.wrongMail", "sai format Email.");
+        }
 
-        if (memberDTO.email.length() <10 || memberDTO.email.length() > 40 ) {
-        errors.rejectValue("email", "email.wrongLengthMail", "Email có độ dài tối thiểu là 10 đến 40 ký tự.");
-    }
+        if (memberDTO.email.length() < 10 || memberDTO.email.length() > 40) {
+            errors.rejectValue("email", "email.wrongLengthMail", "Email có độ dài tối thiểu là 10 đến 40 ký tự.");
+        }
 
         if (!memberDTO.identityNumber.matches("^\\d{9,10}$")) {
-        errors.rejectValue("identityNumber", "identityNumber.wrongIdentityCard", "CMND phải có 9 hoặc 10 số");
-    }
+            errors.rejectValue("identityNumber", "identityNumber.wrongIdentityCard", "CMND phải có 9 hoặc 10 số");
+        }
 
         if (memberDTO.wardId == null) {
-        errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
-    }
+            errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
+        }
         if (checkAgeMember(memberDTO.getDateOfBirth())) {
             errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 đến 100");
         }
@@ -245,10 +232,22 @@ public class MemberDTO implements Validator {
 
     }
 
+
     //check phone regex - NhanNT
     public boolean checkPhone(String phone) {
         Pattern pattern = Pattern.compile("\\(?(0[1-9]{2})\\)?([ .-]?)([0-9]{3})\\2([0-9]{4})");
         Matcher matcher = pattern.matcher(phone);
+        if (!matcher.matches()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //check age name regex - NhanNT
+    public boolean checkName(String name) {
+        Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");
+        Matcher matcher = pattern.matcher(name);
         if (!matcher.matches()) {
             return true;
         } else {

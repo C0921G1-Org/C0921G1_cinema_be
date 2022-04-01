@@ -47,6 +47,8 @@ public class Transaction {
     private Member member;
 
     // cột dùng điểm và nhận điểm
+
+    private Integer checkAcceptTicket;
     private double pointGained;
     private double pointUsed;
 
@@ -126,6 +128,12 @@ public class Transaction {
         this.member = member;
     }
 
+    public Integer getCheckAcceptTicket() {
+        return checkAcceptTicket;
+    }
 
+    public void setCheckAcceptTicket(Integer checkAcceptTicket) {
+        this.checkAcceptTicket = checkAcceptTicket;
+    }
 }
 
