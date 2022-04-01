@@ -22,7 +22,7 @@ public class Member {
             parameters = {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "Mem-"),
-                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
+                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
     private String id;
 
     private String name;
@@ -43,7 +43,9 @@ public class Member {
     private Ward ward;
 
     @OneToMany(mappedBy = "member")
-    @JsonBackReference(value = "transactions_member")
+
+    @JsonBackReference("member_transaction")
+
     private Set<Transaction> transactions;
 
     @OneToOne
@@ -56,6 +58,14 @@ public class Member {
 
     public String getDateOfBirth() {
         return dateOfBirth;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
     public void setDateOfBirth(String dateOfBirth) {
@@ -158,11 +168,11 @@ public class Member {
         this.ward = ward;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
 }

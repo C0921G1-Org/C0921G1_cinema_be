@@ -17,12 +17,13 @@ public class Account {
     private Integer isEnabled;
     private String email;
 
-    @OneToMany(mappedBy = "account")
-    @JsonBackReference
+
+    @OneToOne(mappedBy = "account")
+    @JsonBackReference("account_accountRoleSet")
     private Set<AccountRole> accountRoleSet;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference
+    @JsonBackReference("account_member")
     private Member member;
 
     public Account() {
@@ -58,6 +59,13 @@ public class Account {
 
     public void setIsEnabled(Integer isEnabled) {
         this.isEnabled = isEnabled;
+    }
+    public Integer getEnabled() {
+        return isEnabled;
+    }
+
+    public void setEnabled(Integer enabled) {
+        isEnabled = enabled;
     }
 
     public String getEmail() {

@@ -15,7 +15,7 @@ public class Role {
     private String name;
 
     @OneToMany(mappedBy = "role")
-    @JsonBackReference
+    @JsonBackReference("role_accountRoleSet")
     private Set<AccountRole> accountRoleSet;
 
     public Integer getId() {
