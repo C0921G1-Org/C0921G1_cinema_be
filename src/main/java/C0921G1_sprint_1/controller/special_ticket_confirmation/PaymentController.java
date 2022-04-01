@@ -2,6 +2,7 @@ package C0921G1_sprint_1.controller.special_ticket_confirmation;
 
 
 import C0921G1_sprint_1.model.transaction.Transaction;
+import C0921G1_sprint_1.model.transaction.TransactionDto;
 import C0921G1_sprint_1.service.special_ticket_confirmation.PaymentService;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.MultiFormatWriter;
@@ -94,14 +95,13 @@ public class PaymentController {
         String htmlText=
                 "<div style=\"color: #031327\">\n" +
                         "    <div style=\"background: url(https://thumbs.dreamstime.com/b/abstract-background-white-film-strip-frame-cinema-festival-poster-flyer-template-your-design-movie-time-139262949.jpg);\n" +
-                        "width: 980px ;height: 480px\">\n" +
+                        "width: 700px ;height: 480px\">\n" +
                         "        <br>\n" +
                         "        <h2 style=\"text-align: center;\">Kính chào quý khách <strong style=\"color: darkblue\">"+ transaction.getMember().getName()+ "</strong></h2>\n" +
                         "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim: </strong>" + "<strong style=\"color: darkblue\">" + transaction.getShowTime().getFilm().getName() + "</strong>" +"</p>\n" +
                         "        <p><strong>NGÀY CHIẾU: </strong>"+ transaction.getShowTime().getDate() + "<p>\n" +
                         "        <p><strong>XUẤT CHIẾU: </strong>"+  transaction.getShowTime().getName() + "<p>\n" +
-                        "        <p><strong>SỐ GHẾ: </strong>"+ "đang đợi dữ liệu bên đạt" + "<p>\n" +
-                        "        <p><strong>TỔNG TIỀN: </strong>"+ "100.000.000" + " VND"+ " </p>\n" +
+                        "        <p><strong>Thời Lượng: </strong>"+ transaction.getShowTime().getFilm().getDuration() + "Phút"+ "<p>\n" +
                         "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim tại <span style=\"color: darkblue\">C0921G1-CINEMA</span></strong></p>\n" +
                         "        <p><strong> CHÚC QUÝ KHÁCH MỘT BUỔI XEM PHIM VUI VẺ </strong></p>\n" +
                         "        <p><strong style=\"color: red\">LƯU Ý: KHI ĐI NHỚ ĐEM THEO MÃ QR ĐẾN QUẦY THU NGÂN ĐỂ XÁC NHẬN ĐẶT VÉ.</strong></p>\n" +
@@ -130,8 +130,8 @@ public class PaymentController {
 
         // chuyển đối qrcode thành hình ảnh
     private void qrCode(Transaction transaction) throws WriterException, IOException {
-        String data = transaction.getShowTime().getName() + "" + transaction.getShowTime().getDate() + " "
-                +""+ transaction.getMember().getName() +  transaction.getShowTime().getFilm().getName();
+        String data = transaction.getMember().getName() + "" + transaction.getShowTime().getFilm().getName() + " "
+                +""+ transaction.getShowTime().getDate()  +  transaction.getShowTime().getName() + transaction.getShowTime().getFilm().getDuration();
         String path = "src/main/resources/qr.png";
         BitMatrix matrix;
         matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);

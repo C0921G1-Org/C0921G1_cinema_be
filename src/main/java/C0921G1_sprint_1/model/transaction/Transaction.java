@@ -46,6 +46,11 @@ public class Transaction {
     @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Member member;
 
+    private Integer checkAcceptTicket;
+    private double pointGained;
+    private double pointUsed;
+
+
     public Integer getId() {
         return id;
     }
@@ -105,6 +110,12 @@ public class Transaction {
         this.member = member;
     }
 
+    public Integer getCheckAcceptTicket() {
+        return checkAcceptTicket;
+    }
 
+    public void setCheckAcceptTicket(Integer checkAcceptTicket) {
+        this.checkAcceptTicket = checkAcceptTicket;
+    }
 }
 

@@ -34,4 +34,7 @@ public interface FilmRepository extends JpaRepository<Film, Integer> {
                     "where film.flag_delete = \"1\" and film.start_date like %?1% and film.name like %?2% and film_type.name like %?3% and film_type.name like %?4%",
             nativeQuery = true)
     Page<Film> findAllFilmClient(String startDate, String name, String statusFilm, String typeFilm, Pageable pageable);
+
+
+
 }

@@ -19,11 +19,11 @@ public class Account {
     private String email;
 
     @OneToMany(mappedBy = "account")
-    @JsonBackReference
+ @JsonBackReference(value = "account_RoleSet")
     private List<AccountRole> accountRoleList;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference
+    @JsonBackReference(value = "account_member")
     private Member member;
 
     public Account() {
