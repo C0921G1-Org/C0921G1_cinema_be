@@ -1,12 +1,7 @@
 package C0921G1_sprint_1.dto.member;
 
 import C0921G1_sprint_1.model.member.City;
-import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.transaction.Transaction;
-import C0921G1_sprint_1.repository.member_management.MemberRepository;
-import C0921G1_sprint_1.service.member_management.MemberService;
-import C0921G1_sprint_1.service.member_management.MemberServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
@@ -14,8 +9,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 public class MemberDTO implements Validator {
@@ -32,11 +25,11 @@ public class MemberDTO implements Validator {
 
     @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
     @Pattern(regexp = RegexMember.REGEX_PHONE_NUMBER,
-            message = "Dữ liệu không hợp lệ! Số điện thoại phải tuân theo chuẩn của Việt Nam")
+            message = "Dữ liệu không hợp lệ! Số điện thoại phải tuân theo chuẩn của Việt Nam!")
     private String phone;
 
     @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
-    @Email(message = "Dữ liệu không hợp lệ! Email phải tuân theo chuẩn quy ước")
+    @Email(message = "Dữ liệu không hợp lệ! Email phải tuân theo chuẩn quy ước!")
     private String email;
 
     @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
@@ -52,7 +45,7 @@ public class MemberDTO implements Validator {
 
     @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
     @Pattern(regexp = RegexMember.REGEX_IDENTITY_NUMBER,
-            message = "Dữ liệu không hợp lệ! SỐ chứng minh nhân dân phải tuân theo chuẩn quy ước")
+            message = "Dữ liệu không hợp lệ! Số chứng minh nhân dân phải tuân theo chuẩn quy ước!")
     private String identityNumber;
 
     private City city;
@@ -171,5 +164,8 @@ public class MemberDTO implements Validator {
         }
 
     }
+
+
+    //need solution to solve a problem - how can validate vietnamese name - KhanhLDQ
 
 }

@@ -44,4 +44,16 @@ public class RegexMember {
         return isRetry;
     }
 
+    //check name format
+    public static boolean checkNameFormat(String name) {
+        pattern = Pattern.compile(REGEX_MEMBER_NAME);
+        matcher = pattern.matcher(name);
+
+        boolean isRetry = false;
+
+        if (!matcher.matches())
+            isRetry = true;
+
+        return isRetry;
+    }
 }

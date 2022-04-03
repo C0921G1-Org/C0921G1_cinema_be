@@ -10,19 +10,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -89,14 +84,8 @@ public class MemberController {
     public ResponseEntity<List<FieldError>> updateMember(@PathVariable String id,
                                                          @RequestBody @Validated MemberDTO memberDTO,
                                                          BindingResult bindingResult) {
-//        Optional<Member> memberOptional = this.memberService.findMemberById(id);
-//
-//        if (!memberOptional.isPresent())
-//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-//
-//        member.setId(id);
-//        this.memberService.saveMember(member);
-//        return new ResponseEntity<>(HttpStatus.OK);
+
+//        Map<String, String> listErrors = new HashMap<>();
 
         Optional<Member> memberOptional = this.memberService.findMemberById(id);
 
@@ -108,26 +97,38 @@ public class MemberController {
         if (bindingResult.hasErrors())
             return new ResponseEntity<>(bindingResult.getFieldErrors(), HttpStatus.NOT_ACCEPTABLE);
 
+        //check list errors
+//        if (bindingResult.hasErrors()) {
+//            List<FieldError> errors = bindingResult.getFieldErrors();
+//            System.out.println(errors);
+//
+//            for (FieldError error : errors) {
+//                System.out.println(error);
+//                System.out.println(error.getField());
+//                System.out.println(error.getCode());
+//                System.out.println(Arrays.toString(error.getCodes()));
+//            }
+//        }
+
+
         memberDTO.setId(id);
         Member member = new Member();
         BeanUtils.copyProperties(memberDTO,member);
 
-        //check existed email - KhanhLDQ
-        Map<String, String> listErrors = new HashMap<>();
-
-        System.out.println(member.getEmail());
-        Optional<Member> existedEmail = this.memberService.existedMemberByEmail(member.getEmail());
-
-
-        //need solution to solve the problem - how can create list error to send with http status 406
-        if (existedEmail.isPresent()) {
-            listErrors.put("email","existedEmail");
-//            System.out.println(listErrors);
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
-        }
-
         this.memberService.saveMember(member);
         return new ResponseEntity<>(HttpStatus.OK);
+
+        //check existed email - KhanhLDQ
+//        System.out.println(member.getEmail());
+//        Optional<Member> existedEmail = this.memberService.existedMemberByEmail(member.getEmail());
+
+        //need solution to solve the problem - how can create list error to send with http status 406
+//        if (existedEmail.isPresent()) {
+//            listErrors.put("email","existedEmail");
+//            System.out.println(listErrors);
+//            return new ResponseEntity<>(listErrors,HttpStatus.NOT_ACCEPTABLE);
+//        }
+
     }
 
     //search members by name and point range - KhanhLDQ
