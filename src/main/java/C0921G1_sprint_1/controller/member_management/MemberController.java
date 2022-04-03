@@ -112,15 +112,17 @@ public class MemberController {
         Member member = new Member();
         BeanUtils.copyProperties(memberDTO,member);
 
-        System.out.println(member.getEmail());
-
         //check existed email - KhanhLDQ
         Map<String, String> listErrors = new HashMap<>();
 
+        System.out.println(member.getEmail());
         Optional<Member> existedEmail = this.memberService.existedMemberByEmail(member.getEmail());
 
+
+        //need solution to solve the problem - how can create list error to send with http status 406
         if (existedEmail.isPresent()) {
             listErrors.put("email","existedEmail");
+//            System.out.println(listErrors);
             return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
         }
 
