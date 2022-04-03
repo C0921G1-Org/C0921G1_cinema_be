@@ -45,7 +45,7 @@ public class MemberDTO implements Validator {
 
     private Double point;
 
-    @NotBlank
+
     private String image;
 
 
@@ -225,7 +225,7 @@ public class MemberDTO implements Validator {
 //            errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
 //        }
         if (checkAgeMember(memberDTO.getDateOfBirth())) {
-            errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 đến 100");
+            errors.rejectValue("dateOfBirth", "birthday.checkAge", "Tuổi phải từ 16 trở lên");
         }
         if (checkName(memberDTO.getName())) {
             errors.rejectValue("name", "name.checkName", "Tên cần viết Hoa Chữ cái đầu");

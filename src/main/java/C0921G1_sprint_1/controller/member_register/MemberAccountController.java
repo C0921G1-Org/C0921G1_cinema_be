@@ -25,12 +25,10 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
 import java.security.PublicKey;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
-@RequestMapping(value = "/c09/public")
+@RequestMapping(value = "/c09")
 @CrossOrigin(origins = "*")
 public class MemberAccountController {
 
@@ -40,62 +38,89 @@ public class MemberAccountController {
 
 
     //create member NhanNT
-    @PostMapping(value = "/member", consumes = "application/json", produces = "application/json")
+    @PostMapping(value = "/public/member", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> createMember(@Validated @RequestBody MemberDTO memberObj,
                                           BindingResult bindingResult ) {
         new MemberDTO().validate(memberObj,bindingResult);
+
+        Optional<Member> existedEmail = this.memberAccountService.findMemberByEmail(memberObj.getEmail());
+        System.out.println(existedEmail);
+//        Map<String, String> listErrors = new HashMap<>();
+        List<FieldError> listErrors = new ArrayList<>();
         if (bindingResult.hasFieldErrors()){
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+            System.out.println(bindingResult.getFieldErrors());
+            return new ResponseEntity<>(bindingResult.getFieldErrors(),HttpStatus.NOT_ACCEPTABLE);
+        }
+        //check existed member
+
+//        if (this.memberAccountService.findMemberByEmail(memberObj.getEmail()).isPresent()) {
+        if (existedEmail.isPresent()) {
+            listErrors.add(new FieldError("emailDup", "existedEmail", "Tài khoản đã tồn tại"));
+//            listErrors.add("emailDup","existedEmail");
+//            System.out.println(listErrors);
+            return new ResponseEntity<>(listErrors,HttpStatus.NOT_ACCEPTABLE);
         }
         memberAccountService.createMember(memberObj);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
     //    NhanNT lay list city
-    @GetMapping("/member/city")
+    @GetMapping("/public/member/city")
     public ResponseEntity<Iterable<City>> getCityList(){
         List<City> cityList = (List<City>) memberAccountService.getListCity();
         if(cityList.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(cityList,HttpStatus.OK);
     }
     //    NhanNT lay city
-    @GetMapping("/member/city/{id}")
+    @GetMapping("/public/member/city/{id}")
     public ResponseEntity<City> getCityById(@PathVariable int id){
         City cityById =  memberAccountService.getCityById(id);
         if(cityById == null){
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(cityById,HttpStatus.OK);
     }
     //    NhanNT lay list district
-    @GetMapping("/member/district/{id}")
+    @GetMapping("/public/member/district/{id}")
     public ResponseEntity<Iterable<District>> getDistrictList(@PathVariable int id){
         List<District> districtList = (List<District>) memberAccountService.getListDistrict(id);
         if(districtList.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(districtList,HttpStatus.OK);
     }
     //    NhanNT lay list ward
-    @GetMapping("/member/ward/{id}")
+    @GetMapping("/public/member/ward/{id}")
     public ResponseEntity<Iterable<Ward>> getWardList(@PathVariable int id){
         List<Ward> wardList = (List<Ward>) memberAccountService.getListWard(id);
         if(wardList.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<>(wardList,HttpStatus.OK);
+    }
+
+    //    NhanNT check exist
+    @GetMapping("/public/member/email")
+//    public ResponseEntity<Member> getMemberByEmail(@PathVariable String email){
+    public ResponseEntity<Optional<Member>> getMemberByEmail(@RequestParam(defaultValue = "") String email){
+        Optional<Member> email1 =  memberAccountService.findMemberByEmail(email);
+        if(!email1.isPresent()){
+            return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(email1,HttpStatus.OK);
     }
 
 
 
     //get list trading history NhanNT
-    @GetMapping("/member/history")
+    @GetMapping("/user/member/history")
     public ResponseEntity<Iterable<MemberHistoryDTO>> getTradingHistory(@RequestParam(defaultValue = "0") int page,
                                                                         @RequestParam(defaultValue = "") String memberID,
                                                                         @RequestParam(defaultValue = "") String filmName){
 
-        Pageable pageable = PageRequest.of(page, 2);
+        Pageable pageable = PageRequest.of(page, 10);
         Page<MemberHistoryDTO> historyDTOList = memberAccountService.findTradingHistory(memberID,filmName,pageable);
 
         if (historyDTOList.isEmpty()){

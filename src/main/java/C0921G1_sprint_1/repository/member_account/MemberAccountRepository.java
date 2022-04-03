@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Repository
 public interface MemberAccountRepository extends JpaRepository<Member, String> {
@@ -37,5 +38,8 @@ public interface MemberAccountRepository extends JpaRepository<Member, String> {
             , nativeQuery = true)
     void createAccount(int account_id);
 
-
+    @Query(value =
+            "Select * From `member` where email = ?1 ", nativeQuery = true
+    )
+    Optional<Member> findMemberByEmail(String emailing);
 }

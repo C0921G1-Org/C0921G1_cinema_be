@@ -18,6 +18,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class MemberAccountServiceImpl implements MemberAccountService{
 
@@ -51,7 +53,7 @@ public class MemberAccountServiceImpl implements MemberAccountService{
         String encodedPassword = bCryptPasswordEncoder.encode(memberObj.getPassword());
         account.setEmail(member.getEmail());
         account.setEncryptPw(encodedPassword);
-        account.setIsEnabled(0);
+        account.setIsEnabled(1);
         account.setUsername(member.getEmail());
         member.setAccount(account);
         member.setPoint(0.0);
@@ -59,7 +61,11 @@ public class MemberAccountServiceImpl implements MemberAccountService{
         memberAccountRepository.createAccount(account.getId());
     }
 
-
+    //    NhanNT check exist
+    @Override
+    public Optional<Member> findMemberByEmail(String email){
+        return memberAccountRepository.findMemberByEmail(email);
+    }
     //    NhanNT get City
     @Override
     public Iterable<City> getListCity() {
