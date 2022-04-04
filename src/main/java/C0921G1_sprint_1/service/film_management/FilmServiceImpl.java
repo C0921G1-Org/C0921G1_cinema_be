@@ -33,8 +33,7 @@ public class FilmServiceImpl implements FilmService {
 
     // HungNM lấy danh sách phim và tìm kiếm phim ở màn hình trang chủ
     @Override
-    public Page<Film> findAllFilmClient(String actor, String name, String typeFilm, String filmStatus, Pageable
-            pageable) {
+    public Page<Film> findAllFilmClient(String actor, String name, String typeFilm, String filmStatus, Pageable pageable) {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDateTime now = LocalDateTime.now();
         String currentDate = dtf.format(now);

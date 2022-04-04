@@ -18,8 +18,6 @@ public class Film {
     private String startDate;
     private String endDate;
 
-
-
     @ManyToOne(targetEntity = FilmType.class)
     private FilmType filmType;
 

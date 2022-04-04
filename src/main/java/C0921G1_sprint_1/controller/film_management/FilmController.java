@@ -47,7 +47,6 @@ public class FilmController {
                 return new ResponseEntity<>(filmPage, HttpStatus.OK);
             }
         } catch (NullPointerException e) {
-
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
