@@ -47,6 +47,8 @@ public class BookingController {
         return new ResponseEntity<>(transactionsListSearch, HttpStatus.OK);
     }
 
+
+//AnhVN
 //    @GetMapping(value = "/ConfirmTicket")
 //    public ResponseEntity<Page<Transaction>> confirmTicket(@PageableDefault(value = 5) Pageable pageable) {
 //        Page<Transaction> transactions = this.bookingService.getAllConfirmPage(pageable);
@@ -68,7 +70,7 @@ public class BookingController {
     }
 
 
-    // Cập nhật trạng thái xác nhận của vé
+    // Cập nhật trạng thái xác nhận của vé : AnhVN
     @PatchMapping(value = "/Update")
     public ResponseEntity<?> accepTicket(@RequestBody Transaction transaction) {
         transaction.setCheckAcceptTicket(1);

@@ -17,6 +17,6 @@ public interface BookingService {
     //    Phương thức tìm kiếm qua id của AnhVN
     Optional<Transaction> findById(Integer id);
 
-    //    Phương thức thay đổi trạng thái đối tượng
+    //    Phương thức thay đổi trạng thái đối tượng AnhVN
     void acceptTicket(Transaction transaction);
 }

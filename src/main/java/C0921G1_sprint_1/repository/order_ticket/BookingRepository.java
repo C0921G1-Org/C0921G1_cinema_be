@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 public interface BookingRepository extends JpaRepository<Transaction, Integer> {
-    //    Hiển thị list (CŨ)
+    //    Hiển thị list (CŨ) AnhVN
 //    @Query(value = "Select t.id, t.code , t.member_id, t.show_time_id , m.name, m.identity_number, m.phone, f.name as name_member, t.`transactional_date`,st.date, st.name as time, t.ticket_status\n" +
 //            "From `transaction` as t\n" +
 //            "Join show_time st on t.show_time_id = st.id\n" +
@@ -17,10 +17,10 @@ public interface BookingRepository extends JpaRepository<Transaction, Integer> {
 //            " order by t.id", nativeQuery = true)
 //    Page<Transaction> findAll(Pageable pageable);
 
-    //Truy Vấn tìm kiếm 4 trường (Cũ)
+    //Truy Vấn tìm kiếm 4 trường (Cũ) AnhVN
 //    @Query(value = "select * from transaction where code like concat('%',code,'%')", nativeQuery = true)
 
-     //Truy Vấn tìm kiếm 4 trường (Cũ)
+     //Truy Vấn tìm kiếm 4 trường (Cũ) AnhVN
 //    @Query(value = "Select t.id as id_transation, t.code , t.show_time_id, st.id, t.`transactional_date` , st.name as time , seatt.name as name_seat, seatt.price, t.member_id,m.identity_number, m.name, m.point , t.ticket_status, m.phone \n" +
 //            " From `transaction` as t \n" +
 //            " Join show_time st on t.show_time_id = st.id \n" +
