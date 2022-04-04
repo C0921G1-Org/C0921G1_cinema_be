@@ -3,11 +3,19 @@ package C0921G1_sprint_1.service.member_management;
 import C0921G1_sprint_1.model.member.City;
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.repository.member_management.CityRepository;
+
+
+import C0921G1_sprint_1.model.member.Ward;
+
+import C0921G1_sprint_1.model.security.Account;
+
 import C0921G1_sprint_1.repository.member_management.MemberRepository;
+import C0921G1_sprint_1.repository.member_management.WardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 
 import java.util.Optional;
 
@@ -28,7 +36,25 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public Iterable<City> findAllCities() {
         return this.cityRepository.findAllCities();
+
     }
+
+    @Autowired
+    private WardRepository wardRepository;
+
+    @Override
+    public Optional<Member> findById(String id) {
+        if (id == null || id.equals("")) {
+            return Optional.empty();
+        }
+        return memberRepository.findById(id);
+    }
+
+    @Override
+    public void save(Member member) {
+        memberRepository.save(member);
+    }
+
 
     @Override
     public Page<Member> findAllMembersWithPagination(Pageable pageable) {
@@ -39,6 +65,7 @@ public class MemberServiceImpl implements MemberService {
     public Optional<Member> findMemberById(String id) {
         return this.memberRepository.findMemberById(id);
     }
+
 
     @Override
     public void saveMember(Member member) {
@@ -61,4 +88,10 @@ public class MemberServiceImpl implements MemberService {
         return this.memberRepository.existedMemberByEmail(email);
     }
 
+    @Override
+    public Optional<Member> findMemberByAccount(Account accpunt) {
+        return this.memberRepository.findMemberByAccount(accpunt);
+    }
+
 }
+

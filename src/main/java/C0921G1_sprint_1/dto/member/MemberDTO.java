@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.Set;
+import java.util.regex.Matcher;
 
 public class MemberDTO implements Validator {
 
@@ -21,6 +22,7 @@ public class MemberDTO implements Validator {
     @Size(min = 8, message = "Dữ liệu không hợp lệ! Tên ít nhất bao gồm 8 kí tự!")
     private String name;
 
+    @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
     private Integer gender;
 
     @NotBlank(message = "Dữ liệu còn trống! Mời bạn nhập vào!")
@@ -50,7 +52,67 @@ public class MemberDTO implements Validator {
 
     private City city;
 
+    private Integer cityId;
+    @NotBlank
+    private String password;
     private Set<Transaction> transactions;
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return MemberDTO.class.isAssignableFrom(clazz);
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        MemberDTO memberDTO = (MemberDTO) target;
+
+        String dateOfBirth = memberDTO.dateOfBirth;
+//        System.out.println(RegexMember.checkAgeMember(dateOfBirth));
+        if (RegexMember.checkAgeMember(dateOfBirth)) {
+            errors.rejectValue("dateOfBirth","dateOfBirth.age");
+        }
+
+//        if (memberDTO.gender == null || memberDTO.gender < 0 || memberDTO.gender > 1) {
+//            errors.rejectValue("gender", "gender.wrongGender", "Vui lòng chọn giới tính phù hợp");
+//        }
+
+//        if (!memberDTO.email.matches("^[A-Za-z0-9._]+[@][A-Za-z0-9._]+[.][A-Za-z0-9._]+$")) {
+//            errors.rejectValue("email", "email.wrongMail", "sai format Email.");
+//        }
+
+        if (memberDTO.email.length() < 10 || memberDTO.email.length() > 40) {
+            errors.rejectValue("email", "email.wrongLengthMail", "Email có độ dài tối thiểu là 10 đến 40 ký tự.");
+        }
+
+//        if (!memberDTO.identityNumber.matches("^\\d{9,10}$")) {
+//            errors.rejectValue("identityNumber", "identityNumber.wrongIdentityCard", "CMND phải có 9 hoặc 10 số");
+//        }
+
+//        if (memberDTO.wardId == null) {
+//            errors.rejectValue("wardId", "wardId.nullWardId", "Bắt buộc thành viên phải có địa chỉ");
+//        }
+
+    }
+
+    //check age name regex - NhanNT
+//    public boolean checkName(String name) {
+//        Pattern pattern = Pattern.compile("^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$");
+//        Matcher matcher = pattern.matcher(name);
+//        if (!matcher.matches()) {
+//            return true;
+//        } else {
+//            return false;
+//        }
+//    }
+
 
     public String getId() {
         return id;
@@ -86,6 +148,14 @@ public class MemberDTO implements Validator {
 
     public String getEmail() {
         return email;
+    }
+
+    public Integer getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
     }
 
     public void setEmail(String email) {
@@ -148,24 +218,5 @@ public class MemberDTO implements Validator {
         this.transactions = transactions;
     }
 
-    @Override
-    public boolean supports(Class<?> clazz) {
-        return MemberDTO.class.isAssignableFrom(clazz);
-    }
-
-    @Override
-    public void validate(Object target, Errors errors) {
-        MemberDTO memberDTO = (MemberDTO) target;
-
-        String dateOfBirth = memberDTO.dateOfBirth;
-//        System.out.println(RegexMember.checkAgeMember(dateOfBirth));
-        if (RegexMember.checkAgeMember(dateOfBirth)) {
-            errors.rejectValue("dateOfBirth","dateOfBirth.age");
-        }
-
-    }
-
-
-    //need solution to solve a problem - how can validate vietnamese name - KhanhLDQ
-
 }
+

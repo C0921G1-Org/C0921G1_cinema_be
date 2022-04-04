@@ -1,5 +1,6 @@
 package C0921G1_sprint_1.model.showtime;
 
+import C0921G1_sprint_1.model.seat.SelectedSeat;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;

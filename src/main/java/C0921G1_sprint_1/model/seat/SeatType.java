@@ -17,7 +17,7 @@ public class SeatType {
 
     @OneToMany(mappedBy = "seatType")
     @JsonBackReference(value = "seatType_seats")
-    private List<Seat> seats;
+    private List<SelectedSeat> selectedSeats;
 
     public Integer getId() {
         return id;
@@ -43,11 +43,11 @@ public class SeatType {
         this.price = price;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+    public List<SelectedSeat> getSelectedSeats() {
+        return selectedSeats;
     }
 
-    public void setSeats(List<Seat> seats) {
-        this.seats = seats;
+    public void setSelectedSeats(List<SelectedSeat> selectedSeats) {
+        this.selectedSeats = selectedSeats;
     }
 }

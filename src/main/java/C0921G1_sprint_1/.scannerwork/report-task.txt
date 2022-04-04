@@ -1,6 +1,0 @@
-projectKey=C0921G1_ReviewCode_KhanhLDQ
-serverUrl=http://192.168.1.78:9000
-serverVersion=9.3.0.51899
-dashboardUrl=http://192.168.1.78:9000/dashboard?id=C0921G1_ReviewCode_KhanhLDQ
-ceTaskId=AX_fUKGqwt3wMxMS-X4w
-ceTaskUrl=http://192.168.1.78:9000/api/ce/task?id=AX_fUKGqwt3wMxMS-X4w

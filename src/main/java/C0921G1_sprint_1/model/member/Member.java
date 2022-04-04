@@ -1,6 +1,7 @@
 package C0921G1_sprint_1.model.member;
 
 import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
+import C0921G1_sprint_1.model.security.Account;
 import C0921G1_sprint_1.model.transaction.Transaction;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
@@ -20,8 +21,9 @@ public class Member {
             parameters = {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "Mem-"),
-                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
+                    @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d")})
     private String id;
+
 
     private String name;
     private Integer gender;
@@ -40,44 +42,28 @@ public class Member {
     @JsonBackReference(value = "transactions_member")
     private Set<Transaction> transactions;
 
-    public String getDateOfBirth() {
-        return dateOfBirth;
+
+//    @ManyToOne(targetEntity = City.class)
+//    private City city;
+
+
+
+    @ManyToOne(targetEntity = Ward.class)
+    private Ward ward;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "account_id")
+    private Account account;
+
+    public Member() {
     }
 
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
+    public City getCity() {
+        return city;
     }
 
-    public String getIdentityNumber() {
-        return identityNumber;
-    }
-
-    public void setIdentityNumber(String identityNumber) {
-        this.identityNumber = identityNumber;
-    }
-
-    public Integer getGender() {
-        return gender;
-    }
-
-    public void setGender(Integer gender) {
-        this.gender = gender;
-    }
-
-    public Set<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(Set<Transaction> transactions) {
-        this.transactions = transactions;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public String getId() {
@@ -94,6 +80,14 @@ public class Member {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
     }
 
     public String getPhone() {
@@ -128,11 +122,51 @@ public class Member {
         this.point = point;
     }
 
-    public City getCity() {
-        return city;
+    public String getImage() {
+        return image;
     }
 
-    public void setCity(City city) {
-        this.city = city;
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getIdentityNumber() {
+        return identityNumber;
+    }
+
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
+    }
+
+    public Ward getWard() {
+        return ward;
+    }
+
+    public void setWard(Ward ward) {
+        this.ward = ward;
+    }
+
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

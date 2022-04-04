@@ -1,6 +1,8 @@
 package C0921G1_sprint_1.repository.member_management;
 
 import C0921G1_sprint_1.model.member.Member;
+
+import C0921G1_sprint_1.model.security.Account;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -24,11 +26,14 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             countQuery = "select count(*) from member", nativeQuery = true)
     Page<Member> findAllMembersWithPagination(Pageable pageable);
 
+
     //find member by id - KhanhLDQ
     @Query(value = "select * from member m where m.id = :id", nativeQuery = true)
     Optional<Member> findMemberById(
             @Param("id") String id
     );
+
+    Optional<Member> findMemberByAccount(Account account);
 
     //update member by id - KhanhLDQ
     @Transactional
@@ -78,5 +83,5 @@ public interface MemberRepository extends JpaRepository<Member,String> {
     Optional<Member> existedMemberByEmail(
             @Param("email") String email
     );
-
 }
+

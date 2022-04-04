@@ -12,4 +12,6 @@ public interface CityRepository extends JpaRepository<City,Integer> {
     @Query(value = "select * from city", nativeQuery = true)
     Iterable<City> findAllCities();
 
+    City findCityById(int id);
+
 }

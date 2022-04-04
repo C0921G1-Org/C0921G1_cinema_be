@@ -8,16 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class PaymentServiceImpl implements PaymentService{
+public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;
-    @Override
-    public List<Transaction> getAllTransaction() {
-        return paymentRepository.findAll();
-    }
 
     @Override
     public Transaction saveTransaction(Transaction transaction) {
         return paymentRepository.save(transaction);
     }
+
 }
