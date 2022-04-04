@@ -15,17 +15,12 @@ public class District {
     private String name;
     private String type;
 
-
-
     @OneToMany(mappedBy = "district")
     @JsonBackReference(value = "district_wards")
     private Set<Ward> wards;
 
     @ManyToOne(targetEntity = City.class)
     private City city;
-
-    public District() {
-    }
 
     public Integer getId() {
         return id;

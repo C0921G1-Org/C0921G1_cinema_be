@@ -35,23 +35,35 @@ public class Member {
     private String dateOfBirth;
     private String identityNumber;
 
+    @ManyToOne(targetEntity = City.class)
+    private City city;
+
+    @OneToMany(mappedBy = "member")
+    @JsonBackReference(value = "transactions_member")
+    private Set<Transaction> transactions;
+
+
 //    @ManyToOne(targetEntity = City.class)
 //    private City city;
 
 
+
     @ManyToOne(targetEntity = Ward.class)
     private Ward ward;
-
-    @OneToMany(mappedBy = "member")
-
-    @JsonBackReference("member_transaction")
-    private Set<Transaction> transactions;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id")
     private Account account;
 
     public Member() {
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 
     public String getId() {

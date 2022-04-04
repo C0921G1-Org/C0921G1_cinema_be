@@ -3,6 +3,7 @@ plugins {
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 
+
 }
 
 group = 'com.example'
@@ -33,11 +34,11 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mail'
 //
 
-
-// https://mvnrepository.com/artifact/com.google.zxing/core
-    implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
-// https://mvnrepository.com/artifact/com.google.zxing/javase
-    implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
+//
+//// https://mvnrepository.com/artifact/com.google.zxing/core
+//    implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
+//// https://mvnrepository.com/artifact/com.google.zxing/javase
+//    implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
     
 
 
