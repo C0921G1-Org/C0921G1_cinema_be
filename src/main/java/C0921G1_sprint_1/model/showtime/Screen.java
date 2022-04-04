@@ -19,9 +19,6 @@ public class Screen {
     @JsonBackReference(value = "showtime_screens")
     private List<ShowTime> showTime;
 
-    public Screen() {
-    }
-
     public List<ShowTime> getShowTime() {
         return showTime;
     }

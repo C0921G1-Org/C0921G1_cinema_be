@@ -40,8 +40,6 @@ public class Film {
     //CaHM fix CheckBox
     private String filmTypeNew;
 
-    public Film() {
-    }
 
     public Integer getId() {
         return id;

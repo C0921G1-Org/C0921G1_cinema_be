@@ -25,9 +25,6 @@ public class City {
 //    @JsonBackReference(value = "city_member")
 //    private Set<Member> members;
 
-    public City() {
-    }
-
     public Integer getId() {
         return id;
     }
