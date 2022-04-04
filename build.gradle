@@ -2,7 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.6.4'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
-    id "org.sonarqube" version "3.0"
+
 }
 
 group = 'com.example'
@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
@@ -21,35 +22,25 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'mysql:mysql-connector-java'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.2.0.RELEASE'
     testImplementation 'org.apache.httpcomponents:httpclient'
-
-//     https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
     implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
-//    testImplementation 'org.springframework.security:spring-security-test'
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.2.0.RELEASE'
+
     testImplementation 'org.apache.httpcomponents:httpclient'
-
     implementation 'org.springframework.boot:spring-boot-starter-mail'
-    implementation 'org.springframework.boot:spring-boot-starter-validation'
+//
 
-    // https://mvnrepository.com/artifact/com.google.zxing/core
+
+// https://mvnrepository.com/artifact/com.google.zxing/core
     implementation group: 'com.google.zxing', name: 'core', version: '3.4.1'
-    // https://mvnrepository.com/artifact/com.google.zxing/javase
+// https://mvnrepository.com/artifact/com.google.zxing/javase
     implementation group: 'com.google.zxing', name: 'javase', version: '3.4.1'
 
 }
+
 test {
     useJUnitPlatform()
-}
-
-sonarqube {
-    properties {
-        property 'sonar.host.url', 'http://192.168.1.78:9000/'
-        property 'sonar.login', 'c411f85018504e7c7cf185253d699d752a4d5b76'
-        property 'sonar.projectName', 'C0921G1_ReviewCode_TuNK'
-        property 'sonar.projectKey', 'C0921G1_ReviewCode_TuNK'
-    }
 }

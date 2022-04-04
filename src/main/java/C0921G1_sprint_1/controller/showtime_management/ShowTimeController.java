@@ -12,13 +12,14 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/c09/user")
+
+@RequestMapping("/c09")
 public class ShowTimeController {
     @Autowired
     private ShowTimeService showTimeService;
 
-    /*DatTC - API lấy dữ liệu showTime theo filmId*/
-    @GetMapping("/showtime")
+    /*DatTC - API lấy dữ liệu tất cả showTime */
+    @GetMapping("/public/showtime")
     public ResponseEntity<List<ShowTime>> getAllShowTime(){
         List<ShowTime> showTimeList = this.showTimeService.getAllShowTime();
         if (showTimeList.isEmpty()){
@@ -29,7 +30,7 @@ public class ShowTimeController {
     }
 
     /*DatTC - API lấy dữ liệu showTime theo filmId*/
-    @GetMapping("/showtime/by-film")
+    @GetMapping("/public/showtime/by-film")
     public ResponseEntity<List<ShowTime>> getAllByFilmId(@RequestParam Integer filmId, String date){
         List<ShowTime> showTimeList = this.showTimeService.getAllByFilmId(filmId, date);
         if (showTimeList.isEmpty()){
@@ -39,7 +40,7 @@ public class ShowTimeController {
         }
     }
 
-    @GetMapping("/showtime/{id}")
+    @GetMapping("/public/showtime/{id}")
     public ResponseEntity<ShowTime> findById(@PathVariable Integer id){
         Optional<ShowTime> showTimeOptional = this.showTimeService.findById(id);
         if (!showTimeOptional.isPresent()){
@@ -49,4 +50,6 @@ public class ShowTimeController {
         }
     }
 
+
 }
+

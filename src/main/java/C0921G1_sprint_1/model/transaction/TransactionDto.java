@@ -5,11 +5,18 @@ import C0921G1_sprint_1.dto.showtime.ShowTimeDTO;
 import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.showtime.ShowTime;
 import com.sun.istack.NotNull;
+import org.springframework.http.HttpStatus;
+import org.springframework.validation.FieldError;
 import org.springframework.validation.Validator;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TransactionDto {
     private Integer id;
@@ -22,8 +29,10 @@ public class TransactionDto {
     @NotBlank
     private String ticketStatus;
 
+    @NotNull
     private MemberDTO memberDTO;
 
+    @NotNull
     private ShowTimeDTO showTimeDTO;
 
     public Integer getId() {
@@ -57,14 +66,14 @@ public class TransactionDto {
     public void setTicketStatus(String ticketStatus) {
         this.ticketStatus = ticketStatus;
     }
-
-    public MemberDTO getMemberDTO() {
-        return memberDTO;
-    }
-
-    public void setMemberDTO(MemberDTO memberDTO) {
-        this.memberDTO = memberDTO;
-    }
+//
+//    public MemberDTO getMemberDTO() {
+//        return memberDTO;
+//    }
+//
+//    public void setMemberDTO(MemberDTO memberDTO) {
+//        this.memberDTO = memberDTO;
+//    }
 
     public ShowTimeDTO getShowTimeDTO() {
         return showTimeDTO;
@@ -72,5 +81,20 @@ public class TransactionDto {
 
     public void setShowTimeDTO(ShowTimeDTO showTimeDTO) {
         this.showTimeDTO = showTimeDTO;
+    }
+
+
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public Map<String, String> handleValidationExceptions(
+            MethodArgumentNotValidException ex) {
+        Map<String, String> errors = new HashMap<>();
+        ex.getBindingResult().getAllErrors().forEach((error) -> {
+                String fieldName = ((FieldError) error).getField();
+            String errorMessage = error.getDefaultMessage();
+            errors.put(fieldName, errorMessage);
+        });
+        return errors;
     }
 }

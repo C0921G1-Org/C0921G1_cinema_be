@@ -1,16 +1,10 @@
 package C0921G1_sprint_1.controller.special_ticket_confirmation;
 
 
-
-import C0921G1_sprint_1.model.member.Member;
-import C0921G1_sprint_1.model.seat.SelectedSeat;
 import C0921G1_sprint_1.model.transaction.Transaction;
-import C0921G1_sprint_1.service.member_management.MemberService;
-import C0921G1_sprint_1.service.selected_seat_management.SelectedSeatService;
+import C0921G1_sprint_1.model.transaction.TransactionDto;
 import C0921G1_sprint_1.service.special_ticket_confirmation.PaymentService;
-
 import com.google.zxing.BarcodeFormat;
-import com.google.zxing.EncodeHintType;
 import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
@@ -21,23 +15,17 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.*;
-
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.validation.Valid;
-
 import java.io.IOException;
 import java.nio.file.Paths;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Optional;
 import java.util.Properties;
 
 @RestController
@@ -47,16 +35,6 @@ public class PaymentController {
     @Autowired
     private PaymentService paymentService;
 
-
-
-    // cái này xóa đi
-    @GetMapping("/pay")
-    public ResponseEntity<List<Transaction>> listResponseEntity(){
-        List<Transaction> transactions = paymentService.getAllTransaction();
-        return new ResponseEntity<>(transactions, HttpStatus.OK);
-    }
-
-    //còn 2 3 đối tượng con đang đợi bên phía a đạt gửi qua cùng lúc save xuống data là được !!!
     // thêm mới lịch sử xong redirect về trang lịch sử
     @PostMapping(value = "/pay", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> addTracsaction(@Valid @RequestBody Transaction transaction , BindingResult bindingResult){
@@ -74,10 +52,6 @@ public class PaymentController {
         }
         return new ResponseEntity<>(paymentService.saveTransaction(transaction) , HttpStatus.OK);
     }
-
-
-
-
 
 
         // chức năng send mail
@@ -114,14 +88,13 @@ public class PaymentController {
         String htmlText=
                 "<div style=\"color: #031327\">\n" +
                         "    <div style=\"background: url(https://thumbs.dreamstime.com/b/abstract-background-white-film-strip-frame-cinema-festival-poster-flyer-template-your-design-movie-time-139262949.jpg);\n" +
-                        "width: 720px ;height: 480px\">\n" +
+                        "width: 700px ;height: 480px\">\n" +
                         "        <br>\n" +
                         "        <h2 style=\"text-align: center;\">Kính chào quý khách <strong style=\"color: darkblue\">"+ transaction.getMember().getName()+ "</strong></h2>\n" +
                         "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim: </strong>" + "<strong style=\"color: darkblue\">" + transaction.getShowTime().getFilm().getName() + "</strong>" +"</p>\n" +
                         "        <p><strong>NGÀY CHIẾU: </strong>"+ transaction.getShowTime().getDate() + "<p>\n" +
                         "        <p><strong>XUẤT CHIẾU: </strong>"+  transaction.getShowTime().getName() + "<p>\n" +
-                        "        <p><strong>SỐ GHẾ: </strong>"+ "đang đợi dữ liệu bên đạt" + "<p>\n" +
-                        "        <p><strong>TỔNG TIỀN: </strong>"+ "100.000.000" + " VND"+ " </p>\n" +
+                        "        <p><strong>Thời Lượng: </strong>"+ transaction.getShowTime().getFilm().getDuration() + "Phút"+ "<p>\n" +
                         "        <p><strong>Cảm ơn quý khách đã đặt vé xem phim tại <span style=\"color: darkblue\">C0921G1-CINEMA</span></strong></p>\n" +
                         "        <p><strong> CHÚC QUÝ KHÁCH MỘT BUỔI XEM PHIM VUI VẺ </strong></p>\n" +
                         "        <p><strong style=\"color: red\">LƯU Ý: KHI ĐI NHỚ ĐEM THEO MÃ QR ĐẾN QUẦY THU NGÂN ĐỂ XÁC NHẬN ĐẶT VÉ.</strong></p>\n" +
@@ -150,8 +123,8 @@ public class PaymentController {
 
         // chuyển đối qrcode thành hình ảnh
     private void qrCode(Transaction transaction) throws WriterException, IOException {
-        String data = transaction.getCode() + "" + transaction.getId() + " "
-                + "Email Người đặt vé" +transaction.getMember().getEmail() + "Tên Người Đặt Vé" + transaction.getMember().getName();
+        String data = transaction.getMember().getName() + "" + transaction.getShowTime().getFilm().getName() + " "
+                +""+ transaction.getShowTime().getDate()  +  transaction.getShowTime().getName() + transaction.getShowTime().getFilm().getDuration();
         String path = "src/main/resources/qr.png";
         BitMatrix matrix;
         matrix = new MultiFormatWriter().encode(data, BarcodeFormat.QR_CODE, 150, 150);
@@ -159,7 +132,8 @@ public class PaymentController {
     }
 
 
-
-
 }
+
+
+
 
