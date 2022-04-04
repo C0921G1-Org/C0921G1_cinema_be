@@ -18,4 +18,12 @@ public class FilmTypeServiceImpl implements FilmTypeService{
     public List<FilmType> getAll() {
         return filmTypeRepository.getAll();
     }
+
+
+//    CAmh lay danh sach type film
+    @Override
+    public Iterable<FilmType> findAll() {
+        return filmTypeRepository.findAll();
+    }
+
 }

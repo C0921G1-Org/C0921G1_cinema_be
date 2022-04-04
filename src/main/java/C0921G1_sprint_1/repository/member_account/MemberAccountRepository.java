@@ -25,7 +25,8 @@ public interface MemberAccountRepository extends JpaRepository<Member, String> {
         "join selected_seat se on se.show_time_id = st.id \n" +
         "join seat_type sety on  sety.id = se.seat_type_id \n" +
         "where m.id = ?1 and f.`name` like %?2% \n" +
-        "group by t.transactional_date", nativeQuery = true)
+        "group by t.transactional_date \n"+
+        "order by t.transactional_date", nativeQuery = true)
     Page<MemberHistoryDTO> findTradingHistory(String id, String filmName, Pageable pageable);
 
 

@@ -18,6 +18,10 @@ public class Account {
     private Integer isEnabled;
     private String email;
 
+//    @OneToMany(mappedBy = "account")
+//    @JsonBackReference("C0921G1")
+//    private Set<AccountRole> accountRoleSet;
+
     @OneToMany(mappedBy = "account")
     @JsonBackReference("account_accountRoleList")
     private List<AccountRole> accountRoleList;

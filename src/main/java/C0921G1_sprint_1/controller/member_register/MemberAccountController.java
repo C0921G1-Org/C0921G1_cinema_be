@@ -9,6 +9,7 @@ import C0921G1_sprint_1.model.member.Member;
 import C0921G1_sprint_1.model.member.Ward;
 import C0921G1_sprint_1.service.member_account.MemberAccountService;
 import C0921G1_sprint_1.service.member_management.MemberService;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -48,13 +49,15 @@ public class MemberAccountController {
 //        Map<String, String> listErrors = new HashMap<>();
         List<FieldError> listErrors = new ArrayList<>();
         if (bindingResult.hasFieldErrors()){
-            System.out.println(bindingResult.getFieldErrors());
+//            System.out.println(bindingResult.getFieldErrors());
+
             return new ResponseEntity<>(bindingResult.getFieldErrors(),HttpStatus.NOT_ACCEPTABLE);
         }
         //check existed member
 
 //        if (this.memberAccountService.findMemberByEmail(memberObj.getEmail()).isPresent()) {
         if (existedEmail.isPresent()) {
+
             listErrors.add(new FieldError("emailDup", "existedEmail", "Tài khoản đã tồn tại"));
 //            listErrors.add("emailDup","existedEmail");
 //            System.out.println(listErrors);
@@ -120,7 +123,7 @@ public class MemberAccountController {
                                                                         @RequestParam(defaultValue = "") String memberID,
                                                                         @RequestParam(defaultValue = "") String filmName){
 
-        Pageable pageable = PageRequest.of(page, 10);
+        Pageable pageable = PageRequest.of(page, 5);
         Page<MemberHistoryDTO> historyDTOList = memberAccountService.findTradingHistory(memberID,filmName,pageable);
 
         if (historyDTOList.isEmpty()){

@@ -34,6 +34,13 @@ public class Transaction {
 
     private String transactionalDate;
     private String ticketStatus;
+    private Integer checkAcceptTicket;
+    private double pointGained;
+    private double pointUsed;
+
+
+    //AnhVN tạo cột check thông tin vé đã được nhận
+
 
     @OneToMany(mappedBy = "transaction")
     @JsonBackReference(value = "transaction_attachedService")
@@ -48,9 +55,7 @@ public class Transaction {
 
     // cột dùng điểm và nhận điểm
 
-    private Integer checkAcceptTicket;
-    private double pointGained;
-    private double pointUsed;
+
 
 
     public Integer getId() {
@@ -135,5 +140,6 @@ public class Transaction {
     public void setCheckAcceptTicket(Integer checkAcceptTicket) {
         this.checkAcceptTicket = checkAcceptTicket;
     }
+
 }
 
