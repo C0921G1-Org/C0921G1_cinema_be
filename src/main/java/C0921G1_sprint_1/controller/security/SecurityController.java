@@ -51,7 +51,7 @@ public class SecurityController {
 
         Account account = accountService.findAccountByUsername(loginRequest.getUsername());
 //        Member member = memberService.findMemberById(account.getId().toString()).get();
-        Member member = memberService.findMemberByAccount(account).get();
+        Member member = memberService.findMemberByAccount(account.getId()).get();
 
 
         return ResponseEntity.ok(

@@ -63,8 +63,8 @@ public class MemberServiceImpl implements MemberService {
 
 
     @Override
-    public Optional<Member> findMemberByAccount(Account accpunt) {
-        return this.memberRepository.findMemberByAccount(accpunt);
+    public Optional<Member> findMemberByAccount(Integer accountId) {
+        return this.memberRepository.findMemberByAccount(accountId);
     }
 
     @Override

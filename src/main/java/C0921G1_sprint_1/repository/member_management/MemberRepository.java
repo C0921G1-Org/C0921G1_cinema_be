@@ -28,7 +28,13 @@ public interface MemberRepository extends JpaRepository<Member,String> {
             @Param("id") String id
     );
 
-    Optional<Member> findMemberByAccount(Account accpunt);
+//    Optional<Member> findMemberByAccount(Account accpunt);
+
+    //find member by account
+    @Query(value = "select * from member m where m.account_id = :account_id", nativeQuery = true)
+    Optional<Member> findMemberByAccount(
+            @Param("account_id") Integer accountId
+    );
 
     @Transactional
     @Modifying

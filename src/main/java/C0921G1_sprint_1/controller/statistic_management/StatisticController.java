@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/statistic")
+@RequestMapping("/c09/admin/statistic")
 @CrossOrigin(origins = "*")
 public class StatisticController {
 

@@ -16,7 +16,7 @@ import java.util.Date;
 public class JwtTokenUtils {
     private static Logger logger = LoggerFactory.getLogger(JwtTokenUtils.class);
 
-    @Value("${bezkoder.app.jwtSecret}")
+    @Value("${c0921g1.app.jwtSecret}")
     private String jwtSecret;
 
     @Value("${bezkoder.app.jwtExpirationMs}")

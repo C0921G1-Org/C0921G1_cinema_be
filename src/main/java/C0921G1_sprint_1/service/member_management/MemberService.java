@@ -11,6 +11,8 @@ import org.springframework.data.domain.Pageable;
 import java.util.Optional;
 
 import C0921G1_sprint_1.model.member.Member;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 public interface MemberService {
 
@@ -27,7 +29,7 @@ public interface MemberService {
 
     void save(Member member);
 
-    Optional<Member> findMemberByAccount(Account accpunt);
+    Optional<Member> findMemberByAccount(Integer accountId);
 
 
 
