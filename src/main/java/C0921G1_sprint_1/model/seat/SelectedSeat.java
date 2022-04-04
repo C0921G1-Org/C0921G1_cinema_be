@@ -21,6 +21,9 @@ public class SelectedSeat {
     @ManyToOne(targetEntity = ShowTime.class)
     private ShowTime showTime;
 
+
+
+
     public SelectedSeat() {
     }
 

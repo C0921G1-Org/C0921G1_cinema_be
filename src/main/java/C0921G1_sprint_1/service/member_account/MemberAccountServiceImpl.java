@@ -41,14 +41,17 @@ public class MemberAccountServiceImpl implements MemberAccountService{
     @Override
     public void createMember(MemberDTO memberObj) {
         Member member = new Member();
-        BeanUtils.copyProperties(memberObj, member, "wardId");
-        Ward ward = wardRepository.findById(memberObj.getWardId()).orElse(null);
-        member.setWard(ward);
+//        BeanUtils.copyProperties(memberObj, member, "wardId");
+        BeanUtils.copyProperties(memberObj, member,"city");
+//        Ward ward = wardRepository.findById(memberObj.getWardId()).orElse(null);
+//        member.setWard(ward);//
+        City city = cityRepository.findById(memberObj.getCityId()).orElse(null);
+        member.setCity(city);
         Account account = new Account();
         String encodedPassword = bCryptPasswordEncoder.encode(memberObj.getPassword());
         account.setEmail(member.getEmail());
         account.setEncryptPw(encodedPassword);
-        account.setIsEnabled(0);
+        account.setIsEnabled(1);
         account.setUsername(member.getEmail());
         member.setAccount(account);
         member.setPoint(0.0);

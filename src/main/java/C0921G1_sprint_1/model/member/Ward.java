@@ -18,12 +18,14 @@ public class Ward {
     @ManyToOne(targetEntity = District.class)
     private District district;
 
+
     @OneToMany(mappedBy = "ward")
     @JsonBackReference(value = "ward_member")
     private Set<Member> members;
 
     public Ward() {
     }
+
 
     public Integer getId() {
         return id;

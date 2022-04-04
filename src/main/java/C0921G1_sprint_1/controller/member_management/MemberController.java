@@ -1,5 +1,8 @@
 package C0921G1_sprint_1.controller.member_management;
 
+import C0921G1_sprint_1.dto.member.MemberDTO;
+import C0921G1_sprint_1.model.member.City;
+import C0921G1_sprint_1.model.member.Member;
 
 import C0921G1_sprint_1.dto.member.MemberAccountDTO;
 import C0921G1_sprint_1.dto.member.MemberDTO;
@@ -14,6 +17,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -22,15 +30,167 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+
+import java.util.*;
+
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("member")
-
+@RequestMapping("/c09/admin/member-management")
 public class MemberController {
 
     @Autowired
     private MemberService memberService;
 
+
+    //get all members - KhanhLDQ
+//    @GetMapping(value = "/member-list")
+//    public ResponseEntity<Iterable<Member>> getAllMembers() {
+//        List<Member> members = (List<Member>) this.memberService.findAllMembers();
+//
+//        if (members.isEmpty())
+//            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+//
+//        return new ResponseEntity<>(members,HttpStatus.OK);
+//    }
+
+    //get all cities - KhanhLDQ
+    @GetMapping(value = "/city-list")
+    public ResponseEntity<Iterable<City>> getAllCities() {
+        List<City> cities = (List<City>) this.memberService.findAllCities();
+
+        if (cities.isEmpty())
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+        return new ResponseEntity<>(cities,HttpStatus.OK);
+    }
+
+    //get all members with pagination - KhanhLDQ
+    @GetMapping(value = "/member-list")
+    public ResponseEntity<Page<Member>> getAllMembersWithPagination(
+            @RequestParam(name = "page",required = false,defaultValue = "0") Integer page) {
+
+        try {
+            Pageable pageable = PageRequest.of(page,5);
+            Page<Member> members = this.memberService.findAllMembersWithPagination(pageable);
+
+            if (members.isEmpty())
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+            return new ResponseEntity<>(members,HttpStatus.OK);
+        }
+        catch (NullPointerException nullPointerException) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    //get member by Id - KhanhLDQ
+    @GetMapping(value = "/member-list/info/{id}")
+    public ResponseEntity<Member> getMemberById(@PathVariable String id) {
+        Optional<Member> memberOptional = this.memberService.findMemberById(id);
+
+        if (!memberOptional.isPresent())
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        return new ResponseEntity<>(memberOptional.get(),HttpStatus.OK);
+    }
+
+    //update member by Id - KhanhLDQ
+    @PatchMapping(value = "/member-list/update/{id}")
+    public ResponseEntity<List<FieldError>> updateMember(@PathVariable String id,
+                                                         @RequestBody @Validated MemberDTO memberDTO,
+                                                         BindingResult bindingResult) {
+
+//        Map<String, String> listErrors = new HashMap<>();
+
+        Optional<Member> memberOptional = this.memberService.findMemberById(id);
+
+        if (!memberOptional.isPresent())
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
+        new MemberDTO().validate(memberDTO,bindingResult);
+
+        if (bindingResult.hasErrors())
+            return new ResponseEntity<>(bindingResult.getFieldErrors(), HttpStatus.NOT_ACCEPTABLE);
+
+        //check list errors
+//        if (bindingResult.hasErrors()) {
+//            List<FieldError> errors = bindingResult.getFieldErrors();
+//            System.out.println(errors);
+//
+//            for (FieldError error : errors) {
+//                System.out.println(error);
+//                System.out.println(error.getField());
+//                System.out.println(error.getCode());
+//                System.out.println(Arrays.toString(error.getCodes()));
+//            }
+//        }
+
+
+        memberDTO.setId(id);
+        Member member = new Member();
+        BeanUtils.copyProperties(memberDTO,member);
+
+        this.memberService.saveMember(member);
+        return new ResponseEntity<>(HttpStatus.OK);
+
+        //check existed email - KhanhLDQ
+//        System.out.println(member.getEmail());
+//        Optional<Member> existedEmail = this.memberService.existedMemberByEmail(member.getEmail());
+
+        //need solution to solve the problem - how can create list error to send with http status 406
+//        if (existedEmail.isPresent()) {
+//            listErrors.put("email","existedEmail");
+//            System.out.println(listErrors);
+//            return new ResponseEntity<>(listErrors,HttpStatus.NOT_ACCEPTABLE);
+//        }
+
+    }
+
+    //search members by name and point range - KhanhLDQ
+    @GetMapping(value = "/member-list/search-point-range")
+    public ResponseEntity<Page<Member>> getMembersByNameAndPointRange(
+            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+            @RequestParam(name = "name", required = false) String name,
+            @RequestParam(name = "firstValue", required = false) Integer firstValue,
+            @RequestParam(name = "secondValue", required = false) Integer secondValue
+    ) {
+        try {
+            Pageable pageable = PageRequest.of(page,5);
+            Page<Member> members = this.memberService.findMembersByNameAndPointRange(
+                    pageable,name,firstValue,secondValue);
+
+            if (members.isEmpty())
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+            return new ResponseEntity<>(members,HttpStatus.OK);
+        }
+        catch (NullPointerException nullPointerException) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    //search members by name and point default - KhanhLDQ
+    @GetMapping(value = "/member-list/search-point-default")
+    public ResponseEntity<Page<Member>> getMembersByNameAndPointDefault(
+            @RequestParam(name = "page", required = false, defaultValue = "0") Integer page,
+            @RequestParam(name = "name", required = false) String name
+    ) {
+        try {
+            Pageable pageable = PageRequest.of(page, 5);
+            Page<Member> members = this.memberService.findMembersByNameAndPointDefault(pageable, name);
+
+            //return status: no content - body: null
+            if (members.isEmpty()) {
+//                System.out.println(members.getContent());
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(members, HttpStatus.OK);
+        } catch (NullPointerException nullPointerException) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
     @Autowired
     private TransactionService transactionService;
 
@@ -148,7 +308,6 @@ public class MemberController {
                 t.setPointGained(letTotal(t.getId(),startDate,endDate));
                 System.out.println(letTotal(t.getId(),startDate,endDate));
                 System.out.println("----");
-                System.out.println(t.getShowTime().getFilm().getName());
             }
             return new ResponseEntity<>(history, HttpStatus.OK);
         }

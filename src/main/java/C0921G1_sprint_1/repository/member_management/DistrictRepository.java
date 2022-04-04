@@ -15,4 +15,7 @@ public interface DistrictRepository extends JpaRepository<District,Integer> {
             "where d.city_id = ?1",nativeQuery = true)
     List<District>findDistinctByCity_Id(int id);
 
+
+    
+
 }

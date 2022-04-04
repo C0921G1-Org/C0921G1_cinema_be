@@ -18,8 +18,6 @@ public class Film {
     private String startDate;
     private String endDate;
 
-
-
     @ManyToOne(targetEntity = FilmType.class)
     private FilmType filmType;
 
@@ -40,8 +38,6 @@ public class Film {
     //CaHM fix CheckBox
     private String filmTypeNew;
 
-    public Film() {
-    }
 
     public Integer getId() {
         return id;
