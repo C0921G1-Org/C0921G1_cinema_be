@@ -3,14 +3,14 @@ package C0921G1_sprint_1.model.transaction;
 import C0921G1_sprint_1.custom_id.StringPrefixedSequenceIdGenerator;
 import C0921G1_sprint_1.model.attached_service.AttachedService;
 import C0921G1_sprint_1.model.member.Member;
-import C0921G1_sprint_1.model.seat.Seat;
+
 import C0921G1_sprint_1.model.showtime.ShowTime;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table
@@ -28,15 +28,9 @@ public class Transaction {
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.INCREMENT_PARAM, value = "1"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.VALUE_PREFIX_PARAMETER, value = "TSC-"),
                     @org.hibernate.annotations.Parameter(name = StringPrefixedSequenceIdGenerator.NUMBER_FORMAT_PARAMETER, value = "%03d") })
+    @NotBlank(message = "Ko dc trong")
+
     private String code;
-
-    public Set<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(Set<Seat> seats) {
-        this.seats = seats;
-    }
 
     private String transactionalDate;
     private String ticketStatus;
@@ -48,17 +42,14 @@ public class Transaction {
     @ManyToOne(targetEntity = ShowTime.class)
     private ShowTime showTime;
 
-    @ManyToMany
-    @JsonBackReference(value = "transaction_seat")
-    @JoinTable(
-            name = "ticket",
-            joinColumns = @JoinColumn(name = "transaction_id"),
-            inverseJoinColumns = @JoinColumn(name = "seat_id")
-    )
-    private Set<Seat> seats;
-
     @ManyToOne(targetEntity = Member.class)
+    @JoinColumn(name = "member_id", referencedColumnName = "id")
     private Member member;
+
+    private Integer checkAcceptTicket;
+    private double pointGained;
+    private double pointUsed;
+
 
     public Integer getId() {
         return id;
@@ -118,4 +109,29 @@ public class Transaction {
     public void setMember(Member member) {
         this.member = member;
     }
+
+    public Integer getCheckAcceptTicket() {
+        return checkAcceptTicket;
+    }
+
+    public void setCheckAcceptTicket(Integer checkAcceptTicket) {
+        this.checkAcceptTicket = checkAcceptTicket;
+    }
+
+    public double getPointGained() {
+        return pointGained;
+    }
+
+    public void setPointGained(double pointGained) {
+        this.pointGained = pointGained;
+    }
+
+    public double getPointUsed() {
+        return pointUsed;
+    }
+
+    public void setPointUsed(double pointUsed) {
+        this.pointUsed = pointUsed;
+    }
 }
+
